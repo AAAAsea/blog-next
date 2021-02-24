@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://asea.fun/post/0.html</loc>
-    
-    <lastmod>2021-02-24</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://asea.fun/post/cf7f39c3.html</loc>
     
     <lastmod>2021-02-23</lastmod>
@@ -128,13 +121,6 @@
   </url>
   
   <url>
-    <loc>https://asea.fun/tags/index.html</loc>
-    
-    <lastmod>2020-11-24</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://asea.fun/link/index.html</loc>
     
     <lastmod>2020-11-24</lastmod>
@@ -143,6 +129,13 @@
   
   <url>
     <loc>https://asea.fun/message/index.html</loc>
+    
+    <lastmod>2020-11-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://asea.fun/tags/index.html</loc>
     
     <lastmod>2020-11-24</lastmod>
     

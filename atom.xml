@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://asea.fun/"/>
-  <updated>2021-02-24T11:58:19.580Z</updated>
+  <updated>2021-02-23T02:05:28.000Z</updated>
   <id>https://asea.fun/</id>
   
   <author>
@@ -15,25 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="https://asea.fun/post/0.html"/>
-    <id>https://asea.fun/post/0.html</id>
-    <published>2021-02-24T11:58:19.580Z</published>
-    <updated>2021-02-24T11:58:19.580Z</updated>
-    
-    <content type="html"><![CDATA[<div class="tabs" id="test4"><ul class="nav-tabs"><li class="tab active"><a href="#test4-1">第一个Tab</a></li><li class="tab"><a href="#test4-2"><i class="fab fa-apple-pay" style="text-align: center;"></i></a></li><li class="tab"><a href="#test4-3"><i class="fas fa-bomb"></i>炸弹</a></li></ul><div class="tab-content"><div class="tab-pane active" id="test4-1"><div class="tabs" id="test4"><ul class="nav-tabs"><li class="tab active"><a href="#test4-1">第一个Tab</a></li><li class="tab"><a href="#test4-2"><i class="fab fa-apple-pay" style="text-align: center;"></i></a></li><li class="tab"><a href="#test4-3"><i class="fas fa-bomb"></i>炸弹</a></li></ul><div class="tab-content"><div class="tab-pane active" id="test4-1"><p><strong>tab名字为第一个Tab</strong></p></div><div class="tab-pane" id="test4-2"><p><strong>只有图标 没有Tab名字</strong></p></div><div class="tab-pane" id="test4-3"><p><strong>名字+icon</strong></p></div></div></div></div><div class="tab-pane" id="test4-2"><p><strong>只有图标 没有Tab名字</strong></p></div><div class="tab-pane" id="test4-3"><p><strong>名字+icon</strong></p></div></div></div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;div class=&quot;tabs&quot; id=&quot;test4&quot;&gt;&lt;ul class=&quot;nav-tabs&quot;&gt;&lt;li class=&quot;tab active&quot;&gt;&lt;a href=&quot;#test4-1&quot;&gt;第一个Tab&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;tab&quot;&gt;&lt;a href=&quot;#test4-2&quot;&gt;&lt;i class=&quot;fab fa-apple-pay&quot; style=&quot;text-align: center;&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;tab&quot;&gt;&lt;a href=&quot;#test4-3&quot;&gt;&lt;i class=&quot;fas fa-bomb&quot;&gt;&lt;/i&gt;炸弹&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div class=&quot;tab-content&quot;&gt;&lt;div class=&quot;tab-pane active&quot; id=&quot;test4-1&quot;&gt;&lt;div class=&quot;tabs&quot; id=&quot;test4&quot;&gt;&lt;ul class=&quot;nav-tabs&quot;&gt;&lt;li class=&quot;tab active&quot;&gt;&lt;a href=&quot;#test4-1&quot;&gt;第一个Tab&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;tab&quot;&gt;&lt;a href=&quot;#test4-2&quot;&gt;&lt;i class=&quot;fab fa-apple-pay&quot; style=&quot;text-align: center;&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;tab&quot;&gt;&lt;a href=&quot;#test4-3&quot;&gt;&lt;i class=&quot;fas fa-bomb&quot;&gt;&lt;/i&gt;炸弹&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div class=&quot;tab-content&quot;&gt;&lt;div class=&quot;tab-pane active&quot; id=&quot;test4-1&quot;&gt;&lt;p&gt;&lt;strong&gt;tab名字为第一个Tab&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;tab-pane&quot; id=&quot;test4-2&quot;&gt;&lt;p&gt;&lt;strong&gt;只有图标 没有Tab名字&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;tab-pane&quot; id=&quot;test4-3&quot;&gt;&lt;p&gt;&lt;strong&gt;名字+icon&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;tab-pane&quot; id=&quot;test4-2&quot;&gt;&lt;p&gt;&lt;strong&gt;只有图标 没有Tab名字&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;tab-pane&quot; id=&quot;test4-3&quot;&gt;&lt;p&gt;&lt;strong&gt;名字+icon&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-    
-    </summary>
-    
-    
-    
-  </entry>
   
   <entry>
     <title>hexo deploy——避免重复输入账户密码</title>
@@ -46,7 +27,11 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;ssh配置&quot;&gt;&lt;a href=&quot;#ssh配置&quot; class=&quot;headerlink&quot; title=&quot;ssh配置&quot;&gt;&lt;/a&gt;ssh配置&lt;/h1&gt;
+      
+      
+        &lt;h1 id=&quot;ssh配置&quot;&gt;&lt;a href=&quot;#ssh配置&quot; class=&quot;headerlink&quot; title=&quot;ssh配置&quot;&gt;&lt;/a&gt;ssh配置&lt;/h1&gt;&lt;h2&gt;&lt;a id=&quot;1SSH_13&quot;&gt;&lt;/a&gt;1.生成SSH密钥&lt;/h2&gt; 
+&lt;pre class=&quot;prettypri
+      
     
     </summary>
     
@@ -69,7 +54,10 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;看垃圾&quot;&gt;&lt;a href=&quot;#看垃圾&quot; class=&quot;headerlink&quot; title=&quot;看垃圾&quot;&gt;&lt;/a&gt;看垃圾&lt;/h1&gt;
+      
+      
+        &lt;h1 id=&quot;看垃圾&quot;&gt;&lt;a href=&quot;#看垃圾&quot; class=&quot;headerlink&quot; title=&quot;看垃圾&quot;&gt;&lt;/a&gt;看垃圾&lt;/h1&gt;&lt;p&gt;徐店长店还开着的时候就给老药罐找了这个工作。&lt;br&gt;老药罐因为身体原因常年服药，趁不便走动，遂听徐店长安排在南丰镇东接了家商店。只用
+      
     
     </summary>
     
@@ -92,7 +80,10 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;这里记录网站更新内容&quot;&gt;&lt;a href=&quot;#这里记录网站更新内容&quot; class=&quot;headerlink&quot; title=&quot;这里记录网站更新内容&quot;&gt;&lt;/a&gt;&lt;font color=&quot;#495969&quot;&gt;这里记录网站更新内容&lt;/font&gt;&lt;/h2&gt;
+      
+      
+        &lt;h2 id=&quot;这里记录网站更新内容&quot;&gt;&lt;a href=&quot;#这里记录网站更新内容&quot; class=&quot;headerlink&quot; title=&quot;这里记录网站更新内容&quot;&gt;&lt;/a&gt;&lt;font color=&quot;#495969&quot;&gt;这里记录网站更新内容&lt;/font&gt;&lt;/h2&gt;&lt;div class=&quot;
+      
     
     </summary>
     
@@ -115,7 +106,11 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;说在前面&quot;&gt;&lt;a href=&quot;#说在前面&quot; class=&quot;headerlink&quot; title=&quot;说在前面&quot;&gt;&lt;/a&gt;说在前面&lt;/h1&gt;
+      
+      
+        &lt;h1 id=&quot;说在前面&quot;&gt;&lt;a href=&quot;#说在前面&quot; class=&quot;headerlink&quot; title=&quot;说在前面&quot;&gt;&lt;/a&gt;说在前面&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;前几天年前回了趟老家，要说也不是一直没回去过，但前几次都只是走马观花，单觉得那地方也不属于我了，没
+      
     
     </summary>
     
@@ -138,7 +133,11 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;这里收录一些小技巧&quot;&gt;&lt;a href=&quot;#这里收录一些小技巧&quot; class=&quot;headerlink&quot; title=&quot;这里收录一些小技巧&quot;&gt;&lt;/a&gt;&lt;font color=&quot;#495969&quot;&gt;这里收录一些小技巧&lt;/font&gt;&lt;/h2&gt;
+      
+      
+        &lt;h2 id=&quot;这里收录一些小技巧&quot;&gt;&lt;a href=&quot;#这里收录一些小技巧&quot; class=&quot;headerlink&quot; title=&quot;这里收录一些小技巧&quot;&gt;&lt;/a&gt;&lt;font color=&quot;#495969&quot;&gt;这里收录一些小技巧&lt;/font&gt;&lt;/h2&gt;&lt;blockquote&gt;
+&lt;ul
+      
     
     </summary>
     
@@ -161,7 +160,10 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;🍉&quot;&gt;&lt;a href=&quot;#🍉&quot; class=&quot;headerlink&quot; title=&quot;🍉&quot;&gt;&lt;/a&gt;🍉&lt;/h2&gt;
+      
+      
+        &lt;h2 id=&quot;🍉&quot;&gt;&lt;a href=&quot;#🍉&quot; class=&quot;headerlink&quot; title=&quot;🍉&quot;&gt;&lt;/a&gt;🍉&lt;/h2&gt;&lt;p&gt;不追星，但喜欢一种仪式感。体现在对薛之谦新歌的期待，尽管不好听；体现在关注的某个up更新；体现在他刚好符合我的某个理想中的状态，这算不算追星
+      
     
     </summary>
     
@@ -184,7 +186,11 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;2020的结束&quot;&gt;&lt;a href=&quot;#2020的结束&quot; class=&quot;headerlink&quot; title=&quot;2020的结束&quot;&gt;&lt;/a&gt;&lt;font color=&quot;#495969&quot;&gt;2020的结束&lt;/font&gt;&lt;/h2&gt;
+      
+      
+        &lt;h2 id=&quot;2020的结束&quot;&gt;&lt;a href=&quot;#2020的结束&quot; class=&quot;headerlink&quot; title=&quot;2020的结束&quot;&gt;&lt;/a&gt;&lt;font color=&quot;#495969&quot;&gt;2020的结束&lt;/font&gt;&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;这些东西，有时候
+      
     
     </summary>
     
@@ -207,7 +213,10 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;收集好玩实用的网站&quot;&gt;&lt;a href=&quot;#收集好玩实用的网站&quot; class=&quot;headerlink&quot; title=&quot;收集好玩实用的网站&quot;&gt;&lt;/a&gt;收集好玩实用的网站&lt;/h1&gt;
+      
+      
+        &lt;h1 id=&quot;收集好玩实用的网站&quot;&gt;&lt;a href=&quot;#收集好玩实用的网站&quot; class=&quot;headerlink&quot; title=&quot;收集好玩实用的网站&quot;&gt;&lt;/a&gt;收集好玩实用的网站&lt;/h1&gt;&lt;div class=&quot;tabs&quot; id=&quot;websites&quot;&gt;&lt;ul class=&quot;na
+      
     
     </summary>
     
@@ -230,7 +239,10 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;说在前面&quot;&gt;&lt;a href=&quot;#说在前面&quot; class=&quot;headerlink&quot; title=&quot;说在前面&quot;&gt;&lt;/a&gt;说在前面&lt;/h1&gt;
+      
+      
+        &lt;h1 id=&quot;说在前面&quot;&gt;&lt;a href=&quot;#说在前面&quot; class=&quot;headerlink&quot; title=&quot;说在前面&quot;&gt;&lt;/a&gt;说在前面&lt;/h1&gt;&lt;p&gt;昨天更新了第一个&lt;a href=&quot;https://www.bilibili.com/video/BV18h411f72x&quot;&gt;
+      
     
     </summary>
     
@@ -253,9 +265,14 @@
     
     <summary type="html">
     
-      &lt;center&gt;
+      
+      
+        &lt;center&gt;
 
 &lt;h1 id=&quot;记录一些意象&quot;&gt;&lt;a href=&quot;#记录一些意象&quot; class=&quot;headerlink&quot; title=&quot;记录一些意象&quot;&gt;&lt;/a&gt;记录一些意象&lt;/h1&gt;&lt;/center&gt;
+
+&lt;h2 id=&quot;窗含西岭和风力发电扇叶&quot;&gt;&lt;a href=&quot;#窗含西岭和
+      
     
     </summary>
     
@@ -278,7 +295,10 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;hexo-clean-amp-amp-hexo-generate-amp-amp-hexo-deploy-三命令统一&quot;&gt;&lt;a href=&quot;#hexo-clean-amp-amp-hexo-generate-amp-amp-hexo-deploy-三命令统一&quot; class=&quot;headerlink&quot; title=&quot;hexo clean&amp;amp;&amp;amp;hexo generate&amp;amp;&amp;amp;hexo deploy 三命令统一&quot;&gt;&lt;/a&gt;hexo clean&amp;amp;&amp;amp;hexo generate&amp;amp;&amp;amp;hexo deploy 三命令统一&lt;/h1&gt;
+      
+      
+        &lt;h1 id=&quot;hexo-clean-amp-amp-hexo-generate-amp-amp-hexo-deploy-三命令统一&quot;&gt;&lt;a href=&quot;#hexo-clean-amp-amp-hexo-generate-amp-amp-hexo-deploy-三命令统一&quot; cl
+      
     
     </summary>
     
@@ -301,9 +321,13 @@
     
     <summary type="html">
     
-      &lt;div class=&quot;note primary&quot;&gt;
+      
+      
+        &lt;div class=&quot;note primary&quot;&gt;
             &lt;p&gt;这里记录一些有关域名配置的问题&lt;/p&gt;
           &lt;/div&gt;
+&lt;h1 id=&quot;域名解析（以阿里云为例）&quot;&gt;&lt;a href=&quot;#域名解析（以阿里云为例）&quot; class=&quot;headerli
+      
     
     </summary>
     
@@ -355,7 +379,10 @@
     
     <summary type="html">
     
-      &lt;p&gt;生日快乐呢&lt;br&gt;是不是很快呢&lt;br&gt;2020年是不是很神奇的一年呢&lt;br&gt;奇奇怪怪的&lt;br&gt;你看发生了这么多奇怪的事&lt;br&gt;但是出不去了&lt;br&gt;嘎嘎嘎&lt;br&gt;看了那么多酒店有机会一定要去&lt;br&gt;小宝贝生日快乐呀&lt;br&gt;蛋糕可以不吃&lt;br&gt;酒店可以不住&lt;br&gt;旅行可以不去&lt;br&gt;但是要快乐&lt;br&gt;给你一些可爱的图：&lt;br&gt;吹个蜡烛吧&lt;br&gt;生日快乐！&lt;/p&gt;
+      
+      
+        &lt;p&gt;生日快乐呢&lt;br&gt;是不是很快呢&lt;br&gt;2020年是不是很神奇的一年呢&lt;br&gt;奇奇怪怪的&lt;br&gt;你看发生了这么多奇怪的事&lt;br&gt;但是出不去了&lt;br&gt;嘎嘎嘎&lt;br&gt;看了那么多酒店有机会一定要去&lt;br&gt;小宝贝生日快乐呀&lt;br&gt;蛋糕可以不吃&lt;br&gt;酒店可以不住&lt;br&gt;旅行可以不去&lt;
+      
     
     </summary>
     
@@ -378,7 +405,10 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;罗永浩&quot;&gt;&lt;a href=&quot;#罗永浩&quot; class=&quot;headerlink&quot; title=&quot;罗永浩&quot;&gt;&lt;/a&gt;罗永浩&lt;/h2&gt;
+      
+      
+        &lt;h2 id=&quot;罗永浩&quot;&gt;&lt;a href=&quot;#罗永浩&quot; class=&quot;headerlink&quot; title=&quot;罗永浩&quot;&gt;&lt;/a&gt;罗永浩&lt;/h2&gt;&lt;p&gt;很长时间以来都只是只闻其名，细细研究一下才发现他的的确确是很多人的精神领袖，或者说精神鸦片也未尝不可。辍学打工，办培训机构，打假，做
+      
     
     </summary>
     
@@ -401,7 +431,10 @@
     
     <summary type="html">
     
-      &lt;p&gt;疼一怎么疼了这么久了还是不好，一直以为咬伤的很快就会好的。这么多天居然不见丝毫好转，现在喝水都成问题了，又饿又疼。晚上耐着性子做了米饭，炒了很难吃的菜，但是一粒也吃不成，一碰到就疼。二韩寒大概看的差不多了，剩下还有一些电影和书需要看，反正记录了好多事情待完成，不知道啥时候可以。看的时候会有很多感受，不记录下来就会消失。总体来说不记录相当于白看。三动物真可爱，一看动物就停不下来。以后一定要好好养动物。除了一只，还要养猫、狗、蛇。。算了。够了。想看猫狗大战，想看狗狗大战，想看猫猫大战。四陌生人很难交流。能说得上话的除了年纪遭遇相仿的，别的基本都讲不通逻辑。这个时代变化很快。也不知道什么时候该被淘汰，但现在还不必担心，因为我们是把淘汰者。一点小愿望希望日子赶紧有所好转；积累的事情赶紧做完；少看报纸多读书。&lt;/p&gt;
+      
+      
+        &lt;p&gt;疼一怎么疼了这么久了还是不好，一直以为咬伤的很快就会好的。这么多天居然不见丝毫好转，现在喝水都成问题了，又饿又疼。晚上耐着性子做了米饭，炒了很难吃的菜，但是一粒也吃不成，一碰到就疼。二韩寒大概看的差不多了，剩下还有一些电影和书需要看，反正记录了好多事情待完成，不知道啥时候可
+      
     
     </summary>
     
@@ -424,7 +457,11 @@
     
     <summary type="html">
     
-      &lt;p&gt;总算把主题和基本写作的操作摸索敲定了&lt;br&gt;暂且先这样&lt;br&gt;美化工作还有很多要做&lt;br&gt;先记录一下&lt;/p&gt;
+      
+      
+        &lt;p&gt;总算把主题和基本写作的操作摸索敲定了&lt;br&gt;暂且先这样&lt;br&gt;美化工作还有很多要做&lt;br&gt;先记录一下&lt;/p&gt;
+
+      
     
     </summary>
     
