@@ -147,6 +147,11 @@
     <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
 
   </li>
+        <li class="menu-item menu-item-留言">
+
+    <a href="/liuyan/" rel="section"><i class="fa fa-comments fa-fw"></i>留言</a>
+
+  </li>
         <li class="menu-item menu-item-归档">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
@@ -375,7 +380,7 @@ deploy:
         <div class="reward-container">
   <div></div>
   <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    打赏
+    b(￣▽￣)d
   </button>
   <div id="qr" style="display: none;">
       
@@ -412,7 +417,7 @@ deploy:
         
 
   <div class="followme">
-    <p>我的其它练习途径</p>
+    <p>\(@^0^@)/</p>
 
     <div class="social-list">
 
@@ -576,11 +581,23 @@ deploy:
 
   <div class="links-of-blogroll motion-element">
     <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
-      Links
+      我的其它网站
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
           <a href="https://asea.fun/" title="https:&#x2F;&#x2F;asea.fun">Butterfly主题博客</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://game01.asea.fun/" title="https:&#x2F;&#x2F;game01.asea.fun" rel="noopener" target="_blank">生长方块</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://game02.asea.fun/" title="https:&#x2F;&#x2F;game02.asea.fun" rel="noopener" target="_blank">奔跑吧小球</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://game03.asea.fun/" title="https:&#x2F;&#x2F;game03.asea.fun" rel="noopener" target="_blank">见缝插针</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hole.asea.fun/" title="https:&#x2F;&#x2F;hole.asea.fun" rel="noopener" target="_blank">合成黑洞</a>
         </li>
     </ul>
   </div>
@@ -603,18 +620,41 @@ deploy:
 
 <div class="copyright">
   
-  &copy; 2020 – 
+  &copy; 2019 – 
   <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Asea</span>
+  <span class="author" itemprop="copyrightHolder">©2021 by Asea</span>
+</div>
+<!-- 网站运行时间的设置 -->
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("12/14/2019 22:08:00");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已偷偷运行 "+dnum+" 天";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">全站共11.2k字</span>
 </div>
 
         
 <div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+  <script async src=".\lib\busuanzi.pure.min.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: ;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
       </span>
@@ -623,7 +663,7 @@ deploy:
       </span>
     </span>
     <span class="post-meta-divider">|</span>
-    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: ;">
       <span class="post-meta-item-icon">
         <i class="fa fa-eye"></i>
       </span>
@@ -715,9 +755,10 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       recordIP   : false,
       serverURLs : ''
     });
+    
   }, window.Valine);
 });
 </script>
 
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":170,"height":340},"mobile":{"show":false},"log":false});</script></body>
 </html>
