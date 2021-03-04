@@ -1797,6 +1797,63 @@ table th:nth-of-type(4) {
       </tags>
   </entry>
   <entry>
+    <title>python笔记</title>
+    <url>/post/c00b24b1.html</url>
+    <content><![CDATA[<h1 id="开发环境IDLE"><a href="#开发环境IDLE" class="headerlink" title="开发环境IDLE"></a>开发环境IDLE</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">exit() quit()</span><br><span class="line">shift + 右键打开命令行</span><br><span class="line">ctrl + o </span><br><span class="line">ctrl + n #交互界面下</span><br><span class="line">ctrl + q</span><br><span class="line">alt + 3&#x2F;4 注释与解除 注释&#x3D;》##</span><br><span class="line">f5 run</span><br><span class="line">pypi.org 库</span><br></pre></td></tr></table></figure>
+
+<h1 id="pip-命令"><a href="#pip-命令" class="headerlink" title="pip 命令"></a>pip 命令</h1><pre><code>pip list
+pip install package1 package2
+pip install --upgrade package
+pip uninstall package</code></pre><h1 id="模块导入"><a href="#模块导入" class="headerlink" title="模块导入"></a>模块导入</h1><pre><code>三种导入方式:
+    导入整个模块 import模块名【as模块的别名（自定义)】
+    明确导入模块中的特定对象 from模块名import对象名【as别名】
+    导入特定模块中的所有对象 from 模块名 import * (不建议)</code></pre><h1 id="变量及数据类型"><a href="#变量及数据类型" class="headerlink" title="变量及数据类型"></a>变量及数据类型</h1><h2 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h2><pre><code>1 变量名必须以字母或下划线开头，不能以数字开头。·但下划线开头的变量在Python中有特殊含义。
+2 变量名中不能有空格或标点符号。(括号、引号、逗号、斜线、反斜线、冒号、句号、问号等）。”
+3 不能使用关键字作为变量名。关键字( keyword，也称为保留字，Python3版本中共有33个)。
+4 不建议使用系统内置的模块名、类型名或函数名以及已导入的模块名及其成员名作为变量名，这会改变其类型和含义，甚至会导致4 其他代码无法正常执行。
+5 变量名对英文字母的大小写敏感绶即要区分大小写。例如:a与A是不同的变量。
+6 Python3版本可以使用中文。
+小结:Python采用大、小写字母，数字，下划线，汉字等字符及其组合进行命名，长度没有限制，但是*首字符不能是数字* ，不能出现空格与标点符号，大小写敏感，不能与关键字相同。(不建议使用中文等非英语语言字符)。
+7 变量的值是可以变化的，类型也随之发生改变。比如:a= 3a= &quot;3&quot;</code></pre><h3 id="查看已有关键字"><a href="#查看已有关键字" class="headerlink" title="查看已有关键字"></a>查看已有关键字</h3><pre><code>&gt;&gt;&gt; import keyword
+&gt;&gt;&gt; keyword.kwlist
+[&apos;False&apos;, &apos;None&apos;, &apos;True&apos;, &apos;and&apos;, &apos;as&apos;, &apos;assert&apos;, &apos;async&apos;, &apos;await&apos;, &apos;break&apos;, &apos;class&apos;, &apos;continue&apos;, &apos;def&apos;, &apos;del&apos;, &apos;elif&apos;, &apos;else&apos;, &apos;except&apos;, &apos;finally&apos;, &apos;for&apos;, &apos;from&apos;, &apos;global&apos;, &apos;if&apos;, &apos;import&apos;, &apos;in&apos;, &apos;is&apos;, &apos;lambda&apos;, &apos;nonlocal&apos;, &apos;not&apos;, &apos;or&apos;, &apos;pass&apos;, &apos;raise&apos;, &apos;return&apos;, &apos;try&apos;, &apos;while&apos;, &apos;with&apos;, &apos;yield&apos;]</code></pre><h3 id="查看已有内置对象名"><a href="#查看已有内置对象名" class="headerlink" title="查看已有内置对象名"></a>查看已有内置对象名</h3><pre><code>dir(__builtins__)</code></pre><h2 id="数字类型"><a href="#数字类型" class="headerlink" title="数字类型"></a>数字类型</h2><h3 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h3><pre><code>10 2 8 16进制转换：int() bin() oct() hex()，其中0b 0o 0x 代表2 8 16进制。</code></pre><h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h2><pre><code>tuple 转化为元组 sort reverse 升序和反序（注意不是降序）</code></pre><h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><pre><code>.append </code></pre><h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><pre><code>pop 
+if &apos;&apos; in d:
+for key in d.keys():
+for key in d.values():
+.clear</code></pre><h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><pre><code>s = set(&apos;python&apos;)
+s = frozenset(&apos;python&apos;)
+.add(&apos;0&apos;)
+.update([update])
+.remove()
+.clear
+if 2 in s:
+for e in s:
+s = s1 | s2 并集
+s1.union(s2)
+同理 &amp; 以及 intersection
+- difference
+^差集 symmetric_difference()</code></pre><h2 id="盲点"><a href="#盲点" class="headerlink" title="盲点"></a>盲点</h2><pre><code>位运算符 优先级 可变长参数</code></pre><h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="基本函数"><a href="#基本函数" class="headerlink" title="基本函数"></a>基本函数</h2><pre><code>input() | age = input(&apos;your age:&apos;)
+raw_input() 只存在于python2，不管输入什么的都是字符串
+print()
+int()
+print(value1,value2,value3...,step = &apos;\t&apos;,end = &apos;\n&apos;, file = &apos;sys.stdout&apos;)
+for i in range(1,5)
+    print(i,end=&apos;&apos;) 输出不换行
+写入文件
+    with open (&apos;test.txt&apos;,&apos;w&apos;) as file01:
+        print(&apos;hello&apos;,file = file01)
+    with open (&apos;test02.txt&apos;,&apos;w&apos;) as file02:
+        file02.write(&apos;hello&apos;)</code></pre><h2 id="内置函数"><a href="#内置函数" class="headerlink" title="内置函数"></a>内置函数</h2><h2 id="数学函数"><a href="#数学函数" class="headerlink" title="数学函数"></a>数学函数</h2><p><img src="/images/python%E7%AC%94%E8%AE%B0/%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0.jfif" alt></p>
+<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p><img src="/images/python%E7%AC%94%E8%AE%B0/%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B01.jfif" alt><br><img src="/images/python%E7%AC%94%E8%AE%B0/char.jfif" alt><br><img src="/images/python%E7%AC%94%E8%AE%B0/char2.jfif" alt><br><img src="/images/python%E7%AC%94%E8%AE%B0/char3.jfif" alt></p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>note</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>返校日记</title>
     <url>/post/b6589fc3.html</url>
     <content><![CDATA[<h1 id="大二下的返校有什么可说道的"><a href="#大二下的返校有什么可说道的" class="headerlink" title="大二下的返校有什么可说道的"></a>大二下的返校有什么可说道的</h1><h2 id="流水账一"><a href="#流水账一" class="headerlink" title="流水账一"></a>流水账一</h2><p>火车站安检的位置改了，改的挺合理，我觉得它本来就应该是这样子。在取票厅见到了很久不见的老同学，一见面其实没认出来，好家伙，那肯定认不出来，不过说了些话后感觉也还熟悉，可能是某些深处的记忆被拔出来了，整个相处还算不尴尬。我们五个人上四号车，结果却往相反的地方走，好在问了问工作人员，赶紧掉头走了很久很久才到。上车后我们坐在下铺攀谈了一会，主人过来了，于是我们便移步到道旁的位置上。没什么事干，我们决定打会牌，然而网络问题，磕磕绊绊进去之后，也就打了一把，还算有意思的结束。我坐在窗户旁边看周遭景致后撤，脑中并无任何想法。</p>
