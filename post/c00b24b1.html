@@ -403,9 +403,14 @@
 </ul>
 <h3 id="字符串格式化（format-）"><a href="#字符串格式化（format-）" class="headerlink" title="字符串格式化（format()）"></a>字符串格式化（format()）</h3><p><code>&#39;你好，我是&#123;&#125;，是&#123;&#125;的爸爸。&#39;.format(&#39;Linda&#39;,&#39;Mia&#39;)</code><br><code>&#39;你好，我是&#123;1&#125;，是&#123;0&#125;的爸爸。&#39;.format(&#39;Linda&#39;,&#39;Mia&#39;)</code></p>
 <blockquote>
-<p><code>&#123;&#125;</code>里面可以填写index，用来匹配format()里的参数，从0开始。</p>
+<p><code>&#123;&#125;</code>里面可以填写index，用来匹配format()里的参数，从0开始。<br><code>&#39;你好，我是&#123;&#125;，&#123;&#123;是&#123;&#125;的爸爸。&#125;&#125;&#39;.format(&#39;Linda&#39;,&#39;Mia&#39;)</code><br>当想输出<code>&#123;&#125;</code>的时候，需要写成<code>&#123;&#123;&#125;&#125;</code>，此处{}用来转义。</p>
 </blockquote>
-<h3 id="字符串函数汇总"><a href="#字符串函数汇总" class="headerlink" title="字符串函数汇总"></a>字符串函数汇总</h3><p><img src="/images/python%E7%AC%94%E8%AE%B0/%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0.jfif" alt><br><img src="/images/python%E7%AC%94%E8%AE%B0/char.jfif" alt><br><img src="/images/python%E7%AC%94%E8%AE%B0/char2.jfif" alt><br><img src="/images/python%E7%AC%94%E8%AE%B0/char3.jfif" alt></p>
+<p><del>此处有待补充</del></p>
+<h3 id="字符串函数汇总"><a href="#字符串函数汇总" class="headerlink" title="字符串函数汇总"></a>字符串函数汇总</h3><ol>
+<li>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43158056/article/details/92798114">字符串常用方法汇总</a></li>
+<li><code>eval()</code>去掉最外侧的引号并以Python语句输出</li>
+<li>一些图片<br><img src="/images/python%E7%AC%94%E8%AE%B0/%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0.jfif" alt><br><img src="/images/python%E7%AC%94%E8%AE%B0/char.jfif" alt><br><img src="/images/python%E7%AC%94%E8%AE%B0/char2.jfif" alt><br><img src="/images/python%E7%AC%94%E8%AE%B0/char3.jfif" alt></li>
+</ol>
 <h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h2><p>tuple 转化为元组 sort reverse 升序和反序（注意不是降序）</p>
 <h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>.append </p>
 <h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><p>pop<br>if ‘’ in d:<br>for key in d.keys():<br>for key in d.values():<br>.clear</p>
@@ -707,7 +712,7 @@ setInterval("createtime()",250);
 </script>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共13.6k字</span>
+  <span class="post-count">全站共13.7k字</span>
 </div>
 
         
