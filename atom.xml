@@ -27,10 +27,20 @@
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;开发环境IDLE&quot;&gt;&lt;a href=&quot;#开发环境IDLE&quot; class=&quot;headerlink&quot; title=&quot;开发环境IDLE&quot;&gt;&lt;/a&gt;开发环境IDLE&lt;/h1&gt;&lt;p&gt;&lt;code&gt;exit() quit()&lt;/code&gt;&lt;br&gt;shift + 右键打开命令行&lt;
-      
+      &lt;h1 id=&quot;开发环境IDLE&quot;&gt;&lt;a href=&quot;#开发环境IDLE&quot; class=&quot;headerlink&quot; title=&quot;开发环境IDLE&quot;&gt;&lt;/a&gt;开发环境IDLE&lt;/h1&gt;&lt;p&gt;&lt;code&gt;exit() quit()&lt;/code&gt;&lt;br&gt;shift + 右键打开命令行&lt;br&gt;&lt;code&gt;ctrl + o&lt;/code&gt;&lt;br&gt;ctrl + n&lt;code&gt;#交互界面下&lt;/code&gt;ctrl + q&lt;code&gt;&lt;/code&gt;alt + 3/4&lt;code&gt;注释与解除 注释：##&lt;/code&gt;f5` run&lt;br&gt;pypi.org 库网址&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;pip-命令&quot;&gt;&lt;a href=&quot;#pip-命令&quot; class=&quot;headerlink&quot; title=&quot;pip 命令&quot;&gt;&lt;/a&gt;pip 命令&lt;/h1&gt;&lt;p&gt;&lt;code&gt;pip list&lt;/code&gt;&lt;br&gt;&lt;code&gt;pip install package1 package2&lt;/code&gt;&lt;br&gt;&lt;code&gt;pip install --upgrade package&lt;/code&gt;&lt;br&gt;&lt;code&gt;pip uninstall package&lt;/code&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;模块导入&quot;&gt;&lt;a href=&quot;#模块导入&quot; class=&quot;headerlink&quot; title=&quot;模块导入&quot;&gt;&lt;/a&gt;模块导入&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;三种导入方式:&lt;/strong&gt;&lt;ul&gt;
+&lt;li&gt;导入整个模块 &lt;code&gt;import模块名as模块的别名（自定义）&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;明确导入模块中的特定对象 &lt;code&gt;from模块名import对象名as别名&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;导入特定模块中的所有对象 &lt;code&gt;from 模块名 import *&lt;/code&gt; (不建议)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;变量及数据类型&quot;&gt;&lt;a href=&quot;#变量及数据类型&quot; class=&quot;headerlink&quot; title=&quot;变量及数据类型&quot;&gt;&lt;/a&gt;变量及数据类型&lt;/h1&gt;
     
     </summary>
     
@@ -49,14 +59,24 @@
     <published>2021-02-28T09:26:32.000Z</published>
     <updated>2021-02-28T09:27:02.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="大二下的返校有什么可说道的"><a href="#大二下的返校有什么可说道的" class="headerlink" title="大二下的返校有什么可说道的"></a>大二下的返校有什么可说道的</h1><h2 id="流水账一"><a href="#流水账一" class="headerlink" title="流水账一"></a>流水账一</h2><p>火车站安检的位置改了，改的挺合理，我觉得它本来就应该是这样子。在取票厅见到了很久不见的老同学，一见面其实没认出来，好家伙，那肯定认不出来，不过说了些话后感觉也还熟悉，可能是某些深处的记忆被拔出来了，整个相处还算不尴尬。我们五个人上四号车，结果却往相反的地方走，好在问了问工作人员，赶紧掉头走了很久很久才到。上车后我们坐在下铺攀谈了一会，主人过来了，于是我们便移步到道旁的位置上。没什么事干，我们决定打会牌，然而网络问题，磕磕绊绊进去之后，也就打了一把，还算有意思的结束。我坐在窗户旁边看周遭景致后撤，脑中并无任何想法。</p><h2 id="流水账二"><a href="#流水账二" class="headerlink" title="流水账二"></a>流水账二</h2><p>快到熄灯的时间，我收拾了东西爬上上铺，整个感觉奇妙的很，狭小的空间内时睡时醒，只记得做了很多噩梦，醒来的时候六点多，车上的广播开始有了动静。我翻动了一会下了床洗了脸，牙刷什么的在箱子里，也懒得去拿了。坐在窗户旁边看风景，但也没什么看到，雾气茫茫，不太能看清多远。同行的伙伴递过来面包、🍓，也没什么食欲，捏了个草莓吃了。</p><center>    <img style="border-radius: 0.3125em;    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); width:300px" src="https://img.imgdb.cn/item/603b65385f4313ce25b1d1e4.jpg">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">剩下的叶子放在了车窗旁拍了照，随即丢到了垃圾桶了，毕竟不太好看——放窗户上。</div></center><h2 id="流水账三"><a href="#流水账三" class="headerlink" title="流水账三"></a>流水账三</h2><p>上午没什么事，看了会手机没什么玩的，就站起来站着，车到站的时候咯噔了一下，差点跌倒，还好不至于出丑。后来实在无趣，上了床，开始睡觉了。大约十一点半，乘务员提醒快到站了。拿出浏览器查了查，12：05到，还早，打算再睡会，可也没啥兴致，便下了床。再次坐在窗边，旋即看到“上海站”几个打字向我跑来，原来早点了。那便收拾收拾下车吧。</p><h2 id="流水账四"><a href="#流水账四" class="headerlink" title="流水账四"></a>流水账四</h2><p>一路按照指示牌的方向，给看了健康码，一路来到三四号线的地方，跟我姐分道扬镳，开始了一个多小时的地铁之旅。一路无话，倒是宜山路转9号线，路途之远难以想象，太累了，几十级的台阶，去年帮某人抬了一路，今年换了个人，以后一定提醒带少行李。说起来三号线上看到个有意思的父亲和女儿，那父亲大概三十岁不到，短发、五官都分外精致，手里抱个“长宁美院”的袋子，女儿也六七岁的样子，一会坐下一会站起来。我顿时起了好感。说着她拉起来她爸爸指着墙上的广告说，这两个人怎么长的一样。那美院男子细心的讲解着什么镜像、什么Ps、什么广告，听起来极为有趣。<br>最后面没什么说的了，倒是等公交等不来，打的又堵车，磕磕绊绊算是回了学校，便也开始新的日子了。</p><h2 id="一些图片"><a href="#一些图片" class="headerlink" title="一些图片"></a>一些图片</h2><center>    <img style="border-radius: 0.3125em;    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); width:300px" src="https://img.imgdb.cn/item/603b67ee5f4313ce25b3b2e0.jpg">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">上海站慢慢靠近</div></center><hr><center>    <img style="border-radius: 0.3125em;    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); width:300px" src="https://img.imgdb.cn/item/603b67ee5f4313ce25b3b2e3.jpg" <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">公交车站牌人山人海</div></center><hr><center>    <img style="border-radius: 0.3125em;    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); width:300px" src="https://img.imgdb.cn/item/603b67ee5f4313ce25b3b2e7.jpg">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">到宿舍后一碗泡面草草了事</div></center><hr><center>    <img style="border-radius: 0.3125em;    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); width:300px" src="https://img.imgdb.cn/item/603b67ee5f4313ce25b3b2ea.jpg">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">上铺视角</div></center>]]></content>
+    <content type="html"><![CDATA[<h1 id="大二下的返校有什么可说道的"><a href="#大二下的返校有什么可说道的" class="headerlink" title="大二下的返校有什么可说道的"></a>大二下的返校有什么可说道的</h1><h2 id="流水账一"><a href="#流水账一" class="headerlink" title="流水账一"></a>流水账一</h2><p>火车站安检的位置改了，改的挺合理，我觉得它本来就应该是这样子。在取票厅见到了很久不见的老同学，一见面其实没认出来，好家伙，那肯定认不出来，不过说了些话后感觉也还熟悉，可能是某些深处的记忆被拔出来了，整个相处还算不尴尬。我们五个人上四号车，结果却往相反的地方走，好在问了问工作人员，赶紧掉头走了很久很久才到。上车后我们坐在下铺攀谈了一会，主人过来了，于是我们便移步到道旁的位置上。没什么事干，我们决定打会牌，然而网络问题，磕磕绊绊进去之后，也就打了一把，还算有意思的结束。我坐在窗户旁边看周遭景致后撤，脑中并无任何想法。</p><h2 id="流水账二"><a href="#流水账二" class="headerlink" title="流水账二"></a>流水账二</h2><p>快到熄灯的时间，我收拾了东西爬上上铺，整个感觉奇妙的很，狭小的空间内时睡时醒，只记得做了很多噩梦，醒来的时候六点多，车上的广播开始有了动静。我翻动了一会下了床洗了脸，牙刷什么的在箱子里，也懒得去拿了。坐在窗户旁边看风景，但也没什么看到，雾气茫茫，不太能看清多远。同行的伙伴递过来面包、🍓，也没什么食欲，捏了个草莓吃了。</p><center>    <img style="border-radius: 0.3125em;    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); width:300px" src="https://img.imgdb.cn/item/603b65385f4313ce25b1d1e4.jpg">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">剩下的叶子放在了车窗旁拍了照，随即丢到了垃圾桶了，毕竟不太好看——放窗户上。</div></center><h2 id="流水账三"><a href="#流水账三" class="headerlink" title="流水账三"></a>流水账三</h2><p>上午没什么事，看了会手机没什么玩的，就站起来站着，车到站的时候咯噔了一下，差点跌倒，还好不至于出丑。后来实在无趣，上了床，开始睡觉了。大约十一点半，乘务员提醒快到站了。拿出浏览器查了查，12：05到，还早，打算再睡会，可也没啥兴致，便下了床。再次坐在窗边，旋即看到“上海站”几个打字向我跑来，原来早点了。那便收拾收拾下车吧。</p><h2 id="流水账四"><a href="#流水账四" class="headerlink" title="流水账四"></a>流水账四</h2><p>一路按照指示牌的方向，给看了健康码，一路来到三四号线的地方，跟我姐分道扬镳，开始了一个多小时的地铁之旅。一路无话，倒是宜山路转9号线，路途之远难以想象，太累了，几十级的台阶，去年帮某人抬了一路，今年换了个人，以后一定提醒带少行李。说起来三号线上看到个有意思的父亲和女儿，那父亲大概三十岁不到，短发、五官都分外精致，手里抱个“长宁美院”的袋子，女儿也六七岁的样子，一会坐下一会站起来。我顿时起了好感。说着她拉起来她爸爸指着墙上的广告说，这两个人怎么长的一样。那美院男子细心的讲解着什么镜像、什么Ps、什么广告，听起来极为有趣。<br>最后面没什么说的了，倒是等公交等不来，打的又堵车，磕磕绊绊算是回了学校，便也开始新的日子了。</p><h2 id="一些图片"><a href="#一些图片" class="headerlink" title="一些图片"></a>一些图片</h2><center>    <img style="border-radius: 0.3125em;    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); width:300px" src="https://img.imgdb.cn/item/603b67ee5f4313ce25b3b2e0.jpg">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">上海站慢慢靠近</div></center><hr><center>    <img style="border-radius: 0.3125em;    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); width:300px" src="https://img.imgdb.cn/item/603b67ee5f4313ce25b3b2e3.jpg">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">公交车站牌人山人海</div></center><hr><center>    <img style="border-radius: 0.3125em;    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); width:300px" src="https://img.imgdb.cn/item/603b67ee5f4313ce25b3b2e7.jpg">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">到宿舍后一碗泡面草草了事</div></center><hr><center>    <img style="border-radius: 0.3125em;    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); width:300px" src="https://img.imgdb.cn/item/603b67ee5f4313ce25b3b2ea.jpg">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">上铺视角</div></center>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;大二下的返校有什么可说道的&quot;&gt;&lt;a href=&quot;#大二下的返校有什么可说道的&quot; class=&quot;headerlink&quot; title=&quot;大二下的返校有什么可说道的&quot;&gt;&lt;/a&gt;大二下的返校有什么可说道的&lt;/h1&gt;&lt;h2 id=&quot;流水账一&quot;&gt;&lt;a href=&quot;#流水账一&quot;
-      
+      &lt;h1 id=&quot;大二下的返校有什么可说道的&quot;&gt;&lt;a href=&quot;#大二下的返校有什么可说道的&quot; class=&quot;headerlink&quot; title=&quot;大二下的返校有什么可说道的&quot;&gt;&lt;/a&gt;大二下的返校有什么可说道的&lt;/h1&gt;&lt;h2 id=&quot;流水账一&quot;&gt;&lt;a href=&quot;#流水账一&quot; class=&quot;headerlink&quot; title=&quot;流水账一&quot;&gt;&lt;/a&gt;流水账一&lt;/h2&gt;&lt;p&gt;火车站安检的位置改了，改的挺合理，我觉得它本来就应该是这样子。在取票厅见到了很久不见的老同学，一见面其实没认出来，好家伙，那肯定认不出来，不过说了些话后感觉也还熟悉，可能是某些深处的记忆被拔出来了，整个相处还算不尴尬。我们五个人上四号车，结果却往相反的地方走，好在问了问工作人员，赶紧掉头走了很久很久才到。上车后我们坐在下铺攀谈了一会，主人过来了，于是我们便移步到道旁的位置上。没什么事干，我们决定打会牌，然而网络问题，磕磕绊绊进去之后，也就打了一把，还算有意思的结束。我坐在窗户旁边看周遭景致后撤，脑中并无任何想法。&lt;/p&gt;
+&lt;h2 id=&quot;流水账二&quot;&gt;&lt;a href=&quot;#流水账二&quot; class=&quot;headerlink&quot; title=&quot;流水账二&quot;&gt;&lt;/a&gt;流水账二&lt;/h2&gt;&lt;p&gt;快到熄灯的时间，我收拾了东西爬上上铺，整个感觉奇妙的很，狭小的空间内时睡时醒，只记得做了很多噩梦，醒来的时候六点多，车上的广播开始有了动静。我翻动了一会下了床洗了脸，牙刷什么的在箱子里，也懒得去拿了。坐在窗户旁边看风景，但也没什么看到，雾气茫茫，不太能看清多远。同行的伙伴递过来面包、🍓，也没什么食欲，捏了个草莓吃了。&lt;/p&gt;
+&lt;center&gt;
+    &lt;img style=&quot;border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); width:300px&quot; src=&quot;https://img.imgdb.cn/item/603b65385f4313ce25b1d1e4.jpg&quot;&gt;
+    &lt;br&gt;
+    &lt;div style=&quot;color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;&quot;&gt;剩下的叶子放在了车窗旁拍了照，随即丢到了垃圾桶了，毕竟不太好看——放窗户上。&lt;/div&gt;
+&lt;/center&gt;
+
+&lt;h2 id=&quot;流水账三&quot;&gt;&lt;a href=&quot;#流水账三&quot; class=&quot;headerlink&quot; title=&quot;流水账三&quot;&gt;&lt;/a&gt;流水账三&lt;/h2&gt;&lt;p&gt;上午没什么事，看了会手机没什么玩的，就站起来站着，车到站的时候咯噔了一下，差点跌倒，还好不至于出丑。后来实在无趣，上了床，开始睡觉了。大约十一点半，乘务员提醒快到站了。拿出浏览器查了查，12：05到，还早，打算再睡会，可也没啥兴致，便下了床。再次坐在窗边，旋即看到“上海站”几个打字向我跑来，原来早点了。那便收拾收拾下车吧。&lt;/p&gt;
+&lt;h2 id=&quot;流水账四&quot;&gt;&lt;a href=&quot;#流水账四&quot; class=&quot;headerlink&quot; title=&quot;流水账四&quot;&gt;&lt;/a&gt;流水账四&lt;/h2&gt;&lt;p&gt;一路按照指示牌的方向，给看了健康码，一路来到三四号线的地方，跟我姐分道扬镳，开始了一个多小时的地铁之旅。一路无话，倒是宜山路转9号线，路途之远难以想象，太累了，几十级的台阶，去年帮某人抬了一路，今年换了个人，以后一定提醒带少行李。说起来三号线上看到个有意思的父亲和女儿，那父亲大概三十岁不到，短发、五官都分外精致，手里抱个“长宁美院”的袋子，女儿也六七岁的样子，一会坐下一会站起来。我顿时起了好感。说着她拉起来她爸爸指着墙上的广告说，这两个人怎么长的一样。那美院男子细心的讲解着什么镜像、什么Ps、什么广告，听起来极为有趣。&lt;br&gt;最后面没什么说的了，倒是等公交等不来，打的又堵车，磕磕绊绊算是回了学校，便也开始新的日子了。&lt;/p&gt;
     
     </summary>
     
@@ -79,11 +99,21 @@
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;ssh配置&quot;&gt;&lt;a href=&quot;#ssh配置&quot; class=&quot;headerlink&quot; title=&quot;ssh配置&quot;&gt;&lt;/a&gt;ssh配置&lt;/h1&gt;&lt;h2&gt;&lt;a id=&quot;1SSH_13&quot;&gt;&lt;/a&gt;1.生成SSH密钥&lt;/h2&gt; 
-&lt;pre class=&quot;prettypri
-      
+      &lt;h1 id=&quot;ssh配置&quot;&gt;&lt;a href=&quot;#ssh配置&quot; class=&quot;headerlink&quot; title=&quot;ssh配置&quot;&gt;&lt;/a&gt;ssh配置&lt;/h1&gt;&lt;h2&gt;&lt;a id=&quot;1SSH_13&quot;&gt;&lt;/a&gt;1.生成SSH密钥&lt;/h2&gt; 
+&lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;has-numbering&quot; onclick=&quot;mdcp.copyCode(event)&quot; style=&quot;position: unset;&quot;&gt;cd ~/.ssh
+&lt;div class=&quot;hljs-button &amp;#123;2&amp;#125;&quot; data-title=&quot;复制&quot; data-report-click=&quot;&amp;#123;&amp;quot;spm&amp;quot;:&amp;quot;1001.2101.3001.4259&amp;quot;&amp;#125;&quot;&gt;&lt;/div&gt;&lt;/code&gt;&lt;p class=&quot;pre-numbering&quot; style&gt;&lt;li style=&quot;color: rgb(153, 153, 153);&quot;&gt;1&lt;/li&gt;&lt;/p&gt;&lt;/pre&gt; 
+&lt;p&gt;使用ssh -Keygen 生成密钥&lt;/p&gt; 
+&lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;has-numbering&quot; onclick=&quot;mdcp.copyCode(event)&quot; style=&quot;position: unset;&quot;&gt;ssh-keygen -t rsa -C &quot;your_email@example.com&quot;
+&lt;div class=&quot;hljs-button &amp;#123;2&amp;#125;&quot; data-title=&quot;复制&quot; data-report-click=&quot;&amp;#123;&amp;quot;spm&amp;quot;:&amp;quot;1001.2101.3001.4259&amp;quot;&amp;#125;&quot;&gt;&lt;/div&gt;&lt;/code&gt;&lt;p class=&quot;pre-numbering&quot; style&gt;&lt;li style=&quot;color: rgb(153, 153, 153);&quot;&gt;1&lt;/li&gt;&lt;/p&gt;&lt;/pre&gt; 
+&lt;p&gt;后面的输入均使用默认值，点击&lt;strong&gt;enter回车&lt;/strong&gt;跳过&lt;/p&gt; 
+&lt;p&gt;密钥生成成功&lt;/p&gt; 
+&lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;has-numbering&quot; onclick=&quot;mdcp.copyCode(event)&quot; style=&quot;position: unset;&quot;&gt;Your identification has been saved in /home/you/.ssh/id_rsa.
+Your public key has been saved in /home/you/.ssh/id_rsa.pub.
+The key fingerprint is:
+…………………此处是密钥内容…………………… your_email@example.com
+&lt;div class=&quot;hljs-button &amp;#123;2&amp;#125;&quot; data-title=&quot;复制&quot; data-report-click=&quot;&amp;#123;&amp;quot;spm&amp;quot;:&amp;quot;1001.2101.3001.4259&amp;quot;&amp;#125;&quot;&gt;&lt;/div&gt;&lt;/code&gt;&lt;p class=&quot;pre-numbering&quot; style&gt;&lt;li style=&quot;color: rgb(153, 153, 153);&quot;&gt;1&lt;/li&gt;&lt;li style=&quot;color: rgb(153, 153, 153);&quot;&gt;2&lt;/li&gt;&lt;li style=&quot;color: rgb(153, 153, 153);&quot;&gt;3&lt;/li&gt;&lt;li style=&quot;color: rgb(153, 153, 153);&quot;&gt;4&lt;/li&gt;&lt;/p&gt;&lt;/pre&gt; 
+&lt;p&gt;点击复制&lt;/p&gt; 
+&lt;h2&gt;&lt;a id=&quot;2GitHub_38&quot;&gt;&lt;/a&gt;2.设置GitHub仓库的密钥&lt;/h2&gt;
     
     </summary>
     
@@ -106,10 +136,12 @@
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;看垃圾&quot;&gt;&lt;a href=&quot;#看垃圾&quot; class=&quot;headerlink&quot; title=&quot;看垃圾&quot;&gt;&lt;/a&gt;看垃圾&lt;/h1&gt;&lt;p&gt;徐店长店还开着的时候就给老药罐找了这个工作。&lt;br&gt;老药罐因为身体原因常年服药，趁不便走动，遂听徐店长安排在南丰镇东接了家商店。只用
-      
+      &lt;h1 id=&quot;看垃圾&quot;&gt;&lt;a href=&quot;#看垃圾&quot; class=&quot;headerlink&quot; title=&quot;看垃圾&quot;&gt;&lt;/a&gt;看垃圾&lt;/h1&gt;&lt;p&gt;徐店长店还开着的时候就给老药罐找了这个工作。&lt;br&gt;老药罐因为身体原因常年服药，趁不便走动，遂听徐店长安排在南丰镇东接了家商店。只用做些简单的售卖工作，来的人自己挑，完事把钱放进箱子里就行，要是遇到有人不付账按一下手里的按钮就行了，里面集成有现成的报警电话，所以闲适得很。况且这地方空气刺鼻，人烟稀少，仅有运垃圾的司机到这讨几瓶水喝，有时也顺带进个货——这店好似个服务区。老药罐这名字喊的人多了就被传开了，三人成虎，结果最后被人叫成了老妖怪，也巧，和这地方挺搭。商店再往东二里地是个垃圾站，镇里所有的垃圾都要拉到这里来处理。南丰镇近年来大兴养殖，垃圾只多不少。&lt;/p&gt;
+&lt;p&gt;那天空气燥热，正午的太阳高悬头顶，烈日下一辆辆垃圾车跑来跑去，和隔壁镇的一天两趟完全不同，南丰这地方简直是个工地。路边的商店里，不知谁用帘子隔了个小地方，里面放了个躺椅，一个身材羸弱皮包骨的老汉躺在上面有气无力地摇动扇子，这便是老妖怪了。郊外的野风不见踪影，今天热得出奇。老妖怪虽是身子不便运动，但是脑子却是清醒的很，即便到了午睡的时候，他也能时刻留意周边的变化，仿佛有双无形的眼睛注视着门外的一切，包括来往的车辆。&lt;br&gt;老妖怪眼皮动了动，他知道，有人来了，紧接着，另一只眼皮也动了，“还不只一个”，他想。&lt;br&gt;很快，只见一个身高不足一米的小孩哒哒哒地跑进来，却不见旁人的踪影——一人而已。脚步快得离谱，加之酷热使得声浪扭曲，老汉第一次听错了。&lt;br&gt;那小孩像是走进自己家一样，径直跑向冰柜，掀开上面的褥子，打开柜子，扒拉到柜子边上，抽出两根冰棍来，朝老汉方向晃了晃，老妖怪眯着的眼睛缓缓打开条缝隙又合上，不注意完全看不出来他动了眼皮子，是个死人——扇子也没摇了。小孩把五块钱扔进箱子里就跑了，动作熟练，谁能看出来他是个小孩呢。&lt;br&gt;远处垃圾车轰隆启动了，又开始奔驰在这条走了无数次的路上，车里副驾上的小孩正掏出冰棍塞到驾驶员的嘴里。&lt;/p&gt;
+&lt;p&gt;“我给你找了个地儿，你就去咱垃圾站当个门卫吧，有车来了开个门就行。”说话的人是乡长，躺在病床上的是刚做完手术的徐店长。老徐之前开了家修车店，十多年，人们叫习惯了。乡长看看旁边的孩子，“老徐，我只能帮你到这了。早知道你就应该好好当个店长，跑来做什么垃圾运输员。现在少了条腿委实找不来好差事，当个门卫挺好的。”乡长是个好人，不客套，帮徐店长另谋生路也不是他的责任，只看在当年一起打拼的情分上帮一把。“我知道。”老徐有点不好意思了，尽管腿上的痛还在，但就是不好意思了，他也没想到这个时候他会羞，乡长的救济他很难再说三道四了。&lt;br&gt;“吃个橘子？”老徐拆开乡长拿的果篮。&lt;br&gt;乡长头也没回走了。&lt;br&gt;此后小孩每次到外面玩腻了就跑回垃圾站门口的小房间里去，他亲爱的父亲在里面靠着墙，一条腿悬在床边看着进进出出的车辆，不停的按下手中的遥控。生活从方向盘变成了遥控器而已。&lt;/p&gt;
+&lt;p&gt;说起小孩他妈——因为孩子爸家暴、婚后出轨还拒不认账，几年前就已经离婚了，她跟了乡长，一直经营着一家宾馆，巧的是宾馆的地址正在垃圾站的对面。客户目标很明显了，正是来来往往的司机们，他也曾经住在这里过。小孩妈妈叫雪琴，宾馆是她在老徐之前的丈夫留给他的，没啥情分，这宾馆最后一定亏干净了，根本不盈利啊，来开垃圾车的都是些什么走投无路的人。雪琴自己的房间在二楼正中，从窗户可以看见垃圾站的正大门，老徐所在的小房子也尽收眼底。她每天在自己的房间里和乡长如胶似漆后就坐在床边歪着脖子看下面的垃圾站。她看不见老徐，从她听说老徐搬进去就再也没见过他，老徐从来没有站起来过，所以她天天等着，却连个剪影都等不到。她多想看见那个男人一瘸一拐的走出来，走到她宾馆的下面，然后她一口唾沫啐下去，“这就是你的报应！”&lt;/p&gt;
+&lt;p&gt;老妖怪眼皮动了一下，另一只眼皮也动了一下，他坐起来，看着小孩跑进来拿出来两根冰棍，朝他晃了晃，没有放钱，竟是直接跑出去了。他按下手里的按钮，看着小孩慢慢跑远，最后停在马路边上。那小孩拿着冰棒，眼睛直愣愣看着前面，一根含在嘴里，一根朝着来来往往的垃圾车扔去。&lt;/p&gt;
+
     
     </summary>
     
@@ -126,16 +158,45 @@
     <link href="https://asea.fun/post/2ee0f961.html"/>
     <id>https://asea.fun/post/2ee0f961.html</id>
     <published>2021-02-16T04:44:29.000Z</published>
-    <updated>2021-03-04T07:34:40.000Z</updated>
+    <updated>2021-03-07T02:41:28.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="这里记录网站更新内容"><a href="#这里记录网站更新内容" class="headerlink" title="这里记录网站更新内容"></a><font color="#495969">这里记录网站更新内容</font></h2><div class="tabs" id><ul class="nav-tabs"><li class="tab active"><a href="#-1">Butterfly主题更新内容</a></li><li class="tab"><a href="#-2">Next主题更新内容</a></li></ul><div class="tab-content"><div class="tab-pane active" id="-1"><blockquote><ul><li><em>2021-01-20</em><br>更新文章界面两篇置顶；<br>开通<a href="https://asea.fun/talk/">说说</a>界面；<br><a href="https://asea.fun/talk/">说说</a>界面优化，增加说说评论功能（访客都可以评论）；<br>新增说说发布权限用户；<br>优化不同用户的头像问题；<br>优化navigationbar；</li><li><em>2021-02-09</em><br>更新post<a href="https://asea.fun/post/16fab331.html">《网站收藏》</a>；<br>优化<a href="https://asea.fun/post/16fab331.html">《网站收藏》</a>的界面；<br>优化文章排序和置顶问题（<a href="https://gsy00517.github.io/hexo20200207151318/">参考文章</a>）；<br>修改<a href="https://asea.fun/">主页</a>post图文排版；</li><li><em>2021-02-16</em><br>发布post<a href="https://asea.fun/post/6d79d7dd.html">《老地方》</a>；</li><li><em>2021-02-22</em><br>发布post<a href="https://asea.fun/post/c337a479.html">《看垃圾》</a>；<br>更新post<a href="https://asea.fun/post/cf7f39c3.html">《技术贴》</a>；</li><li><em>2021-02-23</em><br>更新post<a href="https://asea.fun/post/cf7f39c3.html">《技术贴》</a>；<br>发布post<a href="https://asea.fun/post/f7b96544.html">《hexo deploy——重复输入账户密码》</a>；<br>添加<a href="https://asea.fun/fun/chi/">《吃什么》</a><a href="https://asea.fun/fun/du/">《毒鸡汤》</a><a href="https://asea.fun/fun/hua/">《画板》</a><a href="https://asea.fun/fun/mi/">《随机密码》</a>四个界面(累趴了)；</li><li><em>2021-02-24</em></li><li>*<a href="https://next.asea.fun">新主题（Next）博客</a>重磅上线**</li><li><em>2021-02-25</em><br>置顶post<a href="https://asea.fun/post/cf7f39c3.html">《技术贴》</a></li><li><em>2021-02-28</em><br>发布post<a href="https://asea.fun/post/b6589fc3.html">《返校日记》</a><br>更新post<a href="https://asea.fun/post/6d79d7dd.html">《老地方》</a>,优化排版；</li><li><em>2021-03-02</em><br>增加<a href="https://asea.fun/fun/apesk/">《APESK-荣格理论测试》</a>界面。</li><li><em>2021-03-04</em><br>更新post<a href="https://asea.fun/post/cf7f39c3.html">《技术贴》</a>；</li></ul></blockquote></div><div class="tab-pane" id="-2"><blockquote><ul><li><em>2021-01-20</em><br>更新文章界面两篇置顶；<br>开通<a href="https://next.asea.fun/talk/">说说</a>界面；<br><a href="https://next.asea.fun/talk/">说说</a>界面优化，增加说说评论功能（访客都可以评论）；<br>新增说说发布权限用户；<br>优化不同用户的头像问题；<br>优化navigationbar；</li><li><em>2021-02-09</em><br>更新post<a href="https://next.asea.fun/post/16fab331.html">《网站收藏》</a>；<br>优化<a href="https://next.asea.fun/post/16fab331.html">《网站收藏》</a>的界面；<br>优化文章排序和置顶问题（<a href="https://gsy00517.github.io/hexo20200207151318/">参考文章</a>）；<br>修改<a href="https://next.asea.fun/">主页</a>post图文排版；</li><li><em>2021-02-16</em><br>发布post<a href="https://next.asea.fun/post/6d79d7dd.html">《老地方》</a>；</li><li><em>2021-02-22</em><br>发布post<a href="https://next.asea.fun/post/c337a479.html">《看垃圾》</a>；<br>更新post<a href="https://next.asea.fun/post/cf7f39c3.html">《技术贴》</a>；</li><li><em>2021-02-23</em><br>更新post<a href="https://next.asea.fun/post/cf7f39c3.html">《技术贴》</a>；<br>发布post<a href="https://next.asea.fun/post/f7b96544.html">《hexo deploy——重复输入账户密码》</a>；<br>添加<a href="https://next.asea.fun/fun/chi/">《吃什么》</a><a href="https://next.asea.fun/fun/du/">《毒鸡汤》</a><a href="https://next.asea.fun/fun/hua/">《画板》</a><a href="https://next.asea.fun/fun/mi/">《随机密码》</a>四个界面(累趴了)；</li><li><em>2021-02-24</em></li><li>*<a href="https://next.asea.fun">新主题（Next）博客</a>重磅上线**</li><li><em>2021-02-25</em><br>置顶post<a href="https://next.asea.fun/post/cf7f39c3.html">《技术贴》</a><br>网页底部增加运行时间、访客数、总字数<br>增加看板“猫”<br>关联其它链接<br>增加留言板块</li><li><em>2021-02-28</em><br>发布post<a href="https://next.asea.fun/post/b6589fc3.html">《返校日记》</a><br>更新post<a href="https://next.asea.fun/post/6d79d7dd.html">《老地方》</a>,优化排版；</li><li><em>2021-03-02</em><br>增加<a href="https://next.asea.fun/fun/apesk/">《APESK-荣格理论测试》</a>界面。</li><li><em>2021-03-04</em><br>更新post<a href="https://next.asea.fun/post/cf7f39c3.html">《技术贴》</a>；</li></ul></blockquote></div></div></div>]]></content>
+    <content type="html"><![CDATA[<h2 id="这里记录网站更新内容"><a href="#这里记录网站更新内容" class="headerlink" title="这里记录网站更新内容"></a><font color="#495969">这里记录网站更新内容</font></h2><div class="tabs" id><ul class="nav-tabs"><li class="tab active"><a href="#-1">Butterfly主题更新内容</a></li><li class="tab"><a href="#-2">Next主题更新内容</a></li></ul><div class="tab-content"><div class="tab-pane active" id="-1"><blockquote><ul><li><em>2021-01-20</em><br>更新文章界面两篇置顶；<br>开通<a href="https://asea.fun/talk/">说说</a>界面；<br><a href="https://asea.fun/talk/">说说</a>界面优化，增加说说评论功能（访客都可以评论）；<br>新增说说发布权限用户；<br>优化不同用户的头像问题；<br>优化navigationbar；</li><li><em>2021-02-09</em><br>更新post<a href="https://asea.fun/post/16fab331.html">《网站收藏》</a>；<br>优化<a href="https://asea.fun/post/16fab331.html">《网站收藏》</a>的界面；<br>优化文章排序和置顶问题（<a href="https://gsy00517.github.io/hexo20200207151318/">参考文章</a>）；<br>修改<a href="https://asea.fun/">主页</a>post图文排版；</li><li><em>2021-02-16</em><br>发布post<a href="https://asea.fun/post/6d79d7dd.html">《老地方》</a>；</li><li><em>2021-02-22</em><br>发布post<a href="https://asea.fun/post/c337a479.html">《看垃圾》</a>；<br>更新post<a href="https://asea.fun/post/cf7f39c3.html">《技术贴》</a>；</li><li><em>2021-02-23</em><br>更新post<a href="https://asea.fun/post/cf7f39c3.html">《技术贴》</a>；<br>发布post<a href="https://asea.fun/post/f7b96544.html">《hexo deploy——重复输入账户密码》</a>；<br>添加<a href="https://asea.fun/fun/chi/">《吃什么》</a><a href="https://asea.fun/fun/du/">《毒鸡汤》</a><a href="https://asea.fun/fun/hua/">《画板》</a><a href="https://asea.fun/fun/mi/">《随机密码》</a>四个界面(累趴了)；</li><li><em>2021-02-24</em></li><li>*<a href="https://next.asea.fun">新主题（Next）博客</a>重磅上线**</li><li><em>2021-02-25</em><br>置顶post<a href="https://asea.fun/post/cf7f39c3.html">《技术贴》</a></li><li><em>2021-02-28</em><br>发布post<a href="https://asea.fun/post/b6589fc3.html">《返校日记》</a><br>更新post<a href="https://asea.fun/post/6d79d7dd.html">《老地方》</a>,优化排版；</li><li><em>2021-03-02</em><br>增加<a href="https://asea.fun/fun/apesk/">《APESK-荣格理论测试》</a>界面。</li><li><em>2021-03-04</em><br>更新post<a href="https://asea.fun/post/cf7f39c3.html">《技术贴》</a>；</li><li><em>2021-03-07</em><br>更新post<a href="https://asea.fun/post/c00b24b1.html">《python笔记》</a><br>启动gulp服务，优化加载速度</li></ul></blockquote></div><div class="tab-pane" id="-2"><blockquote><ul><li><em>2021-01-20</em><br>更新文章界面两篇置顶；<br>开通<a href="https://next.asea.fun/talk/">说说</a>界面；<br><a href="https://next.asea.fun/talk/">说说</a>界面优化，增加说说评论功能（访客都可以评论）；<br>新增说说发布权限用户；<br>优化不同用户的头像问题；<br>优化navigationbar；</li><li><em>2021-02-09</em><br>更新post<a href="https://next.asea.fun/post/16fab331.html">《网站收藏》</a>；<br>优化<a href="https://next.asea.fun/post/16fab331.html">《网站收藏》</a>的界面；<br>优化文章排序和置顶问题（<a href="https://gsy00517.github.io/hexo20200207151318/">参考文章</a>）；<br>修改<a href="https://next.asea.fun/">主页</a>post图文排版；</li><li><em>2021-02-16</em><br>发布post<a href="https://next.asea.fun/post/6d79d7dd.html">《老地方》</a>；</li><li><em>2021-02-22</em><br>发布post<a href="https://next.asea.fun/post/c337a479.html">《看垃圾》</a>；<br>更新post<a href="https://next.asea.fun/post/cf7f39c3.html">《技术贴》</a>；</li><li><em>2021-02-23</em><br>更新post<a href="https://next.asea.fun/post/cf7f39c3.html">《技术贴》</a>；<br>发布post<a href="https://next.asea.fun/post/f7b96544.html">《hexo deploy——重复输入账户密码》</a>；<br>添加<a href="https://next.asea.fun/fun/chi/">《吃什么》</a><a href="https://next.asea.fun/fun/du/">《毒鸡汤》</a><a href="https://next.asea.fun/fun/hua/">《画板》</a><a href="https://next.asea.fun/fun/mi/">《随机密码》</a>四个界面(累趴了)；</li><li><em>2021-02-24</em></li><li>*<a href="https://next.asea.fun">新主题（Next）博客</a>重磅上线**</li><li><em>2021-02-25</em><br>置顶post<a href="https://next.asea.fun/post/cf7f39c3.html">《技术贴》</a><br>网页底部增加运行时间、访客数、总字数<br>增加看板“猫”<br>关联其它链接<br>增加留言板块</li><li><em>2021-02-28</em><br>发布post<a href="https://next.asea.fun/post/b6589fc3.html">《返校日记》</a><br>更新post<a href="https://next.asea.fun/post/6d79d7dd.html">《老地方》</a>,优化排版；</li><li><em>2021-03-02</em><br>增加<a href="https://next.asea.fun/fun/apesk/">《APESK-荣格理论测试》</a>界面。</li><li><em>2021-03-04</em><br>更新post<a href="https://next.asea.fun/post/cf7f39c3.html">《技术贴》</a>；</li><li><em>2021-03-07</em><br>更新post<a href="https://next.asea.fun/post/c00b24b1.html">《python笔记》</a><br>启动gulp服务，优化加载速度</li></ul></blockquote></div></div></div>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h2 id=&quot;这里记录网站更新内容&quot;&gt;&lt;a href=&quot;#这里记录网站更新内容&quot; class=&quot;headerlink&quot; title=&quot;这里记录网站更新内容&quot;&gt;&lt;/a&gt;&lt;font color=&quot;#495969&quot;&gt;这里记录网站更新内容&lt;/font&gt;&lt;/h2&gt;&lt;div class=&quot;
-      
+      &lt;h2 id=&quot;这里记录网站更新内容&quot;&gt;&lt;a href=&quot;#这里记录网站更新内容&quot; class=&quot;headerlink&quot; title=&quot;这里记录网站更新内容&quot;&gt;&lt;/a&gt;&lt;font color=&quot;#495969&quot;&gt;这里记录网站更新内容&lt;/font&gt;&lt;/h2&gt;&lt;div class=&quot;tabs&quot; id&gt;&lt;ul class=&quot;nav-tabs&quot;&gt;&lt;li class=&quot;tab active&quot;&gt;&lt;a href=&quot;#-1&quot;&gt;Butterfly主题更新内容&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;tab&quot;&gt;&lt;a href=&quot;#-2&quot;&gt;Next主题更新内容&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div class=&quot;tab-content&quot;&gt;&lt;div class=&quot;tab-pane active&quot; id=&quot;-1&quot;&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;2021-01-20&lt;/em&gt;&lt;br&gt;更新文章界面两篇置顶；&lt;br&gt;开通&lt;a href=&quot;https://asea.fun/talk/&quot;&gt;说说&lt;/a&gt;界面；&lt;br&gt;&lt;a href=&quot;https://asea.fun/talk/&quot;&gt;说说&lt;/a&gt;界面优化，增加说说评论功能（访客都可以评论）；&lt;br&gt;新增说说发布权限用户；&lt;br&gt;优化不同用户的头像问题；&lt;br&gt;优化navigationbar；&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;2021-02-09&lt;/em&gt;&lt;br&gt;更新post&lt;a href=&quot;https://asea.fun/post/16fab331.html&quot;&gt;《网站收藏》&lt;/a&gt;；&lt;br&gt;优化&lt;a href=&quot;https://asea.fun/post/16fab331.html&quot;&gt;《网站收藏》&lt;/a&gt;的界面；&lt;br&gt;优化文章排序和置顶问题（&lt;a href=&quot;https://gsy00517.github.io/hexo20200207151318/&quot;&gt;参考文章&lt;/a&gt;）；&lt;br&gt;修改&lt;a href=&quot;https://asea.fun/&quot;&gt;主页&lt;/a&gt;post图文排版；&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;2021-02-16&lt;/em&gt;&lt;br&gt;发布post&lt;a href=&quot;https://asea.fun/post/6d79d7dd.html&quot;&gt;《老地方》&lt;/a&gt;；&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;2021-02-22&lt;/em&gt;&lt;br&gt;发布post&lt;a href=&quot;https://asea.fun/post/c337a479.html&quot;&gt;《看垃圾》&lt;/a&gt;；&lt;br&gt;更新post&lt;a href=&quot;https://asea.fun/post/cf7f39c3.html&quot;&gt;《技术贴》&lt;/a&gt;；&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;2021-02-23&lt;/em&gt;&lt;br&gt;更新post&lt;a href=&quot;https://asea.fun/post/cf7f39c3.html&quot;&gt;《技术贴》&lt;/a&gt;；&lt;br&gt;发布post&lt;a href=&quot;https://asea.fun/post/f7b96544.html&quot;&gt;《hexo deploy——重复输入账户密码》&lt;/a&gt;；&lt;br&gt;添加&lt;a href=&quot;https://asea.fun/fun/chi/&quot;&gt;《吃什么》&lt;/a&gt;&lt;a href=&quot;https://asea.fun/fun/du/&quot;&gt;《毒鸡汤》&lt;/a&gt;&lt;a href=&quot;https://asea.fun/fun/hua/&quot;&gt;《画板》&lt;/a&gt;&lt;a href=&quot;https://asea.fun/fun/mi/&quot;&gt;《随机密码》&lt;/a&gt;四个界面(累趴了)；&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;2021-02-24&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;*&lt;a href=&quot;https://next.asea.fun&quot;&gt;新主题（Next）博客&lt;/a&gt;重磅上线**&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;2021-02-25&lt;/em&gt;&lt;br&gt;置顶post&lt;a href=&quot;https://asea.fun/post/cf7f39c3.html&quot;&gt;《技术贴》&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;2021-02-28&lt;/em&gt;&lt;br&gt;发布post&lt;a href=&quot;https://asea.fun/post/b6589fc3.html&quot;&gt;《返校日记》&lt;/a&gt;&lt;br&gt;更新post&lt;a href=&quot;https://asea.fun/post/6d79d7dd.html&quot;&gt;《老地方》&lt;/a&gt;,优化排版；&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;2021-03-02&lt;/em&gt;&lt;br&gt;增加&lt;a href=&quot;https://asea.fun/fun/apesk/&quot;&gt;《APESK-荣格理论测试》&lt;/a&gt;界面。&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;2021-03-04&lt;/em&gt;&lt;br&gt;更新post&lt;a href=&quot;https://asea.fun/post/cf7f39c3.html&quot;&gt;《技术贴》&lt;/a&gt;；&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;2021-03-07&lt;/em&gt;&lt;br&gt;更新post&lt;a href=&quot;https://asea.fun/post/c00b24b1.html&quot;&gt;《python笔记》&lt;/a&gt;&lt;br&gt;启动gulp服务，优化加载速度&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;&lt;/div&gt;&lt;div class=&quot;tab-pane&quot; id=&quot;-2&quot;&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;2021-01-20&lt;/em&gt;&lt;br&gt;更新文章界面两篇置顶；&lt;br&gt;开通&lt;a href=&quot;https://next.asea.fun/talk/&quot;&gt;说说&lt;/a&gt;界面；&lt;br&gt;&lt;a href=&quot;https://next.asea.fun/talk/&quot;&gt;说说&lt;/a&gt;界面优化，增加说说评论功能（访客都可以评论）；&lt;br&gt;新增说说发布权限用户；&lt;br&gt;优化不同用户的头像问题；&lt;br&gt;优化navigationbar；&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;2021-02-09&lt;/em&gt;&lt;br&gt;更新post&lt;a href=&quot;https://next.asea.fun/post/16fab331.html&quot;&gt;《网站收藏》&lt;/a&gt;；&lt;br&gt;优化&lt;a href=&quot;https://next.asea.fun/post/16fab331.html&quot;&gt;《网站收藏》&lt;/a&gt;的界面；&lt;br&gt;优化文章排序和置顶问题（&lt;a href=&quot;https://gsy00517.github.io/hexo20200207151318/&quot;&gt;参考文章&lt;/a&gt;）；&lt;br&gt;修改&lt;a href=&quot;https://next.asea.fun/&quot;&gt;主页&lt;/a&gt;post图文排版；&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;2021-02-16&lt;/em&gt;&lt;br&gt;发布post&lt;a href=&quot;https://next.asea.fun/post/6d79d7dd.html&quot;&gt;《老地方》&lt;/a&gt;；&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;2021-02-22&lt;/em&gt;&lt;br&gt;发布post&lt;a href=&quot;https://next.asea.fun/post/c337a479.html&quot;&gt;《看垃圾》&lt;/a&gt;；&lt;br&gt;更新post&lt;a href=&quot;https://next.asea.fun/post/cf7f39c3.html&quot;&gt;《技术贴》&lt;/a&gt;；&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;2021-02-23&lt;/em&gt;&lt;br&gt;更新post&lt;a href=&quot;https://next.asea.fun/post/cf7f39c3.html&quot;&gt;《技术贴》&lt;/a&gt;；&lt;br&gt;发布post&lt;a href=&quot;https://next.asea.fun/post/f7b96544.html&quot;&gt;《hexo deploy——重复输入账户密码》&lt;/a&gt;；&lt;br&gt;添加&lt;a href=&quot;https://next.asea.fun/fun/chi/&quot;&gt;《吃什么》&lt;/a&gt;&lt;a href=&quot;https://next.asea.fun/fun/du/&quot;&gt;《毒鸡汤》&lt;/a&gt;&lt;a href=&quot;https://next.asea.fun/fun/hua/&quot;&gt;《画板》&lt;/a&gt;&lt;a href=&quot;https://next.asea.fun/fun/mi/&quot;&gt;《随机密码》&lt;/a&gt;四个界面(累趴了)；&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;2021-02-24&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;*&lt;a href=&quot;https://next.asea.fun&quot;&gt;新主题（Next）博客&lt;/a&gt;重磅上线**&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;2021-02-25&lt;/em&gt;&lt;br&gt;置顶post&lt;a href=&quot;https://next.asea.fun/post/cf7f39c3.html&quot;&gt;《技术贴》&lt;/a&gt;&lt;br&gt;网页底部增加运行时间、访客数、总字数&lt;br&gt;增加看板“猫”&lt;br&gt;关联其它链接&lt;br&gt;增加留言板块&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;2021-02-28&lt;/em&gt;&lt;br&gt;发布post&lt;a href=&quot;https://next.asea.fun/post/b6589fc3.html&quot;&gt;《返校日记》&lt;/a&gt;&lt;br&gt;更新post&lt;a href=&quot;https://next.asea.fun/post/6d79d7dd.html&quot;&gt;《老地方》&lt;/a&gt;,优化排版；&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;2021-03-02&lt;/em&gt;&lt;br&gt;增加&lt;a href=&quot;https://next.asea.fun/fun/apesk/&quot;&gt;《APESK-荣格理论测试》&lt;/a&gt;界面。&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;2021-03-04&lt;/em&gt;&lt;br&gt;更新post&lt;a href=&quot;https://next.asea.fun/post/cf7f39c3.html&quot;&gt;《技术贴》&lt;/a&gt;；&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;2021-03-07&lt;/em&gt;&lt;br&gt;更新post&lt;a href=&quot;https://next.asea.fun/post/c00b24b1.html&quot;&gt;《python笔记》&lt;/a&gt;&lt;br&gt;启动gulp服务，优化加载速度&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+
+
     
     </summary>
     
@@ -158,11 +219,47 @@
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;说在前面&quot;&gt;&lt;a href=&quot;#说在前面&quot; class=&quot;headerlink&quot; title=&quot;说在前面&quot;&gt;&lt;/a&gt;说在前面&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;前几天年前回了趟老家，要说也不是一直没回去过，但前几次都只是走马观花，单觉得那地方也不属于我了，没
-      
+      &lt;h1 id=&quot;说在前面&quot;&gt;&lt;a href=&quot;#说在前面&quot; class=&quot;headerlink&quot; title=&quot;说在前面&quot;&gt;&lt;/a&gt;说在前面&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;前几天年前回了趟老家，要说也不是一直没回去过，但前几次都只是走马观花，单觉得那地方也不属于我了，没啥观察的必要了，加之来去匆忙，相较于这次回家大不一样了。认真打扫了院子，清理了巨量的落叶，扫干净后又像小时候的院子了。打扫的间隙也不断地发现了各种以前的老物件，可谓历史悠久，少则几年，多则十几年。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;爬行&quot;&gt;&lt;a href=&quot;#爬行&quot; class=&quot;headerlink&quot; title=&quot;爬行&quot;&gt;&lt;/a&gt;爬行&lt;/h1&gt;&lt;center&gt;
+    &lt;img style=&quot;border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); width: 300px&quot; src=&quot;https://img.imgdb.cn/item/602b3f6d3ffa7d37b3a19fe7.jpg&quot;&gt;
+    &lt;br&gt;
+    &lt;img style=&quot;border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); width: 300px&quot; src=&quot;https://img.imgdb.cn/item/602b3f6d3ffa7d37b3a19fef.jpg&quot;&gt;
+    &lt;br&gt;
+    &lt;div style=&quot;color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;&quot;&gt;家里最大的一颗葡萄树，支架塌了之后枝蔓沿着院子里晾衣服的绳子爬了十几米远&lt;/div&gt;
+&lt;/center&gt;
+
+&lt;h1 id=&quot;堵&quot;&gt;&lt;a href=&quot;#堵&quot; class=&quot;headerlink&quot; title=&quot;堵&quot;&gt;&lt;/a&gt;堵&lt;/h1&gt;&lt;center&gt;
+    &lt;img style=&quot;border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); width: 300px&quot; src=&quot;https://img.imgdb.cn/item/602b3f803ffa7d37b3a1a898.png&quot;&gt;
+    &lt;br&gt;
+    &lt;div style=&quot;color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;&quot;&gt;院子里的水龙头，因为家里没人住了而且这个水龙头虽然穿得很厚但是每到冬天还是会冻坏所以直接停用了。&lt;/div&gt;
+&lt;/center&gt;
+
+&lt;h1 id=&quot;倒地祝福&quot;&gt;&lt;a href=&quot;#倒地祝福&quot; class=&quot;headerlink&quot; title=&quot;倒地祝福&quot;&gt;&lt;/a&gt;倒地祝福&lt;/h1&gt;&lt;center&gt;
+    &lt;img style=&quot;border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); width: 300px&quot; src=&quot;https://img.imgdb.cn/item/602b3f803ffa7d37b3a1a8a8.jpg&quot;&gt;
+    &lt;br&gt;
+    &lt;img style=&quot;border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); width: 300px&quot; src=&quot;https://img.imgdb.cn/item/602b3f6d3ffa7d37b3a19fe3.png&quot;&gt;
+    &lt;br&gt;
+    &lt;div style=&quot;color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;&quot;&gt;贴对联之前把去年的对联撕了下来，掉在地上落叶里的“万事如意”“合家欢乐”。&lt;/div&gt;
+&lt;/center&gt;
+
+&lt;h1 id=&quot;冷暖&quot;&gt;&lt;a href=&quot;#冷暖&quot; class=&quot;headerlink&quot; title=&quot;冷暖&quot;&gt;&lt;/a&gt;冷暖&lt;/h1&gt;
     
     </summary>
     
@@ -179,17 +276,28 @@
     <link href="https://asea.fun/post/cf7f39c3.html"/>
     <id>https://asea.fun/post/cf7f39c3.html</id>
     <published>2021-01-19T17:10:21.000Z</published>
-    <updated>2021-03-04T07:34:35.000Z</updated>
+    <updated>2021-03-07T02:41:33.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="这里收录一些小技巧"><a href="#这里收录一些小技巧" class="headerlink" title="这里收录一些小技巧"></a><font color="#495969">这里收录一些小技巧</font></h2><blockquote><ul><li>网页长截图可以F12——&gt;Ctrl Shift P——&gt;Capture full size screenshot</li><li>new post 的格式在root\scafflods里面修改</li><li>利用bat快速生成newpost,可以参考<br><code>hexo new post newpost&amp;&amp;code E:\blog\source\_posts\newpost.md&amp;&amp;rd E:\blog\source\_posts\newpost</code></li><li>在微软输入法设置里面可以添加自定义短语，例如我输入sj，自动弹出当前时间，具体格式见下面代码块。</li><li>win10 突然发现某些地方的图标字体变得很大，和分辨率不匹配，可能是因为开机时连接了hdmi线所致，可以拔掉hdmi线然后重启。</li><li>obs录屏如果显卡和节能都调过了，但是某一天突然有黑屏，可以去图形设置里面把obs删了，重新添加一下，因为某些原因可能导致文件路径出错。</li><li>转载csdn的博客：复制<code>&lt;div id=&quot;article_content&quot;&gt;...&lt;/div&gt;</code>里的html代码，粘贴到md文件里就行。</li><li>bilibili等视频网站自定义倍速播放：如在浏览器控制台输入<code>document.getElementsByTagName(&quot;video&quot;)[0].playbackRate = 3</code></li></ul></blockquote><hr><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!-- 输入法时间格式 --&gt;</span><br><span class="line">关键字需要用 %% 来包裹</span><br><span class="line">yyyy    4 位年</span><br><span class="line">MM    2 位月</span><br><span class="line">dd    2 位日</span><br><span class="line">HH  2 位小时（24 小时制）</span><br><span class="line">mm  2 位分钟数</span><br><span class="line">ss  2 位秒数</span><br><span class="line">&lt;!-- 示例 --&gt;</span><br><span class="line"># 结果是这样的格式: 2020-02-07 12:36:52</span><br><span class="line">%yyyy%-%MM%-%dd% %HH%:%mm%:%ss%</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h2 id="这里收录一些小技巧"><a href="#这里收录一些小技巧" class="headerlink" title="这里收录一些小技巧"></a><font color="#495969">这里收录一些小技巧</font></h2><blockquote><ul><li>网页长截图可以F12——&gt;Ctrl Shift P——&gt;Capture full size screenshot</li><li>new post 的格式在root\scafflods里面修改</li><li>利用bat快速生成newpost,可以参考<br><code>hexo new post newpost&amp;&amp;code E:\blog\source\_posts\newpost.md&amp;&amp;rd E:\blog\source\_posts\newpost</code></li><li>在微软输入法设置里面可以添加自定义短语，例如我输入sj，自动弹出当前时间，具体格式见下面代码块。</li><li>win10 突然发现某些地方的图标字体变得很大，和分辨率不匹配，可能是因为开机时连接了hdmi线所致，可以拔掉hdmi线然后重启。</li><li>obs录屏如果显卡和节能都调过了，但是某一天突然有黑屏，可以去图形设置里面把obs删了，重新添加一下，因为某些原因可能导致文件路径出错。</li><li>转载csdn的博客：复制<code>&lt;div id=&quot;article_content&quot;&gt;...&lt;/div&gt;</code>里的html代码，粘贴到md文件里就行。</li><li>bilibili等视频网站自定义倍速播放：如在浏览器控制台输入<code>document.getElementsByTagName(&quot;video&quot;)[0].playbackRate = 3</code></li><li>gulp压缩参考：<a href="https://blog.csdn.net/GerZhouGengCheng/article/details/106074545">使用Gulp压缩Hexo博客静态资源</a>,imagemin可能比较慢，不报错的话建议耐心点。</li></ul></blockquote><hr><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!-- 输入法时间格式 --&gt;</span><br><span class="line">关键字需要用 %% 来包裹</span><br><span class="line">yyyy    4 位年</span><br><span class="line">MM    2 位月</span><br><span class="line">dd    2 位日</span><br><span class="line">HH  2 位小时（24 小时制）</span><br><span class="line">mm  2 位分钟数</span><br><span class="line">ss  2 位秒数</span><br><span class="line">&lt;!-- 示例 --&gt;</span><br><span class="line"># 结果是这样的格式: 2020-02-07 12:36:52</span><br><span class="line">%yyyy%-%MM%-%dd% %HH%:%mm%:%ss%</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h2 id=&quot;这里收录一些小技巧&quot;&gt;&lt;a href=&quot;#这里收录一些小技巧&quot; class=&quot;headerlink&quot; title=&quot;这里收录一些小技巧&quot;&gt;&lt;/a&gt;&lt;font color=&quot;#495969&quot;&gt;这里收录一些小技巧&lt;/font&gt;&lt;/h2&gt;&lt;blockquote&gt;
-&lt;ul
-      
+      &lt;h2 id=&quot;这里收录一些小技巧&quot;&gt;&lt;a href=&quot;#这里收录一些小技巧&quot; class=&quot;headerlink&quot; title=&quot;这里收录一些小技巧&quot;&gt;&lt;/a&gt;&lt;font color=&quot;#495969&quot;&gt;这里收录一些小技巧&lt;/font&gt;&lt;/h2&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;网页长截图可以F12——&amp;gt;Ctrl Shift P——&amp;gt;Capture full size screenshot&lt;/li&gt;
+&lt;li&gt;new post 的格式在root\scafflods里面修改&lt;/li&gt;
+&lt;li&gt;利用bat快速生成newpost,可以参考&lt;br&gt;&lt;code&gt;hexo new post newpost&amp;amp;&amp;amp;code E:\blog\source\_posts\newpost.md&amp;amp;&amp;amp;rd E:\blog\source\_posts\newpost&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;在微软输入法设置里面可以添加自定义短语，例如我输入sj，自动弹出当前时间，具体格式见下面代码块。&lt;/li&gt;
+&lt;li&gt;win10 突然发现某些地方的图标字体变得很大，和分辨率不匹配，可能是因为开机时连接了hdmi线所致，可以拔掉hdmi线然后重启。&lt;/li&gt;
+&lt;li&gt;obs录屏如果显卡和节能都调过了，但是某一天突然有黑屏，可以去图形设置里面把obs删了，重新添加一下，因为某些原因可能导致文件路径出错。&lt;/li&gt;
+&lt;li&gt;转载csdn的博客：复制&lt;code&gt;&amp;lt;div id=&amp;quot;article_content&amp;quot;&amp;gt;...&amp;lt;/div&amp;gt;&lt;/code&gt;里的html代码，粘贴到md文件里就行。&lt;/li&gt;
+&lt;li&gt;bilibili等视频网站自定义倍速播放：如在浏览器控制台输入&lt;code&gt;document.getElementsByTagName(&amp;quot;video&amp;quot;)[0].playbackRate = 3&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;gulp压缩参考：&lt;a href=&quot;https://blog.csdn.net/GerZhouGengCheng/article/details/106074545&quot;&gt;使用Gulp压缩Hexo博客静态资源&lt;/a&gt;,imagemin可能比较慢，不报错的话建议耐心点。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;!-- 输入法时间格式 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;关键字需要用 %% 来包裹&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yyyy    4 位年&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;MM	    2 位月&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;dd	    2 位日&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;HH  	2 位小时（24 小时制）&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;mm  	2 位分钟数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ss  	2 位秒数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;!-- 示例 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 结果是这样的格式: 2020-02-07 12:36:52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;%yyyy%-%MM%-%dd% %HH%:%mm%:%ss%&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
     
     </summary>
     
@@ -212,10 +320,50 @@
     
     <summary type="html">
     
-      
-      
-        &lt;h2 id=&quot;🍉&quot;&gt;&lt;a href=&quot;#🍉&quot; class=&quot;headerlink&quot; title=&quot;🍉&quot;&gt;&lt;/a&gt;🍉&lt;/h2&gt;&lt;p&gt;不追星，但喜欢一种仪式感。体现在对薛之谦新歌的期待，尽管不好听；体现在关注的某个up更新；体现在他刚好符合我的某个理想中的状态，这算不算追星
-      
+      &lt;h2 id=&quot;🍉&quot;&gt;&lt;a href=&quot;#🍉&quot; class=&quot;headerlink&quot; title=&quot;🍉&quot;&gt;&lt;/a&gt;🍉&lt;/h2&gt;&lt;p&gt;不追星，但喜欢一种仪式感。体现在对薛之谦新歌的期待，尽管不好听；体现在关注的某个up更新；体现在他刚好符合我的某个理想中的状态，这算不算追星？不算吧，顶多是从生活里找乐子，也是一种临时逃避生活的借口。&lt;br&gt;当开始认真关注一些人，目标不限于室友，囊括偶像在内的所有人，都会开始发现，对方比你了解的复杂很多。接着我会对就近的采取策略，而且还卓有成效。至于远处诗和远方，偶像不是诗和远方，充其量是个载体，没了载体理想依然能存在。我回想起来高中搬个凳子在狭小的厕所里写日记，有段时间话题无不关于陆之昂立夏几人。说白了就是我把很大一部分纯粹放在电视剧里，放在其中某个人身上了，但绝不是演员身上。这种纯粹每个人或多或少都有一些，而且纯粹的载体是随着时间不断更迭不断推陈的。我发现年龄增长带来了纯粹的减少，但好在记忆还在，它独有的积累效果不言而喻，多年以前的两平米里的冷和感动至今历历在目。这些很珍贵。&lt;br&gt;这两天的爆料很雷人，但我没难过。我又发现一些小的道理：当一个人的能力越来越大，就越来越容易干坏事。想起来限制与自由的论述，恰好符合。身为普通人，幻想着腰缠万贯或者惨遭封禁都是遥不可及的事情，而当有一天你发现你已经腰缠万贯，这时候就要十分警惕，你是否要悬崖勒马，甚至调个头往回走几步了。&lt;br&gt;这是一点想法。&lt;/p&gt;
+&lt;h2 id=&quot;✍&quot;&gt;&lt;a href=&quot;#✍&quot; class=&quot;headerlink&quot; title=&quot;✍&quot;&gt;&lt;/a&gt;✍&lt;/h2&gt;&lt;p&gt;考试结束一直都很想找个机会总结一下这一学年，但是没安下心，一直在补漏下的娱乐。很久没有一个人呆在一个地方了，这样的感觉和高考前两天颇相似，但是却有着截然不同的使命。&lt;br&gt;很多人都总结的很到位，我显然就暗淡很多，不要抱多大希望。&lt;br&gt;这一学年还是没什么可说的，我太没兴趣了，列个表格。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;好&lt;/th&gt;
+&lt;th&gt;坏&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;小有收益&lt;/td&gt;
+&lt;td&gt;四级没过&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;打入外卖&lt;/td&gt;
+&lt;td&gt;没报四级&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;理论力学成绩还行&lt;/td&gt;
+&lt;td&gt;工时没做&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;看了很多电影&lt;/td&gt;
+&lt;td&gt;没有参加比赛&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;开了新坑&lt;/td&gt;
+&lt;td&gt;崴脚&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;尝试了兼职&lt;/td&gt;
+&lt;td&gt;但没要我&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;书尽量读了三本&lt;/td&gt;
+&lt;td&gt;热工不行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;…&lt;/td&gt;
+&lt;td&gt;…&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;这样单纯的分析利弊好像又没什么意思啊，人单纯就是想看些主观的思考，但说实话我越来越懒了，厌倦思考。所以，如果，真的需要我说点什么的话，我觉得这是幸福的一学期，没有什么大富大贵，但至少无病无灾，在我看来已经极其幸运的了，至少在我活过的十几年里，算是第一梯队的一学期。&lt;br&gt;未来逐渐到来，过去逐渐远去。&lt;br&gt;希望假期能把挖的坑填上，提前祝大家新年快乐。&lt;/p&gt;
+
     
     </summary>
     
@@ -238,11 +386,27 @@
     
     <summary type="html">
     
-      
-      
-        &lt;h2 id=&quot;2020的结束&quot;&gt;&lt;a href=&quot;#2020的结束&quot; class=&quot;headerlink&quot; title=&quot;2020的结束&quot;&gt;&lt;/a&gt;&lt;font color=&quot;#495969&quot;&gt;2020的结束&lt;/font&gt;&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;这些东西，有时候
-      
+      &lt;h2 id=&quot;2020的结束&quot;&gt;&lt;a href=&quot;#2020的结束&quot; class=&quot;headerlink&quot; title=&quot;2020的结束&quot;&gt;&lt;/a&gt;&lt;font color=&quot;#495969&quot;&gt;2020的结束&lt;/font&gt;&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;这些东西，有时候你说宿命，我也不得不信。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;当你回忆的时候，试想一下，你带着耳机，保温杯里刚沏了茶，茶叶丢进去拧紧瓶盖，留在外面一根棉线。过了一会，你用手一捋，发现茶水顺着棉线爬了出来，你开始怀疑，是不是瓶盖没有拧紧。怎么会呢，回忆这东西就是这样，无论你如何想法设法把它关在一个空间内，它还是渗透，渗透，趁你不注意偷偷溜出来。当你想用手去抚摸它的时候，忽然发现它都已经湿透，再过会就要往下滴了。&lt;br&gt;2020多吉利啊，我在两年前就想了，多好的年份，科技发展，高中毕业，一切都是向好的方向发展。但格局小的我当然不会意识到，世界变不变好不由得我，还有很多我不了解却在深刻影响世界的东西在发生。但，其实呢，我并不觉得这一年有多坏，但是鉴于大家都说2020不好，我也不能表现出来，我多喜爱这个年份。&lt;/p&gt;
+&lt;h2 id=&quot;2021的开始&quot;&gt;&lt;a href=&quot;#2021的开始&quot; class=&quot;headerlink&quot; title=&quot;2021的开始&quot;&gt;&lt;/a&gt;&lt;font color=&quot;#495969&quot;&gt;2021的开始&lt;/font&gt;&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;把发热的面颊&lt;br&gt;埋在柔软的积雪里一般&lt;br&gt;想那么恋爱一下看看&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2021|2021|2021|2021|2021|2021|2021|2021|2021|&lt;br&gt;多么高级的数字，又酷又遥远。我写这篇post的时候生成的时间是 &lt;strong&gt;&lt;font color=&quot;#495969&quot;&gt;“2021-01-07 15:01:51”&lt;/font&gt;&lt;/strong&gt; 太奇怪了吧，这种时间我居然正在过着，这根本不属于我啊，我仍然感觉2008听起来很熟悉，觉得2016很熟悉。再往后就无感起来了。是谁的问题呢？&lt;br&gt;李健在唱十点半的地铁，我觉得歌词写的不真实。有点矫情了吧，或者是别的原因。&lt;br&gt;我开始想起来那个镇，最好看的地方是一片菜地，四周精致的小灯很有味道，冰块，树，未知名的菜，掉下来的柚子。真的很好看吗，我也问我了。一般般啊，但就是喜欢，因为看起来太熟悉了，像我熟悉的地方。然后人之间的关系才缓和起来啊，生疏豁然消解了。&lt;br&gt;&lt;strong&gt;熟悉是一种美再次得到了印证&lt;/strong&gt;&lt;br&gt;2021开头是各种情绪都到了极致的时候，开心，兴奋，焦虑，压力都是这样，就连现在的放松也是。少有的能坐直身子听歌和打字了。难得难得，也许2021就是这样？所有都开始有了起色吗？&lt;/p&gt;
+&lt;h2 id=&quot;NOTE&quot;&gt;&lt;a href=&quot;#NOTE&quot; class=&quot;headerlink&quot; title=&quot;NOTE&quot;&gt;&lt;/a&gt;&lt;font color=&quot;#495969&quot;&gt;NOTE&lt;/font&gt;&lt;/h2&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;村上新书出版了，译者不是我认识的。&lt;/li&gt;
+&lt;li&gt;有些事情你以为离你很远，直到你经历了，才觉得近在眼前而且不是你能承受的。&lt;/li&gt;
+&lt;li&gt;想了很久的血糯米奶茶，像喝粥一样。&lt;/li&gt;
+&lt;li&gt;一月去商店晚了两天就买不到萌芽了。&lt;/li&gt;
+&lt;li&gt;半胱氨酸和胱氨酸可以相互转化，甲硫氨酸可以转变为半胱氨酸，所以甲硫氨酸是必需氨基酸。&lt;/li&gt;
+&lt;li&gt;有时候最后一节课也没必要去上，去上是为了情怀，不去才是正道。&lt;/li&gt;
+&lt;li&gt;一小块山楂就能使一杯水变酸。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;center&gt;&lt;font color=&quot;#8523912&quot;&gt;祝新的一年快乐、健康、进步。&lt;/font&gt;&lt;center&gt;&lt;/center&gt;&lt;/center&gt;&lt;/strong&gt;&lt;/p&gt;
+
     
     </summary>
     
@@ -265,10 +429,1726 @@
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;收集好玩实用的网站&quot;&gt;&lt;a href=&quot;#收集好玩实用的网站&quot; class=&quot;headerlink&quot; title=&quot;收集好玩实用的网站&quot;&gt;&lt;/a&gt;收集好玩实用的网站&lt;/h1&gt;&lt;div class=&quot;tabs&quot; id=&quot;websites&quot;&gt;&lt;ul class=&quot;na
-      
+      &lt;h1 id=&quot;收集好玩实用的网站&quot;&gt;&lt;a href=&quot;#收集好玩实用的网站&quot; class=&quot;headerlink&quot; title=&quot;收集好玩实用的网站&quot;&gt;&lt;/a&gt;收集好玩实用的网站&lt;/h1&gt;&lt;div class=&quot;tabs&quot; id=&quot;websites&quot;&gt;&lt;ul class=&quot;nav-tabs&quot;&gt;&lt;li class=&quot;tab active&quot;&gt;&lt;a href=&quot;#websites-1&quot;&gt;取景框看世界&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;tab&quot;&gt;&lt;a href=&quot;#websites-2&quot;&gt;-LKs-&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;tab&quot;&gt;&lt;a href=&quot;#websites-3&quot;&gt;阿信OL&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div class=&quot;tab-content&quot;&gt;&lt;div class=&quot;tab-pane active&quot; id=&quot;websites-1&quot;&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;from: bilibili UP主&lt;a href=&quot;https://space.bilibili.com/40427625?spm_id_from=333.788.b_765f7570696e666f.1&quot;&gt;取景框看世界&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;tabs&quot; id=&quot;qjk&quot;&gt;&lt;ul class=&quot;nav-tabs&quot;&gt;&lt;li class=&quot;tab active&quot;&gt;&lt;a href=&quot;#qjk-1&quot;&gt;第一期&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;tab&quot;&gt;&lt;a href=&quot;#qjk-2&quot;&gt;第二期&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;tab&quot;&gt;&lt;a href=&quot;#qjk-3&quot;&gt;第三期&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;tab&quot;&gt;&lt;a href=&quot;#qjk-4&quot;&gt;第四期&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;tab&quot;&gt;&lt;a href=&quot;#qjk-5&quot;&gt;第五期&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div class=&quot;tab-content&quot;&gt;&lt;div class=&quot;tab-pane active&quot; id=&quot;qjk-1&quot;&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;类别&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;网站&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;网址&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;图片&lt;/td&gt;
+&lt;td&gt;pixabay&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://pixabay.com/zh/&quot;&gt;https://pixabay.com/zh/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;图片&lt;/td&gt;
+&lt;td&gt;Unsplash&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://unsplash.com/&quot;&gt;https://unsplash.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;图片&lt;/td&gt;
+&lt;td&gt;Pexels&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.pexels.com/zh-cn/&quot;&gt;https://www.pexels.com/zh-cn/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;图片&lt;/td&gt;
+&lt;td&gt;Foodiesfeed&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.foodiesfeed.com&quot;&gt;https://www.foodiesfeed.com&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;图片&lt;/td&gt;
+&lt;td&gt;CC零图片网&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://cc0.cn/&quot;&gt;https://cc0.cn/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;图片&lt;/td&gt;
+&lt;td&gt;Logo神器&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.logosc.cn/so/&quot;&gt;https://www.logosc.cn/so/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;视频&lt;/td&gt;
+&lt;td&gt;Videezy&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.videezy.com/&quot;&gt;https://www.videezy.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;视频&lt;/td&gt;
+&lt;td&gt;Videvo&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.videvo.net/&quot;&gt;https://www.videvo.net/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;视频&lt;/td&gt;
+&lt;td&gt;mixkit&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://mixkit.co/&quot;&gt;https://mixkit.co/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;视频&lt;/td&gt;
+&lt;td&gt;distill&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://wedistill.io/&quot;&gt;https://wedistill.io/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;音频&lt;/td&gt;
+&lt;td&gt;audionautix&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://audionautix.com/&quot;&gt;https://audionautix.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;音频&lt;/td&gt;
+&lt;td&gt;Freepd&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://freepd.com/&quot;&gt;https://freepd.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;音频&lt;/td&gt;
+&lt;td&gt;Freesound&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://freesound.org/&quot;&gt;https://freesound.org/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;音频&lt;/td&gt;
+&lt;td&gt;耳聆网&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.ear0.com/&quot;&gt;https://www.ear0.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;音频&lt;/td&gt;
+&lt;td&gt;淘声网&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.tosound.com/&quot;&gt;https://www.tosound.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;字体&lt;/td&gt;
+&lt;td&gt;字由&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.hellofont.cn/&quot;&gt;https://www.hellofont.cn/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;字体&lt;/td&gt;
+&lt;td&gt;100font&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.100font.com/&quot;&gt;https://www.100font.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;图标&lt;/td&gt;
+&lt;td&gt;iconfont&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.iconfont.cn/&quot;&gt;https://www.iconfont.cn/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;div class=&quot;tab-pane&quot; id=&quot;qjk-2&quot;&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;类别&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;网站&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;网址&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;图标&lt;/td&gt;
+&lt;td&gt;iconstore&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://iconstore.co/&quot;&gt;https://iconstore.co/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;图标&lt;/td&gt;
+&lt;td&gt;unDraw&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://undraw.co/illustrations&quot;&gt;https://undraw.co/illustrations&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;图标&lt;/td&gt;
+&lt;td&gt;ICONFINDER&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.iconfinder.com/&quot;&gt;https://www.iconfinder.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;图标&lt;/td&gt;
+&lt;td&gt;ICONS8&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://icons8.com/&quot;&gt;https://icons8.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;矢量图/PSD模板&lt;/td&gt;
+&lt;td&gt;freepik&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.freepik.com/&quot;&gt;https://www.freepik.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;矢量图/PSD模板&lt;/td&gt;
+&lt;td&gt;free-PSD-templates&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://free-psd-templates.com/&quot;&gt;https://free-psd-templates.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;矢量图/PSD模板&lt;/td&gt;
+&lt;td&gt;365psd&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://365psd.com/&quot;&gt;https://365psd.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;免抠PNG&lt;/td&gt;
+&lt;td&gt;pngimage&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://pngimg.com/&quot;&gt;http://pngimg.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;免抠PNG&lt;/td&gt;
+&lt;td&gt;CLEANPNG&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.cleanpng.com/&quot;&gt;https://www.cleanpng.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;壁纸&lt;/td&gt;
+&lt;td&gt;wallhaven&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://wallhaven.cc/&quot;&gt;https://wallhaven.cc/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;壁纸&lt;/td&gt;
+&lt;td&gt;Wallpaper Abyss&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://wall.alphacoders.com/&quot;&gt;https://wall.alphacoders.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;壁纸&lt;/td&gt;
+&lt;td&gt;极简壁纸&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://bz.zzzmh.cn/&quot;&gt;https://bz.zzzmh.cn/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PPT模板&lt;/td&gt;
+&lt;td&gt;OfficePLUS&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.officeplus.cn/Template/Home.shtml&quot;&gt;http://www.officeplus.cn/Template/Home.shtml&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PPT模板&lt;/td&gt;
+&lt;td&gt;PPT超级市场&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://ppt.sotary.com/web/wxapp/index.html&quot;&gt;http://ppt.sotary.com/web/wxapp/index.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PPT模板&lt;/td&gt;
+&lt;td&gt;51PPT模板&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.51pptmoban.com/ppt/&quot;&gt;http://www.51pptmoban.com/ppt/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PPT模板&lt;/td&gt;
+&lt;td&gt;PPT汇&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.ppthui.com/&quot;&gt;https://www.ppthui.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PPT模板&lt;/td&gt;
+&lt;td&gt;优品PPT&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.ypppt.com/&quot;&gt;http://www.ypppt.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;div class=&quot;tab-pane&quot; id=&quot;qjk-3&quot;&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;类别&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;网站&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;网址&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;使用论文和部分电子书方法&lt;/td&gt;
+&lt;td&gt;学校图书馆官网&lt;/td&gt;
+&lt;td&gt;注意查看学校购买的数据库以及校外访问方法&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;使用论文和部分电子书方法&lt;/td&gt;
+&lt;td&gt;各省市图书馆官网&lt;/td&gt;
+&lt;td&gt;注册各地图书馆账号&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;论文&lt;/td&gt;
+&lt;td&gt;知网&lt;/td&gt;
+&lt;td&gt;图书馆进入&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;论文&lt;/td&gt;
+&lt;td&gt;Web of Science&lt;/td&gt;
+&lt;td&gt;图书馆进入&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;论文&lt;/td&gt;
+&lt;td&gt;各图书馆官网直接检索&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;论文&lt;/td&gt;
+&lt;td&gt;SCI-HUB&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://sci-hub.do&quot;&gt;https://sci-hub.do&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;论文&lt;/td&gt;
+&lt;td&gt;Library Genesis&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://gen.lib.rus.ec/&quot;&gt;http://gen.lib.rus.ec/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;论文&lt;/td&gt;
+&lt;td&gt;Z-Library&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://booksc.xyz/&quot;&gt;https://booksc.xyz/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;电子书（含教材）&lt;/td&gt;
+&lt;td&gt;电子课本网&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.dzkbw.com/&quot;&gt;http://www.dzkbw.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;电子书（含教材）&lt;/td&gt;
+&lt;td&gt;易学啦&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.yixuela.com/&quot;&gt;https://www.yixuela.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;电子书（含教材）&lt;/td&gt;
+&lt;td&gt;读秀&lt;/td&gt;
+&lt;td&gt;图书馆进入&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;电子书（含教材）&lt;/td&gt;
+&lt;td&gt;超星&lt;/td&gt;
+&lt;td&gt;图书馆进入&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;电子书（含教材）&lt;/td&gt;
+&lt;td&gt;书格&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://new.shuge.org/&quot;&gt;https://new.shuge.org/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;电子书（含教材）&lt;/td&gt;
+&lt;td&gt;七彩英语&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.qcenglish.com/&quot;&gt;http://www.qcenglish.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;电子书（含教材）&lt;/td&gt;
+&lt;td&gt;古腾堡计划&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.gutenberg.org/&quot;&gt;http://www.gutenberg.org/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;电子书（含教材）&lt;/td&gt;
+&lt;td&gt;manybooks&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://manybooks.net/&quot;&gt;https://manybooks.net/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;电子书（含教材）&lt;/td&gt;
+&lt;td&gt;鸠摩搜索&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.jiumodiary.com/&quot;&gt;https://www.jiumodiary.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;电子书（含教材）&lt;/td&gt;
+&lt;td&gt;Library Genesis&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://gen.lib.rus.ec/&quot;&gt;http://gen.lib.rus.ec/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;教辅资源&lt;/td&gt;
+&lt;td&gt;学科网&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.zxxk.com/&quot;&gt;https://www.zxxk.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;教辅资源&lt;/td&gt;
+&lt;td&gt;哔哩哔哩&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.bilibili.com/&quot;&gt;https://www.bilibili.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;教辅资源&lt;/td&gt;
+&lt;td&gt;中国大学慕课&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.icourse163.org/&quot;&gt;https://www.icourse163.org/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;div class=&quot;tab-pane&quot; id=&quot;qjk-4&quot;&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;类别&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;网站&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;网址&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;专业咨询报告&lt;/td&gt;
+&lt;td&gt;贝恩&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.bain.cn/news.php?id=15&quot;&gt;https://www.bain.cn/news.php?id=15&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;专业咨询报告&lt;/td&gt;
+&lt;td&gt;波士顿咨询&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.bcg.com/zh-cn/&quot;&gt;https://www.bcg.com/zh-cn/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;专业咨询报告&lt;/td&gt;
+&lt;td&gt;麦肯锡&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.mckinsey.com/featured-insights&quot;&gt;https://www.mckinsey.com/featured-insights&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;专业咨询报告&lt;/td&gt;
+&lt;td&gt;罗兰贝格&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.rolandberger.com/zh/&quot;&gt;https://www.rolandberger.com/zh/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;专业咨询报告&lt;/td&gt;
+&lt;td&gt;埃森哲&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.accenture.com/cn-zh&quot;&gt;https://www.accenture.com/cn-zh&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;专业咨询报告&lt;/td&gt;
+&lt;td&gt;普华永道&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.pwccn.com/zh/research-and-insights.html&quot;&gt;https://www.pwccn.com/zh/research-and-insights.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;专业咨询报告&lt;/td&gt;
+&lt;td&gt;德勤&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www2.deloitte.com/cn/zh.html&quot;&gt;https://www2.deloitte.com/cn/zh.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;专业咨询报告&lt;/td&gt;
+&lt;td&gt;毕马威&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://home.kpmg/cn/zh/home/insights.html&quot;&gt;https://home.kpmg/cn/zh/home/insights.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;专业咨询报告&lt;/td&gt;
+&lt;td&gt;安永&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.ey.com/zh_cn&quot;&gt;https://www.ey.com/zh_cn&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;互联网+咨询报告&lt;/td&gt;
+&lt;td&gt;艾瑞咨询&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.iresearch.com.cn/report.shtml&quot;&gt;https://www.iresearch.com.cn/report.shtml&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;互联网+咨询报告&lt;/td&gt;
+&lt;td&gt;极光大数据&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.jiguang.cn/reports&quot;&gt;https://www.jiguang.cn/reports&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;互联网+咨询报告&lt;/td&gt;
+&lt;td&gt;QuestMobile&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.questmobile.com.cn/research/report-new&quot;&gt;https://www.questmobile.com.cn/research/report-new&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;互联网+咨询报告&lt;/td&gt;
+&lt;td&gt;亿欧智库&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.iyiou.com/research&quot;&gt;https://www.iyiou.com/research&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;互联网+咨询报告&lt;/td&gt;
+&lt;td&gt;TalkingData&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://mi.talkingdata.com/&quot;&gt;http://mi.talkingdata.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;大厂研究报告&lt;/td&gt;
+&lt;td&gt;阿里研究院&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.aliresearch.com/cn/presentation&quot;&gt;http://www.aliresearch.com/cn/presentation&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;大厂研究报告&lt;/td&gt;
+&lt;td&gt;腾讯研究院&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://tisi.org/yjbg&quot;&gt;https://tisi.org/yjbg&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;大厂研究报告&lt;/td&gt;
+&lt;td&gt;百度研究院&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://research.baidu.com/Research_Areas?id=55&quot;&gt;http://research.baidu.com/Research_Areas?id=55&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;大厂研究报告&lt;/td&gt;
+&lt;td&gt;美团研究院&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://mri.meituan.com/research&quot;&gt;https://mri.meituan.com/research&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;大厂研究报告&lt;/td&gt;
+&lt;td&gt;京东研究院&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://research.jd.com/&quot;&gt;https://research.jd.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;券商行研报告&lt;/td&gt;
+&lt;td&gt;Wind&lt;/td&gt;
+&lt;td&gt;需要付费购买，在校生可以咨询学校或者学院，在一些大企业实习或者工作的小伙伴可以咨询企业：是否已经购买，如果购买如何免费使用&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;券商行研报告&lt;/td&gt;
+&lt;td&gt;慧博投研咨询&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.hibor.com.cn/&quot;&gt;http://www.hibor.com.cn/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;券商行研报告&lt;/td&gt;
+&lt;td&gt;萝卜投研&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://robo.datayes.com/v2/selection&quot;&gt;https://robo.datayes.com/v2/selection&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;报告整合平台&lt;/td&gt;
+&lt;td&gt;199it&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.199it.com/archives/category/report&quot;&gt;http://www.199it.com/archives/category/report&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;报告整合平台&lt;/td&gt;
+&lt;td&gt;报告查一查&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://report.seedsufe.com/#/index&quot;&gt;http://report.seedsufe.com/#/index&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;报告整合平台&lt;/td&gt;
+&lt;td&gt;数据局&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.shujuju.cn/lecture/browe&quot;&gt;http://www.shujuju.cn/lecture/browe&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;报告整合平台&lt;/td&gt;
+&lt;td&gt;行行查&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.hanghangcha.com/&quot;&gt;https://www.hanghangcha.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;div class=&quot;tab-pane&quot; id=&quot;qjk-5&quot;&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;类别&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;网站&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;网址&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;中国全国数据&lt;/td&gt;
+&lt;td&gt;国务院&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.gov.cn/shuju/index.htm&quot;&gt;http://www.gov.cn/shuju/index.htm&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;中国全国数据&lt;/td&gt;
+&lt;td&gt;国家统计局&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://data.stats.gov.cn/&quot;&gt;https://data.stats.gov.cn/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;中国地方数据&lt;/td&gt;
+&lt;td&gt;地方统计局导航&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.stats.gov.cn/tjgz/wzlj/dftjwz/&quot;&gt;http://www.stats.gov.cn/tjgz/wzlj/dftjwz/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;中国地方数据&lt;/td&gt;
+&lt;td&gt;各地方数据开放平台&lt;/td&gt;
+&lt;td&gt;检索网站：某省份/城市+数据开放&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;行业数据&lt;/td&gt;
+&lt;td&gt;行业协会&lt;/td&gt;
+&lt;td&gt;检索网站：某行业+协会&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;行业数据&lt;/td&gt;
+&lt;td&gt;咨询报告、研究报告&lt;/td&gt;
+&lt;td&gt;第4期全部内容&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;其他国家数据&lt;/td&gt;
+&lt;td&gt;其他国家统计局导航&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.stats.gov.cn/tjgz/wzlj/gwtjw/201311/t20131104_452221.html&quot;&gt;http://www.stats.gov.cn/tjgz/wzlj/gwtjw/201311/t20131104_452221.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;其他国家数据&lt;/td&gt;
+&lt;td&gt;Open Data Inception&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://opendatainception.io/&quot;&gt;https://opendatainception.io/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;全球数据&lt;/td&gt;
+&lt;td&gt;各国际组织导航&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.stats.gov.cn/tjgz/wzlj/gjzzwz/201311/t20131101_451662.html&quot;&gt;http://www.stats.gov.cn/tjgz/wzlj/gjzzwz/201311/t20131101_451662.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;数据整合平台&lt;/td&gt;
+&lt;td&gt;知网（年鉴）&lt;/td&gt;
+&lt;td&gt;图书馆进入&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;数据整合平台&lt;/td&gt;
+&lt;td&gt;萝卜投研&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://robo.datayes.com/v2/landing/indicator_library&quot;&gt;https://robo.datayes.com/v2/landing/indicator_library&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;其他特色数据&lt;/td&gt;
+&lt;td&gt;七麦数据&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.qimai.cn/&quot;&gt;https://www.qimai.cn/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;其他特色数据&lt;/td&gt;
+&lt;td&gt;蝉大师&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.chandashi.com/&quot;&gt;https://www.chandashi.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;其他特色数据&lt;/td&gt;
+&lt;td&gt;APP ANNIE&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.appannie.com/cn/&quot;&gt;https://www.appannie.com/cn/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;其他特色数据&lt;/td&gt;
+&lt;td&gt;房天下&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://fdc.fang.com/&quot;&gt;https://fdc.fang.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;其他特色数据&lt;/td&gt;
+&lt;td&gt;高德地图指数&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://report.amap.com/diagnosis/index.do&quot;&gt;https://report.amap.com/diagnosis/index.do&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;其他特色数据&lt;/td&gt;
+&lt;td&gt;艺恩&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.endata.com.cn/BoxOffice/index.html&quot;&gt;https://www.endata.com.cn/BoxOffice/index.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;其他特色数据&lt;/td&gt;
+&lt;td&gt;猫眼专业版&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://piaofang.maoyan.com/dashboard&quot;&gt;http://piaofang.maoyan.com/dashboard&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;微观数据&lt;/td&gt;
+&lt;td&gt;咨询报告、研究报告&lt;/td&gt;
+&lt;td&gt;第4期全部内容&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;!-- 表格样式 --&gt;
+&lt;style&gt;
+table th:first-of-type {
+    width: 30%;
+}
+table th:nth-of-type(2) {
+    width: 30%;
+}
+table th:nth-of-type(3) {
+    width: 30%;
+}
+table th:nth-of-type(4) {
+    width: 10%;
+}
+
+&lt;p&gt;&lt;/style&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;tab-pane&quot; id=&quot;websites-2&quot;&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;from: bilibili UP主&lt;a href=&quot;https://space.bilibili.com/125526?from=search&amp;seid=769593231768718900&quot;&gt;-LKs-&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;tabs&quot; id=&quot;lks&quot;&gt;&lt;ul class=&quot;nav-tabs&quot;&gt;&lt;li class=&quot;tab active&quot;&gt;&lt;a href=&quot;#lks-1&quot;&gt;2016&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;tab&quot;&gt;&lt;a href=&quot;#lks-2&quot;&gt;2017&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;tab&quot;&gt;&lt;a href=&quot;#lks-3&quot;&gt;2018&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;tab&quot;&gt;&lt;a href=&quot;#lks-4&quot;&gt;2019&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;tab&quot;&gt;&lt;a href=&quot;#lks-5&quot;&gt;2020&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;tab&quot;&gt;&lt;a href=&quot;#lks-6&quot;&gt;2020.2&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;tab&quot;&gt;&lt;a href=&quot;#lks-7&quot;&gt;2021&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div class=&quot;tab-content&quot;&gt;&lt;div class=&quot;tab-pane active&quot; id=&quot;lks-1&quot;&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;网址&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;网址2&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;网址3&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://nico-nico-ni.com/&quot;&gt;http://nico-nico-ni.com/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://internet-map.net/&quot;&gt;http://internet-map.net/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;钢琴&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://touchpianist.com/&quot;&gt;http://touchpianist.com/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;搜图&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://iqdb.org/&quot;&gt;http://iqdb.org/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://saucenao.com/index.php&quot;&gt;http://saucenao.com/index.php&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://safebooru.org/&quot;&gt;http://safebooru.org/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;环境&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.rainymood.com/&quot;&gt;http://www.rainymood.com/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.ambient-mixer.com/&quot;&gt;http://www.ambient-mixer.com/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;不明觉厉&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://mrdoob.com/#/157/spin_painter&quot;&gt;http://mrdoob.com/#/157/spin_painter&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.ro.me/&quot;&gt;http://www.ro.me/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://middle-earth.thehobbit.com/map&quot;&gt;http://middle-earth.thehobbit.com/map&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://fff.cmiscm.com/#!/section/planttrees&quot;&gt;http://fff.cmiscm.com/#!/section/planttrees&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://weavesilk.com/&quot;&gt;http://weavesilk.com/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;噫&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.theuselessweb.com/&quot;&gt;http://www.theuselessweb.com/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;风景&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.airpano.com/?n=10&amp;amp;sort_by=&amp;amp;page=1&quot;&gt;http://www.airpano.com/?n=10&amp;amp;sort_by=&amp;amp;page=1&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;制作&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://threejs.org/http://www.instructables.com/&quot;&gt;http://threejs.org/http://www.instructables.com/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;miku&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://johnsu.deviantart.com/art/Halfne-Miku-Studio-396850314&quot;&gt;http://johnsu.deviantart.com/art/Halfne-Miku-Studio-396850314&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=1szQ7YDGdXw&amp;amp;feature=youtu.be&quot;&gt;https://www.youtube.com/watch?v=1szQ7YDGdXw&amp;amp;feature=youtu.be&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;音游&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.beatstage.com/&quot;&gt;http://www.beatstage.com/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.m2ustudio.com/index.html#album-tracks&quot;&gt;http://www.m2ustudio.com/index.html#album-tracks&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;水效果&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://watereffect.net/index.php&quot;&gt;http://watereffect.net/index.php&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;猜地点&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://geoguessr.com/&quot;&gt;https://geoguessr.com/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2ch&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://kanquwen.com/&quot;&gt;http://kanquwen.com/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;音乐素材&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.hmix.net/music_gallery/music_top.htm&quot;&gt;http://www.hmix.net/music_gallery/music_top.htm&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;画&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://en.gallerix.ru/&quot;&gt;http://en.gallerix.ru/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;制服&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.seihuku-zukan.com/index.htm&quot;&gt;http://www.seihuku-zukan.com/index.htm&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://uniform.wingzero.tw/&quot;&gt;http://uniform.wingzero.tw/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;学英语&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.wuxiaworld.com/cdindex-html/&quot;&gt;http://www.wuxiaworld.com/cdindex-html/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.baka-tsuki.org/project/index.php?title=Main_Page&quot;&gt;http://www.baka-tsuki.org/project/index.php?title=Main_Page&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;剁手&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://fancy.com/&quot;&gt;https://fancy.com/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.farfetch.com/cn/shopping/men/items.aspx?ffref=hp_gender&quot;&gt;http://www.farfetch.com/cn/shopping/men/items.aspx?ffref=hp_gender&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.chiphell.com/&quot;&gt;http://www.chiphell.com/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;电音&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://techno.org/electronic-music-guide/&quot;&gt;http://techno.org/electronic-music-guide/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://the.wubmachine.com/&quot;&gt;https://the.wubmachine.com/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;捏人&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.dreamself.me/clothes.php?action=view&amp;amp;id=0&amp;amp;c=1&quot;&gt;http://www.dreamself.me/clothes.php?action=view&amp;amp;id=0&amp;amp;c=1&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;gal&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://polka-dot.co/lzbx.php&quot;&gt;http://polka-dot.co/lzbx.php&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;搬砖&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.fotojet.com/&quot;&gt;http://www.fotojet.com/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://habitica.com/static/front&quot;&gt;https://habitica.com/static/front&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;聊天&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://drrr.com/lounge&quot;&gt;http://drrr.com/lounge&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;图站&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://anime-pictures.net/&quot;&gt;https://anime-pictures.net/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;与佛论禅&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.ptxz.com/fo/&quot;&gt;http://www.ptxz.com/fo/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;音乐&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://haru.ocv.me/&quot;&gt;http://haru.ocv.me/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;学习&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.wolframalpha.com/&quot;&gt;http://www.wolframalpha.com/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;不明觉厉&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://edialogue.org/index/zh-CN&quot;&gt;https://edialogue.org/index/zh-CN&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;不明觉厉&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://dribbble.com/wagerfield&quot;&gt;https://dribbble.com/wagerfield&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;手机&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://mowned.com/&quot;&gt;http://mowned.com/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GPS&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.flashearth.com/&quot;&gt;http://www.flashearth.com/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;北方&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://wiki.joyme.com/jc/%E5%8C%97%E6%96%B9%E9%85%B1%E8%A1%A8%E6%83%85&quot;&gt;http://wiki.joyme.com/jc/%E5%8C%97%E6%96%B9%E9%85%B1%E8%A1%A8%E6%83%85&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;剁手&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.smzdm.com/&quot;&gt;http://www.smzdm.com/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.iliangcang.com/i/home/&quot;&gt;http://www.iliangcang.com/i/home/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;菜板狂魔&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://mtmwood.com/en&quot;&gt;http://mtmwood.com/en&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://youquhome.com/page/3/&quot;&gt;http://youquhome.com/page/3/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;div class=&quot;tab-pane&quot; id=&quot;lks-2&quot;&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;大类&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;网址&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;翻墙&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://sscat.cn/?referer=%2F&quot;&gt;https://sscat.cn/?referer=%2F&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;开场&lt;/td&gt;
+&lt;td&gt;世界数据统计&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.everysecond.io/&quot;&gt;http://www.everysecond.io/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;五花肉&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://eitheryoulikebaconoryourewrong.com/&quot;&gt;https://eitheryoulikebaconoryourewrong.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;实用系&lt;/td&gt;
+&lt;td&gt;免费游戏音效&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.sonniss.com/gameaudiogdc2017/&quot;&gt;http://www.sonniss.com/gameaudiogdc2017/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;下载视频&lt;/td&gt;
+&lt;td&gt;youtube1s&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;adobe全系&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://adobe.v404.cn/adobe/&quot;&gt;http://adobe.v404.cn/adobe/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;艺术字&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.akuziti.com/yw/&quot;&gt;http://www.akuziti.com/yw/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;2倍老婆&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://waifu2x.udp.jp/&quot;&gt;http://waifu2x.udp.jp/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;截图搜新番&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://whatanime.ga/#&quot;&gt;https://whatanime.ga/#&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;自动上色&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://paintschainer.preferred.tech/index_zh.html&quot;&gt;http://paintschainer.preferred.tech/index_zh.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;自动生成女朋友&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://hiroshiba.github.io/girl_friend_factory/index.html&quot;&gt;https://hiroshiba.github.io/girl_friend_factory/index.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;设计&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.chuangkit.com/dc.html&quot;&gt;https://www.chuangkit.com/dc.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;简笔画&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://aiexperiments.withgoogle.com/autodraw&quot;&gt;https://aiexperiments.withgoogle.com/autodraw&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;wuxiaworld&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.wuxiaworld.com/&quot;&gt;http://www.wuxiaworld.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;gif&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://giphy.com/&quot;&gt;https://giphy.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;逼格&lt;/td&gt;
+&lt;td&gt;秘密&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://soulapartment.net/bin/index.php&quot;&gt;http://soulapartment.net/bin/index.php&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;独立音乐&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.luoo.net/essays/&quot;&gt;http://www.luoo.net/essays/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;做音乐&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.madeon.fr/adventuremachine/?t=1,10,26,35&quot;&gt;http://www.madeon.fr/adventuremachine/?t=1,10,26,35&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;背景音合成器&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://asoftmurmur.com/&quot;&gt;http://asoftmurmur.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;摄像头+梦境&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://anasomnia.com/&quot;&gt;http://anasomnia.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;illegal&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://isnowillegal.com/?plus%201s&quot;&gt;http://isnowillegal.com/?plus%201s&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;全球电台&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://radio.garden/live/tokyo/j-idols-project-radio/&quot;&gt;http://radio.garden/live/tokyo/j-idols-project-radio/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.ostagram.ru/lenta?locale=en&quot;&gt;http://www.ostagram.ru/lenta?locale=en&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;世界飞机&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.flightradar24.com/PRBGT/d0da2bf&quot;&gt;https://www.flightradar24.com/PRBGT/d0da2bf&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;png&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.pngall.com/thug-life-png&quot;&gt;http://www.pngall.com/thug-life-png&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;在线生成白浊液&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://mygamestudio.x.fc2.com/bukkake/&quot;&gt;http://mygamestudio.x.fc2.com/bukkake/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;空当接龙&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://mrdoob.com/lab/javascript/effects/solitaire/?url_type=39&amp;amp;object_type=webpage&amp;amp;pos=1&amp;amp;url_type=39&amp;amp;object_type=webpage&amp;amp;pos=1&quot;&gt;http://mrdoob.com/lab/javascript/effects/solitaire/?url_type=39&amp;amp;object_type=webpage&amp;amp;pos=1&amp;amp;url_type=39&amp;amp;object_type=webpage&amp;amp;pos=1&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;div class=&quot;tab-pane&quot; id=&quot;lks-3&quot;&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;网址&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;网址2&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;网址3&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;重力&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://codepen.io/akm2/full/rHIsa&quot;&gt;https://codepen.io/akm2/full/rHIsa&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;反向&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.ilidilid.com/&quot;&gt;http://www.ilidilid.com/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;成为批发商&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.1688.com/&quot;&gt;https://www.1688.com/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;龋齿一号&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.gfxcamp.com/&quot;&gt;http://www.gfxcamp.com/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;摄影老法师必读&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.dxomark.com/&quot;&gt;https://www.dxomark.com/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;表情包gif&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://sorry.xuty.tk/sorry/&quot;&gt;https://sorry.xuty.tk/sorry/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;学说话&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://zh.forvo.com/user/hikari1/pronounced-words/page-2/&quot;&gt;https://zh.forvo.com/user/hikari1/pronounced-words/page-2/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;做网站&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.wix.com/&quot;&gt;https://www.wix.com/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;lkssr.info&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;在线效果&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://photomosh.com/&quot;&gt;https://photomosh.com/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;学英语&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://nexus.leagueoflegends.com/en-us/&quot;&gt;https://nexus.leagueoflegends.com/en-us/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;音游&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://ddrkirby.com/games/melody-muncher/melody-muncher.html&quot;&gt;http://ddrkirby.com/games/melody-muncher/melody-muncher.html&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;深网&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://bbs.saraba1st.com/2b/thread-1527405-1-1.html&quot;&gt;https://bbs.saraba1st.com/2b/thread-1527405-1-1.html&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;deep/dark web&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://freenetproject.org/&quot;&gt;https://freenetproject.org/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;f**king eat&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://wtfsigfd.com/#location&quot;&gt;https://wtfsigfd.com/#location&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;真实大小&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://thetruesize.com&quot;&gt;https://thetruesize.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;remember&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://i-remember.fr/en/&quot;&gt;http://i-remember.fr/en/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;游戏&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://pos.biborg.com/fr/&quot;&gt;https://pos.biborg.com/fr/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;拍卖&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://sf.taobao.com/?spm=a213w.7398504.sfhead2014.2.9vuB5l&amp;amp;current=index&quot;&gt;https://sf.taobao.com/?spm=a213w.7398504.sfhead2014.2.9vuB5l&amp;amp;current=index&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://auction.jd.com/haiguan.html&quot;&gt;http://auction.jd.com/haiguan.html&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;div class=&quot;tab-pane&quot; id=&quot;lks-4&quot;&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;大类&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;网址&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;实用&lt;/td&gt;
+&lt;td&gt;全能下视频&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.urlgot.com/&quot;&gt;https://www.urlgot.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;封面下载&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://cover.olook.me/&quot;&gt;https://cover.olook.me/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;小工具集合&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://tools.imiku.me/&quot;&gt;https://tools.imiku.me/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;医学微视&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.mvyxws.com/&quot;&gt;https://www.mvyxws.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;仿知网&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.cn-ki.net/&quot;&gt;https://www.cn-ki.net/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;自动加字幕&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://2zimu.com/#/&quot;&gt;https://2zimu.com/#/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;N卡深度学习&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.nvidia.com/en-us/research/ai-playground/?fbclid=IwAR2QEjuH4aCYP3SycnKwa_LO36rfmDhulB4WCeY1plGCfofwIU-qf1anBTY&quot;&gt;https://www.nvidia.com/en-us/research/ai-playground/?fbclid=IwAR2QEjuH4aCYP3SycnKwa_LO36rfmDhulB4WCeY1plGCfofwIU-qf1anBTY&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;渐变图&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.ls.graphics/meshgradients&quot;&gt;https://www.ls.graphics/meshgradients&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;时差&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://everytimezone.com/&quot;&gt;https://everytimezone.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;双色&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://duotone.shapefactory.co/?f=f56468&amp;amp;t=27184f&amp;amp;q=&quot;&gt;https://duotone.shapefactory.co/?f=f56468&amp;amp;t=27184f&amp;amp;q=&lt;/a&gt;_&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;图表&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://chartify.io/&quot;&gt;https://chartify.io/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;亚塞&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://wangyasai.github.io/&quot;&gt;https://wangyasai.github.io/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;音乐&lt;/td&gt;
+&lt;td&gt;listen 1&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://listen1.github.io/listen1/&quot;&gt;http://listen1.github.io/listen1/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;音乐&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCht8qITGkBvXKsR1Byln-wA/videos&quot;&gt;https://www.youtube.com/channel/UCht8qITGkBvXKsR1Byln-wA/videos&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;电音风格&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://music.ishkur.com/&quot;&gt;http://music.ishkur.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;信息&lt;/td&gt;
+&lt;td&gt;创意&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://creativemass.cn/#/&quot;&gt;https://creativemass.cn/#/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;up主排名&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://leptc.github.io/bili/&quot;&gt;https://leptc.github.io/bili/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;yuzhua&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://mj.yuzhua.com/search/3.html&quot;&gt;https://mj.yuzhua.com/search/3.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;游戏&lt;/td&gt;
+&lt;td&gt;日麻&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://majsoul.union-game.com/0/&quot;&gt;https://majsoul.union-game.com/0/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;马&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://cavalierchallenge.com/&quot;&gt;https://cavalierchallenge.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;？&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://resn.co.nz/#&quot;&gt;https://resn.co.nz/#&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;？&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.brakebillsu.com/&quot;&gt;http://www.brakebillsu.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Grammarly&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://app.grammarly.com/&quot;&gt;https://app.grammarly.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;机酒&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.tianxun.com/&quot;&gt;https://www.tianxun.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;div class=&quot;tab-pane&quot; id=&quot;lks-5&quot;&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;网址&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;大像素&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.bigpixel.cn/index.html&quot;&gt;http://www.bigpixel.cn/index.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PPT&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://slidesgo.com/theme/isometric-proposal&quot;&gt;https://slidesgo.com/theme/isometric-proposal&lt;/a&gt; &lt;br&gt;&lt;a href=&quot;https://24slides.com/templates/featured&quot;&gt;https://24slides.com/templates/featured&lt;/a&gt; &lt;br&gt;&lt;a href=&quot;https://www.free-powerpoint-templates-design.com/free-powerpoint-templates-design/&quot;&gt;https://www.free-powerpoint-templates-design.com/free-powerpoint-templates-design/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;云&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.ianfisherart.com/&quot;&gt;https://www.ianfisherart.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;展会&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.eshow365.com/&quot;&gt;http://www.eshow365.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;全历史&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.allhistory.com/&quot;&gt;https://www.allhistory.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;诡秘之主&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.zcool.com.cn/work/ZNDI0NzUzNzY=.html&quot;&gt;https://www.zcool.com.cn/work/ZNDI0NzUzNzY=.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;背景素材&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://bg-patterns.com/&quot;&gt;http://bg-patterns.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;做音乐&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://learningmusic.ableton.com/&quot;&gt;https://learningmusic.ableton.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;新媒体导航&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.kaolamedia.com/&quot;&gt;https://www.kaolamedia.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AI捏人&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://artbreeder.com/&quot;&gt;https://artbreeder.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;数据&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://ncov.dxy.cn/ncovh5/view/pneumonia&quot;&gt;https://ncov.dxy.cn/ncovh5/view/pneumonia&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;人类测试&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://humanbenchmark.com/&quot;&gt;https://humanbenchmark.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;音乐分轨&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://melody.ml/&quot;&gt;https://melody.ml/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;物流&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://logisticsartproject.com/&quot;&gt;https://logisticsartproject.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;慕课&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.icourse163.org/&quot;&gt;https://www.icourse163.org/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;反人类UI&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://userinyerface.com/game.html&quot;&gt;https://userinyerface.com/game.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;yes/no&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://yesno.wtf/&quot;&gt;https://yesno.wtf/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;老照片上色&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://colourise.sg/&quot;&gt;https://colourise.sg/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;地球时间&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://timelineofearth.com/&quot;&gt;http://timelineofearth.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;猫&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://bongo.cat/&quot;&gt;https://bongo.cat/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;大佬&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://neave.com/&quot;&gt;https://neave.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;太鼓达人&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://taiko.bui.pm/&quot;&gt;https://taiko.bui.pm/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;emm&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.shushubuyue.net/#&quot;&gt;http://www.shushubuyue.net/#&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;全网热门&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://tophub.today/&quot;&gt;https://tophub.today/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;数据表&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.visualcapitalist.com/&quot;&gt;https://www.visualcapitalist.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;医疗&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.msdmanuals.com/zh#mission&quot;&gt;https://www.msdmanuals.com/zh#mission&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;临时验证码&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.materialtools.com/?page=1&quot;&gt;https://www.materialtools.com/?page=1&lt;/a&gt; &lt;br&gt;&lt;a href=&quot;https://temp-mail.org/zh/&quot;&gt;https://temp-mail.org/zh/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;词云&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.weiciyun.com/&quot;&gt;https://www.weiciyun.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;探月&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://moon.bao.ac.cn/mul/index/list&quot;&gt;http://moon.bao.ac.cn/mul/index/list&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;中国地图&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.ageeye.cn/&quot;&gt;https://www.ageeye.cn/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;解谜&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://nazo.one-story.cn/&quot;&gt;http://nazo.one-story.cn/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;div class=&quot;tab-pane&quot; id=&quot;lks-6&quot;&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;网址&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;AI音乐推荐&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.gnoosic.com/faves.php&quot;&gt;https://www.gnoosic.com/faves.php&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RAP&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://foreignrap.com&quot;&gt;https://foreignrap.com&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;壁纸&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://wallhaven.cc/&quot;&gt;https://wallhaven.cc/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;私人定制&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.fiverr.com&quot;&gt;www.fiverr.com&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;云旅游&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.airpano.com/&quot;&gt;http://www.airpano.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;云住酒店云吃饭&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://bbs.saraba1st.com/2b/space-uid-197835.html&quot;&gt;https://bbs.saraba1st.com/2b/space-uid-197835.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;开窗户&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://window-swap.com/&quot;&gt;https://window-swap.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;伴奏提取&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.lalal.ai/&quot;&gt;https://www.lalal.ai/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;格式转换&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.alltoall.net/&quot;&gt;https://www.alltoall.net/&lt;/a&gt; &lt;br&gt;&lt;a href=&quot;https://www.aconvert.com/cn/&quot;&gt;https://www.aconvert.com/cn/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;高端翻译&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.deepl.com/translator&quot;&gt;https://www.deepl.com/translator&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;图片唱歌&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://yanderify.com/&quot;&gt;https://yanderify.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;好好说话&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://lab.magiconch.com/nbnhhsh/&quot;&gt;https://lab.magiconch.com/nbnhhsh/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;那你能帮帮我吗&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://zh.wikihow.com/%E9%A6%96%E9%A1%B5&quot;&gt;https://zh.wikihow.com/%E9%A6%96%E9%A1%B5&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;天气&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.windy.com/&quot;&gt;https://www.windy.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;自杀网站&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.thiswebsitewillselfdestruct.com/&quot;&gt;https://www.thiswebsitewillselfdestruct.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;起名&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.behindthename.com/&quot;&gt;https://www.behindthename.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;版权音乐曲库&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.epidemicsound.com&quot;&gt;https://www.epidemicsound.com&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;独立游戏&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.indiexpo.net/&quot;&gt;https://www.indiexpo.net/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;学钢琴&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://app.flowkey.com.cn/&quot;&gt;https://app.flowkey.com.cn/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;焦段科普&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.samyanglens.com/en/product/simulator/lens.php&quot;&gt;https://www.samyanglens.com/en/product/simulator/lens.php&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;全球生活水平&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.gapminder.org/dollar-street/&quot;&gt;https://www.gapminder.org/dollar-street/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;海&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://seaside-station.com/region/hokkaido/&quot;&gt;https://seaside-station.com/region/hokkaido/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;标准地图&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://bzdt.ch.mnr.gov.cn/index.html&quot;&gt;http://bzdt.ch.mnr.gov.cn/index.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;色差&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.cuishuai.cc/game/&quot;&gt;http://www.cuishuai.cc/game/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;div class=&quot;tab-pane&quot; id=&quot;lks-7&quot;&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;网址&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;行业报告&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://report.seedsufe.com/#/report&quot;&gt;http://report.seedsufe.com/#/report&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;世界之声&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://aporee.org/maps/&quot;&gt;https://aporee.org/maps/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;商用图片&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.pexels.com/zh-cn/&quot;&gt;https://www.pexels.com/zh-cn/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;抠图&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.remove.bg/&quot;&gt;https://www.remove.bg/&lt;/a&gt; &lt;br&gt;&lt;a href=&quot;http://waifu2x.udp.jp/&quot;&gt;http://waifu2x.udp.jp/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;抠视频&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.unscreen.com/&quot;&gt;https://www.unscreen.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;打字比赛&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://play.typeracer.com/&quot;&gt;https://play.typeracer.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;空投&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://airportal.cn/&quot;&gt;https://airportal.cn/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;宝贝DJ&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.bbdj.com/&quot;&gt;http://www.bbdj.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;色彩&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://color.adobe.com/zh/create/color-wheel&quot;&gt;https://color.adobe.com/zh/create/color-wheel&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3D模型&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://sketchfab.com/&quot;&gt;https://sketchfab.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;核爆&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://nuclearsecrecy.com/nukemap/&quot;&gt;https://nuclearsecrecy.com/nukemap/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;约稿&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.mihuashi.com/artists&quot;&gt;https://www.mihuashi.com/artists&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;虚拟博物馆&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://virtual.mauritshuis.nl/index.html?lang=en&amp;amp;startscene=21&quot;&gt;https://virtual.mauritshuis.nl/index.html?lang=en&amp;amp;startscene=21&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;尺寸&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.dimensions.com/&quot;&gt;https://www.dimensions.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;迪士尼化&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://toonme.com/&quot;&gt;https://toonme.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;动态图表&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://hanabi.data-viz.cn/index?lang=zh-CN&quot;&gt;https://hanabi.data-viz.cn/index?lang=zh-CN&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;中国营养&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.fatsecret.cn/%E7%83%AD%E9%87%8F%E8%90%A5%E5%85%BB/&quot;&gt;https://www.fatsecret.cn/%E7%83%AD%E9%87%8F%E8%90%A5%E5%85%BB/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;发现&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.producthunt.com/&quot;&gt;https://www.producthunt.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;找音乐&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.tunefind.com/&quot;&gt;https://www.tunefind.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;996身临其境&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://imisstheoffice.eu/&quot;&gt;https://imisstheoffice.eu/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;这个不存在&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://thisxdoesnotexist.com/&quot;&gt;https://thisxdoesnotexist.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;森林之声&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.tree.fm/&quot;&gt;https://www.tree.fm/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;西方电音&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.traxsource.com/dj-top-10s&quot;&gt;https://www.traxsource.com/dj-top-10s&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;猜真假&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://landing.adobe.com/en/na/products/creative-cloud/69308-real-or-photoshop/index.html&quot;&gt;https://landing.adobe.com/en/na/products/creative-cloud/69308-real-or-photoshop/index.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;魔性&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://patatap.com/&quot;&gt;https://patatap.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;中华珍宝馆&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.ltfc.net/exhibit/recent&quot;&gt;https://www.ltfc.net/exhibit/recent&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;英语游戏&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.merriam-webster.com/&quot;&gt;https://www.merriam-webster.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;防疫政策&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://i.snssdk.com/feoffline/ugc_activities/html/epidemic-prevention-sftr/index.html?style_id=30044&quot;&gt;https://i.snssdk.com/feoffline/ugc_activities/html/epidemic-prevention-sftr/index.html?style_id=30044&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;tab-pane&quot; id=&quot;websites-3&quot;&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;from: bilibili UP主&lt;a href=&quot;https://www.bilibili.com/video/av76317286/?spm_id_from=333.788.b_765f64657363.8&quot;&gt;阿信OL&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;名称&lt;/th&gt;
+&lt;th&gt;网址&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;爱给素材网&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.aigei.com/&quot;&gt;http://www.aigei.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OepnGameArt&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://opengameart.org/&quot;&gt;https://opengameart.org/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Ludum Dare&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://ldjam.com/&quot;&gt;https://ldjam.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Itch&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://itch.io/&quot;&gt;https://itch.io/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+
+
+
+
+
+
+
     
     </summary>
     
@@ -291,10 +2171,11 @@
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;说在前面&quot;&gt;&lt;a href=&quot;#说在前面&quot; class=&quot;headerlink&quot; title=&quot;说在前面&quot;&gt;&lt;/a&gt;说在前面&lt;/h1&gt;&lt;p&gt;昨天更新了第一个&lt;a href=&quot;https://www.bilibili.com/video/BV18h411f72x&quot;&gt;
-      
+      &lt;h1 id=&quot;说在前面&quot;&gt;&lt;a href=&quot;#说在前面&quot; class=&quot;headerlink&quot; title=&quot;说在前面&quot;&gt;&lt;/a&gt;说在前面&lt;/h1&gt;&lt;p&gt;昨天更新了第一个&lt;a href=&quot;https://www.bilibili.com/video/BV18h411f72x&quot;&gt;&lt;b&gt;vlog&lt;/b&gt;&lt;/a&gt;，从剪辑上来说还算凑合，达到七八十分的样子，所以就算做vlog的开端。这个开端想了很久了，以前也录了很多素材，但都在某天不知所以然地灰飞烟灭了。所以一直没有下手。这次反倒是借个机会，因为我的生活的单调性是毋庸置疑的，这点从辅导员找我谈话的问答中就可以看出来。这次拍的很随意，也是临时起意，我觉得vlog是一种认证生活质量的一种方式，或者说，他不单能够认证，还能升华。这种欢乐应该是每一个做vlog的人都能体会到的。我希望这是个良好的开始。&lt;br&gt;&lt;img src=&quot;https://pic.downk.cc/item/5fe5fabd3ffa7d37b311afc0.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;h1 id=&quot;正文&quot;&gt;&lt;a href=&quot;#正文&quot; class=&quot;headerlink&quot; title=&quot;正文&quot;&gt;&lt;/a&gt;正文&lt;/h1&gt;&lt;p&gt;今天是圣诞节，一般我不会过这样的节日，个中缘由大概有些清高，但最正确的原因还是过于懒惰。节日往往需要很多人的参与才会好玩，我却经常没有资本和习惯去加入。索性写写最近的作为。&lt;br&gt;前段时间刷了阿弥的视频，每次看他的视频就很积极，会不断的想象往他靠拢，我是指那种生活态度上。所以我会很喜欢看他的vlog。可我始终缺少面对镜头的勇气。看了很多，算下来，最大的感受是：自己的积累很鸡肋。陈铭提到了好奇心，说到了心坎上。我本身就是好奇心很大的人，从小就是，但是还有很多复杂的性格以及其它原因导致我没有去发挥出来。失望之余，我在反思，其实我接触的方面不少，但真正能够进入其中的少之又少，我半途而废，我浅尝辄止，我慵懒涣散。这多令人失望。我常常幻想自己能像那些up一样快乐生活（这是我最向往的工作目前为止，其实我还会想假如我从小生活的环境能让我的眼界更加开阔，我将会走一条很好的路，但开阔毕竟没有界限，所以又没有定数，只能归属于瞎想）。我还会幻想，有人给我送礼物，我不知道什么是姜饼人；不知道谁是皮神；文导和我聊起来，我只会回应我没刷鬼灭——总之，我的积累太浅薄了，一戳击破的浅薄。我只会堆叠在一大堆“然后”里，然后退场退场退场。我还经常觉得我就是看到朋友被打的时候去劝架的树先生，只有被人推开的命运，也就是：“你算什么东西。”生活真的会像等不到车却等到龙猫、找不到人却找到龙猫那样简单又奇妙吗？会是失恋了有人帮你撑腰吗？会是亲人被杀，有人能帮你讨回公道吗？会有Hachi在你临终前接球不让你走吗？会有一个女孩看你一眼就喜欢上你吗？会有一个好老师拯救一个学校吗？&lt;br&gt;统统不会。&lt;br&gt;生活没有龙猫也没有那么简单，狗很早就死，学校依旧像个魔鬼，女孩始终讨厌你。&lt;br&gt;况且呢，这甚至只是很少的一部分，这些都属于高级情绪。&lt;br&gt;而我只会真实地开心几秒钟，随后任何不如意的事会立马把我打下地狱。&lt;br&gt;生活啊，多可悲！&lt;/p&gt;
+&lt;p&gt;真实的希望在哪呢？&lt;br&gt;大光圈下虚化的酒店背景，人山人海雨衣里呼喊，拍立得咔嚓一下的声音，米11一步步预热，海口人见到东北的雪，有些人还在重蹈我的覆辙不知疲倦的写几千字的高级苦水。&lt;br&gt;这些都是希望。&lt;/p&gt;
+&lt;p&gt;最后说一点，vlog带来的效果比blog好。&lt;br&gt;再说一点吧，节日快乐。&lt;/p&gt;
+
     
     </summary>
     
@@ -317,14 +2198,15 @@
     
     <summary type="html">
     
-      
-      
-        &lt;center&gt;
+      &lt;center&gt;
 
 &lt;h1 id=&quot;记录一些意象&quot;&gt;&lt;a href=&quot;#记录一些意象&quot; class=&quot;headerlink&quot; title=&quot;记录一些意象&quot;&gt;&lt;/a&gt;记录一些意象&lt;/h1&gt;&lt;/center&gt;
 
-&lt;h2 id=&quot;窗含西岭和风力发电扇叶&quot;&gt;&lt;a href=&quot;#窗含西岭和
-      
+&lt;h2 id=&quot;窗含西岭和风力发电扇叶&quot;&gt;&lt;a href=&quot;#窗含西岭和风力发电扇叶&quot; class=&quot;headerlink&quot; title=&quot;窗含西岭和风力发电扇叶&quot;&gt;&lt;/a&gt;窗含西岭和风力发电扇叶&lt;/h2&gt;&lt;p&gt;看了别人写在城市五楼看雪山的景，才想起来五年前也在五楼天天下课看山上的扇叶。至今还会记起来面部汹涌的物理老师口中扇叶的巨大。那时候成绩远远不是我该担心的问题。&lt;/p&gt;
+&lt;h2 id=&quot;老酸奶和没有盖上的面霜&quot;&gt;&lt;a href=&quot;#老酸奶和没有盖上的面霜&quot; class=&quot;headerlink&quot; title=&quot;老酸奶和没有盖上的面霜&quot;&gt;&lt;/a&gt;老酸奶和没有盖上的面霜&lt;/h2&gt;&lt;p&gt;早上用的吧，晚上八点才看到面霜没盖，其实也没什么，只是当时正在嚼老酸奶，于是萌生出老酸奶涂脸上的想法。但是奶这东西珍贵的很，还是吃了为好。我哪有那么多钱喂脸。不过或许有君乐宝面霜，回头试试未尝不可。&lt;/p&gt;
+&lt;h2 id=&quot;盆栽和狗&quot;&gt;&lt;a href=&quot;#盆栽和狗&quot; class=&quot;headerlink&quot; title=&quot;盆栽和狗&quot;&gt;&lt;/a&gt;盆栽和狗&lt;/h2&gt;&lt;p&gt;Leon的盆栽是他除了Mathilda最珍贵的东西吧，是他之前平面化性格的唯一突起。直到难以逃命的那刻他抱着盆栽乱窜，倒确实是像怀抱小狗，乖得很，不动，也乱动。&lt;/p&gt;
+&lt;h2 id=&quot;电影&quot;&gt;&lt;a href=&quot;#电影&quot; class=&quot;headerlink&quot; title=&quot;电影&quot;&gt;&lt;/a&gt;电影&lt;/h2&gt;&lt;p&gt;很久没有去刻意找好片子看了，之前看完一部片子还会疑惑，这到底是不是一部好w片子啊，为什么众说纷纭。害，其实一部好片子，是个正常人都觉得好看的。真的能代入真的能让你心跳加速的，不由自主的，还会存疑吗？也考虑过写个影评的，我最近不怎么擅长写东西，现在只会：wnm，真好看！&lt;/p&gt;
+
     
     </summary>
     
@@ -347,10 +2229,13 @@
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;hexo-clean-amp-amp-hexo-generate-amp-amp-hexo-deploy-三命令统一&quot;&gt;&lt;a href=&quot;#hexo-clean-amp-amp-hexo-generate-amp-amp-hexo-deploy-三命令统一&quot; cl
-      
+      &lt;h1 id=&quot;hexo-clean-amp-amp-hexo-generate-amp-amp-hexo-deploy-三命令统一&quot;&gt;&lt;a href=&quot;#hexo-clean-amp-amp-hexo-generate-amp-amp-hexo-deploy-三命令统一&quot; class=&quot;headerlink&quot; title=&quot;hexo clean&amp;amp;&amp;amp;hexo generate&amp;amp;&amp;amp;hexo deploy 三命令统一&quot;&gt;&lt;/a&gt;hexo clean&amp;amp;&amp;amp;hexo generate&amp;amp;&amp;amp;hexo deploy 三命令统一&lt;/h1&gt;&lt;p&gt;可在根目录下建立bat文件，写入“hexo clean&amp;amp;&amp;amp;hexo generate&amp;amp;&amp;amp;hexo deploy”或简洁点“hexo cl&amp;amp;hexo g&amp;amp;hexo d（注意：如果装了豆瓣插件则必须用hexo deploy）”。&lt;br&gt;以后部署只用在命令行敲入你bat的文件名即可执行。&lt;/p&gt;
+&lt;h1 id=&quot;关于deploy每次都要输入账号密码的问题&quot;&gt;&lt;a href=&quot;#关于deploy每次都要输入账号密码的问题&quot; class=&quot;headerlink&quot; title=&quot;关于deploy每次都要输入账号密码的问题&quot;&gt;&lt;/a&gt;关于deploy每次都要输入账号密码的问题&lt;/h1&gt;&lt;p&gt;博主已经尝试了SSH，但还是需要输入密码（账号可以不用输入）。&lt;/p&gt;
+&lt;h2 id=&quot;操作&quot;&gt;&lt;a href=&quot;#操作&quot; class=&quot;headerlink&quot; title=&quot;操作&quot;&gt;&lt;/a&gt;操作&lt;/h2&gt;&lt;p&gt;修改_config.yml，将部署方式从https方式修改为ssh方式。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# Deployment&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;## Docs: https:&amp;#x2F;&amp;#x2F;hexo.io&amp;#x2F;docs&amp;#x2F;deployment.html&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;deploy:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  type: git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  repository: https:&amp;#x2F;&amp;#x2F;github.com&amp;#x2F;XXXXXX&amp;#x2F;XXXXXX.github.io.git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  branch: master&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;修改为&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# Deployment&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;## Docs: https:&amp;#x2F;&amp;#x2F;hexo.io&amp;#x2F;docs&amp;#x2F;deployment.html&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;deploy:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  type: git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  repository: git@github.com:XXXXXX&amp;#x2F;XXXXXX.github.io.git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  branch: master&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;教程已更新，可去更新贴查看其它操作。&quot;&gt;&lt;a href=&quot;#教程已更新，可去更新贴查看其它操作。&quot; class=&quot;headerlink&quot; title=&quot;教程已更新，可去更新贴查看其它操作。&quot;&gt;&lt;/a&gt;教程已更新，可去更新贴查看其它操作。&lt;/h2&gt;
     
     </summary>
     
@@ -373,13 +2258,12 @@
     
     <summary type="html">
     
-      
-      
-        &lt;div class=&quot;note primary&quot;&gt;
+      &lt;div class=&quot;note primary&quot;&gt;
             &lt;p&gt;这里记录一些有关域名配置的问题&lt;/p&gt;
           &lt;/div&gt;
-&lt;h1 id=&quot;域名解析（以阿里云为例）&quot;&gt;&lt;a href=&quot;#域名解析（以阿里云为例）&quot; class=&quot;headerli
-      
+&lt;h1 id=&quot;域名解析（以阿里云为例）&quot;&gt;&lt;a href=&quot;#域名解析（以阿里云为例）&quot; class=&quot;headerlink&quot; title=&quot;域名解析（以阿里云为例）&quot;&gt;&lt;/a&gt;域名解析（以阿里云为例）&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/post/2244254b.htm/%E8%A7%A3%E6%9E%90%E9%85%8D%E7%BD%AE.png&quot; alt&gt;&lt;/p&gt;
+&lt;h1 id=&quot;vercel-domain-配置&quot;&gt;&lt;a href=&quot;#vercel-domain-配置&quot; class=&quot;headerlink&quot; title=&quot;vercel domain 配置&quot;&gt;&lt;/a&gt;vercel domain 配置&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/post/2244254b.htm/vercel%E9%85%8D%E7%BD%AE.png&quot; alt&gt;&lt;br&gt;&lt;font color=&quot;#265489&quot;&gt; 另外直接利用gitpages的记得在主题&lt;strong&gt;source&lt;/strong&gt;文件夹下添加&lt;strong&gt;CNAME&lt;/strong&gt;文件，否则github每次都要重新配置domain。&lt;/font&gt;&lt;/p&gt;
+
     
     </summary>
     
@@ -402,13 +2286,10 @@
     
     <summary type="html">
     
-      
-      
-        &lt;center&gt;
+      &lt;center&gt;
 
 &lt;p&gt;这次打算认真处理一下这个网站了&lt;br&gt;从查找问题到一步步排除修正&lt;br&gt;相当于又从头布局了一下网站&lt;br&gt;butterfly更新了所以还遇到很多问题&lt;br&gt;主要是太久没管过了&lt;br&gt;总而言之&lt;br&gt;这次打算简洁点&lt;/p&gt;
 &lt;/center&gt;
-      
     
     </summary>
     
@@ -431,10 +2312,8 @@
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;生日快乐呢&lt;br&gt;是不是很快呢&lt;br&gt;2020年是不是很神奇的一年呢&lt;br&gt;奇奇怪怪的&lt;br&gt;你看发生了这么多奇怪的事&lt;br&gt;但是出不去了&lt;br&gt;嘎嘎嘎&lt;br&gt;看了那么多酒店有机会一定要去&lt;br&gt;小宝贝生日快乐呀&lt;br&gt;蛋糕可以不吃&lt;br&gt;酒店可以不住&lt;br&gt;旅行可以不去&lt;
-      
+      &lt;p&gt;生日快乐呢&lt;br&gt;是不是很快呢&lt;br&gt;2020年是不是很神奇的一年呢&lt;br&gt;奇奇怪怪的&lt;br&gt;你看发生了这么多奇怪的事&lt;br&gt;但是出不去了&lt;br&gt;嘎嘎嘎&lt;br&gt;看了那么多酒店有机会一定要去&lt;br&gt;小宝贝生日快乐呀&lt;br&gt;蛋糕可以不吃&lt;br&gt;酒店可以不住&lt;br&gt;旅行可以不去&lt;br&gt;但是要快乐&lt;br&gt;给你一些可爱的图：&lt;br&gt;吹个蜡烛吧&lt;br&gt;生日快乐！&lt;/p&gt;
+
     
     </summary>
     
@@ -457,10 +2336,10 @@
     
     <summary type="html">
     
-      
-      
-        &lt;h2 id=&quot;罗永浩&quot;&gt;&lt;a href=&quot;#罗永浩&quot; class=&quot;headerlink&quot; title=&quot;罗永浩&quot;&gt;&lt;/a&gt;罗永浩&lt;/h2&gt;&lt;p&gt;很长时间以来都只是只闻其名，细细研究一下才发现他的的确确是很多人的精神领袖，或者说精神鸦片也未尝不可。辍学打工，办培训机构，打假，做
-      
+      &lt;h2 id=&quot;罗永浩&quot;&gt;&lt;a href=&quot;#罗永浩&quot; class=&quot;headerlink&quot; title=&quot;罗永浩&quot;&gt;&lt;/a&gt;罗永浩&lt;/h2&gt;&lt;p&gt;很长时间以来都只是只闻其名，细细研究一下才发现他的的确确是很多人的精神领袖，或者说精神鸦片也未尝不可。辍学打工，办培训机构，打假，做手机。面对了很多争议、嘲讽。你很难看见一个人十几年来都是这一个模样，不单单是外貌，那股精神气似乎从来都没有消减。但是这显然不太现实，面对理想主义的不如意，你好好观察一下，也能发现某些被磨平的棱角。但是不管怎样，他的高度自律、行动力、成熟的价值观体系、理性的做事规则都无比吸引人。&lt;/p&gt;
+&lt;h2 id=&quot;韩寒&quot;&gt;&lt;a href=&quot;#韩寒&quot; class=&quot;headerlink&quot; title=&quot;韩寒&quot;&gt;&lt;/a&gt;韩寒&lt;/h2&gt;&lt;p&gt;不去深入了解，大多数略有耳闻的人都对韩寒有一些误解：叛逆、不听话、我行我素、大骂教育制度、暴躁。但其实完全不是，他尊重人和事、面对他人谦逊无比、虚心接受其它有价值的意见。他很善良，有爱，不管是从一言一行还是从他的小说里的字里行间，无论你能看得出多少痞气，你都不能想当然。那是媒体过分渲染的韩寒，他们把一个孩子想得太简单了。大人们习惯这样，把比自己年龄小的人想得简单。&lt;/p&gt;
+&lt;h2 id=&quot;后话&quot;&gt;&lt;a href=&quot;#后话&quot; class=&quot;headerlink&quot; title=&quot;后话&quot;&gt;&lt;/a&gt;后话&lt;/h2&gt;&lt;p&gt;以前为了安慰自己一直都有一套理论：&lt;br&gt;人不可能长时间保持一种状态，无论你多么有自制力，还是免不了被改变，人就是一个阶段一个阶段的，哪有不忘初心。&lt;br&gt;现在又发现其实人可以长时间保持一种状态，不过所依赖的条件是：你必须不停的汲取知识，不是科学知识，而是经历。这种经历可以从过来的人身上看到，也可以从虚构的人和事上看到，简单说就是多读书。&lt;/p&gt;
+
     
     </summary>
     
@@ -483,10 +2362,8 @@
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;疼一怎么疼了这么久了还是不好，一直以为咬伤的很快就会好的。这么多天居然不见丝毫好转，现在喝水都成问题了，又饿又疼。晚上耐着性子做了米饭，炒了很难吃的菜，但是一粒也吃不成，一碰到就疼。二韩寒大概看的差不多了，剩下还有一些电影和书需要看，反正记录了好多事情待完成，不知道啥时候可
-      
+      &lt;p&gt;疼一怎么疼了这么久了还是不好，一直以为咬伤的很快就会好的。这么多天居然不见丝毫好转，现在喝水都成问题了，又饿又疼。晚上耐着性子做了米饭，炒了很难吃的菜，但是一粒也吃不成，一碰到就疼。二韩寒大概看的差不多了，剩下还有一些电影和书需要看，反正记录了好多事情待完成，不知道啥时候可以。看的时候会有很多感受，不记录下来就会消失。总体来说不记录相当于白看。三动物真可爱，一看动物就停不下来。以后一定要好好养动物。除了一只，还要养猫、狗、蛇。。算了。够了。想看猫狗大战，想看狗狗大战，想看猫猫大战。四陌生人很难交流。能说得上话的除了年纪遭遇相仿的，别的基本都讲不通逻辑。这个时代变化很快。也不知道什么时候该被淘汰，但现在还不必担心，因为我们是把淘汰者。一点小愿望希望日子赶紧有所好转；积累的事情赶紧做完；少看报纸多读书。&lt;/p&gt;
+
     
     </summary>
     
@@ -509,11 +2386,8 @@
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;总算把主题和基本写作的操作摸索敲定了&lt;br&gt;暂且先这样&lt;br&gt;美化工作还有很多要做&lt;br&gt;先记录一下&lt;/p&gt;
+      &lt;p&gt;总算把主题和基本写作的操作摸索敲定了&lt;br&gt;暂且先这样&lt;br&gt;美化工作还有很多要做&lt;br&gt;先记录一下&lt;/p&gt;
 
-      
     
     </summary>
     
