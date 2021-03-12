@@ -221,21 +221,7 @@
   </url>
   
   <url>
-    <loc>https://asea.fun/tags/note/</loc>
-    <lastmod>2021-03-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://asea.fun/tags/deploy/</loc>
-    <lastmod>2021-03-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://asea.fun/tags/three-js/</loc>
     <lastmod>2021-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -250,6 +236,20 @@
   
   <url>
     <loc>https://asea.fun/tags/literature/</loc>
+    <lastmod>2021-03-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://asea.fun/tags/note/</loc>
+    <lastmod>2021-03-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://asea.fun/tags/three-js/</loc>
     <lastmod>2021-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -279,13 +279,6 @@
   </url>
   
   <url>
-    <loc>https://asea.fun/categories/%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2021-03-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://asea.fun/categories/%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2021-03-12</lastmod>
     <changefreq>daily</changefreq>
@@ -293,14 +286,21 @@
   </url>
   
   <url>
-    <loc>https://asea.fun/categories/%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>https://asea.fun/categories/%E6%96%87%E5%AD%A6/</loc>
     <lastmod>2021-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://asea.fun/categories/%E6%96%87%E5%AD%A6/</loc>
+    <loc>https://asea.fun/categories/%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2021-03-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://asea.fun/categories/%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2021-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
