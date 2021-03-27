@@ -2277,6 +2277,111 @@ table th:nth-of-type(4) {
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://asea.fun/post/71485f5b.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar1.png">
+      <meta itemprop="name" content="Asea">
+      <meta itemprop="description" content="我以為我可以獨自過一生 我還是被打動了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AseaBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/71485f5b.html" class="post-title-link" itemprop="url">python项目练习</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-27 11:44:22" itemprop="dateCreated datePublished" datetime="2021-03-27T11:44:22+08:00">2021-03-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/post/71485f5b.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/71485f5b.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="记录一下python常用的源码"><a href="#记录一下python常用的源码" class="headerlink" title="记录一下python常用的源码"></a>记录一下python常用的源码</h1><h2 id="邮件服务"><a href="#邮件服务" class="headerlink" title="邮件服务"></a>邮件服务</h2><blockquote>
+<p>用来每次部署博客以后给订阅的人自动发邮件</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!-- 邮件服务 --&gt;</span><br><span class="line"># coding: UTF-8</span><br><span class="line">import smtplib</span><br><span class="line">from email.mime.text import MIMEText</span><br><span class="line">mailserver &#x3D; &quot;smtp.163.com&quot;  #邮箱服务器地址</span><br><span class="line">username_send &#x3D; &#39;******@163.com,xxx@qq.com&#39;  #邮箱用户名</span><br><span class="line">password &#x3D; &#39;******&#39;   #邮箱密码：需要使用授权码</span><br><span class="line">username_recv &#x3D; &#39;****@qq.com&#39;  #收件人，多个收件人用逗号隔开</span><br><span class="line">mail &#x3D; MIMEText(&#39;xxx&#39;)</span><br><span class="line">mail[&#39;Subject&#39;] &#x3D; &#39;xxx&#39;</span><br><span class="line">mail[&#39;From&#39;] &#x3D; username_send  #发件人</span><br><span class="line">mail[&#39;To&#39;] &#x3D; username_recv  #收件人；[]里的三个是固定写法，别问为什么，我只是代码的搬运工</span><br><span class="line">smtp &#x3D; smtplib.SMTP(mailserver,port&#x3D;25) # 连接邮箱服务器，smtp的端口号是25</span><br><span class="line"># smtp&#x3D;smtplib.SMTP_SSL(&#39;smtp.qq.com&#39;,port&#x3D;465) #QQ邮箱的服务器和端口号</span><br><span class="line">smtp.login(username_send,password)  #登录邮箱</span><br><span class="line">smtp.sendmail(username_send,username_recv,mail.as_string())# 参数分别是发送者，接收者，第三个是把上面的发送邮件的内容变成字符串</span><br><span class="line">smtp.quit() # 发送完毕后退出smtp</span><br><span class="line">print (&#39;success&#39;)</span><br></pre></td></tr></table></figure>
+<h2 id="自动更新更新时间"><a href="#自动更新更新时间" class="headerlink" title="自动更新更新时间"></a>自动更新更新时间</h2><blockquote>
+<p>每次部署的时候自动将post的<code>update:</code>后面的时间改成文件的修改时间</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!-- 自动更新更新时间 --&gt;</span><br><span class="line">import re</span><br><span class="line">import time</span><br><span class="line">import os</span><br><span class="line">def change_time(path):</span><br><span class="line">        fileList &#x3D; os.listdir(path)</span><br><span class="line">        for file in fileList:</span><br><span class="line">            allpath &#x3D; path+file</span><br><span class="line">            f &#x3D; open(allpath,&#39;r&#39;,encoding&#x3D;&#39;utf-8&#39;)</span><br><span class="line">            txt &#x3D; f.read() #读取内容</span><br><span class="line">            f.close()</span><br><span class="line">            now &#x3D; int(time.time())</span><br><span class="line">            old_update &#x3D; re.findall(r&quot;(updated: \d&#123;4&#125;-\d&#123;1,2&#125;-\d&#123;1,2&#125;\s\d&#123;1,2&#125;:\d&#123;1,2&#125;:\d&#123;1,2&#125;)&quot;,txt) # 正则匹配要修改的字符串</span><br><span class="line">            new_update &#x3D; time.strftime(&#39;updated: %Y-%m-%d %H:%M:%S&#39;,time.localtime(int(os.path.getmtime(allpath)))) # 获取文件的最后修改时间并赋值</span><br><span class="line">            try:</span><br><span class="line">                txt &#x3D; txt.replace(old_update[0],new_update) # 替换</span><br><span class="line">            except:</span><br><span class="line">                print(&#39;&#123;&#125;有误&#39;.format(file)) # 排查错误</span><br><span class="line">                continue</span><br><span class="line">            else:</span><br><span class="line">                if now - int(os.path.getmtime(allpath)) &lt; 86400: # 只修改当天创建或修改的文章</span><br><span class="line">                    fi &#x3D; open(allpath,&#39;w&#39;,encoding &#x3D; &#39;utf-8&#39;)</span><br><span class="line">                    fi.write(txt) # 写入</span><br><span class="line">                    fi.close() # 关闭</span><br><span class="line">change_time(&#39;E:&#x2F;blog&#x2F;source&#x2F;_posts&#x2F;&#39;) #执行代码&#x3D;</span><br></pre></td></tr></table></figure>
+<h2 id="自己写了一个文件名字批处理的软件"><a href="#自己写了一个文件名字批处理的软件" class="headerlink" title="自己写了一个文件名字批处理的软件"></a>自己写了一个文件名字批处理的软件</h2><blockquote>
+<p>网上找的都怪怪的，用起来不舒服，就自己写了一个，自由度更高，使用的是tkinter。<br>未来打算更新的几个功能</p>
+<ol>
+<li>增加前缀后缀 </li>
+<li>修改字符的半匹配</li>
+<li>支持正则替换</li>
+<li>支持修改范围（例如：前十个）<br>等后续有空再写<br>另外附上：<a target="_blank" rel="noopener" href="https://aseaee.lanzous.com/ibrq8nbq00f">&gt;&gt;1.1.0版本下载地址&lt;&lt;</a></li>
+</ol>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import tkinter as tk</span><br><span class="line">import time</span><br><span class="line">import os</span><br><span class="line">import re</span><br><span class="line">from tkinter import scrolledtext</span><br><span class="line"></span><br><span class="line">class MY_GUI():</span><br><span class="line">    #窗口初始化</span><br><span class="line">    def __init__(self,window_name):</span><br><span class="line">        self.window &#x3D; window_name</span><br><span class="line">        self.is_all_change &#x3D; 0</span><br><span class="line">        self.is_all_change &#x3D; tk.IntVar()</span><br><span class="line">        self.can_change &#x3D; 0</span><br><span class="line">        # 设置窗口</span><br><span class="line">    #窗口设置</span><br><span class="line">    def set_window(self):</span><br><span class="line">        self.window.title(&#39;文件名称批量修改器_v1.1.0 QQ:569389750&#39;)</span><br><span class="line">        self.window.geometry(&#39;800x600+500+100&#39;)</span><br><span class="line">        self.window.maxsize(800,600)</span><br><span class="line">        self.window.minsize(800,600)</span><br><span class="line">        self.window.attributes(&#39;-alpha&#39;,1) # 1为不虚化</span><br><span class="line">        self.address_label &#x3D; tk.Label(self.window,text&#x3D;&#39;原文件夹的地址&#39;,bg&#x3D;&#39;#336666&#39;,font&#x3D;(&#39;microsoft yahei&#39;, 10))</span><br><span class="line">        self.to_be_changed_label &#x3D; tk.Label(self.window,text&#x3D;&#39;被替换的字符串&#39;,bg&#x3D;&#39;#669999&#39;,font&#x3D;(&#39;microsoft yahei&#39;, 10))</span><br><span class="line">        self.to_change_label &#x3D; tk.Label(self.window,text&#x3D;&#39;来替换的字符串&#39;,bg&#x3D;&#39;#CCCC99&#39;,font&#x3D;(&#39;microsoft yahei&#39;, 10))</span><br><span class="line">        self.original_fileList_label &#x3D; tk.Label(self.window,text&#x3D;&#39;原始文件目录&#39;,bg&#x3D;&#39;#669999&#39;)</span><br><span class="line">        self.latest_fileList_label &#x3D; tk.Label(self.window,text&#x3D;&#39;修改后文件目录&#39;,bg&#x3D;&#39;#669999&#39;)</span><br><span class="line">        self.log_data_label &#x3D; tk.Label(self.window,text&#x3D;&#39;工  作  日  志&#39;,bg&#x3D;&#39;#ccc&#39;)</span><br><span class="line">        self.address_Entry &#x3D; tk.Entry(self.window) # 文件夹地址收集框</span><br><span class="line">        self.to_be_changed_Entry &#x3D; tk.Entry(self.window) # 要被改变的字符串</span><br><span class="line">        self.to_change_Entry &#x3D; tk.Entry(self.window) # 要改变成的字符串</span><br><span class="line"></span><br><span class="line">        self.change_button &#x3D; tk.Button(self.window,text &#x3D; &#39;修改&#39;,bg&#x3D;&#39;#CCCCCC&#39;,command&#x3D;self.callChange)</span><br><span class="line"></span><br><span class="line">        self.original_fileList_text &#x3D; tk.Text(self.window) # 原始文件目录</span><br><span class="line">        self.latest_fileList_text &#x3D; tk.Text(self.window) # 修改后的文件目录</span><br><span class="line">        self.log_data_text &#x3D; scrolledtext.ScrolledText(self.window,font&#x3D;(&#39;microsoft yahei&#39;, 10)) # 工作日志</span><br><span class="line">        self.is_all_change_button &#x3D; tk.Checkbutton(self.window,text &#x3D; &quot;是否遍历整个文件夹(默认为否)&quot;,variable&#x3D;self.is_all_change,onvalue&#x3D;1,offvalue&#x3D;0)</span><br><span class="line">        self.look_files_button &#x3D; tk.Button(self.window,text&#x3D;&#39;查看当前目录&#39;,command&#x3D;self.look_files)</span><br><span class="line">        self.clear_button &#x3D; tk.Button(self.window,text&#x3D;&#39;重置&#39;,command&#x3D;self.clearAll)</span><br><span class="line">        self.clearLog_button &#x3D; tk.Button(self.window,text&#x3D;&#39;清除工作日志&#39;,command&#x3D;self.clearLog)</span><br><span class="line">        # 滚动条</span><br><span class="line">        self.original_fileList_text_scroll &#x3D; tk.Scrollbar()</span><br><span class="line">        self.latest_fileList_text_scroll &#x3D; tk.Scrollbar()</span><br><span class="line">        # 放到窗口的右侧, 填充Y竖直方向       </span><br><span class="line">        # 两个控件关联</span><br><span class="line">        self.original_fileList_text_scroll.config(command&#x3D;self.original_fileList_text.yview)</span><br><span class="line">        self.original_fileList_text.config(yscrollcommand&#x3D;self.original_fileList_text_scroll.set)</span><br><span class="line">        self.latest_fileList_text_scroll.config(command&#x3D;self.latest_fileList_text.yview)</span><br><span class="line">        self.latest_fileList_text.config(yscrollcommand&#x3D;self.latest_fileList_text_scroll.set)</span><br><span class="line">        #布局</span><br><span class="line">        label_x &#x3D; 10</span><br><span class="line">        extry_x &#x3D; 140</span><br><span class="line">        fileList_text_x &#x3D; 380</span><br><span class="line">        log_text_width &#x3D; 360-label_x</span><br><span class="line">        self.address_label.place(x&#x3D;label_x,y&#x3D;0,width&#x3D;log_text_width&#x2F;3,height&#x3D;30)</span><br><span class="line">        self.to_be_changed_label.place(x&#x3D;label_x,y&#x3D;30,width&#x3D;log_text_width&#x2F;3,height&#x3D;30)</span><br><span class="line">        self.to_change_label.place(x&#x3D;label_x,y&#x3D;60,width&#x3D;log_text_width&#x2F;3,height&#x3D;30)</span><br><span class="line">        self.address_Entry.place(x&#x3D;extry_x,y&#x3D;0,width&#x3D;220,height&#x3D;30)</span><br><span class="line">        self.to_be_changed_Entry.place(x&#x3D;extry_x,y&#x3D;30,width&#x3D;220,height&#x3D;30)</span><br><span class="line">        self.to_change_Entry.place(x&#x3D;extry_x,y&#x3D;60,width&#x3D;220,height&#x3D;30)</span><br><span class="line">        self.change_button.place(x&#x3D;2*(log_text_width)&#x2F;3+label_x,y&#x3D;120,width&#x3D;log_text_width&#x2F;3,height&#x3D;30)</span><br><span class="line">        self.is_all_change_button.place(x&#x3D;100,y&#x3D;90,width&#x3D;280,height&#x3D;30)</span><br><span class="line">        self.log_data_text.place(x&#x3D;label_x,y&#x3D;175,width&#x3D;log_text_width+18,height&#x3D;430-25)</span><br><span class="line">        self.original_fileList_label.place(x&#x3D;fileList_text_x,y&#x3D;0,width&#x3D;100,height&#x3D;30)</span><br><span class="line">        self.original_fileList_text.place(x&#x3D;fileList_text_x,y&#x3D;30,width&#x3D;400,height&#x3D;250)</span><br><span class="line">        self.latest_fileList_label.place(x&#x3D;fileList_text_x,y&#x3D;300,width&#x3D;100,height&#x3D;30)</span><br><span class="line">        self.latest_fileList_text.place(x&#x3D;fileList_text_x,y&#x3D;330,width&#x3D;400,height&#x3D;250)</span><br><span class="line">        self.look_files_button.place(x&#x3D;label_x,y&#x3D;90,width&#x3D;log_text_width&#x2F;3,height&#x3D;30)</span><br><span class="line">        self.clear_button.place(x&#x3D;label_x,y&#x3D;120,width&#x3D;log_text_width&#x2F;3,height&#x3D;30)</span><br><span class="line">        self.original_fileList_text_scroll.place(x&#x3D;780,y&#x3D;0,width&#x3D;15,height&#x3D;300)</span><br><span class="line">        self.latest_fileList_text_scroll.place(x&#x3D;780,y&#x3D;330,width&#x3D;15,height&#x3D;300)</span><br><span class="line">        self.clearLog_button.place(x&#x3D;log_text_width&#x2F;3+label_x,y&#x3D;120,width&#x3D;log_text_width&#x2F;3,height&#x3D;30)</span><br><span class="line">        self.log_data_label.place(x&#x3D;label_x,y&#x3D;150,width&#x3D;log_text_width,height&#x3D;25)</span><br><span class="line">    #清除工作日志</span><br><span class="line">    def clearLog(self):</span><br><span class="line">        self.log_data_text.delete(1.0,tk.END)</span><br><span class="line">        current_time &#x3D; str(self.get_current_time())</span><br><span class="line">        self.log_data_text.insert(1.0, current_time+&#39; &#39;+&#39;WARNING:已清除\n&#39;)</span><br><span class="line">        # self.log_data_text.mark_set(&#39;insert&#39;, tk.END)</span><br><span class="line">    #遍历文件夹返回生成器</span><br><span class="line">    def findAllFile(self,path): # 获取文件夹下所有文件</span><br><span class="line">        for root, ds, fs in os.walk(path):</span><br><span class="line">            for f in fs:</span><br><span class="line">                fullname &#x3D; [os.path.join(root, f),os.path.join(root),os.path.join(f)]</span><br><span class="line">                yield fullname</span><br><span class="line">    #重置</span><br><span class="line">    def clearAll(self):</span><br><span class="line">        current_time &#x3D; str(self.get_current_time())</span><br><span class="line">        self.address_Entry.delete(0,tk.END)</span><br><span class="line">        self.to_be_changed_Entry.delete(0,tk.END)</span><br><span class="line">        self.to_change_Entry.delete(0,tk.END,)</span><br><span class="line">        self.log_data_text.delete(1.0,tk.END)</span><br><span class="line">        self.log_data_text.insert(1.0,current_time+&#39; &#39;+&#39;WARNING:已重置\n&#39;)</span><br><span class="line">        self.original_fileList_text.delete(1.0,tk.END)</span><br><span class="line">        self.latest_fileList_text.delete(1.0,tk.END)</span><br><span class="line">    #获取当前时间</span><br><span class="line">    def get_current_time(self):</span><br><span class="line">        current_time &#x3D; time.strftime(&#39;%Y-%m-%d %H:%M:%S&#39;,time.localtime(time.time()))</span><br><span class="line">        return current_time</span><br><span class="line">    #判断是否输入文件夹地址</span><br><span class="line">    def callChange(self):</span><br><span class="line">        if self.address_Entry.get() !&#x3D; &#39;&#39;:</span><br><span class="line">            self.change_name()</span><br><span class="line">    #查看当前文件夹目录</span><br><span class="line">    def look_files(self):</span><br><span class="line">        self.original_fileList_text.delete(1.0,tk.END)</span><br><span class="line">        address_str &#x3D; self.address_Entry.get()</span><br><span class="line">        if self.is_all_change.get():</span><br><span class="line">            fileList &#x3D; self.findAllFile(address_str)</span><br><span class="line">            for filelist in fileList:</span><br><span class="line">                self.original_fileList_text.insert(tk.END,filelist[0]+&#39;\n&#39;)</span><br><span class="line">        else:</span><br><span class="line">            fileList &#x3D; os.listdir(address_str)</span><br><span class="line">            for fileName in fileList:</span><br><span class="line">                self.original_fileList_text.insert(tk.END,fileName+&#39;\n&#39;)</span><br><span class="line">    #主函数</span><br><span class="line">    def change_name(self):</span><br><span class="line">        address_str &#x3D; self.address_Entry.get()</span><br><span class="line">        if self.is_all_change.get():#判断是否遍历</span><br><span class="line">            current_time &#x3D; self.get_current_time()</span><br><span class="line">            try:</span><br><span class="line">                fileList &#x3D; self.findAllFile(address_str)</span><br><span class="line">            except:</span><br><span class="line">                self.log_data_text.insert(tk.END,current_time+&#39; &#39;+&#39;ERROR:请确认路径存在\n&#39;)</span><br><span class="line">            self.original_fileList_text.delete(1.0,tk.END)</span><br><span class="line">            self.latest_fileList_text.delete(1.0,tk.END)</span><br><span class="line">            to_be_changed_str &#x3D; self.to_be_changed_Entry.get()</span><br><span class="line">            to_change_str &#x3D; self.to_change_Entry.get()</span><br><span class="line">            num &#x3D; 0</span><br><span class="line">            for filelist in (fileList):</span><br><span class="line">                fileName &#x3D; filelist[0]#绝对路径</span><br><span class="line">                fileRoot &#x3D; filelist[1]+&#39;\\&#39;</span><br><span class="line">                fileShortName &#x3D; filelist[2]</span><br><span class="line">                self.original_fileList_text.insert(tk.END,fileName+&#39;\n&#39;)</span><br><span class="line">                try:</span><br><span class="line">                    os.rename(fileName, fileRoot + fileShortName.replace(to_be_changed_str,to_change_str)) # 3. 文件重新命名 规则根据需求自己定</span><br><span class="line">                    if fileShortName !&#x3D; fileShortName.replace(to_be_changed_str,to_change_str):</span><br><span class="line">                        num +&#x3D; 1</span><br><span class="line">                        self.log_data_text.insert(tk.END, &#39;已将\n&#39;+fileName+&#39;\n&#39;+&#39;修改为\n&#39;+fileRoot + fileShortName.replace(to_be_changed_str,to_change_str)+&#39;\n&#39;+&#39;-&#39;*20+&#39;\n&#39;)</span><br><span class="line">                except:</span><br><span class="line">                    self.log_data_text.insert(tk.END,current_time+&#39; &#39;+&#39;ERROR:无法同时存在两个相同名字的文件\n   &#39;)</span><br><span class="line">            self.log_data_text.insert(tk.END,current_time+&#39; &#39;+&#39;共修改&#39;+str(num)+&#39;个文件&#39;+&#39;\n&#39;+&#39;&#123;:■^26&#125;&#39;.format(&#39;本次修改结束&#39;)+&#39;\n&#39;)</span><br><span class="line">            self.log_data_text.see(tk.END) # 自动将光标移到末尾</span><br><span class="line">            fileList &#x3D; self.findAllFile(address_str)</span><br><span class="line">            for filelist in fileList:</span><br><span class="line">                self.latest_fileList_text.insert(tk.END,filelist[0]+&#39;\n&#39;)</span><br><span class="line">        else:</span><br><span class="line">            current_time &#x3D; self.get_current_time()</span><br><span class="line">            try:</span><br><span class="line">                fileList &#x3D; os.listdir(address_str)</span><br><span class="line">            except:</span><br><span class="line">                self.log_data_text.insert(tk.END,current_time+&#39; &#39;+&#39;ERROR:请确认路径存在\n&#39;)</span><br><span class="line">            # os.chdir(address_str)  # 将当前工作目录修改为待修改文件夹的位置</span><br><span class="line">            self.original_fileList_text.delete(1.0,tk.END)</span><br><span class="line">            self.latest_fileList_text.delete(1.0,tk.END)</span><br><span class="line">            to_be_changed_str &#x3D; self.to_be_changed_Entry.get()</span><br><span class="line">            to_change_str &#x3D; self.to_change_Entry.get()</span><br><span class="line">            num &#x3D; 0</span><br><span class="line">            for fileName in fileList:</span><br><span class="line">                self.original_fileList_text.insert(tk.END,fileName+&#39;\n&#39;)</span><br><span class="line">                try:</span><br><span class="line">                    os.rename(address_str+&#39;\\&#39;+fileName, address_str+&#39;\\&#39;+fileName.replace(to_be_changed_str,to_change_str)) # 3. 文件重新命名 规则根据需求自己定</span><br><span class="line">                    if fileName !&#x3D; fileName.replace(to_be_changed_str,to_change_str):</span><br><span class="line">                        num +&#x3D; 1</span><br><span class="line">                        self.log_data_text.insert(tk.END, &#39;已将\n&#39;+fileName+&#39;\n&#39;+&#39;修改为\n&#39;+fileName.replace(to_be_changed_str,to_change_str)+&#39;\n&#39;+&#39;-&#39;*20+&#39;\n&#39;)</span><br><span class="line">                except:</span><br><span class="line">                    self.log_data_text.insert(tk.END,current_time+&#39; &#39;+&#39;ERROR:无法同时存在两个相同名字的文件\n&#39;)</span><br><span class="line">            fileList &#x3D; os.listdir(address_str)</span><br><span class="line">            self.latest_fileList_text.insert(tk.END,&#39;\n&#39;.join(fileList))</span><br><span class="line">            self.log_data_text.insert(tk.END,current_time+&#39; &#39;+&#39;共修改&#39;+str(num)+&#39;个文件&#39;+&#39;\n&#39;+&#39;&#123;:■^26&#125;&#39;.format(&#39;本次修改结束&#39;)+&#39;\n&#39;)</span><br><span class="line">            # sys.stdin.flush()  # 刷新</span><br><span class="line"></span><br><span class="line">def gui_start():</span><br><span class="line">    window &#x3D; tk.Tk()</span><br><span class="line">    MY_PORTAL &#x3D; MY_GUI(window)</span><br><span class="line">    MY_PORTAL.set_window()</span><br><span class="line">    window.mainloop()</span><br><span class="line"></span><br><span class="line">gui_start()#启动</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/71485f5b.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://asea.fun/post/afab6017.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2399,7 +2504,7 @@ table th:nth-of-type(4) {
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-26 23:46:08" itemprop="dateModified" datetime="2021-03-26T23:46:08+08:00">2021-03-26</time>
+                <time title="修改时间：2021-03-27 11:44:12" itemprop="dateModified" datetime="2021-03-27T11:44:12+08:00">2021-03-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -2906,149 +3011,10 @@ The key fingerprint is:
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://asea.fun/post/35baf9b8.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar1.png">
-      <meta itemprop="name" content="Asea">
-      <meta itemprop="description" content="我以為我可以獨自過一生 我還是被打動了">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AseaBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/35baf9b8.html" class="post-title-link" itemprop="url">2021年的大瓜</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-19 20:45:06" itemprop="dateCreated datePublished" datetime="2021-01-19T20:45:06+08:00">2021-01-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-23 22:08:58" itemprop="dateModified" datetime="2021-03-23T22:08:58+08:00">2021-03-23</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%97%A5%E5%B8%B8/" itemprop="url" rel="index"><span itemprop="name">日常</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/post/35baf9b8.html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/35baf9b8.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="🍉"><a href="#🍉" class="headerlink" title="🍉"></a>🍉</h2><p>不追星，但喜欢一种仪式感。体现在对薛之谦新歌的期待，尽管不好听；体现在关注的某个up更新；体现在他刚好符合我的某个理想中的状态，这算不算追星？不算吧，顶多是从生活里找乐子，也是一种临时逃避生活的借口。<br>当开始认真关注一些人，目标不限于室友，囊括偶像在内的所有人，都会开始发现，对方比你了解的复杂很多。接着我会对就近的采取策略，而且还卓有成效。至于远处诗和远方，偶像不是诗和远方，充其量是个载体，没了载体理想依然能存在。我回想起来高中搬个凳子在狭小的厕所里写日记，有段时间话题无不关于陆之昂立夏几人。说白了就是我把很大一部分纯粹放在电视剧里，放在其中某个人身上了，但绝不是演员身上。这种纯粹每个人或多或少都有一些，而且纯粹的载体是随着时间不断更迭不断推陈的。我发现年龄增长带来了纯粹的减少，但好在记忆还在，它独有的积累效果不言而喻，多年以前的两平米里的冷和感动至今历历在目。这些很珍贵。<br>这两天的爆料很雷人，但我没难过。我又发现一些小的道理：当一个人的能力越来越大，就越来越容易干坏事。想起来限制与自由的论述，恰好符合。身为普通人，幻想着腰缠万贯或者惨遭封禁都是遥不可及的事情，而当有一天你发现你已经腰缠万贯，这时候就要十分警惕，你是否要悬崖勒马，甚至调个头往回走几步了。<br>这是一点想法。</p>
-<h2 id="✍"><a href="#✍" class="headerlink" title="✍"></a>✍</h2><p>考试结束一直都很想找个机会总结一下这一学年，但是没安下心，一直在补漏下的娱乐。很久没有一个人呆在一个地方了，这样的感觉和高考前两天颇相似，但是却有着截然不同的使命。<br>很多人都总结的很到位，我显然就暗淡很多，不要抱多大希望。<br>这一学年还是没什么可说的，我太没兴趣了，列个表格。</p>
-<table>
-<thead>
-<tr>
-<th>好</th>
-<th>坏</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>小有收益</td>
-<td>四级没过</td>
-</tr>
-<tr>
-<td>打入外卖</td>
-<td>没报四级</td>
-</tr>
-<tr>
-<td>理论力学成绩还行</td>
-<td>工时没做</td>
-</tr>
-<tr>
-<td>看了很多电影</td>
-<td>没有参加比赛</td>
-</tr>
-<tr>
-<td>开了新坑</td>
-<td>崴脚</td>
-</tr>
-<tr>
-<td>尝试了兼职</td>
-<td>但没要我</td>
-</tr>
-<tr>
-<td>书尽量读了三本</td>
-<td>热工不行</td>
-</tr>
-<tr>
-<td>…</td>
-<td>…</td>
-</tr>
-</tbody></table>
-<p>这样单纯的分析利弊好像又没什么意思啊，人单纯就是想看些主观的思考，但说实话我越来越懒了，厌倦思考。所以，如果，真的需要我说点什么的话，我觉得这是幸福的一学期，没有什么大富大贵，但至少无病无灾，在我看来已经极其幸运的了，至少在我活过的十几年里，算是第一梯队的一学期。<br>未来逐渐到来，过去逐渐远去。<br>希望假期能把挖的坑填上，提前祝大家新年快乐。</p>
-<p>3.23修补了一下后台配置。</p>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/35baf9b8.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -3115,7 +3081,7 @@ The key fingerprint is:
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -3126,7 +3092,7 @@ The key fingerprint is:
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -3240,7 +3206,7 @@ setInterval("createtime()",250);
 </script>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共17.9k字</span>
+  <span class="post-count">全站共21.9k字</span>
 </div>
 
         
