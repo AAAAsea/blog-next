@@ -1816,6 +1816,23 @@ table th:nth-of-type(4) {
       </tags>
   </entry>
   <entry>
+    <title>electron学习笔记</title>
+    <url>/post/5f7056f2.html</url>
+    <content><![CDATA[<h1 id="记录一下学习electron的坑"><a href="#记录一下学习electron的坑" class="headerlink" title="记录一下学习electron的坑"></a>记录一下学习electron的坑</h1><ol>
+<li>require is not defined<br> 在12版本往后，同时设置<code>nodeIntegration: true</code>及<code>contextIsolation: false</code>解决该问题！</li>
+<li>cannot read property ‘BrowserWindow’ of undefined<br> 在原有的基础上配置<code>enableRemoteModule:true</code></li>
+<li>打包<br> <code>electron-packager . HelloWorld --win --out ../HelloWorldApp --arch=x64 --electron-ersion=1.0.0 --electron-version=12.0.4</code></li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>notes</tag>
+        <tag>electron</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>PHP学习笔记</title>
     <url>/post/55d182ea.html</url>
     <content><![CDATA[<blockquote>

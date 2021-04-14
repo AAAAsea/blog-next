@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://asea.fun/"/>
-  <updated>2021-04-13T08:47:11.000Z</updated>
+  <updated>2021-04-14T15:39:15.000Z</updated>
   <id>https://asea.fun/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>electron学习笔记</title>
+    <link href="https://asea.fun/post/5f7056f2.html"/>
+    <id>https://asea.fun/post/5f7056f2.html</id>
+    <published>2021-04-14T14:59:41.000Z</published>
+    <updated>2021-04-14T15:39:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="记录一下学习electron的坑"><a href="#记录一下学习electron的坑" class="headerlink" title="记录一下学习electron的坑"></a>记录一下学习electron的坑</h1><ol><li>require is not defined<br> 在12版本往后，同时设置<code>nodeIntegration: true</code>及<code>contextIsolation: false</code>解决该问题！</li><li>cannot read property ‘BrowserWindow’ of undefined<br> 在原有的基础上配置<code>enableRemoteModule:true</code></li><li>打包<br> <code>electron-packager . HelloWorld --win --out ../HelloWorldApp --arch=x64 --electron-ersion=1.0.0 --electron-version=12.0.4</code></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;记录一下学习electron的坑&quot;&gt;&lt;a href=&quot;#记录一下学习electron的坑&quot; class=&quot;headerlink&quot; title=&quot;记录一下学习electron的坑&quot;&gt;&lt;/a&gt;记录一下学习electron的坑&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;require is not defined&lt;br&gt; 在12版本往后，同时设置&lt;code&gt;nodeIntegration: true&lt;/code&gt;及&lt;code&gt;contextIsolation: false&lt;/code&gt;解决该问题！&lt;/li&gt;
+&lt;li&gt;cannot read property ‘BrowserWindow’ of undefined&lt;br&gt; 在原有的基础上配置&lt;code&gt;enableRemoteModule:true&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;打包&lt;br&gt; &lt;code&gt;electron-packager . HelloWorld --win --out ../HelloWorldApp --arch=x64 --electron-ersion=1.0.0 --electron-version=12.0.4&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="https://asea.fun/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="notes" scheme="https://asea.fun/tags/notes/"/>
+    
+      <category term="electron" scheme="https://asea.fun/tags/electron/"/>
+    
+  </entry>
   
   <entry>
     <title>PHP学习笔记</title>
@@ -2496,37 +2526,6 @@ table th:nth-of-type(4) {
     
     
       <category term="literature" scheme="https://asea.fun/tags/literature/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>部署技巧</title>
-    <link href="https://asea.fun/post/c4266d98.html"/>
-    <id>https://asea.fun/post/c4266d98.html</id>
-    <published>2020-11-28T04:15:52.000Z</published>
-    <updated>2021-02-28T15:36:17.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="hexo-clean-amp-amp-hexo-generate-amp-amp-hexo-deploy-三命令统一"><a href="#hexo-clean-amp-amp-hexo-generate-amp-amp-hexo-deploy-三命令统一" class="headerlink" title="hexo clean&amp;&amp;hexo generate&amp;&amp;hexo deploy 三命令统一"></a>hexo clean&amp;&amp;hexo generate&amp;&amp;hexo deploy 三命令统一</h1><p>可在根目录下建立bat文件，写入“hexo clean&amp;&amp;hexo generate&amp;&amp;hexo deploy”或简洁点“hexo cl&amp;hexo g&amp;hexo d（注意：如果装了豆瓣插件则必须用hexo deploy）”。<br>以后部署只用在命令行敲入你bat的文件名即可执行。</p><h1 id="关于deploy每次都要输入账号密码的问题"><a href="#关于deploy每次都要输入账号密码的问题" class="headerlink" title="关于deploy每次都要输入账号密码的问题"></a>关于deploy每次都要输入账号密码的问题</h1><p>博主已经尝试了SSH，但还是需要输入密码（账号可以不用输入）。</p><h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><p>修改_config.yml，将部署方式从https方式修改为ssh方式。</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https:&#x2F;&#x2F;github.com&#x2F;XXXXXX&#x2F;XXXXXX.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure><p>修改为</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:XXXXXX&#x2F;XXXXXX.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure><h2 id="教程已更新，可去更新贴查看其它操作。"><a href="#教程已更新，可去更新贴查看其它操作。" class="headerlink" title="教程已更新，可去更新贴查看其它操作。"></a>教程已更新，可去更新贴查看其它操作。</h2>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;hexo-clean-amp-amp-hexo-generate-amp-amp-hexo-deploy-三命令统一&quot;&gt;&lt;a href=&quot;#hexo-clean-amp-amp-hexo-generate-amp-amp-hexo-deploy-三命令统一&quot; class=&quot;headerlink&quot; title=&quot;hexo clean&amp;amp;&amp;amp;hexo generate&amp;amp;&amp;amp;hexo deploy 三命令统一&quot;&gt;&lt;/a&gt;hexo clean&amp;amp;&amp;amp;hexo generate&amp;amp;&amp;amp;hexo deploy 三命令统一&lt;/h1&gt;&lt;p&gt;可在根目录下建立bat文件，写入“hexo clean&amp;amp;&amp;amp;hexo generate&amp;amp;&amp;amp;hexo deploy”或简洁点“hexo cl&amp;amp;hexo g&amp;amp;hexo d（注意：如果装了豆瓣插件则必须用hexo deploy）”。&lt;br&gt;以后部署只用在命令行敲入你bat的文件名即可执行。&lt;/p&gt;
-&lt;h1 id=&quot;关于deploy每次都要输入账号密码的问题&quot;&gt;&lt;a href=&quot;#关于deploy每次都要输入账号密码的问题&quot; class=&quot;headerlink&quot; title=&quot;关于deploy每次都要输入账号密码的问题&quot;&gt;&lt;/a&gt;关于deploy每次都要输入账号密码的问题&lt;/h1&gt;&lt;p&gt;博主已经尝试了SSH，但还是需要输入密码（账号可以不用输入）。&lt;/p&gt;
-&lt;h2 id=&quot;操作&quot;&gt;&lt;a href=&quot;#操作&quot; class=&quot;headerlink&quot; title=&quot;操作&quot;&gt;&lt;/a&gt;操作&lt;/h2&gt;&lt;p&gt;修改_config.yml，将部署方式从https方式修改为ssh方式。&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# Deployment&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;## Docs: https:&amp;#x2F;&amp;#x2F;hexo.io&amp;#x2F;docs&amp;#x2F;deployment.html&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;deploy:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  type: git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  repository: https:&amp;#x2F;&amp;#x2F;github.com&amp;#x2F;XXXXXX&amp;#x2F;XXXXXX.github.io.git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  branch: master&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;修改为&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# Deployment&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;## Docs: https:&amp;#x2F;&amp;#x2F;hexo.io&amp;#x2F;docs&amp;#x2F;deployment.html&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;deploy:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  type: git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  repository: git@github.com:XXXXXX&amp;#x2F;XXXXXX.github.io.git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  branch: master&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;教程已更新，可去更新贴查看其它操作。&quot;&gt;&lt;a href=&quot;#教程已更新，可去更新贴查看其它操作。&quot; class=&quot;headerlink&quot; title=&quot;教程已更新，可去更新贴查看其它操作。&quot;&gt;&lt;/a&gt;教程已更新，可去更新贴查看其它操作。&lt;/h2&gt;
-    
-    </summary>
-    
-    
-      <category term="技术" scheme="https://asea.fun/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="deploy" scheme="https://asea.fun/tags/deploy/"/>
-    
-      <category term="hexo" scheme="https://asea.fun/tags/hexo/"/>
     
   </entry>
   
