@@ -75,6 +75,7 @@
 <li>当需要查看浏览器的密码输入框里面的密码时，可以审查元素将<code>type</code>改成<code>text</code>就可以显示了。</li>
 <li>浏览器快捷键：录屏<code>ctrl+alt+s</code>  元素检查<code>ctrl+shift+c</code></li>
 <li>云服务器上python发送邮件连接失败：<code>smtp = smtplib.SMTP(mailserver,port=25)</code>修改成<code>smtp=smtplib.SMTP_SSL(mailserver,port=465)</code>。</li>
+<li>word表格转excel可以通过html作为中转。</li>
 </ul>
 </blockquote>
 ]]></content>
@@ -1816,16 +1817,28 @@ table th:nth-of-type(4) {
       </tags>
   </entry>
   <entry>
+    <title>我的记忆只有一扇门</title>
+    <url>/post/7e086bda.html</url>
+    <content><![CDATA[<p>我总是在打算干正事的时候发现很多有趣的事情，于是开始陷入对某些旧事的反思。我时常感到我有些笨，我故意起了个“<strong>我的记忆只有一扇门</strong>”这样的标题，看起来能让世俗更有气质。<br>不写东西几近半年，我已经很久没有用文学的头脑去思考问题了，随之而来的，我丢掉了很多独特的情感，包括对某种<strong>亲情的憎恶</strong>、<strong>爱情的崇尚</strong>、<strong>世俗的感叹</strong>。我看过去的我就像是秋天的虫子，四足渐僵。<br>我感到很遗憾，在忘记某本书是谁送的时候：<strong>梦里有人告诉我说，我看好你，你很棒的，我也不再多夸你了，你受到的称赞一定不会少。</strong>但是都很飘渺，就在身边绕来绕去，半径越来越大。这真令人遗憾，我在摆脱一种生活的同时，也摆脱掉了无数珍宝，甚至是我多年前唯一的宝藏。而我又在不断挖掘新的宝藏，这然我感到充实，可我每当停下来的时候却又很失落，我正处于上一代货币被淘汰，而无处兑换新的货币的时候。哪些财富离我而去，同时对我嗤之以鼻。<br>记忆只有一扇门，要门往里进，要么往外出，我发现我印在瓶子上的话就像是个咒，我深知多年以前的担忧，却毫无办法，我活成了另一个样子：<strong>过去和未来不兼得，我忘了回忆过去，也不会想往未来。</strong><br>但是当我停下来的时候，我又有一种感受，那就是我拥有了前前后后的所有。<br>我几分钟前打算联系一位好友，当我打了三行字后才盯着它的名字看了半天，我越看越陌生，直到我一点也认不出它。我大概明白，我们正在互相远离。我也不知道很多过去怎么和现下链接。<br>所以只好删除所有文字，<strong>再把记忆之门开到另一个方向。</strong></p>
+]]></content>
+      <categories>
+        <category>文学</category>
+      </categories>
+      <tags>
+        <tag>literature</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>electron学习笔记</title>
     <url>/post/5f7056f2.html</url>
     <content><![CDATA[<h1 id="记录一下学习electron的坑"><a href="#记录一下学习electron的坑" class="headerlink" title="记录一下学习electron的坑"></a>记录一下学习electron的坑</h1><ol>
 <li>require is not defined<br> 在12版本往后，同时设置<code>nodeIntegration: true</code>及<code>contextIsolation: false</code>解决该问题！</li>
 <li>cannot read property ‘BrowserWindow’ of undefined<br> 在原有的基础上配置<code>enableRemoteModule:true</code></li>
-<li>打包<br> <code>electron-packager . HelloWorld --win --out ../HelloWorldApp --arch=x64 --electron-ersion=1.0.0 --electron-version=12.0.4</code></li>
+<li>打包<br> <code>electron-packager . HelloWorld --win --out ../HelloWorldApp --arch=x64 --electron-ersion=1.0.0 --electron-version=12.0.4</code><br> 貌似下载下来一个包要放到哪里来着。。。</li>
 </ol>
 ]]></content>
       <categories>
-        <category>技术</category>
+        <category>笔记</category>
       </categories>
       <tags>
         <tag>notes</tag>
