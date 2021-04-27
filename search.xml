@@ -4,7 +4,7 @@
     <title>更新帖</title>
     <url>/post/2ee0f961.html</url>
     <content><![CDATA[<h2 id="这里记录网站更新内容"><a href="#这里记录网站更新内容" class="headerlink" title="这里记录网站更新内容"></a><font color="#495969">这里记录网站更新内容</font></h2><blockquote>
-<p>想要及时收到网站更新的邮件提醒可在下方留言处留下你的邮箱。</p>
+<p>本贴更新不及时，想要及时收到网站更新的邮件提醒可在下方留言处留下你的邮箱。</p>
 </blockquote>
 <div class="tabs" id><ul class="nav-tabs"><li class="tab active"><a href="#-1">Butterfly主题更新内容</a></li><li class="tab"><a href="#-2">Next主题更新内容</a></li></ul><div class="tab-content"><div class="tab-pane active" id="-1"><table><tr><td bgcolor="#f1f5ec">
 
@@ -25,7 +25,8 @@
 <li><em>2021-03-20</em><br>使用python增加博客更新邮件提醒功能<br>使用python增加自动修改本贴的更新时间功能<br>更新post<a href="https://blog.asea.fun/post/c00b24b1.html">《python笔记》</a></li>
 <li><em>2021-03-27</em><br>更新post<a href="https://blog.asea.fun/post/c00b24b1.html">《python笔记》</a><br>发布post<a href="https://blog.asea.fun/post/71485f5b.html">《python项目练习》</a></li>
 <li><em>2021-03-30</em><br>调整代码块为默认不展开<br>更新post<a href="https://blog.asea.fun/post/71485f5b.html">《python项目练习》</a><br>更新post<a href="https://blog.asea.fun/post/cf7f39c3.html">《技术贴》</a>；</li>
-<li><em>2021-04-07</em><br>Butterfly博客上线到服务器，因为懒得备案，所以只能用IP地址了。<a href="http://39.103.144.114">地址</a></li></ul></td></tr></table>
+<li><em>2021-04-07</em><br>Butterfly博客上线到服务器，因为懒得备案，所以只能用IP地址了。<a href="http://39.103.144.114">地址</a></li>
+<li><em>2021-04-27</em><br>最近更新的几篇post没来得及放更新帖<br><a href="https://blog.asea.fun/post/55d182ea.html">PHP学习笔记</a><br><a href="https://blog.asea.fun/post/5f7056f2.html">electron学习笔记</a><br><a href="https://blog.asea.fun/post/7e086bda.html">我的记忆只有一扇门</a></li></ul></td></tr></table>
 
 
 </div><div class="tab-pane" id="-2"><table><tr><td bgcolor="#f6f5ec">
@@ -45,7 +46,8 @@
 <li><em>2021-03-13</em><br>更新post<a href="https://next.asea.fun/post/c00b24b1.html">《python笔记》</a><br>修改本页样式</li>
 <li><em>2021-03-20</em><br>使用python增加博客更新邮件提醒功能<br>使用python增加博客更新邮件提醒功能<br>更新post<a href="https://next.asea.fun/post/c00b24b1.html">《python笔记》</a></li>
 <li><em>2021-03-27</em><br>更新post<a href="https://next.asea.fun/post/c00b24b1.html">《python笔记》</a><br>发布post<a href="https://next.asea.fun/post/71485f5b.html">《python项目练习》</a></li>
-<li><em>2021-03-30</em><br>调整代码块为默认不展开<br>更新post<a href="https://next.asea.fun/post/71485f5b.html">《python项目练习》</a><br>更新post<a href="https://next.asea.fun/post/cf7f39c3.html">《技术贴》</a>；
+<li><em>2021-03-30</em><br>调整代码块为默认不展开<br>更新post<a href="https://next.asea.fun/post/71485f5b.html">《python项目练习》</a><br>更新post<a href="https://next.asea.fun/post/cf7f39c3.html">《技术贴》</a></li>
+<li><em>2021-04-27</em><br>最近更新的几篇post没来得及放更新帖<br><a href="https://next.asea.fun/post/55d182ea.html">PHP学习笔记</a><br><a href="https://next.asea.fun/post/5f7056f2.html">electron学习笔记</a><br><a href="https://next.asea.fun/post/7e086bda.html">我的记忆只有一扇门</a>
 </li>
 </div></div></div>
 
@@ -1814,6 +1816,33 @@ table th:nth-of-type(4) {
       </categories>
       <tags>
         <tag>tools</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>node学习笔记</title>
+    <url>/post/129264f1.html</url>
+    <content><![CDATA[<h1 id="Node初步学习（后端入门）"><a href="#Node初步学习（后端入门）" class="headerlink" title="Node初步学习（后端入门）"></a>Node初步学习（后端入门）</h1><h2 id="基础入门"><a href="#基础入门" class="headerlink" title="基础入门"></a>基础入门</h2><ol>
+<li>node安装</li>
+<li>node运行js文件<h2 id="模块使用之fs"><a href="#模块使用之fs" class="headerlink" title="模块使用之fs"></a>模块使用之fs</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>)</span><br><span class="line"><span class="comment">// 写文件</span></span><br><span class="line">fs.writeFile(path,data,<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 读文件</span></span><br><span class="line">fs.readFile(path,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="模块使用之http"><a href="#模块使用之http" class="headerlink" title="模块使用之http"></a>模块使用之http</h2><h3 id="基本使用方法"><a href="#基本使用方法" class="headerlink" title="基本使用方法"></a>基本使用方法</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>)</span><br><span class="line"><span class="keyword">var</span> server = http.createServer()</span><br><span class="line"><span class="comment">// 绑定事件</span></span><br><span class="line">server.on(<span class="string">&#x27;request&#x27;</span>,<span class="function"><span class="title">funtion</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 根据不同路径返回不同response</span></span><br><span class="line">    <span class="keyword">if</span> (url = <span class="string">&#x27;/index&#x27;</span>)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(res.url)</span><br><span class="line">        <span class="comment">// 需要end结束，不太常用</span></span><br><span class="line">        res.write(<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line">        res.end</span><br><span class="line">        <span class="comment">// 一般不用write</span></span><br><span class="line">        res.end(<span class="string">&#x27;hhh&#x27;</span>) <span class="comment">// 只能是字符串，可以用json. stringify()</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 绑定端口号，启动服务器</span></span><br><span class="line">server.listen()</span><br></pre></td></tr></table></figure>
+<h3 id="关于content-type"><a href="#关于content-type" class="headerlink" title="关于content-type"></a>关于content-type</h3><code>res.setHeader(&#39;Content-Type&#39;,&#39;text/plain;charset-utf-8&#39;)</code><br>具体类型可参照<a href="https://tool.oschina.net/commons">此处链接</a><h2 id="引用自己的模块"><a href="#引用自己的模块" class="headerlink" title="引用自己的模块"></a>引用自己的模块</h2><!-- 核心模块os不讲了 -->
+
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 自制模块，需要用到exports对象，设定不同的属性值达到跨文件引用变量目的</span></span><br><span class="line"><span class="built_in">exports</span>.name = <span class="string">&#x27;Doge&#x27;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 引用模块</span></span><br><span class="line"><span class="keyword">var</span> myModule = <span class="built_in">require</span>(<span class="string">&#x27;./a.js&#x27;</span>) <span class="comment">// 后缀可以省略</span></span><br><span class="line"><span class="built_in">console</span>.log(a.name) <span class="comment">// 输出Dog</span></span><br></pre></td></tr></table></figure>
+<h2 id="代码风格"><a href="#代码风格" class="headerlink" title="代码风格"></a>代码风格</h2><ol>
+<li>JavaScript Style要求tab两个空格</li>
+<li>一般结尾不加<code>;</code> 某些特殊情况要加（很不常见）<h2 id="模板引擎"><a href="#模板引擎" class="headerlink" title="模板引擎"></a>模板引擎</h2></li>
+</ol>
+<p><strong>art-template</strong><br><code>npm install art-template</code><br>暂时跳过</p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>notes</tag>
+        <tag>node</tag>
       </tags>
   </entry>
   <entry>
