@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://asea.fun/"/>
-  <updated>2021-05-05T14:54:39.000Z</updated>
+  <updated>2021-05-06T13:25:52.000Z</updated>
   <id>https://asea.fun/</id>
   
   <author>
@@ -17,11 +17,106 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Github进不去解决方法</title>
+    <link href="https://asea.fun/post/3345821.html"/>
+    <id>https://asea.fun/post/3345821.html</id>
+    <published>2021-05-06T13:23:47.000Z</published>
+    <updated>2021-05-06T13:25:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Github进不去解决方法"><a href="#Github进不去解决方法" class="headerlink" title="Github进不去解决方法"></a>Github进不去解决方法</h1><p>按以下方法修改hosts文件，注意hosts文件只有在管理员权限下才可以修改，hosts文件所在目录为:</p><p>C:\Windows\System32\drivers\etc\hosts，注意修改右下角显示所有文件才可以看到。</p><p><a href="https://www.ipaddress.com/ip-lookup用此网站查找github.com和github.global.ssl.fastly.net对应的ip，然后添加hosts文件以下内容：">https://www.ipaddress.com/ip-lookup用此网站查找github.com和github.global.ssl.fastly.net对应的ip，然后添加hosts文件以下内容：</a></p><p>github.com的ip    github.com</p><p>github.global.ssl.fastly.net的ip    github.global.ssl.fastly.net</p><p> 注意添加的ip要是你自己本机查到的，用网上其他人查到的可能不管用</p><p>————————————————</p><p>版权声明：本文为CSDN博主「w͏l͏j͏」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。</p><p><a href="https://blog.csdn.net/qq_40624026/article/details/107704677">原文链接</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Github进不去解决方法&quot;&gt;&lt;a href=&quot;#Github进不去解决方法&quot; class=&quot;headerlink&quot; title=&quot;Github进不去解决方法&quot;&gt;&lt;/a&gt;Github进不去解决方法&lt;/h1&gt;&lt;p&gt;按以下方法修改hosts文件，注意hosts文件只有在管理员权限下才可以修改，hosts文件所在目录为:&lt;/p&gt;
+&lt;p&gt;C:\Windows\System32\drivers\etc\hosts，注意修改右下角显示所有文件才可以看到。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.ipaddress.com/ip-lookup用此网站查找github.com和github.global.ssl.fastly.net对应的ip，然后添加hosts文件以下内容：&quot;&gt;https://www.ipaddress.com/ip-lookup用此网站查找github.com和github.global.ssl.fastly.net对应的ip，然后添加hosts文件以下内容：&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;github.com的ip    github.com&lt;/p&gt;
+&lt;p&gt;github.global.ssl.fastly.net的ip    github.global.ssl.fastly.net&lt;/p&gt;
+&lt;p&gt; 注意添加的ip要是你自己本机查到的，用网上其他人查到的可能不管用&lt;/p&gt;
+&lt;p&gt;————————————————&lt;/p&gt;
+&lt;p&gt;版权声明：本文为CSDN博主「w͏l͏j͏」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/qq_40624026/article/details/107704677&quot;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="https://asea.fun/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="github" scheme="https://asea.fun/tags/github/"/>
+    
+  </entry>
+  
+  <entry>
     <title>数据结构学习笔记</title>
     <link href="https://asea.fun/post/31bf2518.html"/>
     <id>https://asea.fun/post/31bf2518.html</id>
     <published>2021-05-05T14:54:39.000Z</published>
     <updated>2021-05-05T14:54:39.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="数据结构学习笔记"><a href="#数据结构学习笔记" class="headerlink" title="数据结构学习笔记"></a>数据结构学习笔记</h1><h2 id="认识数据"><a href="#认识数据" class="headerlink" title="认识数据"></a>认识数据</h2><ul><li>数据</li><li>数据对象（<em>同一类数据元素的集合</em>）</li><li>数据元素（<em>研究的最小的一个整体</em>）</li><li>数据项（<em>数据元素的最小构成单位</em>）</li></ul><h2 id="数据结构分类"><a href="#数据结构分类" class="headerlink" title="数据结构分类"></a>数据结构分类</h2><ol><li>数据结构主要研究其<strong>逻辑结构</strong>、<strong>物理结构</strong>、及其<strong>运算</strong>。</li><li>逻辑结构<ol><li>划分一<ul><li>线性结构（<em>有且仅有一个开始和一个终端结点，并且所有结点都最多只有一个直接前趋和一个直接后继。</em>）<ul><li>线性表</li><li>栈</li><li>队列</li><li>串</li></ul></li><li>非线性结构（<em>一个结点可能有多个直接前趋和直接后继</em>）<ul><li>树</li><li>图</li></ul></li></ul></li><li>划分二<ul><li>集合结构（<em>结构中的数据元素之间除了同属于一个集合的关系外，无任何其它关系。</em>）</li><li>线性结构（<em>结构中的数据元素之间存在着一对一的线性关系。</em>）</li><li>树形结构（<em>结构中的数据元素之间存在着一对多的层次关系。</em>）</li><li>图/网状结构 （<em>结构中的数据元素之间存在着多对多的任意关系。</em>）</li></ul></li></ol></li><li>存储结构<ol><li>顺序存储结构（<em>用一组连续的存储单鹂依次存储数据元素，数据元素之间的逻辑关系由元素的存储位置来表示。*</em>C语言中用数组来实现顺序存储结构***）</li><li>链式存储结构（<em>用一组任意的存储单元存储数据元素，数据元素之间的逻辑关系用指针来表示。*</em>C中用指针来实现链式存储结构***）</li><li><em>索引存储结构</em></li><li><em>散列存储结构</em></li></ol></li></ol><h2 id><a href="#" class="headerlink" title></a></h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;数据结构学习笔记&quot;&gt;&lt;a href=&quot;#数据结构学习笔记&quot; class=&quot;headerlink&quot; title=&quot;数据结构学习笔记&quot;&gt;&lt;/a&gt;数据结构学习笔记&lt;/h1&gt;&lt;h2 id=&quot;认识数据&quot;&gt;&lt;a href=&quot;#认识数据&quot; class=&quot;headerlink&quot; title=&quot;认识数据&quot;&gt;&lt;/a&gt;认识数据&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;数据&lt;/li&gt;
+&lt;li&gt;数据对象（&lt;em&gt;同一类数据元素的集合&lt;/em&gt;）&lt;/li&gt;
+&lt;li&gt;数据元素（&lt;em&gt;研究的最小的一个整体&lt;/em&gt;）&lt;/li&gt;
+&lt;li&gt;数据项（&lt;em&gt;数据元素的最小构成单位&lt;/em&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;数据结构分类&quot;&gt;&lt;a href=&quot;#数据结构分类&quot; class=&quot;headerlink&quot; title=&quot;数据结构分类&quot;&gt;&lt;/a&gt;数据结构分类&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;数据结构主要研究其&lt;strong&gt;逻辑结构&lt;/strong&gt;、&lt;strong&gt;物理结构&lt;/strong&gt;、及其&lt;strong&gt;运算&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;逻辑结构&lt;ol&gt;
+&lt;li&gt;划分一&lt;ul&gt;
+&lt;li&gt;线性结构（&lt;em&gt;有且仅有一个开始和一个终端结点，并且所有结点都最多只有一个直接前趋和一个直接后继。&lt;/em&gt;）&lt;ul&gt;
+&lt;li&gt;线性表&lt;/li&gt;
+&lt;li&gt;栈&lt;/li&gt;
+&lt;li&gt;队列&lt;/li&gt;
+&lt;li&gt;串&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;非线性结构（&lt;em&gt;一个结点可能有多个直接前趋和直接后继&lt;/em&gt;）&lt;ul&gt;
+&lt;li&gt;树&lt;/li&gt;
+&lt;li&gt;图&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;划分二&lt;ul&gt;
+&lt;li&gt;集合结构（&lt;em&gt;结构中的数据元素之间除了同属于一个集合的关系外，无任何其它关系。&lt;/em&gt;）&lt;/li&gt;
+&lt;li&gt;线性结构（&lt;em&gt;结构中的数据元素之间存在着一对一的线性关系。&lt;/em&gt;）&lt;/li&gt;
+&lt;li&gt;树形结构（&lt;em&gt;结构中的数据元素之间存在着一对多的层次关系。&lt;/em&gt;）&lt;/li&gt;
+&lt;li&gt;图/网状结构 （&lt;em&gt;结构中的数据元素之间存在着多对多的任意关系。&lt;/em&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;存储结构&lt;ol&gt;
+&lt;li&gt;顺序存储结构（&lt;em&gt;用一组连续的存储单鹂依次存储数据元素，数据元素之间的逻辑关系由元素的存储位置来表示。*&lt;/em&gt;C语言中用数组来实现顺序存储结构***）&lt;/li&gt;
+&lt;li&gt;链式存储结构（&lt;em&gt;用一组任意的存储单元存储数据元素，数据元素之间的逻辑关系用指针来表示。*&lt;/em&gt;C中用指针来实现链式存储结构***）&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;索引存储结构&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;散列存储结构&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title&gt;&lt;/a&gt;&lt;/h2&gt;
+    
+    </summary>
+    
+    
+      <category term="笔记" scheme="https://asea.fun/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="数据结构" scheme="https://asea.fun/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构学习笔记</title>
+    <link href="https://asea.fun/post/31bf2518.html"/>
+    <id>https://asea.fun/post/31bf2518.html</id>
+    <published>2021-05-05T14:54:39.000Z</published>
+    <updated>2021-05-05T15:32:51.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="数据结构学习笔记"><a href="#数据结构学习笔记" class="headerlink" title="数据结构学习笔记"></a>数据结构学习笔记</h1><h2 id="认识数据"><a href="#认识数据" class="headerlink" title="认识数据"></a>认识数据</h2><ul><li>数据</li><li>数据对象（<em>同一类数据元素的集合</em>）</li><li>数据元素（<em>研究的最小的一个整体</em>）</li><li>数据项（<em>数据元素的最小构成单位</em>）</li></ul><h2 id="数据结构分类"><a href="#数据结构分类" class="headerlink" title="数据结构分类"></a>数据结构分类</h2><ol><li>数据结构主要研究其<strong>逻辑结构</strong>、<strong>物理结构</strong>、及其<strong>运算</strong>。</li><li>逻辑结构<ol><li>划分一<ul><li>线性结构（<em>有且仅有一个开始和一个终端结点，并且所有结点都最多只有一个直接前趋和一个直接后继。</em>）<ul><li>线性表</li><li>栈</li><li>队列</li><li>串</li></ul></li><li>非线性结构（<em>一个结点可能有多个直接前趋和直接后继</em>）<ul><li>树</li><li>图</li></ul></li></ul></li><li>划分二<ul><li>集合结构（<em>结构中的数据元素之间除了同属于一个集合的关系外，无任何其它关系。</em>）</li><li>线性结构（<em>结构中的数据元素之间存在着一对一的线性关系。</em>）</li><li>树形结构（<em>结构中的数据元素之间存在着一对多的层次关系。</em>）</li><li>图/网状结构 （<em>结构中的数据元素之间存在着多对多的任意关系。</em>）</li></ul></li></ol></li><li>存储结构<ol><li>顺序存储结构（<em>用一组连续的存储单鹂依次存储数据元素，数据元素之间的逻辑关系由元素的存储位置来表示。*</em>C语言中用数组来实现顺序存储结构***）</li><li>链式存储结构（<em>用一组任意的存储单元存储数据元素，数据元素之间的逻辑关系用指针来表示。*</em>C中用指针来实现链式存储结构***）</li><li><em>索引存储结构</em></li><li><em>散列存储结构</em></li></ol></li></ol><h2 id><a href="#" class="headerlink" title></a></h2>]]></content>
     
@@ -716,114 +811,6 @@ The key fingerprint is:
 &lt;/center&gt;
 
 &lt;h1 id=&quot;冷暖&quot;&gt;&lt;a href=&quot;#冷暖&quot; class=&quot;headerlink&quot; title=&quot;冷暖&quot;&gt;&lt;/a&gt;冷暖&lt;/h1&gt;
-    
-    </summary>
-    
-    
-      <category term="日常" scheme="https://asea.fun/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    
-      <category term="life" scheme="https://asea.fun/tags/life/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>技术贴</title>
-    <link href="https://asea.fun/post/cf7f39c3.html"/>
-    <id>https://asea.fun/post/cf7f39c3.html</id>
-    <published>2021-01-19T17:10:21.000Z</published>
-    <updated>2021-04-17T16:14:06.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="这里收录一些小技巧"><a href="#这里收录一些小技巧" class="headerlink" title="这里收录一些小技巧"></a><font color="#495969">这里收录一些小技巧</font></h2><blockquote><ul><li>网页长截图可以F12——&gt;Ctrl Shift P——&gt;Capture full size screenshot</li><li>new post 的格式在root\scafflods里面修改</li><li>利用bat快速生成newpost,可以参考<br><code>hexo new post newpost&amp;&amp;code E:\blog\source\_posts\newpost.md&amp;&amp;rd E:\blog\source\_posts\newpost</code></li><li>在微软输入法设置里面可以添加自定义短语，例如我输入sj，自动弹出当前时间，具体格式:<code>%yyyy%-%MM%-%dd% %HH%:%mm%:%ss%</code>。</li><li>win10 突然发现某些地方的图标字体变得很大，和分辨率不匹配，可能是因为开机时连接了hdmi线所致，可以拔掉hdmi线然后重启。</li><li>obs录屏如果显卡和节能都调过了，但是某一天突然有黑屏，可以去图形设置里面把obs删了，重新添加一下，因为某些原因可能导致文件路径出错。</li><li>转载csdn的博客：复制<code>&lt;div id=&quot;article_content&quot;&gt;...&lt;/div&gt;</code>里的html代码，粘贴到md文件里就行。</li><li>bilibili等视频网站自定义倍速播放：如在浏览器控制台输入<code>document.getElementsByTagName(&quot;video&quot;)[0].playbackRate = 3</code></li><li>gulp压缩参考：<a href="https://blog.csdn.net/GerZhouGengCheng/article/details/106074545">使用Gulp压缩Hexo博客静态资源</a>,imagemin可能比较慢，不报错的话建议耐心点。</li><li>放个订阅地址：<a href="https://l.dabai.pw/link/z2SMogEehRtWyNWq?sub=3&extend=1">地址</a></li><li>当需要查看浏览器的密码输入框里面的密码时，可以审查元素将<code>type</code>改成<code>text</code>就可以显示了。</li><li>浏览器快捷键：录屏<code>ctrl+alt+s</code>  元素检查<code>ctrl+shift+c</code></li><li>云服务器上python发送邮件连接失败：<code>smtp = smtplib.SMTP(mailserver,port=25)</code>修改成<code>smtp=smtplib.SMTP_SSL(mailserver,port=465)</code>。</li><li>word表格转excel可以通过html作为中转。</li></ul></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;这里收录一些小技巧&quot;&gt;&lt;a href=&quot;#这里收录一些小技巧&quot; class=&quot;headerlink&quot; title=&quot;这里收录一些小技巧&quot;&gt;&lt;/a&gt;&lt;font color=&quot;#495969&quot;&gt;这里收录一些小技巧&lt;/font&gt;&lt;/h2&gt;&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;网页长截图可以F12——&amp;gt;Ctrl Shift P——&amp;gt;Capture full size screenshot&lt;/li&gt;
-&lt;li&gt;new post 的格式在root\scafflods里面修改&lt;/li&gt;
-&lt;li&gt;利用bat快速生成newpost,可以参考&lt;br&gt;&lt;code&gt;hexo new post newpost&amp;amp;&amp;amp;code E:\blog\source\_posts\newpost.md&amp;amp;&amp;amp;rd E:\blog\source\_posts\newpost&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;在微软输入法设置里面可以添加自定义短语，例如我输入sj，自动弹出当前时间，具体格式:&lt;code&gt;%yyyy%-%MM%-%dd% %HH%:%mm%:%ss%&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;win10 突然发现某些地方的图标字体变得很大，和分辨率不匹配，可能是因为开机时连接了hdmi线所致，可以拔掉hdmi线然后重启。&lt;/li&gt;
-&lt;li&gt;obs录屏如果显卡和节能都调过了，但是某一天突然有黑屏，可以去图形设置里面把obs删了，重新添加一下，因为某些原因可能导致文件路径出错。&lt;/li&gt;
-&lt;li&gt;转载csdn的博客：复制&lt;code&gt;&amp;lt;div id=&amp;quot;article_content&amp;quot;&amp;gt;...&amp;lt;/div&amp;gt;&lt;/code&gt;里的html代码，粘贴到md文件里就行。&lt;/li&gt;
-&lt;li&gt;bilibili等视频网站自定义倍速播放：如在浏览器控制台输入&lt;code&gt;document.getElementsByTagName(&amp;quot;video&amp;quot;)[0].playbackRate = 3&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;gulp压缩参考：&lt;a href=&quot;https://blog.csdn.net/GerZhouGengCheng/article/details/106074545&quot;&gt;使用Gulp压缩Hexo博客静态资源&lt;/a&gt;,imagemin可能比较慢，不报错的话建议耐心点。&lt;/li&gt;
-&lt;li&gt;放个订阅地址：&lt;a href=&quot;https://l.dabai.pw/link/z2SMogEehRtWyNWq?sub=3&amp;extend=1&quot;&gt;地址&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;当需要查看浏览器的密码输入框里面的密码时，可以审查元素将&lt;code&gt;type&lt;/code&gt;改成&lt;code&gt;text&lt;/code&gt;就可以显示了。&lt;/li&gt;
-&lt;li&gt;浏览器快捷键：录屏&lt;code&gt;ctrl+alt+s&lt;/code&gt;  元素检查&lt;code&gt;ctrl+shift+c&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;云服务器上python发送邮件连接失败：&lt;code&gt;smtp = smtplib.SMTP(mailserver,port=25)&lt;/code&gt;修改成&lt;code&gt;smtp=smtplib.SMTP_SSL(mailserver,port=465)&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;word表格转excel可以通过html作为中转。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-
-    
-    </summary>
-    
-    
-      <category term="技术" scheme="https://asea.fun/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="tools" scheme="https://asea.fun/tags/tools/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2021年的大瓜</title>
-    <link href="https://asea.fun/post/35baf9b8.html"/>
-    <id>https://asea.fun/post/35baf9b8.html</id>
-    <published>2021-01-19T12:45:06.000Z</published>
-    <updated>2021-03-23T14:08:58.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="🍉"><a href="#🍉" class="headerlink" title="🍉"></a>🍉</h2><p>不追星，但喜欢一种仪式感。体现在对薛之谦新歌的期待，尽管不好听；体现在关注的某个up更新；体现在他刚好符合我的某个理想中的状态，这算不算追星？不算吧，顶多是从生活里找乐子，也是一种临时逃避生活的借口。<br>当开始认真关注一些人，目标不限于室友，囊括偶像在内的所有人，都会开始发现，对方比你了解的复杂很多。接着我会对就近的采取策略，而且还卓有成效。至于远处诗和远方，偶像不是诗和远方，充其量是个载体，没了载体理想依然能存在。我回想起来高中搬个凳子在狭小的厕所里写日记，有段时间话题无不关于陆之昂立夏几人。说白了就是我把很大一部分纯粹放在电视剧里，放在其中某个人身上了，但绝不是演员身上。这种纯粹每个人或多或少都有一些，而且纯粹的载体是随着时间不断更迭不断推陈的。我发现年龄增长带来了纯粹的减少，但好在记忆还在，它独有的积累效果不言而喻，多年以前的两平米里的冷和感动至今历历在目。这些很珍贵。<br>这两天的爆料很雷人，但我没难过。我又发现一些小的道理：当一个人的能力越来越大，就越来越容易干坏事。想起来限制与自由的论述，恰好符合。身为普通人，幻想着腰缠万贯或者惨遭封禁都是遥不可及的事情，而当有一天你发现你已经腰缠万贯，这时候就要十分警惕，你是否要悬崖勒马，甚至调个头往回走几步了。<br>这是一点想法。</p><h2 id="✍"><a href="#✍" class="headerlink" title="✍"></a>✍</h2><p>考试结束一直都很想找个机会总结一下这一学年，但是没安下心，一直在补漏下的娱乐。很久没有一个人呆在一个地方了，这样的感觉和高考前两天颇相似，但是却有着截然不同的使命。<br>很多人都总结的很到位，我显然就暗淡很多，不要抱多大希望。<br>这一学年还是没什么可说的，我太没兴趣了，列个表格。</p><table><thead><tr><th>好</th><th>坏</th></tr></thead><tbody><tr><td>小有收益</td><td>四级没过</td></tr><tr><td>打入外卖</td><td>没报四级</td></tr><tr><td>理论力学成绩还行</td><td>工时没做</td></tr><tr><td>看了很多电影</td><td>没有参加比赛</td></tr><tr><td>开了新坑</td><td>崴脚</td></tr><tr><td>尝试了兼职</td><td>但没要我</td></tr><tr><td>书尽量读了三本</td><td>热工不行</td></tr><tr><td>…</td><td>…</td></tr></tbody></table><p>这样单纯的分析利弊好像又没什么意思啊，人单纯就是想看些主观的思考，但说实话我越来越懒了，厌倦思考。所以，如果，真的需要我说点什么的话，我觉得这是幸福的一学期，没有什么大富大贵，但至少无病无灾，在我看来已经极其幸运的了，至少在我活过的十几年里，算是第一梯队的一学期。<br>未来逐渐到来，过去逐渐远去。<br>希望假期能把挖的坑填上，提前祝大家新年快乐。</p><p>3.23修补了一下后台配置。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;🍉&quot;&gt;&lt;a href=&quot;#🍉&quot; class=&quot;headerlink&quot; title=&quot;🍉&quot;&gt;&lt;/a&gt;🍉&lt;/h2&gt;&lt;p&gt;不追星，但喜欢一种仪式感。体现在对薛之谦新歌的期待，尽管不好听；体现在关注的某个up更新；体现在他刚好符合我的某个理想中的状态，这算不算追星？不算吧，顶多是从生活里找乐子，也是一种临时逃避生活的借口。&lt;br&gt;当开始认真关注一些人，目标不限于室友，囊括偶像在内的所有人，都会开始发现，对方比你了解的复杂很多。接着我会对就近的采取策略，而且还卓有成效。至于远处诗和远方，偶像不是诗和远方，充其量是个载体，没了载体理想依然能存在。我回想起来高中搬个凳子在狭小的厕所里写日记，有段时间话题无不关于陆之昂立夏几人。说白了就是我把很大一部分纯粹放在电视剧里，放在其中某个人身上了，但绝不是演员身上。这种纯粹每个人或多或少都有一些，而且纯粹的载体是随着时间不断更迭不断推陈的。我发现年龄增长带来了纯粹的减少，但好在记忆还在，它独有的积累效果不言而喻，多年以前的两平米里的冷和感动至今历历在目。这些很珍贵。&lt;br&gt;这两天的爆料很雷人，但我没难过。我又发现一些小的道理：当一个人的能力越来越大，就越来越容易干坏事。想起来限制与自由的论述，恰好符合。身为普通人，幻想着腰缠万贯或者惨遭封禁都是遥不可及的事情，而当有一天你发现你已经腰缠万贯，这时候就要十分警惕，你是否要悬崖勒马，甚至调个头往回走几步了。&lt;br&gt;这是一点想法。&lt;/p&gt;
-&lt;h2 id=&quot;✍&quot;&gt;&lt;a href=&quot;#✍&quot; class=&quot;headerlink&quot; title=&quot;✍&quot;&gt;&lt;/a&gt;✍&lt;/h2&gt;&lt;p&gt;考试结束一直都很想找个机会总结一下这一学年，但是没安下心，一直在补漏下的娱乐。很久没有一个人呆在一个地方了，这样的感觉和高考前两天颇相似，但是却有着截然不同的使命。&lt;br&gt;很多人都总结的很到位，我显然就暗淡很多，不要抱多大希望。&lt;br&gt;这一学年还是没什么可说的，我太没兴趣了，列个表格。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;好&lt;/th&gt;
-&lt;th&gt;坏&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;小有收益&lt;/td&gt;
-&lt;td&gt;四级没过&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;打入外卖&lt;/td&gt;
-&lt;td&gt;没报四级&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;理论力学成绩还行&lt;/td&gt;
-&lt;td&gt;工时没做&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;看了很多电影&lt;/td&gt;
-&lt;td&gt;没有参加比赛&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;开了新坑&lt;/td&gt;
-&lt;td&gt;崴脚&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;尝试了兼职&lt;/td&gt;
-&lt;td&gt;但没要我&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;书尽量读了三本&lt;/td&gt;
-&lt;td&gt;热工不行&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;…&lt;/td&gt;
-&lt;td&gt;…&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;p&gt;这样单纯的分析利弊好像又没什么意思啊，人单纯就是想看些主观的思考，但说实话我越来越懒了，厌倦思考。所以，如果，真的需要我说点什么的话，我觉得这是幸福的一学期，没有什么大富大贵，但至少无病无灾，在我看来已经极其幸运的了，至少在我活过的十几年里，算是第一梯队的一学期。&lt;br&gt;未来逐渐到来，过去逐渐远去。&lt;br&gt;希望假期能把挖的坑填上，提前祝大家新年快乐。&lt;/p&gt;
-&lt;p&gt;3.23修补了一下后台配置。&lt;/p&gt;
-
     
     </summary>
     
