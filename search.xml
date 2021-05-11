@@ -1820,6 +1820,34 @@ table th:nth-of-type(4) {
       </tags>
   </entry>
   <entry>
+    <title>关于部署机器人到linux的一些记录</title>
+    <url>/post/b3542778.html</url>
+    <content><![CDATA[<h1 id="一下是我踩的坑（不完全记录）"><a href="#一下是我踩的坑（不完全记录）" class="headerlink" title="一下是我踩的坑（不完全记录）"></a>一下是我踩的坑（不完全记录）</h1><h2 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h2><ol>
+<li>从阿里云控制台直接登录（更换系统的时候可以直接选择设置好root和pw）</li>
+<li>putty登录（我没怎么用，阿里云的网页登录居然很不错！待会再说）<h2 id="文件传输"><a href="#文件传输" class="headerlink" title="文件传输"></a>文件传输</h2></li>
+<li>利用软件<code>winscp</code>，此处感谢zjy的帮助！！</li>
+<li>不过用貌似有时候winscp和putty会断掉，可以自行百度一下怎么长时间保持连接…<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install openjdk-8-jre-headless</span><br></pre></td></tr></table></figure>
+安装完之后<code>java -version</code>可以查看版本<h3 id="python"><a href="#python" class="headerlink" title="python"></a>python</h3><blockquote>
+<p>应该是有预装python的，输入<code>python</code>可以检测，<code>exit()</code>退出<br>更新版本</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$sudo apt-get update</span><br><span class="line">$sudo apt-get install python3.8</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><blockquote>
+<p>由于需要同时运行多个程序，具体可以参考<a href="https://www.jb51.net/article/165417.htm">在Linux中查看及终止正在运行的后台程序方法</a><br>但是，我看了一会觉得好麻烦！这时，我发现了阿里云远程连接的网页端居然可以多开terminal，还有各种布局，太奈斯了！<br>于是直接两个terminal搭好环境，运行<code>bot.py</code>哈哈哈，不行！缺少module（意料之中）…</p>
+</blockquote>
+<h3 id="安装库"><a href="#安装库" class="headerlink" title="安装库"></a>安装库</h3><p>我发现居然没有<code>pip</code>，那就装<br><code>sudo apt install python3-pip</code><br>重新运行<code>bot.py</code>，然后看着报错一个一个模块装，最后成功！<br>下面我要去搞我的<code>selenium</code>了，这又是个大坑…</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>robot</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>部署robot+selenium的坑</title>
     <url>/post/90946297.html</url>
     <content><![CDATA[<h1 id="记录一下部署robot-selenium的坑"><a href="#记录一下部署robot-selenium的坑" class="headerlink" title="记录一下部署robot+selenium的坑"></a>记录一下部署robot+selenium的坑</h1><ol>

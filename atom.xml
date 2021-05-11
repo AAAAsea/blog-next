@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://asea.fun/"/>
-  <updated>2021-05-09T16:27:22.000Z</updated>
+  <updated>2021-05-11T08:02:11.000Z</updated>
   <id>https://asea.fun/</id>
   
   <author>
@@ -15,6 +15,47 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于部署机器人到linux的一些记录</title>
+    <link href="https://asea.fun/post/b3542778.html"/>
+    <id>https://asea.fun/post/b3542778.html</id>
+    <published>2021-05-11T07:45:01.000Z</published>
+    <updated>2021-05-11T08:02:11.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一下是我踩的坑（不完全记录）"><a href="#一下是我踩的坑（不完全记录）" class="headerlink" title="一下是我踩的坑（不完全记录）"></a>一下是我踩的坑（不完全记录）</h1><h2 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h2><ol><li>从阿里云控制台直接登录（更换系统的时候可以直接选择设置好root和pw）</li><li>putty登录（我没怎么用，阿里云的网页登录居然很不错！待会再说）<h2 id="文件传输"><a href="#文件传输" class="headerlink" title="文件传输"></a>文件传输</h2></li><li>利用软件<code>winscp</code>，此处感谢zjy的帮助！！</li><li>不过用貌似有时候winscp和putty会断掉，可以自行百度一下怎么长时间保持连接…<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install openjdk-8-jre-headless</span><br></pre></td></tr></table></figure>安装完之后<code>java -version</code>可以查看版本<h3 id="python"><a href="#python" class="headerlink" title="python"></a>python</h3><blockquote><p>应该是有预装python的，输入<code>python</code>可以检测，<code>exit()</code>退出<br>更新版本</p></blockquote><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$sudo apt-get update</span><br><span class="line">$sudo apt-get install python3.8</span><br></pre></td></tr></table></figure></li></ol><h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><blockquote><p>由于需要同时运行多个程序，具体可以参考<a href="https://www.jb51.net/article/165417.htm">在Linux中查看及终止正在运行的后台程序方法</a><br>但是，我看了一会觉得好麻烦！这时，我发现了阿里云远程连接的网页端居然可以多开terminal，还有各种布局，太奈斯了！<br>于是直接两个terminal搭好环境，运行<code>bot.py</code>哈哈哈，不行！缺少module（意料之中）…</p></blockquote><h3 id="安装库"><a href="#安装库" class="headerlink" title="安装库"></a>安装库</h3><p>我发现居然没有<code>pip</code>，那就装<br><code>sudo apt install python3-pip</code><br>重新运行<code>bot.py</code>，然后看着报错一个一个模块装，最后成功！<br>下面我要去搞我的<code>selenium</code>了，这又是个大坑…</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;一下是我踩的坑（不完全记录）&quot;&gt;&lt;a href=&quot;#一下是我踩的坑（不完全记录）&quot; class=&quot;headerlink&quot; title=&quot;一下是我踩的坑（不完全记录）&quot;&gt;&lt;/a&gt;一下是我踩的坑（不完全记录）&lt;/h1&gt;&lt;h2 id=&quot;登录&quot;&gt;&lt;a href=&quot;#登录&quot; class=&quot;headerlink&quot; title=&quot;登录&quot;&gt;&lt;/a&gt;登录&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;从阿里云控制台直接登录（更换系统的时候可以直接选择设置好root和pw）&lt;/li&gt;
+&lt;li&gt;putty登录（我没怎么用，阿里云的网页登录居然很不错！待会再说）&lt;h2 id=&quot;文件传输&quot;&gt;&lt;a href=&quot;#文件传输&quot; class=&quot;headerlink&quot; title=&quot;文件传输&quot;&gt;&lt;/a&gt;文件传输&lt;/h2&gt;&lt;/li&gt;
+&lt;li&gt;利用软件&lt;code&gt;winscp&lt;/code&gt;，此处感谢zjy的帮助！！&lt;/li&gt;
+&lt;li&gt;不过用貌似有时候winscp和putty会断掉，可以自行百度一下怎么长时间保持连接…&lt;h2 id=&quot;环境搭建&quot;&gt;&lt;a href=&quot;#环境搭建&quot; class=&quot;headerlink&quot; title=&quot;环境搭建&quot;&gt;&lt;/a&gt;环境搭建&lt;/h2&gt;&lt;h3 id=&quot;Java&quot;&gt;&lt;a href=&quot;#Java&quot; class=&quot;headerlink&quot; title=&quot;Java&quot;&gt;&lt;/a&gt;Java&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt install openjdk-8-jre-headless&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+安装完之后&lt;code&gt;java -version&lt;/code&gt;可以查看版本&lt;h3 id=&quot;python&quot;&gt;&lt;a href=&quot;#python&quot; class=&quot;headerlink&quot; title=&quot;python&quot;&gt;&lt;/a&gt;python&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;应该是有预装python的，输入&lt;code&gt;python&lt;/code&gt;可以检测，&lt;code&gt;exit()&lt;/code&gt;退出&lt;br&gt;更新版本&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$sudo apt-get update&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$sudo apt-get install python3.8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;运行&quot;&gt;&lt;a href=&quot;#运行&quot; class=&quot;headerlink&quot; title=&quot;运行&quot;&gt;&lt;/a&gt;运行&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;由于需要同时运行多个程序，具体可以参考&lt;a href=&quot;https://www.jb51.net/article/165417.htm&quot;&gt;在Linux中查看及终止正在运行的后台程序方法&lt;/a&gt;&lt;br&gt;但是，我看了一会觉得好麻烦！这时，我发现了阿里云远程连接的网页端居然可以多开terminal，还有各种布局，太奈斯了！&lt;br&gt;于是直接两个terminal搭好环境，运行&lt;code&gt;bot.py&lt;/code&gt;哈哈哈，不行！缺少module（意料之中）…&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;安装库&quot;&gt;&lt;a href=&quot;#安装库&quot; class=&quot;headerlink&quot; title=&quot;安装库&quot;&gt;&lt;/a&gt;安装库&lt;/h3&gt;&lt;p&gt;我发现居然没有&lt;code&gt;pip&lt;/code&gt;，那就装&lt;br&gt;&lt;code&gt;sudo apt install python3-pip&lt;/code&gt;&lt;br&gt;重新运行&lt;code&gt;bot.py&lt;/code&gt;，然后看着报错一个一个模块装，最后成功！&lt;br&gt;下面我要去搞我的&lt;code&gt;selenium&lt;/code&gt;了，这又是个大坑…&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="https://asea.fun/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="linux" scheme="https://asea.fun/tags/linux/"/>
+    
+      <category term="robot" scheme="https://asea.fun/tags/robot/"/>
+    
+  </entry>
   
   <entry>
     <title>部署robot+selenium的坑</title>
@@ -27,11 +68,14 @@
     
     <summary type="html">
     
-      记录一下部署robot+selenium的坑
- 1. no module ... cv2.cv2
-    SOLUTION: pip uninstall opencv-python``pip install opencv-python
- 2. ...tensorflow
-    SOLUTION: pip uninstall tensorflow``pip install tensorflow其余相关问题例如numpy等都可以通过重装模块解决。
+      &lt;h1 id=&quot;记录一下部署robot-selenium的坑&quot;&gt;&lt;a href=&quot;#记录一下部署robot-selenium的坑&quot; class=&quot;headerlink&quot; title=&quot;记录一下部署robot+selenium的坑&quot;&gt;&lt;/a&gt;记录一下部署robot+selenium的坑&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;no module ... cv2.cv2&lt;/code&gt;&lt;br&gt;&lt;strong&gt;SOLUTION&lt;/strong&gt;: &lt;code&gt;pip uninstall opencv-python``pip install opencv-python&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;...tensorflow&lt;/code&gt;&lt;br&gt;&lt;strong&gt;SOLUTION&lt;/strong&gt;: &lt;code&gt;pip uninstall tensorflow``pip install tensorflow&lt;/code&gt;&lt;blockquote&gt;
+&lt;p&gt;其余相关问题例如&lt;code&gt;numpy&lt;/code&gt;等都可以通过重装模块解决。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
     
     </summary>
     
@@ -60,27 +104,19 @@
     
     <summary type="html">
     
-      本文作者： YOOZIKI
-本文链接： https://yooziki.github.io/2020/08/297095/
+      &lt;blockquote&gt;
+&lt;p&gt;本文作者： YOOZIKI&lt;br&gt; 本文链接： &lt;a href=&quot;https://yooziki.github.io/2020/08/297095/&quot;&gt;https://yooziki.github.io/2020/08/297095/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Python版本：py37&quot;&gt;&lt;a href=&quot;#Python版本：py37&quot; class=&quot;headerlink&quot; title=&quot;Python版本：py37&quot;&gt;&lt;/a&gt;Python版本：py37&lt;/h2&gt;&lt;p&gt;安装相关模块，&lt;a href=&quot;https://github.com/GraiaProject/Application&quot;&gt;源码在这里&lt;/a&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pip install graia-application-mirai&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pip install graia-broadcast --upgrade&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pip install singledispatchmethod&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-Python版本：py37
-安装相关模块，源码在这里
+&lt;p&gt;添加选择器子模块&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pip install graia-component-selector&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-pip install graia-application-mirai
-pip install graia-broadcast --upgrade
-pip install singledispatchmethod
-
-
-添加选择器子模块
-
-pip install graia-component-selector
-
-
-mirai环境配置
-自定义方式(推荐)
-在mirai仓库中的shadow下找到对应的包体并下载
-
-如果
+&lt;h2 id=&quot;mirai环境配置&quot;&gt;&lt;a href=&quot;#mirai环境配置&quot; class=&quot;headerlink&quot; title=&quot;mirai环境配置&quot;&gt;&lt;/a&gt;mirai环境配置&lt;/h2&gt;&lt;h3 id=&quot;自定义方式-推荐&quot;&gt;&lt;a href=&quot;#自定义方式-推荐&quot; class=&quot;headerlink&quot; title=&quot;自定义方式(推荐)&quot;&gt;&lt;/a&gt;自定义方式(推荐)&lt;/h3&gt;&lt;p&gt;在&lt;a href=&quot;https://github.com/project-mirai/mirai-repo&quot;&gt;mirai仓库中&lt;/a&gt;的&lt;code&gt;shadow&lt;/code&gt;下找到对应的包体并下载&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果出现无法下载的情况下载文件时将&lt;a href=&quot;https://github.com替换成http://github-proxy.yobot.win即可&quot;&gt;https://github.com替换成http://github-proxy.yobot.win即可&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
@@ -107,20 +143,24 @@ mirai环境配置
     
     <summary type="html">
     
-      目前涉猎内容
-简单记录一下自己目前所了解到的知识
+      &lt;h1 id=&quot;目前涉猎内容&quot;&gt;&lt;a href=&quot;#目前涉猎内容&quot; class=&quot;headerlink&quot; title=&quot;目前涉猎内容&quot;&gt;&lt;/a&gt;目前涉猎内容&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;简单记录一下自己目前所了解到的知识&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;hexo个人博客&lt;/li&gt;
+&lt;li&gt;cocoscreater开发的小游戏&lt;/li&gt;
+&lt;li&gt;前端三剑客入门&lt;/li&gt;
+&lt;li&gt;计算机二级证书&lt;/li&gt;
+&lt;li&gt;python做的几个桌面应用&lt;ol&gt;
+&lt;li&gt;百度网盘链接提取器&lt;/li&gt;
+&lt;li&gt;文件批量处理工具&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;学习通作业提醒、博客更新提醒&lt;/li&gt;
+&lt;li&gt;基于mirai和graia的qq机器人（集成包括作业提醒的功能）&lt;/li&gt;
+&lt;li&gt;微信小程序（起步）&lt;/li&gt;
+&lt;/ol&gt;
 
- 1. hexo个人博客
- 2. cocoscreater开发的小游戏
- 3. 前端三剑客入门
- 4. 计算机二级证书
- 5. python做的几个桌面应用 1. 百度网盘链接提取器
-     2. 文件批量处理工具
-    
-    
- 6. 学习通作业提醒、博客更新提醒
- 7. 基于mirai和graia的qq机器人（集成包括作业提醒的功能）
- 8. 微信小程序（起步）
     
     </summary>
     
@@ -143,16 +183,15 @@ mirai环境配置
     
     <summary type="html">
     
-      Github进不去解决方法
-按以下方法修改hosts文件，注意hosts文件只有在管理员权限下才可以修改，hosts文件所在目录为:
-
-C:\Windows\System32\drivers\etc\hosts，注意修改右下角显示所有文件才可以看到。
-
-https://www.ipaddress.com/ip-lookup用此网站查找github.com和github.global.ssl.fastly.net对应的ip，然后添加hosts文件以下内容：
-
-github.com的ip github.com
-
-github.global.ssl.fastly.net的ip github.glob
+      &lt;h1 id=&quot;Github进不去解决方法&quot;&gt;&lt;a href=&quot;#Github进不去解决方法&quot; class=&quot;headerlink&quot; title=&quot;Github进不去解决方法&quot;&gt;&lt;/a&gt;Github进不去解决方法&lt;/h1&gt;&lt;p&gt;按以下方法修改hosts文件，注意hosts文件只有在管理员权限下才可以修改，hosts文件所在目录为:&lt;/p&gt;
+&lt;p&gt;C:\Windows\System32\drivers\etc\hosts，注意修改右下角显示所有文件才可以看到。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.ipaddress.com/ip-lookup用此网站查找github.com和github.global.ssl.fastly.net对应的ip，然后添加hosts文件以下内容：&quot;&gt;https://www.ipaddress.com/ip-lookup用此网站查找github.com和github.global.ssl.fastly.net对应的ip，然后添加hosts文件以下内容：&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;github.com的ip    github.com&lt;/p&gt;
+&lt;p&gt;github.global.ssl.fastly.net的ip    github.global.ssl.fastly.net&lt;/p&gt;
+&lt;p&gt; 注意添加的ip要是你自己本机查到的，用网上其他人查到的可能不管用&lt;/p&gt;
+&lt;p&gt;————————————————&lt;/p&gt;
+&lt;p&gt;版权声明：本文为CSDN博主「w͏l͏j͏」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/qq_40624026/article/details/107704677&quot;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
@@ -175,22 +214,48 @@ github.global.ssl.fastly.net的ip github.glob
     
     <summary type="html">
     
-      数据结构学习笔记
-认识数据
- * 数据
- * 数据对象（同一类数据元素的集合）
- * 数据元素（研究的最小的一个整体）
- * 数据项（数据元素的最小构成单位）
-
-数据结构分类
- 1. 数据结构主要研究其逻辑结构、物理结构、及其运算。
- 2. 逻辑结构 1. 划分一 * 线性结构（有且仅有一个开始和一个终端结点，并且所有结点都最多只有一个直接前趋和一个直接后继。） * 线性表
-            * 栈
-            * 队列
-            * 串
-           
-           
-         * 非线性结构（一个结点可能有多个直接前趋和直接后继） *
+      &lt;h1 id=&quot;数据结构学习笔记&quot;&gt;&lt;a href=&quot;#数据结构学习笔记&quot; class=&quot;headerlink&quot; title=&quot;数据结构学习笔记&quot;&gt;&lt;/a&gt;数据结构学习笔记&lt;/h1&gt;&lt;h2 id=&quot;认识数据&quot;&gt;&lt;a href=&quot;#认识数据&quot; class=&quot;headerlink&quot; title=&quot;认识数据&quot;&gt;&lt;/a&gt;认识数据&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;数据&lt;/li&gt;
+&lt;li&gt;数据对象（&lt;em&gt;同一类数据元素的集合&lt;/em&gt;）&lt;/li&gt;
+&lt;li&gt;数据元素（&lt;em&gt;研究的最小的一个整体&lt;/em&gt;）&lt;/li&gt;
+&lt;li&gt;数据项（&lt;em&gt;数据元素的最小构成单位&lt;/em&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;数据结构分类&quot;&gt;&lt;a href=&quot;#数据结构分类&quot; class=&quot;headerlink&quot; title=&quot;数据结构分类&quot;&gt;&lt;/a&gt;数据结构分类&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;数据结构主要研究其&lt;strong&gt;逻辑结构&lt;/strong&gt;、&lt;strong&gt;物理结构&lt;/strong&gt;、及其&lt;strong&gt;运算&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;逻辑结构&lt;ol&gt;
+&lt;li&gt;划分一&lt;ul&gt;
+&lt;li&gt;线性结构（&lt;em&gt;有且仅有一个开始和一个终端结点，并且所有结点都最多只有一个直接前趋和一个直接后继。&lt;/em&gt;）&lt;ul&gt;
+&lt;li&gt;线性表&lt;/li&gt;
+&lt;li&gt;栈&lt;/li&gt;
+&lt;li&gt;队列&lt;/li&gt;
+&lt;li&gt;串&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;非线性结构（&lt;em&gt;一个结点可能有多个直接前趋和直接后继&lt;/em&gt;）&lt;ul&gt;
+&lt;li&gt;树&lt;/li&gt;
+&lt;li&gt;图&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;划分二&lt;ul&gt;
+&lt;li&gt;集合结构（&lt;em&gt;结构中的数据元素之间除了同属于一个集合的关系外，无任何其它关系。&lt;/em&gt;）&lt;/li&gt;
+&lt;li&gt;线性结构（&lt;em&gt;结构中的数据元素之间存在着一对一的线性关系。&lt;/em&gt;）&lt;/li&gt;
+&lt;li&gt;树形结构（&lt;em&gt;结构中的数据元素之间存在着一对多的层次关系。&lt;/em&gt;）&lt;/li&gt;
+&lt;li&gt;图/网状结构 （&lt;em&gt;结构中的数据元素之间存在着多对多的任意关系。&lt;/em&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;存储结构&lt;ol&gt;
+&lt;li&gt;顺序存储结构（&lt;em&gt;用一组连续的存储单鹂依次存储数据元素，数据元素之间的逻辑关系由元素的存储位置来表示。*&lt;/em&gt;C语言中用数组来实现顺序存储结构***）&lt;/li&gt;
+&lt;li&gt;链式存储结构（&lt;em&gt;用一组任意的存储单元存储数据元素，数据元素之间的逻辑关系用指针来表示。*&lt;/em&gt;C中用指针来实现链式存储结构***）&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;索引存储结构&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;散列存储结构&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title&gt;&lt;/a&gt;&lt;/h2&gt;
     
     </summary>
     
@@ -213,22 +278,48 @@ github.global.ssl.fastly.net的ip github.glob
     
     <summary type="html">
     
-      数据结构学习笔记
-认识数据
- * 数据
- * 数据对象（同一类数据元素的集合）
- * 数据元素（研究的最小的一个整体）
- * 数据项（数据元素的最小构成单位）
-
-数据结构分类
- 1. 数据结构主要研究其逻辑结构、物理结构、及其运算。
- 2. 逻辑结构 1. 划分一 * 线性结构（有且仅有一个开始和一个终端结点，并且所有结点都最多只有一个直接前趋和一个直接后继。） * 线性表
-            * 栈
-            * 队列
-            * 串
-           
-           
-         * 非线性结构（一个结点可能有多个直接前趋和直接后继） *
+      &lt;h1 id=&quot;数据结构学习笔记&quot;&gt;&lt;a href=&quot;#数据结构学习笔记&quot; class=&quot;headerlink&quot; title=&quot;数据结构学习笔记&quot;&gt;&lt;/a&gt;数据结构学习笔记&lt;/h1&gt;&lt;h2 id=&quot;认识数据&quot;&gt;&lt;a href=&quot;#认识数据&quot; class=&quot;headerlink&quot; title=&quot;认识数据&quot;&gt;&lt;/a&gt;认识数据&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;数据&lt;/li&gt;
+&lt;li&gt;数据对象（&lt;em&gt;同一类数据元素的集合&lt;/em&gt;）&lt;/li&gt;
+&lt;li&gt;数据元素（&lt;em&gt;研究的最小的一个整体&lt;/em&gt;）&lt;/li&gt;
+&lt;li&gt;数据项（&lt;em&gt;数据元素的最小构成单位&lt;/em&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;数据结构分类&quot;&gt;&lt;a href=&quot;#数据结构分类&quot; class=&quot;headerlink&quot; title=&quot;数据结构分类&quot;&gt;&lt;/a&gt;数据结构分类&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;数据结构主要研究其&lt;strong&gt;逻辑结构&lt;/strong&gt;、&lt;strong&gt;物理结构&lt;/strong&gt;、及其&lt;strong&gt;运算&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;逻辑结构&lt;ol&gt;
+&lt;li&gt;划分一&lt;ul&gt;
+&lt;li&gt;线性结构（&lt;em&gt;有且仅有一个开始和一个终端结点，并且所有结点都最多只有一个直接前趋和一个直接后继。&lt;/em&gt;）&lt;ul&gt;
+&lt;li&gt;线性表&lt;/li&gt;
+&lt;li&gt;栈&lt;/li&gt;
+&lt;li&gt;队列&lt;/li&gt;
+&lt;li&gt;串&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;非线性结构（&lt;em&gt;一个结点可能有多个直接前趋和直接后继&lt;/em&gt;）&lt;ul&gt;
+&lt;li&gt;树&lt;/li&gt;
+&lt;li&gt;图&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;划分二&lt;ul&gt;
+&lt;li&gt;集合结构（&lt;em&gt;结构中的数据元素之间除了同属于一个集合的关系外，无任何其它关系。&lt;/em&gt;）&lt;/li&gt;
+&lt;li&gt;线性结构（&lt;em&gt;结构中的数据元素之间存在着一对一的线性关系。&lt;/em&gt;）&lt;/li&gt;
+&lt;li&gt;树形结构（&lt;em&gt;结构中的数据元素之间存在着一对多的层次关系。&lt;/em&gt;）&lt;/li&gt;
+&lt;li&gt;图/网状结构 （&lt;em&gt;结构中的数据元素之间存在着多对多的任意关系。&lt;/em&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;存储结构&lt;ol&gt;
+&lt;li&gt;顺序存储结构（&lt;em&gt;用一组连续的存储单鹂依次存储数据元素，数据元素之间的逻辑关系由元素的存储位置来表示。*&lt;/em&gt;C语言中用数组来实现顺序存储结构***）&lt;/li&gt;
+&lt;li&gt;链式存储结构（&lt;em&gt;用一组任意的存储单元存储数据元素，数据元素之间的逻辑关系用指针来表示。*&lt;/em&gt;C中用指针来实现链式存储结构***）&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;索引存储结构&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;散列存储结构&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title&gt;&lt;/a&gt;&lt;/h2&gt;
     
     </summary>
     
@@ -251,9 +342,9 @@ github.global.ssl.fastly.net的ip github.glob
     
     <summary type="html">
     
-      在生日过后记录些
-前两天忽然想起来《毕业缺海》那篇文章，于是又翻出来看了看，其中大概有一成的东西读来仿佛不属于我了，我知道这个比例会越来越大，但相较于其他篇算性能不错了。一晃而过，毕业到现在，还有一个多月便两年了，刚好是我从一个环境到另一个环境所需要的适应的时间。再多一年就会成为心里永远的壁垒了。
-农历生日过了十几年了，今年单独抽出来过了阳历生日，410总比317好听些，但是317实在太令人熟悉了，条件反射般的让我激灵。2021年的317，算是我主观意义上真正二十了，这一天极为平淡，上午两大节课，电工技术和机械原理都是再前半段集中注意力了，后面逐渐跑神，就再也没能回过来。下午互换性还算勉强抵抗
+      &lt;h2 id=&quot;在生日过后记录些&quot;&gt;&lt;a href=&quot;#在生日过后记录些&quot; class=&quot;headerlink&quot; title=&quot;在生日过后记录些&quot;&gt;&lt;/a&gt;在生日过后记录些&lt;/h2&gt;&lt;p&gt;前两天忽然想起来《毕业缺海》那篇文章，于是又翻出来看了看，其中大概有一成的东西读来仿佛不属于我了，我知道这个比例会越来越大，但相较于其他篇算性能不错了。一晃而过，毕业到现在，还有一个多月便两年了，刚好是我从一个环境到另一个环境所需要的适应的时间。再多一年就会成为心里永远的壁垒了。&lt;br&gt;农历生日过了十几年了，今年单独抽出来过了阳历生日，410总比317好听些，但是317实在太令人熟悉了，条件反射般的让我激灵。2021年的317，算是我主观意义上真正二十了，这一天极为平淡，上午两大节课，电工技术和机械原理都是再前半段集中注意力了，后面逐渐跑神，就再也没能回过来。下午互换性还算勉强抵抗困意，软件技术还是一如往常。这些事情不重要，所以只需要一笔带过。真正想要记录的有一些，例如：阿弥在我生日这天直播，我把qq飞车打上了星耀，买的拖鞋到了，会用浴花起沫洗头，会在vscode使用qq插件，我妈早上给我了500，奶奶在七点多就给我打了个电话（我到晚上才回过去），我爸发的红包里我和我妈抢到的竟然一模一样（这毕竟是我们母子二人的节日），作业基本搞定，两天后要出去玩一下，衣服洗好，床单更换，枕套更换，我对家的理解慢慢改善，家庭关系愈发融洽（我悟出来的解决方法就是像对待朋友一样对待他们）……&lt;br&gt;最近仿佛是在好起来。&lt;br&gt;仿佛我在阳历生日许下的心愿已经完成一二。&lt;br&gt;那这次生日许个什么愿呢，愿望是不能说出来的，但毕竟我写这些东西的时候，已经二十了，所以还是可以说的对吧？&lt;br&gt;所以，我真的希望，现阶段，转专业可以成功吧，之后便是投入计算机的努力（这是最好的结果，尽管可能性不是很大）。&lt;/p&gt;
+&lt;p&gt;再说点关于生日的吧，现在除了家人（大鹅也是家人）基本没人会跟我说生日快乐了。可能会有些失落，是不可控的那种失落。我想起来那个up过二十的时候录vlog了，还是很喜欢那样直抒胸臆的措辞和神态的，至少我做不出来，我还是很喜欢看别人快乐。&lt;br&gt;为什么说水漫二十呢，第一是有点上火喝了很多水；第二是水有时候很平静，就像这次的生日；第三是毕业缺海那篇，到现在我也没见到海；第四是过去稀里糊涂，二十算是上岸了吧。&lt;br&gt;太晚了，就不多写了。&lt;br&gt;&lt;strong&gt;anyway，goonigh~&lt;/strong&gt;&lt;/p&gt;
+
     
     </summary>
     
@@ -278,9 +369,9 @@ github.global.ssl.fastly.net的ip github.glob
     
     <summary type="html">
     
-      在生日过后记录些
-前两天忽然想起来《毕业缺海》那篇文章，于是又翻出来看了看，其中大概有一成的东西读来仿佛不属于我了，我知道这个比例会越来越大，但相较于其他篇算性能不错了。一晃而过，毕业到现在，还有一个多月便两年了，刚好是我从一个环境到另一个环境所需要的适应的时间。再多一年就会成为心里永远的壁垒了。
-农历生日过了十几年了，今年单独抽出来过了阳历生日，410总比317好听些，但是317实在太令人熟悉了，条件反射般的让我激灵。2021年的317，算是我主观意义上真正二十了，这一天极为平淡，上午两大节课，电工技术和机械原理都是再前半段集中注意力了，后面逐渐跑神，就再也没能回过来。下午互换性还算勉强抵抗
+      &lt;h2 id=&quot;在生日过后记录些&quot;&gt;&lt;a href=&quot;#在生日过后记录些&quot; class=&quot;headerlink&quot; title=&quot;在生日过后记录些&quot;&gt;&lt;/a&gt;在生日过后记录些&lt;/h2&gt;&lt;p&gt;前两天忽然想起来《毕业缺海》那篇文章，于是又翻出来看了看，其中大概有一成的东西读来仿佛不属于我了，我知道这个比例会越来越大，但相较于其他篇算性能不错了。一晃而过，毕业到现在，还有一个多月便两年了，刚好是我从一个环境到另一个环境所需要的适应的时间。再多一年就会成为心里永远的壁垒了。&lt;br&gt;农历生日过了十几年了，今年单独抽出来过了阳历生日，410总比317好听些，但是317实在太令人熟悉了，条件反射般的让我激灵。2021年的317，算是我主观意义上真正二十了，这一天极为平淡，上午两大节课，电工技术和机械原理都是再前半段集中注意力了，后面逐渐跑神，就再也没能回过来。下午互换性还算勉强抵抗困意，软件技术还是一如往常。这些事情不重要，所以只需要一笔带过。真正想要记录的有一些，例如：阿弥在我生日这天直播，我把qq飞车打上了星耀，买的拖鞋到了，会用浴花起沫洗头，会在vscode使用qq插件，我妈早上给我了500，奶奶在七点多就给我打了个电话（我到晚上才回过去），我爸发的红包里我和我妈抢到的竟然一模一样（这毕竟是我们母子二人的节日），作业基本搞定，两天后要出去玩一下，衣服洗好，床单更换，枕套更换，我对家的理解慢慢改善，家庭关系愈发融洽（我悟出来的解决方法就是像对待朋友一样对待他们）……&lt;br&gt;最近仿佛是在好起来。&lt;br&gt;仿佛我在阳历生日许下的心愿已经完成一二。&lt;br&gt;那这次生日许个什么愿呢，愿望是不能说出来的，但毕竟我写这些东西的时候，已经二十了，所以还是可以说的对吧？&lt;br&gt;所以，我真的希望，现阶段，转专业可以成功吧，之后便是投入计算机的努力（这是最好的结果，尽管可能性不是很大）。&lt;/p&gt;
+&lt;p&gt;再说点关于生日的吧，现在除了家人（大鹅也是家人）基本没人会跟我说生日快乐了。可能会有些失落，是不可控的那种失落。我想起来那个up过二十的时候录vlog了，还是很喜欢那样直抒胸臆的措辞和神态的，至少我做不出来，我还是很喜欢看别人快乐。&lt;br&gt;为什么说水漫二十呢，第一是有点上火喝了很多水；第二是水有时候很平静，就像这次的生日；第三是毕业缺海那篇，到现在我也没见到海；第四是过去稀里糊涂，二十算是上岸了吧。&lt;br&gt;太晚了，就不多写了。&lt;br&gt;&lt;strong&gt;anyway，goonigh~&lt;/strong&gt;&lt;/p&gt;
+
     
     </summary>
     
@@ -305,27 +396,17 @@ github.global.ssl.fastly.net的ip github.glob
     
     <summary type="html">
     
-      Node初步学习（后端入门）
-基础入门
- 1. node安装
- 2. node运行js文件模块使用之fs
-    var fs = require(&#39;fs&#39;)
-    // 写文件
-    fs.writeFile(path,data,function(err){
-    
-    })
-    // 读文件
-    fs.readFile(path,function(err,data){
-    
-    })
-    
-    
-    
+      &lt;h1 id=&quot;Node初步学习（后端入门）&quot;&gt;&lt;a href=&quot;#Node初步学习（后端入门）&quot; class=&quot;headerlink&quot; title=&quot;Node初步学习（后端入门）&quot;&gt;&lt;/a&gt;Node初步学习（后端入门）&lt;/h1&gt;&lt;h2 id=&quot;基础入门&quot;&gt;&lt;a href=&quot;#基础入门&quot; class=&quot;headerlink&quot; title=&quot;基础入门&quot;&gt;&lt;/a&gt;基础入门&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;node安装&lt;/li&gt;
+&lt;li&gt;node运行js文件&lt;h2 id=&quot;模块使用之fs&quot;&gt;&lt;a href=&quot;#模块使用之fs&quot; class=&quot;headerlink&quot; title=&quot;模块使用之fs&quot;&gt;&lt;/a&gt;模块使用之fs&lt;/h2&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; fs = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&amp;#x27;fs&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 写文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;fs.writeFile(path,data,&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;err&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 读文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;fs.readFile(path,&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;err,data&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-模块使用之http
-基本使用方法
-var http = require(&#39;http&#39;)
-var server = http.createServer(
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;模块使用之http&quot;&gt;&lt;a href=&quot;#模块使用之http&quot; class=&quot;headerlink&quot; title=&quot;模块使用之http&quot;&gt;&lt;/a&gt;模块使用之http&lt;/h2&gt;&lt;h3 id=&quot;基本使用方法&quot;&gt;&lt;a href=&quot;#基本使用方法&quot; class=&quot;headerlink&quot; title=&quot;基本使用方法&quot;&gt;&lt;/a&gt;基本使用方法&lt;/h3&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; http = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&amp;#x27;http&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; server = http.createServer()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 绑定事件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;server.on(&lt;span class=&quot;string&quot;&gt;&amp;#x27;request&amp;#x27;&lt;/span&gt;,&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;funtion&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;req,res&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 根据不同路径返回不同response&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (url = &lt;span class=&quot;string&quot;&gt;&amp;#x27;/index&amp;#x27;&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(res.url)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// 需要end结束，不太常用&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        res.write(&lt;span class=&quot;string&quot;&gt;&amp;#x27;hello&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        res.end&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// 一般不用write&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        res.end(&lt;span class=&quot;string&quot;&gt;&amp;#x27;hhh&amp;#x27;&lt;/span&gt;) &lt;span class=&quot;comment&quot;&gt;// 只能是字符串，可以用json. stringify()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 绑定端口号，启动服务器&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;server.listen()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;关于content-type&quot;&gt;&lt;a href=&quot;#关于content-type&quot; class=&quot;headerlink&quot; title=&quot;关于content-type&quot;&gt;&lt;/a&gt;关于content-type&lt;/h3&gt;&lt;p&gt;&lt;code&gt;res.setHeader(&amp;#39;Content-Type&amp;#39;,&amp;#39;text/plain;charset-utf-8&amp;#39;)&lt;/code&gt;&lt;br&gt;具体类型可参照&lt;a href=&quot;https://tool.oschina.net/commons&quot;&gt;此处链接&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;引用自己的模块&quot;&gt;&lt;a href=&quot;#引用自己的模块&quot; class=&quot;headerlink&quot; title=&quot;引用自己的模块&quot;&gt;&lt;/a&gt;引用自己的模块&lt;/h2&gt;&lt;!-- 核心模块os不讲了 --&gt;
+
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 自制模块，需要用到exports对象，设定不同的属性值达到跨文件引用变量目的&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;exports&lt;/span&gt;.name = &lt;span class=&quot;string&quot;&gt;&amp;#x27;Doge&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -350,9 +431,8 @@ var server = http.createServer(
     
     <summary type="html">
     
-      我总是在打算干正事的时候发现很多有趣的事情，于是开始陷入对某些旧事的反思。我时常感到我有些笨，我故意起了个“我的记忆只有一扇门”这样的标题，看起来能让世俗更有气质。
-不写东西几近半年，我已经很久没有用文学的头脑去思考问题了，随之而来的，我丢掉了很多独特的情感，包括对某种亲情的憎恶、爱情的崇尚、世俗的感叹。我看过去的我就像是秋天的虫子，四足渐僵。
-我感到很遗憾，在忘记某本书是谁送的时候：梦里有人告诉我说，我看好你，你很棒的，我也不再多夸你了，你受到的称赞一定不会少。但是都很飘渺，就在身边绕来绕去，半径越来越大。这真令人遗憾，我在摆脱一种生活的同时，也摆脱掉了无数珍宝，甚至是我多年前唯一的宝藏。而
+      &lt;p&gt;我总是在打算干正事的时候发现很多有趣的事情，于是开始陷入对某些旧事的反思。我时常感到我有些笨，我故意起了个“&lt;strong&gt;我的记忆只有一扇门&lt;/strong&gt;”这样的标题，看起来能让世俗更有气质。&lt;br&gt;不写东西几近半年，我已经很久没有用文学的头脑去思考问题了，随之而来的，我丢掉了很多独特的情感，包括对某种&lt;strong&gt;亲情的憎恶&lt;/strong&gt;、&lt;strong&gt;爱情的崇尚&lt;/strong&gt;、&lt;strong&gt;世俗的感叹&lt;/strong&gt;。我看过去的我就像是秋天的虫子，四足渐僵。&lt;br&gt;我感到很遗憾，在忘记某本书是谁送的时候：&lt;strong&gt;梦里有人告诉我说，我看好你，你很棒的，我也不再多夸你了，你受到的称赞一定不会少。&lt;/strong&gt;但是都很飘渺，就在身边绕来绕去，半径越来越大。这真令人遗憾，我在摆脱一种生活的同时，也摆脱掉了无数珍宝，甚至是我多年前唯一的宝藏。而我又在不断挖掘新的宝藏，这然我感到充实，可我每当停下来的时候却又很失落，我正处于上一代货币被淘汰，而无处兑换新的货币的时候。哪些财富离我而去，同时对我嗤之以鼻。&lt;br&gt;记忆只有一扇门，要门往里进，要么往外出，我发现我印在瓶子上的话就像是个咒，我深知多年以前的担忧，却毫无办法，我活成了另一个样子：&lt;strong&gt;过去和未来不兼得，我忘了回忆过去，也不会想往未来。&lt;/strong&gt;&lt;br&gt;但是当我停下来的时候，我又有一种感受，那就是我拥有了前前后后的所有。&lt;br&gt;我几分钟前打算联系一位好友，当我打了三行字后才盯着它的名字看了半天，我越看越陌生，直到我一点也认不出它。我大概明白，我们正在互相远离。我也不知道很多过去怎么和现下链接。&lt;br&gt;所以只好删除所有文字，&lt;strong&gt;再把记忆之门开到另一个方向。&lt;/strong&gt;&lt;/p&gt;
+
     
     </summary>
     
@@ -375,13 +455,12 @@ var server = http.createServer(
     
     <summary type="html">
     
-      记录一下学习electron的坑
- 1. require is not defined
-    在12版本往后，同时设置nodeIntegration: true及contextIsolation: false解决该问题！
- 2. cannot read property ‘BrowserWindow’ of undefined
-    在原有的基础上配置enableRemoteModule:true
- 3. 打包
-    electron-packager . HelloWorld --win --out ../HelloWorldApp --arch=x64 --electron-ersi
+      &lt;h1 id=&quot;记录一下学习electron的坑&quot;&gt;&lt;a href=&quot;#记录一下学习electron的坑&quot; class=&quot;headerlink&quot; title=&quot;记录一下学习electron的坑&quot;&gt;&lt;/a&gt;记录一下学习electron的坑&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;require is not defined&lt;br&gt; 在12版本往后，同时设置&lt;code&gt;nodeIntegration: true&lt;/code&gt;及&lt;code&gt;contextIsolation: false&lt;/code&gt;解决该问题！&lt;/li&gt;
+&lt;li&gt;cannot read property ‘BrowserWindow’ of undefined&lt;br&gt; 在原有的基础上配置&lt;code&gt;enableRemoteModule:true&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;打包&lt;br&gt; &lt;code&gt;electron-packager . HelloWorld --win --out ../HelloWorldApp --arch=x64 --electron-ersion=1.0.0 --electron-version=12.0.4&lt;/code&gt;&lt;br&gt; 貌似下载下来一个包要放到哪里来着。。。&lt;/li&gt;
+&lt;/ol&gt;
+
     
     </summary>
     
@@ -406,28 +485,65 @@ var server = http.createServer(
     
     <summary type="html">
     
-      以下是我最近学习php的笔记，主要记录自认为会遗忘的知识点
+      &lt;blockquote&gt;
+&lt;p&gt;以下是我最近学习php的笔记，主要记录自认为会遗忘的知识点&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;初识php&quot;&gt;&lt;a href=&quot;#初识php&quot; class=&quot;headerlink&quot; title=&quot;初识php&quot;&gt;&lt;/a&gt;初识php&lt;/h1&gt;&lt;p&gt;php是一种动态网站开发的脚本语言，有交互性，有数据的传递。&lt;/p&gt;
+&lt;h1 id=&quot;基本语法&quot;&gt;&lt;a href=&quot;#基本语法&quot; class=&quot;headerlink&quot; title=&quot;基本语法&quot;&gt;&lt;/a&gt;基本语法&lt;/h1&gt;&lt;h2 id=&quot;注意事项&quot;&gt;&lt;a href=&quot;#注意事项&quot; class=&quot;headerlink&quot; title=&quot;注意事项&quot;&gt;&lt;/a&gt;注意事项&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;标准语法&lt;code&gt;&amp;lt;?php php代码 ?&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;最后一句php语言可以不带结束符&lt;code&gt;;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;最后可以不写&lt;code&gt;?&amp;gt;&lt;/code&gt;，这样就可以避免读取最后的空行&lt;/li&gt;
+&lt;li&gt;行注释&lt;code&gt;//&lt;/code&gt;或&lt;code&gt;#&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;块注释&lt;code&gt;/* */&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;开始语法&quot;&gt;&lt;a href=&quot;#开始语法&quot; class=&quot;headerlink&quot; title=&quot;开始语法&quot;&gt;&lt;/a&gt;开始语法&lt;/h2&gt;&lt;h3 id=&quot;变量&quot;&gt;&lt;a href=&quot;#变量&quot; class=&quot;headerlink&quot; title=&quot;变量&quot;&gt;&lt;/a&gt;变量&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;声明&lt;br&gt;&lt;code&gt;$var1;&lt;/code&gt;或直接赋值&lt;code&gt;$var2 = 1;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;删除变量&lt;br&gt;&lt;code&gt;unset($var1);&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;命名规则&lt;ul&gt;
+&lt;li&gt;以$开始&lt;/li&gt;
+&lt;li&gt;由字母、数字、下划线组成，但不能以数字开始&lt;/li&gt;
+&lt;li&gt;支持中文变量（很不建议你懂的）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;预定义变量（均为数组类型）&lt;ul&gt;
+&lt;li&gt;$_GET: 获取所有表单以get方式提交的数据&lt;/li&gt;
+&lt;li&gt;$_POST: 提交的数据都会保存在此&lt;/li&gt;
+&lt;li&gt;$_REQUEST: GET和POST提交的都会保存&lt;/li&gt;
+&lt;li&gt;$GLOBALS: PHP钟所有的全局变量&lt;/li&gt;
+&lt;li&gt;$_SERVER: 服务器信息&lt;/li&gt;
+&lt;li&gt;$_SESSION: session会话数据&lt;/li&gt;
+&lt;li&gt;$_COOKIE: cookie会话数据&lt;/li&gt;
+&lt;li&gt;$_ENV: 环境信息&lt;/li&gt;
+&lt;li&gt;$_FILES: 用户上传的文件信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;可变变量&lt;br&gt;如果一个变量保存的值刚好是另一个变量的名字，那么可以通过访问一个变量得到另一个变量的值。&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$a &amp;#x3D; &amp;#39;b&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$b &amp;#x3D; &amp;#39;bb&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo $$A&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;变量赋值&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$b &amp;#x3D; 1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$a &amp;#x3D; $b&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$a &amp;#x3D; 2 &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo $a，$b&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$b &amp;#x3D; 1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$a &amp;#x3D; &amp;amp;$b &amp;#x2F;&amp;#x2F;引用赋值&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$a &amp;#x3D; 2 &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo $a，$b&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;常量&quot;&gt;&lt;a href=&quot;#常量&quot; class=&quot;headerlink&quot; title=&quot;常量&quot;&gt;&lt;/a&gt;常量&lt;/h3&gt;&lt;/li&gt;
+&lt;li&gt;定义常量&lt;ul&gt;
+&lt;li&gt;函数定义 &lt;code&gt;define(&amp;#39;PI&amp;#39;,3.14)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;const定义 &lt;code&gt;const PI = 3.14&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;命名规则&lt;ul&gt;
+&lt;li&gt;不需要$&lt;/li&gt;
+&lt;li&gt;名字由数字、字母、下划线组成但不能由数字开头&lt;/li&gt;
+&lt;li&gt;通常常量都是大写字母&lt;/li&gt;
+&lt;li&gt;命名规则其实比较松，比如其实可以用一些特殊字符，但标准下不这样使用 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;define(&amp;#39;-_-&amp;#39;,3); &amp;#x2F;&amp;#x2F;只能这样命名&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;const -_-,3; &amp;#x2F;&amp;#x2F;这是错误的&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;注意细节&lt;ul&gt;
+&lt;li&gt;define和const定义的常量是有区别的：访问权限有区别&lt;/li&gt;
+&lt;li&gt;常量名不区分大小写，但是可以区分（？？？）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;使用形式&lt;br&gt;&lt;code&gt;echo PI;&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;特殊常量的使用形式 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;echo -_-; &amp;#x2F;&amp;#x2F;X&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo constant(&amp;#39;-_-&amp;#39;); &amp;#x2F;&amp;#x2F;√&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 
-初识php
-php是一种动态网站开发的脚本语言，有交互性，有数据的传递。
-
-基本语法
-注意事项
- 1. 标准语法&lt;?php php代码 ?&gt;
- 2. 最后一句php语言可以不带结束符;
- 3. 最后可以不写?&gt;，这样就可以避免读取最后的空行
- 4. 行注释//或#
- 5. 块注释/* */
-
-开始语法
-变量
- 1. 声明
-    $var1;或直接赋值$var2 = 1;
- 2. 删除变量
-    unset($var1);
- 3. 命名规则 * 以$开始
-     * 由字母、数字、下划线组成，但不能以数字开始
-     * 支持
     
     </summary>
     
@@ -452,17 +568,13 @@ php是一种动态网站开发的脚本语言，有交互性，有数据的传�
     
     <summary type="html">
     
-      视频：https://www.bilibili.com/video/BV18x411H7qD?p=3
-
-基础
-Web分为两类：静态网站和动态网站。流程:浏览器发起访问-&gt;DNS解析域名-&gt;服务器电脑-&gt;服务软件
-
-1、静态网站访问原理：
-
-
-必备工具：1、有两台电脑，PC（个人电脑），里面需要有浏览器；另外一台为服务器（需要有服务软件，假设为APACHE）,软件没有数据，故需在里面添加文件夹（准备访问的文件/网页）2、下面蓝线代表两个在同一个互联网下。
-
-访问流程：1、在浏览器中需输入URL（uniformed resource location，统一资源定位，即互联网的绝对路径）；2、第一部
+      &lt;p&gt;视频：&lt;a href=&quot;https://www.bilibili.com/video/BV18x411H7qD?p=3&quot;&gt;https://www.bilibili.com/video/BV18x411H7qD?p=3&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;基础&quot;&gt;&lt;a href=&quot;#基础&quot; class=&quot;headerlink&quot; title=&quot;基础&quot;&gt;&lt;/a&gt;基础&lt;/h1&gt;&lt;p&gt;Web分为两类：静态网站和动态网站。流程:浏览器发起访问-&amp;gt;DNS解析域名-&amp;gt;服务器电脑-&amp;gt;服务软件&lt;/p&gt;
+&lt;h5 id=&quot;1、静态网站访问原理：&quot;&gt;&lt;a href=&quot;#1、静态网站访问原理：&quot; class=&quot;headerlink&quot; title=&quot;1、静态网站访问原理：&quot;&gt;&lt;/a&gt;1、静态网站访问原理：&lt;/h5&gt;&lt;p&gt;&lt;img src=&quot;/post/55d182ea.htm/C:%5CUsers%5Ca%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200726195840264.png&quot; alt=&quot;image-20200726195840264&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;必备工具&lt;/strong&gt;：1、有两台电脑，PC（个人电脑），里面需要有浏览器；另外一台为服务器（需要有服务软件，假设为APACHE）,软件没有数据，故需在里面添加文件夹（准备访问的文件/网页）2、下面蓝线代表两个在同一个互联网下。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;访问流程&lt;/strong&gt;：1、在浏览器中需输入URL（uniformed resource location，统一资源定位，即互联网的绝对路径）；2、第一部需要经过URL的解析（DNS，DNS内部包含本地DNS与网络DNS，，访问本地DNS无需通过网络，可提高效率。如果本地DNS无法转化IP，就需要网络DNS）。3、DNS将转换后的IP地址返回给浏览器。4、浏览器通过IP地址找到服务器。5、（虽然找到了服务器，但服务器里面资源很多，如何找自己想要的APACH？）这就需要利用端口，APACHE的端口为80。6、访问APACHE后，即可找到要访问的内容（IP地址后的/index.html也称为URI（uniformed resource identify，统一资源标志。目标机器上相对某个文件夹的相对路径，，，注/即为根目录，相对根目录所以其为相对路径））.7、Apache根据URI读取文件，读取文件的内容（注意只是读取）。8、Apache读取文件后，返回结果。9、浏览器看之前，需要经过浏览器解析，才可展示给用户。（所有人访问的时候，都访问的一样的index文件，若要改变显示的信息，就需要改变index，比较麻烦）&lt;/p&gt;
+&lt;h5 id=&quot;2、动态网站访问&quot;&gt;&lt;a href=&quot;#2、动态网站访问&quot; class=&quot;headerlink&quot; title=&quot;2、动态网站访问&quot;&gt;&lt;/a&gt;2、动态网站访问&lt;/h5&gt;&lt;p&gt;区别：相对静态网站访问多了几个步骤：需要服务器端解析；需要数据库&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/post/55d182ea.htm/C:%5CUsers%5Ca%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200726202647377.png&quot; alt=&quot;image-20200726202647377&quot;&gt;&lt;/p&gt;
     
     </summary>
     
@@ -487,7 +599,18 @@ Web分为两类：静态网站和动态网站。流程:浏览器发起访问-&gt
     
     <summary type="html">
     
-      这里有东西被加密了，需要输入密码查看哦。
+      &lt;div class=&quot;hbe hbe-container&quot; id=&quot;hexo-blog-encrypt&quot; data-wpm=&quot;抱歉, 这个密码看着不太对, 请再试试.&quot; data-whm=&quot;抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.&quot;&gt;
+  &lt;script id=&quot;hbeData&quot; type=&quot;hbeData&quot; data-hmacdigest=&quot;4cf46947b33711549667985c62613a518bd30812932281913a9fa8422c490376&quot;&gt;a3c8742250d271b2e3b1a321002123b1a21673cb531b7fb05248b7ba99bd173b2c08e017e3e71f17a51e4ba26ac79b9eaa32b43617273db02b7fc5f0bf6f58b022407f41b3d69c01b4b61fceba46649b18165b5fb9de8912bf382b0604030872c9104057748028bf112dbbaa79c354696c2fc0799eba0bce72f354cc34b8a7a79f6665e6d098b40cf15325c761cc4762cc92d3a3cb909d6f49913ff7db9c8ce6745ae59aa33e1c36a37628a8588635352e5b75745943a885f3566c074f95da9b0e4eeee74abc913e3878f1752bbe9d5785e8b0bb87af9ac76c6394c26622bf8b0ff20404a6cbc7da12315d0c7d3e59827b78848272918d09182ca0278c97eaf895dac7ffff1828b292b7fe1a19c649f47d7635cf502bb68e59514989d4cea069a0c10bce5b0f2acb2e9bb2028984a6714d15847e001c1f842252590d3e7810433a457e095b9d7ffda60ddbc4c15a0342940678c3ba75d09dc67bfd59107709e1e32c242018335d13ab4827cf97314e11c8efcfe3c53099eee6c225c25c4fbfa6a22ea907672911c7b9f7ebf76d8069fd12866eaba131e359f2397a55bfbc4f0ad0b748abddfc6a4778bde5af594bfd55ccbcbf679025bfbf33e4995aa21f3274c45bb5424045f110a716ad1b104ec981caaee86fa79d915ca314861ad8a5169c694fdf91d2500db47326faeb81811a412534351b2311e84af40598020de2889b7eee557e90513155784e99c2f17172d64e466119539b9e269d0e63af70f7cc4022885a0a36d0520d47b40a07104a5259f05c34c80736fa0cbc6c05ea06b9804c05283ef891f01cd8edd58e136b5c123bfd319ce120f98e7b38109cb75d0062bd8fb9c83568915294e94adcc37d13671bc1c6f40b00a3b15157d33af7483bd6d5141d0e88429deba13f3e889dd70521c7a00d8d758ee8b0bc92c14b1134a45dc18c9de4d472280d1b57b3193d9b3ae49f11a15b20d58b96802b2e654638584180455afd7c00d76f0ce92e17a61eabd6139c6b19a1ff859846a442e10496de07d9d6696d99a8a583cfc5db9621f2e25cd99b51aa8f11a1fdc6fc4a6cc056618e5eab2e22b826afd49940acd71873577787bf412e59c541c79802632efe3e6d643bc8de17214ca6893a3a30abf2e65c00a8293ec80f48580b3b9c121813001134ef4a947c004e4473b1e47c3607230f23f49a23923dc7ab2b286b2969ff751185cdf8dc4597f1dd94b46f7ec9930825bb1abda282d105f89b164a66252bf2889479abfc66f03217ee201c80a97b503751d31022d823ffc6adf198840c513908ef7bbf0787710cccd1d01d47ddd6195e9306f41e570601c2e57bf739307be0ad5b88c912a0c0dfe210a89b46adfc87341300814eb0314242dd754ecded98e487b7491531580b5b6771909a0a2647c4828754d464d3199a943aeb5657d29336bf050c9532c0f0c7acbc2b5bf10759c517ebe2a457aca9a2a1be76de1306cafdcdc3c7f019905444b6e6d50a8ca6edd4c2885b641c63e8b3769072885763190797caec91047a1a181e84acb391cb0ae9fe94cb06d9605b8b7d70e9bde6dcde9c2d3cddbeddc05e0796901a1fecee174812b5c12db5214efa231ac9ccb93487aed5eebc6be691aaf0eea9617c3998b69a07818f704b2b554d646f05ed8e93693a1bc23ec950837b1e8219220b3cfb4bf9cee4d519579e7649663afe1bf10449a87069c0748f305be4e243eb3eea01b96c7c5e52ef7d44a08f11e7ef7aeacd7d49edd2233ac60dfbf84e38837192345eb278e61412912bcf538911b7374ff96291e1a8a8c56a5311c19d07e754a4efb71d010d89bd426c5a383c939ac4ef1735f75a861bae13d8edff308c3c75bc74ce1babb574f23e13d08849de29dd9a77cf66f7454988d320b3da1732283cf0bcf50f143cebacd479d43b5c2aa2bccd675e1b453f0f4276ef0db806603ff0a7befee152f8dbf103a8e5e6783b47e9e420d6fec46e6a3182b556c7098ad056f9cd5be0a84157879cde9a82353fa1a20b05a0a8f0dc4a1bf2c14dcb50173866544f4e4d7a3f097e798d41dab9c0d556237aa0200e6b6261b01a34db32b13fbaf0aa2bb1ce438231dbec78f0ff72c48ec8ee1ba6e184340bd4cd206268cdcfc7c0c8cb8ded3ca5a917462100b2aefc0b0ae1ffce0148e5fc382640cf2abe89ecafaee7c166499b887af364eb0adb890a6b2868f8f3ffed12b5250644aa15536620eeef62485cbc7276ddda61eb2f131c42e9cb7df9bdd2e943cf7c0517f7409c98fd6e1c4d0389143cff28dd6a437b40d6812f99e311cb862ceaab04aaae9120a74c2acb30d0b56dd8be64497064f39f7af87778d5fa61b5e23f185eb17f9561c7394b03d7f4136c82d9d56bed5565fc0b05a90ba1fa54c0c4748db4fd5f9d0b96ae68934cca7109f2867ab1145672a1f995ed35f9bf2a71f38af295870872509d18228c548a28e42dfa1b8dc5bc9f65357c5f19dace489abb3f2b035b7a519015972c25c8ec98420b201ebe8de4dfcf8caa43eb11db632134afef57416b98671f43759cbe90c4e04b32adfec38293b4265f680eabf3140d2747f8c10c07469fc69c8a26a31ca925cb47fa98a3bc14da9e0b80ac3269756f59beb6af6c521ea5bfae33b0a23c7616a21fd49c840a861021b5dda9bf918043206d82f07031430b88eb9f7ba383f91fcf3e7fd38c2805d6dd9bb48ec9d8bc52453733406be7eaed56b0bfa655175791deaf9dc7c3b017c0ad37130600b246c960c47356bbff0b7dc4424c8c9ded9c25c3321c42fcb08dbca2ea07af381b6d690e2d4a59df22f0ef3e5d4ec1566764058834b0b94553cbe573748e9ad029d608af706703cbab546bacc8cc3fa5c76f459946e8547d287b23c06c3307ac9bf7d17523fd3499a229ec698a0a6a8aa2d1943907cedc6c56e320313939ae91c4fd0943a0a315aa6454a33a5e24c88b58815d5b0434fc31323a4bf24a7be333f808a839cc332d76a83e700147b0bf7367ae7c65b2b8860abf4dcc3510b9a7a38f4bbacc0d382ff0acafcfe783d8f25be153979c1f7d2a3f92d155870c939216bea3dd03d21b63556e30881026ad7a1bbbf4c88e14a9327e889170f889a1e44cef857e97744d3aba65f568a8eb9f5ba76c118d508a45fd96d8c0090d6e5e5e588aac6f7630ce7b408e5d2e955889481e1847404e74ae069e53a6a53195e22c31f936ee4af49f438e5c375c66ab13f3e6941e30b02a535705ba1ba0f08ae4fc3524be459e662751be14a4d3e979d599288f691a9458475b468fe015d124d8552e7864aad12ba8be8e5dde423257e5742c85b22522ab47a4900fc582eda0c526c56430caed23f1294f9de0159e0b0cc92b67393d3fb9c71b1c14f270e3e147a14d92f100302293cc6c751dd0acc565f2fd89e85085acdd225ebefb3246cb8035ec6b243185aa80dc56e9d6fbdb84764f0a72fb6af107c45e969534654727657ecce7429089b4a634e453019bcdb1efa8909dd8c34ffb122f57aa0ed8ecdb2e4733450137864d5be22ad994f1a5b300a9ece2d18827108934d09e4c2670d2ed88e2c796d0e489c6cd2dd0497eeaa9a110e9a95ab9a2b4d2b2dd77d52fe289c52f6ce4bd15a459565991b2841c94832faa6e39758def2f2c6d2829fe95c3e7a3ba308949bbc988ac225e55b340b3d664b3afcf43a58efa44e78dc393253592ddd192ad22102bbddbaa09f5479e559f84a98ac3e2fc267d8e6c7b8e5b2a23acbe6f7bc8fd8ab7c35884a94c9a09706c52020a6cc79d683eaaab158184262549b59d754b0a3bbaaa761e09e93faf97ab3a05c0a528d2ee031078a422338189673b3db52bcbffd2e784fd692c7c6d9cf08772eb241bb5581e8285507a1c995e60916dbc5ebd9c1ba2d65c9378d395f7f7b7ec301de079fa7022e2b1b67edf53afce82c0b5aff3143e2c79e0fc63ced2998d92b10b6e8c18cdacd830e98a88f1219a8e565dda46706e3b5537a734eb10428a232af091e0b34b9525badafd9a9c6a0d684f46874e89746818540bfa38475b8034d3a40dce8d639b8f80a99793d1c870db5d14408b36deaa0bf34022e102fe90b5b091f409df6f073dc4e182244aed1eb556f15b9d3d43185caa1ecd77cdec71e887c63bc5e017ab0b84d2b0a105ae4878c645a9dbcc973d42607feff6652c5f3baa9d6fb969e9da52f3d398cfcef6121bb787b6e99acf5213ad8edeff0f235079032ecf0a0086ae7a2e8075f9507200d3b1801b239f3b5febb810559f7aaf2e4edfdd7a7b4dd1e43dd078831d813a1c87add5b2710d87434de5ae6f2ddabb249a09d3dde8c6df4013aa24c257360b8a8bd54b7d2bbd60c2bd2d5c4e55ce1608a9bf2d4c986723eec63882a1f2a62e48f570405762434db1ed14b72cc3b3b05f9fd972c74635d5bf0c195f6b1a38fc94c37372e3e2189cfd1758616e4e064c3d7b029ca264ee87194e7faff7a10e1018e064bbaab72518d647e8ca14aed53c19710e46b3dea81407e330a9f04cdc8f15ea946c464d92e15f25a4f161d404036a34a4e48137e3bec6a2b276f91c543b2e4567fb1be5bfe5f1721ccb0ffe0de8f87f65263c36871c7329f5a5d0b6b5c3a29c5d0095d80706d7892140dbbd867ae1514f9ed94b8ac3a23dacd596ddd90d098bae0427e6de9cad7124e9374a6be7f2dc8271b9e5a8b54fa8f4f2e6e22c8dd90a6e700fe481e5ccbf04971b0ef50adb2426820b628fb10baf2f02fd4cb5df6de32720c2da76dd49d0437eea62c3219e1dfa18abcd29e94b0523e363ac3c933c9dfe238334d48f450cd08bb63ddd3dcee38b60ada6b98cbc6b84fae1c887aa5616db65575b2b14c2b2f470fe6c4e20080e4dc9d72064a203ecf05f6dda8f9b3061c4eb48dc3d844a552d4b8e6085453f8d0c7746b14c1a7ed327e8ced78b94131824b1b7deb94ad0e063b7fa4df57d1e694023913dc92fd9e673f1cb7d2c96854db14a742c319dc872ce0e9ecf52067c7c7898c17381f9825d167d466f31fdf6bc6601d00fddd93096ef8b2b6bb0139f2ba95dbaf6ec128475787f48a47328d74018f37ae0eda704e044ae4efcefa314ffcd63f47411e7c646ee85089d124d12192e9deddfd14cd28551eb5739aa4bb718cf76a777d5fa05e1fdeba69dd54c7f1bc40bb3b604e08117cc8e2e68ee629b35ab5f39862dae6fbdd7d396ec95e709df699c0ff16c216075933db38ae273de61c4fa4adda317c5913c243508932ac68003c5b92656567c2b9bd5da3f6cb76d79c68b430d1af809c0085e96a78338579a54df6a6cc600eccbecd6c9d3d469d861298e6865525d869a1b59c2fc196557870186f582ab4cb585d8df34e2625008063c365c7bca4a9346d13b5eca5af9901ebcedd164bb854f4d2971bb1da1d17056360c729b0f137ec9cc30e84e7b238a77a49212237d538056d1e32e89216ff23a3368d994dcdaa4bd2dba8c75368e686200d77e9a49578147aed7f7d842fdf6cc8ad9046b88d89ca33c9569b5a0cb8a4420b055d9c0adc2ca7c8cbe0609626b59c88f1c6a364ae18044cc36d879409be9091bff5ae72769d7b981c7deff504ae66c33cd46f2875cb1e27a200686f30328ff9754d6c183d7334be326f370cc56c31f920c30b554b549dee0a7704d6672e09d74e2b76a9f8cdc9d01b07d7385c3f6c821549c7ff6bfaa0840a14f775ffa4451413f0bff1b95aab588fa042c0e55708999706b1aa3617020edc28d50e7bd4bea535eb8186748d48fa7308680ba4bb8f6dab6e02c9da8f7cd3fdf7ef01b038b45daace93fde1ddcac5866023bf198a3b4af2fc56c85eaf8cf64d6eaef28eb6de7fd01cbc6a830af128466334ac07ac62111943b532d08bc0cd9711cbbd63b3cbc13586bec3b87be04c982232d347e7742e23ebca5a9233352b9d91de849467f2633dd361d740ad5541a074b13290f48b9b13bbca065e5f48e941c5b5769d15b2ca08431ce0bd7a9b98292d846930c18e4c8a27f5772e6efef5e14236ef79088c5103eb4ee71df9f64e7859856612abf87da6c9dab868ed812008bd6b44b60f82b4a243045b46326785f440b3f5a3878993ac3e521c8bb65d0b1cb517892422a98c44addb7efe7c7eae2e811b7edee995c9e3e3d07f41ea0e3facde577c68978040fa03e3efc2ae7f3860f8ecb3a8e66dc7c66a9063703a3ed3a95e1d1975699e9d3cc6300f6e021ac3ba740bff8209a7d83a78f6254a105a23a44c6ea6f42387c27b21addc516de67e3e51e36dd0f94e3add21ca7d52762a793b503faceff00c6a84a3d3d58869e62235cdc3ece247690f8fc51693cddcc868c6efd89c778ab35db389e3419ed09eaf7745f008eb33a3cea474c3b0204487bcc611b805f117b488b40785fa982d30904c7665bfd567404675cd31f9cbbf7296991a9cc0a6fdf4d18201d82b5267aeb110113e1bc0834ad898a7553c13cd60b277ad1f8077cfc20138e1afd62bee31957210a54c1de9a59eab7487265177648f0de15c6cb74325bd07f27f41b9408285778b92581925ce73101fc4f007bec95844be9526a9d00bea9fe8ccf0b9b6671ff1ba9da33150e3b8df2ffb377bda42b9e3ffcef985f8c402699309e75a2dfdf0614843aeca1e7c84dde8387ee63265e46c06a3ccdfc3dc16e7ecbc9da09fd027329dd7e8f7fbcea5024d4a28a9191155a516a77dcd2b0095e5a6982126e7f9c8dc5d0d024592bab3c25b809abae903692913bff625a340c1623ea9302647ac3934802822542d897fd6845fcad60ca9ef0165c991287ffac5e6d9e02c08fae9d54da141ae065aec7612e537033c6c5c2cd7aff424f2f4f1a1522a294dff1cfccd44db423685b2d52e1151f78ae80f005b00f8966b39cbb16522ec6dc6d4a11c527502a914c3aa5cdc8f6b11aaf8330dd929e1a5fe4bc965e0f4d67950cf9c5af184ea8b26f52cf5a161663f5157eff7d57d22d3f4751854f66489a564d668a6e04e7e67bc46612c4d09b6254f6300737efcd033eff376ae1c79baeca698ab8a8b227f92ea735ad23f294e635b4ad72427e0df52358cc7541fc4ac0c97b436eead645d2c8fe5544e8ea427717d2f6db4cd1caa4ed184c59aab50e9f85990c5fbffb43c3de099ec1c9985dfe191afe0c0d35b5a703a7226fbe2e544ee421e32968f753535e419355a3e0d92f63f40ea196eddfa3b117aa2c27fd569df41400c4ed11988842b946bc79dcd3fe1a9afbc4031ab93f1ada1d297d58bb3185fff9a0f837c755340d7296dc2add10ebbcff98097270ea3fbe4a8fea34afb62c776a30506a4f770b0b935f9493c861295ddd638ec9f99afd041123ae00baeaf83059a0308e283b4840a66d0ffe81e0ece11df2356dc17e2972123d17374a62ae0a4ae1119d2d7dd6c3398791f8de9ca61ca846414f5738506ee2a58f0616f495674400e15ec0a6b068f273b3c1340f6771eec5fab99a7a6e1e42e897f7ec1bad960419938dbb3f383b6993c7713f1744a7c13b050d8e5e8299b79adabe480a1e72f1719e1dd254f54711177ae1d97cab950c69a26eb4a3f072f2c7e818cb179be05584966e16a86ad607a60ab618c8a84525278bb20cddfb7a63ce924c99705756458fe4cc3fc484ee9738b8784f5abf95c15ae33d6bf4688e9761728f59d8f260676380fb7aef12e401d72bcb79705e01df9e5926bf03cf62367bde68a8a7969ebfe4e8211d3bbb1d9acb5f320f21f669ddcc071347f08760c92690136f744ca063cf9e389f85a7b612a2fce596b9ac787d5e9d8eb9cfc69d3f89657d30b563685b42256190e13c42454593fdc74926ccb17e8e604fb01cd75b8b21e52bc413dfec0c16ce669e41b9055cc080a38780b17d860424ab8e882c860fabaef064f36864f7fdd94a3dd1481fc88ff38f2a96e1839afe6f32ed317571b272e821a3a7ce257c9c6b2a02a3248476c620d78371006894335ab8625a8dd3f872953860272dd44aa2b8e5edd116a653630e5b546b39fe7aca6a4c9e8148672814a371ee6edb4a0c4bd0e5a1f820156cf23fa64e500f28d42bdd49252349607504d7a151670fab338b654f61e085283f738a72d512a076973bd8fd4986989336be37db2c139ad206913ede5f68262f739217d8ac63ea34f74dd1eea31cccbc73376b6b5a7691b24a05694ec5692e32b99e337d7507458ca06d39796f1850219bc9dadd0ad299bf0979b9d9f1cdab4ff4fed1c818b8a39ad88cd39b411afe57e34cead7d75969f5f4e9cd3757ac4c2b7eaeb53279e303219297be451416559a5a2bebebf89c7d7c5478c04af6d94dc6d36df3b71fe1294a7d7b88fc5956eb25dc0923d3929aef936386fa259998dab6ee2868c095d743b67fedc09dd2c53b2b3980a10b5e84233ee696be888fb729676ad5bddbb5c5c2cecf79743ef06cb57e1d05f084a7e2e178378fefa6a0e01301e24f06f76c726b0b64cc83f9e60bcb6bda85026be4592ea4c5611ed6623c3aabee3d21d3429c28d0a9654d39f32faea47ef6727393a9ed5a9378408727b27cb0586ddb95be2cc2feee27b5f5550541bc251bb44362b9348f27fb7f00af86763197eb385f78fab15990d26edec7140e1263edb8f45d867677f98efa0db6c4ce2ccf5bd85fcce3e325bfa8f3fcef680117a99cead10b4c03e37e0f68121618cba64876b57e7c449d2c2e615809cddb3d20401f3bf02487fc283a1a85e757a6955e9ad41c8c1a3a92fdcdc8e65e0efc79e6c0de54e7a8c63f76b810b8b2da8e2975f0847540ec39e242f1cc859c2c67986019b6590b2f74930f06683c7b4f0f494fc7e983a993d5f2cacd449d7cfc9a0782c83e87068aff56e7d3f362671b07ed7c3a8388e821800169b6aa8c61916cbeeb396f38c1dff45cdb7bd1b54ccfdb83f2263e83a56b1f327458f895fdf6606c1a98b40f5c1660faa2d739d9aea08626676b465564a561794c03a05175bc20b07a4ebf455f7a2873b666f5f3359c3022accb743ba986e57c5b9ff8b96fc285c629dac0ae64b0e7b9d66eb110eb0a7eee923b2e5714bc436afe90c2166254db102e88315d59d9c42528597a1f9c62f26af62252d8fa8fed994a1d819f7417ff77c9422e3dc18a60ad7ce8a99dd8cffae9168fcc0ec0b828657a8d760501fbd7a8343d02b85b83e2e4b533751316255a41fb560e06865670490066b3b55660a85d17382887368d57c06e0ce19220493e23bf70f154caf11e4c80ecae9c588e20e148c468248abcfe2570eb8f4a58e068591c26c22f97735db7cfeca873c0a23fabf01955d289007597cffb9d4ab368618b7560c88a2111c7fbffa83095f2cadd79a7c8f93cb459bc50fb67ff50616e01d75b3002b7190a08c20375e602ec397e0653c0177fd378613dc1ff66c60508cc0663bfc8e949&lt;/script&gt;
+  &lt;div class=&quot;hbe hbe-content&quot;&gt;
+    &lt;div class=&quot;hbe hbe-input hbe-input-default&quot;&gt;
+      &lt;input class=&quot;hbe hbe-input-field hbe-input-field-default&quot; type=&quot;password&quot; id=&quot;hbePass&quot;&gt;
+      &lt;label class=&quot;hbe hbe-input-label hbe-input-label-default&quot; for=&quot;hbePass&quot;&gt;
+        &lt;span class=&quot;hbe hbe-input-label-content hbe-input-label-content-default&quot;&gt;已加密，请在这里密码.&lt;/span&gt;
+      &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script data-pjax src=&quot;/lib/hbe.js&quot;&gt;&lt;/script&gt;&lt;link href=&quot;/css/hbe.style.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
     
     </summary>
     
@@ -512,7 +635,8 @@ Web分为两类：静态网站和动态网站。流程:浏览器发起访问-&gt
     
     <summary type="html">
     
-      从来没看过这么长的发布会，有感于雷总的人格魅力，分为两场的发布会丝毫不觉得劳累。今天的发布会雷总已经嗓子哑得很严重了，只要稍微大声说话便会失声，我以为讲完mix雷总要休息了，没想到后面的笔记本，以及最后的充满激情的造车宣言，他都坚持下来了。我在想，假如我在场，一定会热泪盈眶吧。听了太多的参数，这里我已经不想提产品了。正常发布会看下来，各种新品层出不穷，可谓盛宴，又被人称之为手机界的“春晚”，说实话，毫不为过。但是其实我最喜欢的还是雷总讲起来他的回忆，讲起来他和许知远的对话，那是无比真诚的，一口不是很标准的普通话却感人肺腑。雷总又讲起来了他的以往，从当年笃定要敲代码，到最后代码被格式化，学习管理
+      &lt;p&gt;从来没看过这么长的发布会，有感于雷总的人格魅力，分为两场的发布会丝毫不觉得劳累。今天的发布会雷总已经嗓子哑得很严重了，只要稍微大声说话便会失声，我以为讲完mix雷总要休息了，没想到后面的笔记本，以及最后的充满激情的造车宣言，他都坚持下来了。我在想，假如我在场，一定会热泪盈眶吧。听了太多的参数，这里我已经不想提产品了。正常发布会看下来，各种新品层出不穷，可谓盛宴，又被人称之为手机界的“春晚”，说实话，毫不为过。但是其实我最喜欢的还是雷总讲起来他的回忆，讲起来他和许知远的对话，那是无比真诚的，一口不是很标准的普通话却感人肺腑。雷总又讲起来了他的以往，从当年笃定要敲代码，到最后代码被格式化，学习管理、金融的知识，16年小米的低谷期，雷总挑起大旗带领大家扛了过来，如今有了“我们又1080亿”的资本这样的豪言，属实让人感叹！今天雷总正式在发布会上宣布要进军智能电动汽车行业，他说到：“这是我人生中最后一次重大的创业项目了。”我一时间还不能接受这样的消息，雷军在我眼里一直是一个年轻帅气充满魅力的成功人士，况且当他将其mix fold的时候还调侃自己还年轻，可是终究逃不了变老的命运。这样的感受让我想起来罗老师，当年他在各行各业闯荡，而现在算算，他还有多少时间可以依旧保持活力探索呢。我真心的希望小米能在汽车行业有一番成就，至少不会辜负一百亿美金的资金调用，至少不会辜负发布会最后两句失声的谢谢。&lt;br&gt;&lt;img src=&quot;https://img.imgdb.cn/item/606335818322e6675c6e5344.jpg&quot; alt&gt;&lt;/p&gt;
+
     
     </summary>
     
@@ -535,19 +659,18 @@ Web分为两类：静态网站和动态网站。流程:浏览器发起访问-&gt
     
     <summary type="html">
     
-      记录一下python常用的源码
-邮件服务
-用来每次部署博客以后给订阅的人自动发邮件
-
-&lt;!-- 邮件服务 --&gt;
-# coding: UTF-8
-import smtplib
-from email.mime.text import MIMEText
-mailserver = &quot;smtp.163.com&quot;  #邮箱服务器地址
-username_send = &#39;******@163.com,xxx@qq.com&#39;  #邮箱用户名
-password = &#39;******&#39;   #邮箱密码：需要使用授权码
-username_recv = &#39;****@qq.com&#39;  #收件人，多个收件人用逗号隔开
-ma
+      &lt;h1 id=&quot;记录一下python常用的源码&quot;&gt;&lt;a href=&quot;#记录一下python常用的源码&quot; class=&quot;headerlink&quot; title=&quot;记录一下python常用的源码&quot;&gt;&lt;/a&gt;记录一下python常用的源码&lt;/h1&gt;&lt;h2 id=&quot;邮件服务&quot;&gt;&lt;a href=&quot;#邮件服务&quot; class=&quot;headerlink&quot; title=&quot;邮件服务&quot;&gt;&lt;/a&gt;邮件服务&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;用来每次部署博客以后给订阅的人自动发邮件&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;!-- 邮件服务 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# coding: UTF-8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;import smtplib&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from email.mime.text import MIMEText&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;mailserver &amp;#x3D; &amp;quot;smtp.163.com&amp;quot;  #邮箱服务器地址&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;username_send &amp;#x3D; &amp;#39;******@163.com,xxx@qq.com&amp;#39;  #邮箱用户名&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;password &amp;#x3D; &amp;#39;******&amp;#39;   #邮箱密码：需要使用授权码&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;username_recv &amp;#x3D; &amp;#39;****@qq.com&amp;#39;  #收件人，多个收件人用逗号隔开&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;mail &amp;#x3D; MIMEText(&amp;#39;xxx&amp;#39;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;mail[&amp;#39;Subject&amp;#39;] &amp;#x3D; &amp;#39;xxx&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;mail[&amp;#39;From&amp;#39;] &amp;#x3D; username_send  #发件人&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;mail[&amp;#39;To&amp;#39;] &amp;#x3D; username_recv  #收件人；[]里的三个是固定写法，别问为什么，我只是代码的搬运工&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;smtp &amp;#x3D; smtplib.SMTP(mailserver,port&amp;#x3D;25) # 连接邮箱服务器，smtp的端口号是25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# smtp&amp;#x3D;smtplib.SMTP_SSL(&amp;#39;smtp.qq.com&amp;#39;,port&amp;#x3D;465) #QQ邮箱的服务器和端口号&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;smtp.login(username_send,password)  #登录邮箱&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;smtp.sendmail(username_send,username_recv,mail.as_string())# 参数分别是发送者，接收者，第三个是把上面的发送邮件的内容变成字符串&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;smtp.quit() # 发送完毕后退出smtp&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print (&amp;#39;success&amp;#39;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;自动更新更新时间&quot;&gt;&lt;a href=&quot;#自动更新更新时间&quot; class=&quot;headerlink&quot; title=&quot;自动更新更新时间&quot;&gt;&lt;/a&gt;自动更新更新时间&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;每次部署的时候自动将post的&lt;code&gt;update:&lt;/code&gt;后面的时间改成文件的修改时间&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;!-- 自动更新更新时间和文件名 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;import re&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;import time&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;import os&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;def change_time(path):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        fileList &amp;#x3D; os.listdir(path)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        fb &amp;#x3D; open(&amp;#39;更新内容.txt&amp;#39;,&amp;#39;w&amp;#39;,encoding &amp;#x3D; &amp;#39;utf-8&amp;#39;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        hello &amp;#x3D; &amp;#39;博客更新&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        fb.write(&amp;#39;&amp;#123;:⭐^10&amp;#125;\n&amp;#39;.format(hello))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        for file in fileList:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            allpath &amp;#x3D; path+file&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            f &amp;#x3D; open(allpath,&amp;#39;r&amp;#39;,encoding&amp;#x3D;&amp;#39;utf-8&amp;#39;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            txt &amp;#x3D; f.read() #读取内容&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            f.close()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            now &amp;#x3D; int(time.time())&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            # 匹配，加入\n是为了防止匹配到文章内部代码。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            old_update &amp;#x3D; re.findall(r&amp;quot;(updated: \d&amp;#123;4&amp;#125;-\d&amp;#123;1,2&amp;#125;-\d&amp;#123;1,2&amp;#125;\s\d&amp;#123;1,2&amp;#125;:\d&amp;#123;1,2&amp;#125;:\d&amp;#123;1,2&amp;#125;\n)&amp;quot;,txt) # 正则匹配要修改的字符串&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            file_title &amp;#x3D; re.findall(r&amp;#39;title: (.*?)\n&amp;#39;,txt)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            if old_update &amp;#x3D;&amp;#x3D; []:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    old_update &amp;#x3D; [&amp;#39;updated:\n&amp;#39;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            new_update &amp;#x3D; time.strftime(&amp;#39;updated: %Y-%m-%d %H:%M:%S\n&amp;#39;,time.localtime(int(os.path.getmtime(allpath)))) # 获取文件的最后修改时间并赋值&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            try:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                txt &amp;#x3D; txt.replace(old_update[0],new_update) # 替换&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            except:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                print(&amp;#39;&amp;#123;&amp;#125;有误&amp;#39;.format(file))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                continue&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            else:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                if now - int(os.path.getmtime(allpath)) &amp;lt; 43200:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    fi &amp;#x3D; open(allpath,&amp;#39;w&amp;#39;,encoding &amp;#x3D; &amp;#39;utf-8&amp;#39;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    fi.write(txt) # 写入&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    fi.close() # 关闭&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    os.rename(allpath,path+file_title[0]+os.path.splitext(allpath)[1])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    update_name &amp;#x3D; &amp;#39;《&amp;#39;+file_title[0]+&amp;#39;》&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    fb.write(&amp;#39;------------&amp;#123;&amp;#125;\n&amp;#39;.format(update_name))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        fb.write(&amp;#39;\n访问地址：https:&amp;#x2F;&amp;#x2F;blog.asea.fun&amp;#39;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        fb.close()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;change_time(&amp;#39;E:&amp;#x2F;blog&amp;#x2F;source&amp;#x2F;_posts&amp;#x2F;&amp;#39;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;自己写了一个文件名字批处理的软件&quot;&gt;&lt;a href=&quot;#自己写了一个文件名字批处理的软件&quot; class=&quot;headerlink&quot; title=&quot;自己写了一个文件名字批处理的软件&quot;&gt;&lt;/a&gt;自己写了一个文件名字批处理的软件&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;网上找的都怪怪的，用起来不舒服，就自己写了一个，自由度更高，使用的是tkinter。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;未来打算更新的几个功能&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     
@@ -570,11 +693,9 @@ ma
     
     <summary type="html">
     
-      程序结构
+      &lt;h1 id=&quot;程序结构&quot;&gt;&lt;a href=&quot;#程序结构&quot; class=&quot;headerlink&quot; title=&quot;程序结构&quot;&gt;&lt;/a&gt;程序结构&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/images/three/three%E7%BB%93%E6%9E%84.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;h1 id=&quot;live-server的坑&quot;&gt;&lt;a href=&quot;#live-server的坑&quot; class=&quot;headerlink&quot; title=&quot;live-server的坑&quot;&gt;&lt;/a&gt;live-server的坑&lt;/h1&gt;&lt;p&gt;html引入本地three.js文件后404，因为我live-server启动的地方没有包含three.js-master。应该在根目录启动。&lt;/p&gt;
 
-
-live-server的坑
-html引入本地three.js文件后404，因为我live-server启动的地方没有包含three.js-master。应该在根目录启动。
     
     </summary>
     
@@ -597,31 +718,20 @@ html引入本地three.js文件后404，因为我live-server启动的地方没有
     
     <summary type="html">
     
-      开发环境IDLE
-exit() quit()
-shift + 右键打开命令行
-ctrl + o
-ctrl + n #交互界面下
-ctrl + q
-alt + 3/4 注释与解除 注释：##
-f5 run
-pypi.org 库网址
-
-
-
-
-pip 命令
-pip list
-pip install package1 package2
-pip install --upgrade package
-pip uninstall package
-
-
-
-
-模块导入
- * 三种导入方式: * 导入整个模块 import模块名as模块的别名（自定义）
-    * 明确导入模块中的特定对象 from模块名import
+      &lt;h1 id=&quot;开发环境IDLE&quot;&gt;&lt;a href=&quot;#开发环境IDLE&quot; class=&quot;headerlink&quot; title=&quot;开发环境IDLE&quot;&gt;&lt;/a&gt;开发环境IDLE&lt;/h1&gt;&lt;p&gt;&lt;code&gt;exit() quit()&lt;/code&gt;&lt;br&gt;shift + 右键打开命令行&lt;br&gt;&lt;code&gt;ctrl + o&lt;/code&gt;&lt;br&gt;&lt;code&gt;ctrl + n&lt;/code&gt; #交互界面下&lt;br&gt;&lt;code&gt;ctrl + q&lt;/code&gt;&lt;br&gt;&lt;code&gt;alt + 3/4&lt;/code&gt; 注释与解除 注释：##&lt;br&gt;&lt;code&gt;f5&lt;/code&gt; run&lt;br&gt;pypi.org 库网址&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;pip-命令&quot;&gt;&lt;a href=&quot;#pip-命令&quot; class=&quot;headerlink&quot; title=&quot;pip 命令&quot;&gt;&lt;/a&gt;pip 命令&lt;/h1&gt;&lt;p&gt;&lt;code&gt;pip list&lt;/code&gt;&lt;br&gt;&lt;code&gt;pip install package1 package2&lt;/code&gt;&lt;br&gt;&lt;code&gt;pip install --upgrade package&lt;/code&gt;&lt;br&gt;&lt;code&gt;pip uninstall package&lt;/code&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;模块导入&quot;&gt;&lt;a href=&quot;#模块导入&quot; class=&quot;headerlink&quot; title=&quot;模块导入&quot;&gt;&lt;/a&gt;模块导入&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;三种导入方式:&lt;/strong&gt;&lt;ul&gt;
+&lt;li&gt;导入整个模块 &lt;code&gt;import模块名as模块的别名（自定义）&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;明确导入模块中的特定对象 &lt;code&gt;from模块名import对象名as别名&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;导入特定模块中的所有对象 &lt;code&gt;from 模块名 import *&lt;/code&gt; (不建议)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;变量及数据类型&quot;&gt;&lt;a href=&quot;#变量及数据类型&quot; class=&quot;headerlink&quot; title=&quot;变量及数据类型&quot;&gt;&lt;/a&gt;变量及数据类型&lt;/h1&gt;
     
     </summary>
     
@@ -644,12 +754,20 @@ pip uninstall package
     
     <summary type="html">
     
-      大二下的返校有什么可说道的
-流水账一
-火车站安检的位置改了，改的挺合理，我觉得它本来就应该是这样子。在取票厅见到了很久不见的老同学，一见面其实没认出来，好家伙，那肯定认不出来，不过说了些话后感觉也还熟悉，可能是某些深处的记忆被拔出来了，整个相处还算不尴尬。我们五个人上四号车，结果却往相反的地方走，好在问了问工作人员，赶紧掉头走了很久很久才到。上车后我们坐在下铺攀谈了一会，主人过来了，于是我们便移步到道旁的位置上。没什么事干，我们决定打会牌，然而网络问题，磕磕绊绊进去之后，也就打了一把，还算有意思的结束。我坐在窗户旁边看周遭景致后撤，脑中并无任何想法。
+      &lt;h1 id=&quot;大二下的返校有什么可说道的&quot;&gt;&lt;a href=&quot;#大二下的返校有什么可说道的&quot; class=&quot;headerlink&quot; title=&quot;大二下的返校有什么可说道的&quot;&gt;&lt;/a&gt;大二下的返校有什么可说道的&lt;/h1&gt;&lt;h2 id=&quot;流水账一&quot;&gt;&lt;a href=&quot;#流水账一&quot; class=&quot;headerlink&quot; title=&quot;流水账一&quot;&gt;&lt;/a&gt;流水账一&lt;/h2&gt;&lt;p&gt;火车站安检的位置改了，改的挺合理，我觉得它本来就应该是这样子。在取票厅见到了很久不见的老同学，一见面其实没认出来，好家伙，那肯定认不出来，不过说了些话后感觉也还熟悉，可能是某些深处的记忆被拔出来了，整个相处还算不尴尬。我们五个人上四号车，结果却往相反的地方走，好在问了问工作人员，赶紧掉头走了很久很久才到。上车后我们坐在下铺攀谈了一会，主人过来了，于是我们便移步到道旁的位置上。没什么事干，我们决定打会牌，然而网络问题，磕磕绊绊进去之后，也就打了一把，还算有意思的结束。我坐在窗户旁边看周遭景致后撤，脑中并无任何想法。&lt;/p&gt;
+&lt;h2 id=&quot;流水账二&quot;&gt;&lt;a href=&quot;#流水账二&quot; class=&quot;headerlink&quot; title=&quot;流水账二&quot;&gt;&lt;/a&gt;流水账二&lt;/h2&gt;&lt;p&gt;快到熄灯的时间，我收拾了东西爬上上铺，整个感觉奇妙的很，狭小的空间内时睡时醒，只记得做了很多噩梦，醒来的时候六点多，车上的广播开始有了动静。我翻动了一会下了床洗了脸，牙刷什么的在箱子里，也懒得去拿了。坐在窗户旁边看风景，但也没什么看到，雾气茫茫，不太能看清多远。同行的伙伴递过来面包、🍓，也没什么食欲，捏了个草莓吃了。&lt;/p&gt;
+&lt;center&gt;
+    &lt;img style=&quot;border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); width:300px&quot; src=&quot;https://img.imgdb.cn/item/603b65385f4313ce25b1d1e4.jpg&quot;&gt;
+    &lt;br&gt;
+    &lt;div style=&quot;color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;&quot;&gt;剩下的叶子放在了车窗旁拍了照，随即丢到了垃圾桶了，毕竟不太好看——放窗户上。&lt;/div&gt;
+&lt;/center&gt;
 
-流水账二
-快到熄灯的时间，我收拾了东西爬
+&lt;h2 id=&quot;流水账三&quot;&gt;&lt;a href=&quot;#流水账三&quot; class=&quot;headerlink&quot; title=&quot;流水账三&quot;&gt;&lt;/a&gt;流水账三&lt;/h2&gt;&lt;p&gt;上午没什么事，看了会手机没什么玩的，就站起来站着，车到站的时候咯噔了一下，差点跌倒，还好不至于出丑。后来实在无趣，上了床，开始睡觉了。大约十一点半，乘务员提醒快到站了。拿出浏览器查了查，12：05到，还早，打算再睡会，可也没啥兴致，便下了床。再次坐在窗边，旋即看到“上海站”几个打字向我跑来，原来早点了。那便收拾收拾下车吧。&lt;/p&gt;
+&lt;h2 id=&quot;流水账四&quot;&gt;&lt;a href=&quot;#流水账四&quot; class=&quot;headerlink&quot; title=&quot;流水账四&quot;&gt;&lt;/a&gt;流水账四&lt;/h2&gt;&lt;p&gt;一路按照指示牌的方向，给看了健康码，一路来到三四号线的地方，跟我姐分道扬镳，开始了一个多小时的地铁之旅。一路无话，倒是宜山路转9号线，路途之远难以想象，太累了，几十级的台阶，去年帮某人抬了一路，今年换了个人，以后一定提醒带少行李。说起来三号线上看到个有意思的父亲和女儿，那父亲大概三十岁不到，短发、五官都分外精致，手里抱个“长宁美院”的袋子，女儿也六七岁的样子，一会坐下一会站起来。我顿时起了好感。说着她拉起来她爸爸指着墙上的广告说，这两个人怎么长的一样。那美院男子细心的讲解着什么镜像、什么Ps、什么广告，听起来极为有趣。&lt;br&gt;最后面没什么说的了，倒是等公交等不来，打的又堵车，磕磕绊绊算是回了学校，便也开始新的日子了。&lt;/p&gt;
     
     </summary>
     
@@ -658,50 +776,6 @@ pip uninstall package
     
     
       <category term="life" scheme="https://asea.fun/tags/life/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo deploy——避免重复输入账户密码</title>
-    <link href="https://asea.fun/post/f7b96544.html"/>
-    <id>https://asea.fun/post/f7b96544.html</id>
-    <published>2021-02-23T02:05:28.000Z</published>
-    <updated>2021-02-23T13:48:28.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="ssh配置"><a href="#ssh配置" class="headerlink" title="ssh配置"></a>ssh配置</h1><h2><a id="1SSH_13"></a>1.生成SSH密钥</h2> <pre class="prettyprint"><code class="has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">cd ~/.ssh<div class="hljs-button &#123;2&#125;" data-title="复制" data-report-click="&#123;&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;&#125;"></div></code><p class="pre-numbering" style><li style="color: rgb(153, 153, 153);">1</li></p></pre> <p>使用ssh -Keygen 生成密钥</p> <pre class="prettyprint"><code class="has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">ssh-keygen -t rsa -C "your_email@example.com"<div class="hljs-button &#123;2&#125;" data-title="复制" data-report-click="&#123;&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;&#125;"></div></code><p class="pre-numbering" style><li style="color: rgb(153, 153, 153);">1</li></p></pre> <p>后面的输入均使用默认值，点击<strong>enter回车</strong>跳过</p> <p>密钥生成成功</p> <pre class="prettyprint"><code class="has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">Your identification has been saved in /home/you/.ssh/id_rsa.Your public key has been saved in /home/you/.ssh/id_rsa.pub.The key fingerprint is:…………………此处是密钥内容…………………… your_email@example.com<div class="hljs-button &#123;2&#125;" data-title="复制" data-report-click="&#123;&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;&#125;"></div></code><p class="pre-numbering" style><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li></p></pre> <p>点击复制</p> <h2><a id="2GitHub_38"></a>2.设置GitHub仓库的密钥</h2> <p>点击SSh and GPG keys，后新建一个SSh key</p> <p><img src="https://img-blog.csdnimg.cn/img_convert/f8c5d3ae311c550857f785e2cd599386.png" alt="image-20210103194924377"></p> <p>输入密钥的title，可自定义输入，下面的key的内容即为刚才生成的密钥内容，将其复制粘贴进去（可能会遇到问题，请继续往后看），后点击add ssh key即可创建成功</p> <p><img src="https://img-blog.csdnimg.cn/img_convert/3b39fd4fdde832109ea9f30f2d85d834.png" alt="image-20210103195020682"></p> <h2><a id="3_48"></a>3.测试配置是否成功</h2> <pre class="prettyprint"><code class="has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">ssh -T git@GitHub.com<div class="hljs-button &#123;2&#125;" data-title="复制" data-report-click="&#123;&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;&#125;"></div></code><p class="pre-numbering" style><li style="color: rgb(153, 153, 153);">1</li></p></pre> <p>如果看到successfully，即为配置完成并且成功</p> <p><img src="https://img-blog.csdnimg.cn/img_convert/cae4224ec411aaff9598cae46dd7d1dd.png" alt="image-20210103195309236"></p> <h2><a id="4Git_60"></a>4.修改博客Git远程提交的地址</h2> <pre class="prettyprint"><code class="has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"># 修改 https 协议为 ssh 协议(仓库的ssh地址)git remote set-url origin git@github.com:xxx/xxx.git<div class="hljs-button &#123;2&#125;" data-title="复制" data-report-click="&#123;&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;&#125;"></div></code><p class="pre-numbering" style><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li></p></pre> <h2><a id="5hexo_configyml_67"></a>5.修改hexo根目录下的_config.yml文件中的远程仓库设置</h2> <pre class="prettyprint"><code class="has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"># Deployment## Docs: https://hexo.io/docs/one-command-deploymentdeploy:  type: git  repository: git@github.com:looles/looles.github.io.git  branch: master<div class="hljs-button &#123;2&#125;" data-title="复制" data-report-click="&#123;&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;&#125;"></div></code><p class="pre-numbering" style><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li></p></pre> <h2><a id="6_78"></a>6.部署推送到远程仓库</h2> <p>ub.com:looles/looles.github.io.git<br> branch: master</p> <pre class="prettyprint"><code class="has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">#### 6.部署推送到远程仓库<div class="hljs-button &#123;2&#125;" data-title="复制" data-report-click="&#123;&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;&#125;"></div></code><p class="pre-numbering" style><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li></p></pre>                <div><div></div></div>                <link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/markdown_views-d7a94ec6ab.css" rel="stylesheet">                <link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/style-80ad9b4f5b.css" rel="stylesheet">        <p>转载于: <a href="https://blog.csdn.net/qq_43729277/article/details/112150367?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control&dist_request_id=ad442711-b6a8-4c52-8eb8-433089bfe963&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control">2021-01-03-设解决使用hexo deploy推送代码到github仓库时重复输入账户密码</a></p><hr><h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><blockquote><p>1、如果之前设置过ssh，但是部署的时候需要输入密码，可能是没有配置好，用<code>ssh -T <a href="mailto:git@GitHub.com">git@GitHub.com</a></code>检查的时候需要输入密码，则代表没有配置好。建议重头配置一次，提示是否要overwrite的时候y就行了。<br>2、另外粘贴密钥的时候可能会遇到问题 <em>“Key is invalid. You must supply a key in OpenSSH public key format github”</em>，请继续往后看。</p></blockquote><hr><h1 id="add-ssh-key报错"><a href="#add-ssh-key报错" class="headerlink" title="add ssh key报错"></a>add ssh key报错</h1><div id="article_content" class="article_content clearfix">        <link rel="stylesheet" href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/ck_htmledit_views-b5506197d8.css">                <div id="content_views" class="markdown_views prism-atom-one-light">                    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">                        <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>                    </svg>                    <p>直接复制粘贴 .ssh的文件<strong>会破坏格式</strong><br> 需要打开 git bash<br> <img src="https://img-blog.csdnimg.cn/20200609194954856.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTYwNDI1Nw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br> 输入命令<code>clip &lt; ~/.ssh/id_rsa.pub</code><br> 回车后就复制到剪切板了，到github添加ssh keys的地方直接就能粘贴上<br> 如图：<br> <img src="https://img-blog.csdnimg.cn/20200609195404177.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTYwNDI1Nw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>                </div><div><div></div></div>                <link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/markdown_views-d7a94ec6ab.css" rel="stylesheet">                <link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/style-80ad9b4f5b.css" rel="stylesheet">        </div><p>转载于：<a href="https://blog.csdn.net/weixin_45604257/article/details/106649576">Key is invalid. You must supply a key in OpenSSH public key format github</a></p><hr><p>以上就完成了对hexo deploy的所有配置。</p>]]></content>
-    
-    <summary type="html">
-    
-      ssh配置
-1.生成SSH密钥
-cd ~/.ssh
-1
-
-
-
-使用ssh -Keygen 生成密钥
-
-ssh-keygen -t rsa -C &quot;your_email@example.com&quot;
-1
-
-
-
-后面的输入均使用默认值，点击enter回车跳过
-
-密钥生成成功
-
-Your identification has been saved in /home/you/.ssh/id_rsa.
-Your public key has been saved in /home/you/.ssh/id_rsa.pub.
-The key fingerprint is:
-…………………此处是密钥内容……………
-    
-    </summary>
-    
-    
-      <category term="技术" scheme="https://asea.fun/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="deploy" scheme="https://asea.fun/tags/deploy/"/>
     
   </entry>
   
