@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://asea.fun/"/>
-  <updated>2021-05-11T08:02:11.000Z</updated>
+  <updated>2021-05-17T14:29:13.000Z</updated>
   <id>https://asea.fun/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于vercel私有域名无法访问</title>
+    <link href="https://asea.fun/post/3548e590.html"/>
+    <id>https://asea.fun/post/3548e590.html</id>
+    <published>2021-05-17T14:21:28.000Z</published>
+    <updated>2021-05-17T14:29:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="记录一下deploy在vercel上的项目忽然无法访问的问题"><a href="#记录一下deploy在vercel上的项目忽然无法访问的问题" class="headerlink" title="记录一下deploy在vercel上的项目忽然无法访问的问题"></a>记录一下deploy在vercel上的项目忽然无法访问的问题</h1><p>这几天没打开，今天偶然打开发现我的个人主页无法访问了（只是私有域名无法访问，但是vercel提供的域名毫无问题，怪哉！），看了半天控制台的域名解析没问题，又到vercel后台查了半天，实在是不行。<br>最后想起来会不会是被墙了，于是科学上网尝试了一下，居然真的成功了。<br>然而我还是不知道该怎么解决，四处询问未果。<br>最后我想会不会是因为github的这个仓库挺久没更新了，于是稍稍修改了一下html文件push上去，嘿嘿，然后就可以访问了，具体原因不清楚，至少可以进去了！！<br>由于问题来的莫名其妙，解决的也莫名其妙，不用再多说什么了。<br>另外，明天加油！（紧张ingngg)</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;记录一下deploy在vercel上的项目忽然无法访问的问题&quot;&gt;&lt;a href=&quot;#记录一下deploy在vercel上的项目忽然无法访问的问题&quot; class=&quot;headerlink&quot; title=&quot;记录一下deploy在vercel上的项目忽然无法访问的问题&quot;&gt;&lt;/a&gt;记录一下deploy在vercel上的项目忽然无法访问的问题&lt;/h1&gt;&lt;p&gt;这几天没打开，今天偶然打开发现我的个人主页无法访问了（只是私有域名无法访问，但是vercel提供的域名毫无问题，怪哉！），看了半天控制台的域名解析没问题，又到vercel后台查了半天，实在是不行。&lt;br&gt;最后想起来会不会是被墙了，于是科学上网尝试了一下，居然真的成功了。&lt;br&gt;然而我还是不知道该怎么解决，四处询问未果。&lt;br&gt;最后我想会不会是因为github的这个仓库挺久没更新了，于是稍稍修改了一下html文件push上去，嘿嘿，然后就可以访问了，具体原因不清楚，至少可以进去了！！&lt;br&gt;由于问题来的莫名其妙，解决的也莫名其妙，不用再多说什么了。&lt;br&gt;另外，明天加油！（紧张ingngg)&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="https://asea.fun/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="github" scheme="https://asea.fun/tags/github/"/>
+    
+      <category term="vercel" scheme="https://asea.fun/tags/vercel/"/>
+    
+      <category term="domain" scheme="https://asea.fun/tags/domain/"/>
+    
+  </entry>
   
   <entry>
     <title>关于部署机器人到linux的一些记录</title>
@@ -740,42 +768,6 @@
     
     
       <category term="note" scheme="https://asea.fun/tags/note/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>返校日记</title>
-    <link href="https://asea.fun/post/b6589fc3.html"/>
-    <id>https://asea.fun/post/b6589fc3.html</id>
-    <published>2021-02-28T09:26:32.000Z</published>
-    <updated>2021-02-28T09:27:02.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="大二下的返校有什么可说道的"><a href="#大二下的返校有什么可说道的" class="headerlink" title="大二下的返校有什么可说道的"></a>大二下的返校有什么可说道的</h1><h2 id="流水账一"><a href="#流水账一" class="headerlink" title="流水账一"></a>流水账一</h2><p>火车站安检的位置改了，改的挺合理，我觉得它本来就应该是这样子。在取票厅见到了很久不见的老同学，一见面其实没认出来，好家伙，那肯定认不出来，不过说了些话后感觉也还熟悉，可能是某些深处的记忆被拔出来了，整个相处还算不尴尬。我们五个人上四号车，结果却往相反的地方走，好在问了问工作人员，赶紧掉头走了很久很久才到。上车后我们坐在下铺攀谈了一会，主人过来了，于是我们便移步到道旁的位置上。没什么事干，我们决定打会牌，然而网络问题，磕磕绊绊进去之后，也就打了一把，还算有意思的结束。我坐在窗户旁边看周遭景致后撤，脑中并无任何想法。</p><h2 id="流水账二"><a href="#流水账二" class="headerlink" title="流水账二"></a>流水账二</h2><p>快到熄灯的时间，我收拾了东西爬上上铺，整个感觉奇妙的很，狭小的空间内时睡时醒，只记得做了很多噩梦，醒来的时候六点多，车上的广播开始有了动静。我翻动了一会下了床洗了脸，牙刷什么的在箱子里，也懒得去拿了。坐在窗户旁边看风景，但也没什么看到，雾气茫茫，不太能看清多远。同行的伙伴递过来面包、🍓，也没什么食欲，捏了个草莓吃了。</p><center>    <img style="border-radius: 0.3125em;    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); width:300px" src="https://img.imgdb.cn/item/603b65385f4313ce25b1d1e4.jpg">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">剩下的叶子放在了车窗旁拍了照，随即丢到了垃圾桶了，毕竟不太好看——放窗户上。</div></center><h2 id="流水账三"><a href="#流水账三" class="headerlink" title="流水账三"></a>流水账三</h2><p>上午没什么事，看了会手机没什么玩的，就站起来站着，车到站的时候咯噔了一下，差点跌倒，还好不至于出丑。后来实在无趣，上了床，开始睡觉了。大约十一点半，乘务员提醒快到站了。拿出浏览器查了查，12：05到，还早，打算再睡会，可也没啥兴致，便下了床。再次坐在窗边，旋即看到“上海站”几个打字向我跑来，原来早点了。那便收拾收拾下车吧。</p><h2 id="流水账四"><a href="#流水账四" class="headerlink" title="流水账四"></a>流水账四</h2><p>一路按照指示牌的方向，给看了健康码，一路来到三四号线的地方，跟我姐分道扬镳，开始了一个多小时的地铁之旅。一路无话，倒是宜山路转9号线，路途之远难以想象，太累了，几十级的台阶，去年帮某人抬了一路，今年换了个人，以后一定提醒带少行李。说起来三号线上看到个有意思的父亲和女儿，那父亲大概三十岁不到，短发、五官都分外精致，手里抱个“长宁美院”的袋子，女儿也六七岁的样子，一会坐下一会站起来。我顿时起了好感。说着她拉起来她爸爸指着墙上的广告说，这两个人怎么长的一样。那美院男子细心的讲解着什么镜像、什么Ps、什么广告，听起来极为有趣。<br>最后面没什么说的了，倒是等公交等不来，打的又堵车，磕磕绊绊算是回了学校，便也开始新的日子了。</p><h2 id="一些图片"><a href="#一些图片" class="headerlink" title="一些图片"></a>一些图片</h2><center>    <img style="border-radius: 0.3125em;    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); width:300px" src="https://img.imgdb.cn/item/603b67ee5f4313ce25b3b2e0.jpg">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">上海站慢慢靠近</div></center><hr><center>    <img style="border-radius: 0.3125em;    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); width:300px" src="https://img.imgdb.cn/item/603b67ee5f4313ce25b3b2e3.jpg">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">公交车站牌人山人海</div></center><hr><center>    <img style="border-radius: 0.3125em;    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); width:300px" src="https://img.imgdb.cn/item/603b67ee5f4313ce25b3b2e7.jpg">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">到宿舍后一碗泡面草草了事</div></center><hr><center>    <img style="border-radius: 0.3125em;    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); width:300px" src="https://img.imgdb.cn/item/603b67ee5f4313ce25b3b2ea.jpg">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">上铺视角</div></center>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;大二下的返校有什么可说道的&quot;&gt;&lt;a href=&quot;#大二下的返校有什么可说道的&quot; class=&quot;headerlink&quot; title=&quot;大二下的返校有什么可说道的&quot;&gt;&lt;/a&gt;大二下的返校有什么可说道的&lt;/h1&gt;&lt;h2 id=&quot;流水账一&quot;&gt;&lt;a href=&quot;#流水账一&quot; class=&quot;headerlink&quot; title=&quot;流水账一&quot;&gt;&lt;/a&gt;流水账一&lt;/h2&gt;&lt;p&gt;火车站安检的位置改了，改的挺合理，我觉得它本来就应该是这样子。在取票厅见到了很久不见的老同学，一见面其实没认出来，好家伙，那肯定认不出来，不过说了些话后感觉也还熟悉，可能是某些深处的记忆被拔出来了，整个相处还算不尴尬。我们五个人上四号车，结果却往相反的地方走，好在问了问工作人员，赶紧掉头走了很久很久才到。上车后我们坐在下铺攀谈了一会，主人过来了，于是我们便移步到道旁的位置上。没什么事干，我们决定打会牌，然而网络问题，磕磕绊绊进去之后，也就打了一把，还算有意思的结束。我坐在窗户旁边看周遭景致后撤，脑中并无任何想法。&lt;/p&gt;
-&lt;h2 id=&quot;流水账二&quot;&gt;&lt;a href=&quot;#流水账二&quot; class=&quot;headerlink&quot; title=&quot;流水账二&quot;&gt;&lt;/a&gt;流水账二&lt;/h2&gt;&lt;p&gt;快到熄灯的时间，我收拾了东西爬上上铺，整个感觉奇妙的很，狭小的空间内时睡时醒，只记得做了很多噩梦，醒来的时候六点多，车上的广播开始有了动静。我翻动了一会下了床洗了脸，牙刷什么的在箱子里，也懒得去拿了。坐在窗户旁边看风景，但也没什么看到，雾气茫茫，不太能看清多远。同行的伙伴递过来面包、🍓，也没什么食欲，捏了个草莓吃了。&lt;/p&gt;
-&lt;center&gt;
-    &lt;img style=&quot;border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); width:300px&quot; src=&quot;https://img.imgdb.cn/item/603b65385f4313ce25b1d1e4.jpg&quot;&gt;
-    &lt;br&gt;
-    &lt;div style=&quot;color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;&quot;&gt;剩下的叶子放在了车窗旁拍了照，随即丢到了垃圾桶了，毕竟不太好看——放窗户上。&lt;/div&gt;
-&lt;/center&gt;
-
-&lt;h2 id=&quot;流水账三&quot;&gt;&lt;a href=&quot;#流水账三&quot; class=&quot;headerlink&quot; title=&quot;流水账三&quot;&gt;&lt;/a&gt;流水账三&lt;/h2&gt;&lt;p&gt;上午没什么事，看了会手机没什么玩的，就站起来站着，车到站的时候咯噔了一下，差点跌倒，还好不至于出丑。后来实在无趣，上了床，开始睡觉了。大约十一点半，乘务员提醒快到站了。拿出浏览器查了查，12：05到，还早，打算再睡会，可也没啥兴致，便下了床。再次坐在窗边，旋即看到“上海站”几个打字向我跑来，原来早点了。那便收拾收拾下车吧。&lt;/p&gt;
-&lt;h2 id=&quot;流水账四&quot;&gt;&lt;a href=&quot;#流水账四&quot; class=&quot;headerlink&quot; title=&quot;流水账四&quot;&gt;&lt;/a&gt;流水账四&lt;/h2&gt;&lt;p&gt;一路按照指示牌的方向，给看了健康码，一路来到三四号线的地方，跟我姐分道扬镳，开始了一个多小时的地铁之旅。一路无话，倒是宜山路转9号线，路途之远难以想象，太累了，几十级的台阶，去年帮某人抬了一路，今年换了个人，以后一定提醒带少行李。说起来三号线上看到个有意思的父亲和女儿，那父亲大概三十岁不到，短发、五官都分外精致，手里抱个“长宁美院”的袋子，女儿也六七岁的样子，一会坐下一会站起来。我顿时起了好感。说着她拉起来她爸爸指着墙上的广告说，这两个人怎么长的一样。那美院男子细心的讲解着什么镜像、什么Ps、什么广告，听起来极为有趣。&lt;br&gt;最后面没什么说的了，倒是等公交等不来，打的又堵车，磕磕绊绊算是回了学校，便也开始新的日子了。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="日常" scheme="https://asea.fun/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    
-      <category term="life" scheme="https://asea.fun/tags/life/"/>
     
   </entry>
   
