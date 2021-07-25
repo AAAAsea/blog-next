@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://asea.fun/"/>
-  <updated>2021-07-25T15:40:14.000Z</updated>
+  <updated>2021-07-25T15:44:25.000Z</updated>
   <id>https://asea.fun/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>c++学习笔记</title>
+    <link href="https://asea.fun/post/258a2097.html"/>
+    <id>https://asea.fun/post/258a2097.html</id>
+    <published>2021-07-25T15:40:14.000Z</published>
+    <updated>2021-07-25T15:44:25.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="c-学习笔记"><a href="#c-学习笔记" class="headerlink" title="c++学习笔记"></a>c++学习笔记</h1><h2 id="四大件"><a href="#四大件" class="headerlink" title="四大件"></a>四大件</h2><ol><li>数据结构和算法</li><li>计算机网络</li><li>操作系统</li><li>设计模式组成原理</li></ol><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ol><li>常量</li></ol><p>​    宏常量 #define</p><p>​    const 修饰变量</p><p>​    均不可修改</p><ol><li>字符串<ol><li>char str[] = “ldksjfa”</li><li>string str = “dlkjafd” 需要头文件<string></string></li></ol></li></ol><h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><ol><li>三目运算符可以返回变量也可以返回变量值</li></ol><h2 id="控制结构"><a href="#控制结构" class="headerlink" title="控制结构"></a>控制结构</h2><ol><li>if - else if - else</li><li>switch - case break- case break-default break ==只能是int 或者 char，必须break==</li><li>循环结构 while（）{},do{}while()，for(int i =0;i&lt;10;i++)</li><li>goto FLAG; FLAG:</li><li>continue</li></ol><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ol><li><p>定义数组</p><ol><li>int a[10];</li><li>int a[10] = {0,1,2,3,4,5,6,7,8,9}</li><li>int a[] = {0,1,2,3}</li></ol></li><li><p>特点</p><ol><li>数据类型相同</li><li>内存空间连续</li></ol></li><li><p>二维数组</p><ol><li>行数</li><li>元素数目（用好sizeof())</li><li>理解好变量名与地址的关系</li></ol></li></ol><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><pre><code>1. 声明可以写多次，定义只能写一次</code></pre><h2 id="分文件编写"><a href="#分文件编写" class="headerlink" title="分文件编写"></a>分文件编写</h2><ol><li>.h写声明，.cpp写定义，最后新的cpp里引用.h即可</li></ol><h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> * p = &amp;a;</span><br><span class="line">cou&lt;&lt;*p; <span class="comment">//解引用，找到内存中的数据</span></span><br></pre></td></tr></table></figure><p>任何类型的指针都占四个字节</p><h3 id="空指针和野指针"><a href="#空指针和野指针" class="headerlink" title="空指针和野指针"></a>空指针和野指针</h3><ol><li>空指针：指向内存编号为0的指针，一般用来初始换（0-255）不可访问，系统占用。<code>int * p = nullptr</code></li><li>野指针：指向非法空间（是一种错误），无法访问。</li></ol><h3 id="const修饰指针"><a href="#const修饰指针" class="headerlink" title="const修饰指针"></a>const修饰指针</h3><h4 id="常量指针"><a href="#常量指针" class="headerlink" title="常量指针"></a>常量指针</h4><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> * p = &amp;a;</span><br><span class="line">cou&lt;&lt;*p&lt;&lt;<span class="built_in">endl</span>; </span><br><span class="line">a = <span class="number">20</span>; <span class="comment">//这样是可以的</span></span><br><span class="line">*p = <span class="number">20</span>; <span class="comment">//不可以！！指针的指向可以修改，但不可以通过解引用来修改</span></span><br></pre></td></tr></table></figure><h4 id="指针常量"><a href="#指针常量" class="headerlink" title="指针常量"></a>指针常量</h4><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> * <span class="keyword">const</span> p = &amp;a; <span class="comment">//指向不可以改，解引用可以改。</span></span><br></pre></td></tr></table></figure><h4 id="常量指针常量"><a href="#常量指针常量" class="headerlink" title="常量指针常量"></a>常量指针常量</h4><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> * <span class="keyword">const</span> p = &amp;a; <span class="comment">//都不可以改</span></span><br></pre></td></tr></table></figure><h3 id="指针和数组"><a href="#指针和数组" class="headerlink" title="指针和数组"></a>指针和数组</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> arr[<span class="number">3</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> * p = arr;</span><br><span class="line"></span><br><span class="line"><span class="comment">//利用指针遍历数组</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; *p &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    p++; <span class="comment">//向后走四个字节，即到下个元素</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="指针与函数（引用（地址）传递）"><a href="#指针与函数（引用（地址）传递）" class="headerlink" title="指针与函数（引用（地址）传递）"></a>指针与函数（引用（地址）传递）</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> * p1, <span class="keyword">int</span> * p2)</span></span>&#123;</span><br><span class="line"> <span class="keyword">return</span>(*p1 + *p2)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> b = <span class="number">20</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; add(&amp;a, &amp;b);</span><br></pre></td></tr></table></figure><h2 id="杂乱"><a href="#杂乱" class="headerlink" title="杂乱"></a>杂乱</h2><h3 id="头文件"><a href="#头文件" class="headerlink" title="头文件"></a>头文件</h3><ol><li><ctime></ctime></li><li><iostream></iostream></li></ol><h3 id="踩坑"><a href="#踩坑" class="headerlink" title="踩坑"></a>踩坑</h3><ol><li>pow是浮点计算，貌似算出来的数可能导致不相等，可以加个(int)，加（int）会导致不准确，需要自己写函数（不同编译器不一样效果）</li><li>cout输出小数不会带后面的0；</li><li>当在循环的时候要找到最好的判断方式，在最合适的地方break，不然很容易超时！</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;c-学习笔记&quot;&gt;&lt;a href=&quot;#c-学习笔记&quot; class=&quot;headerlink&quot; title=&quot;c++学习笔记&quot;&gt;&lt;/a&gt;c++学习笔记&lt;/h1&gt;&lt;h2 id=&quot;四大件&quot;&gt;&lt;a href=&quot;#四大件&quot; class=&quot;headerlink&quot; title=&quot;四大件&quot;&gt;&lt;/a&gt;四大件&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;数据结构和算法&lt;/li&gt;
+&lt;li&gt;计算机网络&lt;/li&gt;
+&lt;li&gt;操作系统&lt;/li&gt;
+&lt;li&gt;设计模式组成原理&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;数据类型&quot;&gt;&lt;a href=&quot;#数据类型&quot; class=&quot;headerlink&quot; title=&quot;数据类型&quot;&gt;&lt;/a&gt;数据类型&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;常量&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;​    宏常量 #define&lt;/p&gt;
+&lt;p&gt;​    const 修饰变量&lt;/p&gt;
+&lt;p&gt;​    均不可修改&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;字符串&lt;ol&gt;
+&lt;li&gt;char str[] = “ldksjfa”&lt;/li&gt;
+&lt;li&gt;string str = “dlkjafd” 需要头文件&lt;string&gt;&lt;/string&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;运算符&quot;&gt;&lt;a href=&quot;#运算符&quot; class=&quot;headerlink&quot; title=&quot;运算符&quot;&gt;&lt;/a&gt;运算符&lt;/h2&gt;
+    
+    </summary>
+    
+    
+      <category term="笔记" scheme="https://asea.fun/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="c++" scheme="https://asea.fun/tags/c/"/>
+    
+  </entry>
   
   <entry>
     <title>c++学习笔记</title>
@@ -63,7 +105,7 @@
     <link href="https://asea.fun/post/eb0811b7.html"/>
     <id>https://asea.fun/post/eb0811b7.html</id>
     <published>2021-07-21T16:12:40.000Z</published>
-    <updated>2021-07-24T07:04:29.000Z</updated>
+    <updated>2021-07-25T15:40:41.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="踩坑"><a href="#踩坑" class="headerlink" title="踩坑"></a>踩坑</h2><blockquote><p>推荐环境统一放在一个environment的文件夹下，最新的jdk的jre不用自己配置，只需要配置java_home以及path即可。<br>安装后移动jdk路径，会导致cmd无任何输出，可以重新安装一下（如果你想换位置的话）。</p></blockquote><h2 id="DOS命令"><a href="#DOS命令" class="headerlink" title="DOS命令"></a>DOS命令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">1. dir</span><br><span class="line">2. cd /d E:\xxx 跨盘操作</span><br><span class="line">3. cls (clear screen)</span><br><span class="line">4. exit</span><br><span class="line">5. ipconfig</span><br><span class="line">6. calc</span><br><span class="line">7. mspaint</span><br><span class="line">8. notepad</span><br><span class="line">9. ping + domain</span><br><span class="line">10. md test</span><br><span class="line">11. cd&gt;a.txt</span><br><span class="line">12. del a.txt</span><br><span class="line">13. rd test</span><br></pre></td></tr></table></figure><h2 id="基础知识点"><a href="#基础知识点" class="headerlink" title="基础知识点"></a>基础知识点</h2><ol><li><p>大小写敏感、强类型</p></li><li><p>char c  = ‘\u0061’</p></li><li><p>引用类型比较地址 基本类型比较值</p></li><li><p>高到低：强制转换；低到高：自动转换</p><ol><li>byte-&gt;short-&gt;hcar-&gt;int-&gt;long-&gt;float-&gt;double</li></ol></li><li><p>JDK7后数字可以用下划线分割</p></li><li><p>方法重载（参数类型、个数、排序不同）</p></li><li><p>数组</p><ol><li><p>int[] nums; （首选）</p></li><li><p>int nums[]; （C的风格）</p></li><li><p>int[] nums = new int[10];nums[0] = 1（动态初始化，先声明，后赋值）隐式初始化，int默认0，string默认null</p></li><li><p>int [] nums = {1,2,3}（静态初始化：创建直接赋值）</p></li><li><p>长度是确定的，不可更改，元素类型相同，可以是基本类型也可是引用类型</p></li><li><p>for-each:</p><ol><li><pre><code class="java"><span class="keyword">for</span>(<span class="keyword">int</span> array : arrays)&#123;    System.out.println(array);&#125;</code></pre></li></ol></li><li><p>Arrays类</p><ol><li>Arrays.sort()</li><li>Arrays.fill()</li><li>Arrays.tostring()</li></ol></li><li><p>稀疏数组</p><ol><li>总行 总列 有效值个数</li><li>行 列 值</li><li>…</li></ol></li></ol></li></ol><h2 id="面向对象（OOP）"><a href="#面向对象（OOP）" class="headerlink" title="面向对象（OOP）"></a>面向对象（OOP）</h2><ol><li><p>非静态方法需要实例化才能调用</p></li><li><p>引用传递、值传递</p></li><li><p>构造器（方法名和类名一致）,new本质是在调用构造器</p></li><li><p>无参构造再不定义任何构造时会自动生成，反之必须自己显示定义。</p></li><li><p>idea :  alt+insert 自动生成构造器</p></li><li><p>封装：属性私有，get，set</p></li><li><p>继承：实例化子类时，会先调用父类构造器，如果显式定义构造器，super（）必须在子类构造器的第一行。ctrl + h继承树</p></li><li><p>重写：方法名和参数列表必须一样</p></li><li><p>多态：能调用的方法只看引用类型，且如果子类重写父类方法，则运行子类方法。 多态是方法的多态</p></li><li><p>A instanceof B</p></li><li></li></ol>]]></content>
     
@@ -649,7 +691,7 @@
     <link href="https://asea.fun/post/129264f1.html"/>
     <id>https://asea.fun/post/129264f1.html</id>
     <published>2021-04-26T13:53:00.000Z</published>
-    <updated>2021-04-26T13:53:00.000Z</updated>
+    <updated>2021-07-25T15:44:09.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Node初步学习（后端入门）"><a href="#Node初步学习（后端入门）" class="headerlink" title="Node初步学习（后端入门）"></a>Node初步学习（后端入门）</h1><h2 id="基础入门"><a href="#基础入门" class="headerlink" title="基础入门"></a>基础入门</h2><ol><li><p>node安装</p></li><li><p>node运行js文件</p></li><li><p>寻找包的时候先去node_modules，如果没有，在上一级寻找node_modules，直到根目录</p></li><li><p>const math = require(math)</p></li><li><p>buffer</p><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> buf = Buffer.from(str);</span><br><span class="line"><span class="built_in">console</span>.log(buf.length) <span class="comment">//汉字算2（内存大小）</span></span><br><span class="line"><span class="built_in">console</span>.log(str.length) <span class="comment">//汉字英文都算1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> buf2 = Buffer.alloc(<span class="number">10</span>) <span class="comment">//创建10字节大小的Buffer</span></span><br><span class="line">buf2[<span class="number">0</span>] = <span class="number">88</span></span><br><span class="line"><span class="built_in">console</span>.log(bur2[<span class="number">0</span>].toString(<span class="number">2</span>)) <span class="comment">//输出二进制</span></span><br><span class="line"><span class="comment">//一单创建无法更改长度</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> buf3 = Buffer.allocUnsafe(<span class="number">10</span>) <span class="comment">//不清空内存，可能包含敏感数据</span></span><br></pre></td></tr></table></figure><h2 id="模块使用之fs"><a href="#模块使用之fs" class="headerlink" title="模块使用之fs"></a>模块使用之fs</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>)</span><br><span class="line"><span class="comment">// 写文件</span></span><br><span class="line">fs.writeFile(path,data,<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 读文件</span></span><br><span class="line">fs.readFile(path,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li></ol><h2 id="模块使用之http"><a href="#模块使用之http" class="headerlink" title="模块使用之http"></a>模块使用之http</h2><h3 id="基本使用方法"><a href="#基本使用方法" class="headerlink" title="基本使用方法"></a>基本使用方法</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>)</span><br><span class="line"><span class="keyword">var</span> server = http.createServer()</span><br><span class="line"><span class="comment">// 绑定事件</span></span><br><span class="line">server.on(<span class="string">&#x27;request&#x27;</span>,<span class="function"><span class="title">funtion</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 根据不同路径返回不同response</span></span><br><span class="line">    <span class="keyword">if</span> (url = <span class="string">&#x27;/index&#x27;</span>)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(res.url)</span><br><span class="line">        <span class="comment">// 需要end结束，不太常用</span></span><br><span class="line">        res.write(<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line">        res.end</span><br><span class="line">        <span class="comment">// 一般不用write</span></span><br><span class="line">        res.end(<span class="string">&#x27;hhh&#x27;</span>) <span class="comment">// 只能是字符串，可以用json. stringify()</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 绑定端口号，启动服务器</span></span><br><span class="line">server.listen()</span><br></pre></td></tr></table></figure><h3 id="关于content-type"><a href="#关于content-type" class="headerlink" title="关于content-type"></a>关于content-type</h3><p><code>res.setHeader(&#39;Content-Type&#39;,&#39;text/plain;charset-utf-8&#39;)</code><br>具体类型可参照<a href="https://tool.oschina.net/commons">此处链接</a></p><h2 id="引用自己的模块"><a href="#引用自己的模块" class="headerlink" title="引用自己的模块"></a>引用自己的模块</h2><!-- 核心模块os不讲了 --><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 自制模块，需要用到exports对象，设定不同的属性值达到跨文件引用变量目的</span></span><br><span class="line"><span class="built_in">exports</span>.name = <span class="string">&#x27;Doge&#x27;</span></span><br></pre></td></tr></table></figure><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 引用模块</span></span><br><span class="line"><span class="keyword">var</span> myModule = <span class="built_in">require</span>(<span class="string">&#x27;./a.js&#x27;</span>) <span class="comment">// 后缀可以省略</span></span><br><span class="line"><span class="built_in">console</span>.log(a.name) <span class="comment">// 输出Dog</span></span><br></pre></td></tr></table></figure><h2 id="代码风格"><a href="#代码风格" class="headerlink" title="代码风格"></a>代码风格</h2><ol><li>JavaScript Style要求tab两个空格</li><li>一般结尾不加<code>;</code> 某些特殊情况要加（很不常见）</li></ol><h2 id="模板引擎"><a href="#模板引擎" class="headerlink" title="模板引擎"></a>模板引擎</h2><p><strong>art-template</strong><br><code>npm install art-template</code><br><strong>暂时跳过</strong></p><h2 id="渲染模式"><a href="#渲染模式" class="headerlink" title="渲染模式"></a>渲染模式</h2><ul><li>服务端渲染（服务端使用模板引擎）<br>SEO优化</li><li>客户端渲染<br>请求更快，但不利于SEO</li></ul><h2 id="静态资源案例"><a href="#静态资源案例" class="headerlink" title="静态资源案例"></a>静态资源案例</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>)</span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>)</span><br><span class="line"></span><br><span class="line">http <span class="comment">//简写方式，默认绑定request</span></span><br><span class="line">  .creatServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">    res.end(<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">  .listen(<span class="number">3000</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;runing&#x27;</span>) </span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -749,89 +791,6 @@
       <category term="notes" scheme="https://asea.fun/tags/notes/"/>
     
       <category term="electron" scheme="https://asea.fun/tags/electron/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP学习笔记</title>
-    <link href="https://asea.fun/post/55d182ea.html"/>
-    <id>https://asea.fun/post/55d182ea.html</id>
-    <published>2021-04-13T04:18:56.000Z</published>
-    <updated>2021-04-13T08:47:11.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>以下是我最近学习php的笔记，主要记录自认为会遗忘的知识点</p></blockquote><h1 id="初识php"><a href="#初识php" class="headerlink" title="初识php"></a>初识php</h1><p>php是一种动态网站开发的脚本语言，有交互性，有数据的传递。</p><h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol><li>标准语法<code>&lt;?php php代码 ?&gt;</code></li><li>最后一句php语言可以不带结束符<code>;</code></li><li>最后可以不写<code>?&gt;</code>，这样就可以避免读取最后的空行</li><li>行注释<code>//</code>或<code>#</code></li><li>块注释<code>/* */</code></li></ol><h2 id="开始语法"><a href="#开始语法" class="headerlink" title="开始语法"></a>开始语法</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ol><li>声明<br><code>$var1;</code>或直接赋值<code>$var2 = 1;</code></li><li>删除变量<br><code>unset($var1);</code></li><li>命名规则<ul><li>以$开始</li><li>由字母、数字、下划线组成，但不能以数字开始</li><li>支持中文变量（很不建议你懂的）</li></ul></li><li>预定义变量（均为数组类型）<ul><li>$_GET: 获取所有表单以get方式提交的数据</li><li>$_POST: 提交的数据都会保存在此</li><li>$_REQUEST: GET和POST提交的都会保存</li><li>$GLOBALS: PHP钟所有的全局变量</li><li>$_SERVER: 服务器信息</li><li>$_SESSION: session会话数据</li><li>$_COOKIE: cookie会话数据</li><li>$_ENV: 环境信息</li><li>$_FILES: 用户上传的文件信息</li></ul></li><li>可变变量<br>如果一个变量保存的值刚好是另一个变量的名字，那么可以通过访问一个变量得到另一个变量的值。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$a &#x3D; &#39;b&#39;</span><br><span class="line">$b &#x3D; &#39;bb&#39;</span><br><span class="line">echo $$A</span><br></pre></td></tr></table></figure></li><li>变量赋值<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$b &#x3D; 1</span><br><span class="line">$a &#x3D; $b</span><br><span class="line">$a &#x3D; 2 </span><br><span class="line">echo $a，$b</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$b &#x3D; 1</span><br><span class="line">$a &#x3D; &amp;$b &#x2F;&#x2F;引用赋值</span><br><span class="line">$a &#x3D; 2 </span><br><span class="line">echo $a，$b</span><br></pre></td></tr></table></figure><h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3></li><li>定义常量<ul><li>函数定义 <code>define(&#39;PI&#39;,3.14)</code></li><li>const定义 <code>const PI = 3.14</code></li></ul></li><li>命名规则<ul><li>不需要$</li><li>名字由数字、字母、下划线组成但不能由数字开头</li><li>通常常量都是大写字母</li><li>命名规则其实比较松，比如其实可以用一些特殊字符，但标准下不这样使用 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">define(&#39;-_-&#39;,3); &#x2F;&#x2F;只能这样命名</span><br><span class="line">const -_-,3; &#x2F;&#x2F;这是错误的</span><br></pre></td></tr></table></figure></li><li>注意细节<ul><li>define和const定义的常量是有区别的：访问权限有区别</li><li>常量名不区分大小写，但是可以区分（？？？）</li></ul></li></ul></li><li>使用形式<br><code>echo PI;</code><ul><li>特殊常量的使用形式 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">echo -_-; &#x2F;&#x2F;X</span><br><span class="line">echo constant(&#39;-_-&#39;); &#x2F;&#x2F;√</span><br></pre></td></tr></table></figure></li></ul></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;以下是我最近学习php的笔记，主要记录自认为会遗忘的知识点&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;初识php&quot;&gt;&lt;a href=&quot;#初识php&quot; class=&quot;headerlink&quot; title=&quot;初识php&quot;&gt;&lt;/a&gt;初识php&lt;/h1&gt;&lt;p&gt;php是一种动态网站开发的脚本语言，有交互性，有数据的传递。&lt;/p&gt;
-&lt;h1 id=&quot;基本语法&quot;&gt;&lt;a href=&quot;#基本语法&quot; class=&quot;headerlink&quot; title=&quot;基本语法&quot;&gt;&lt;/a&gt;基本语法&lt;/h1&gt;&lt;h2 id=&quot;注意事项&quot;&gt;&lt;a href=&quot;#注意事项&quot; class=&quot;headerlink&quot; title=&quot;注意事项&quot;&gt;&lt;/a&gt;注意事项&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;标准语法&lt;code&gt;&amp;lt;?php php代码 ?&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;最后一句php语言可以不带结束符&lt;code&gt;;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;最后可以不写&lt;code&gt;?&amp;gt;&lt;/code&gt;，这样就可以避免读取最后的空行&lt;/li&gt;
-&lt;li&gt;行注释&lt;code&gt;//&lt;/code&gt;或&lt;code&gt;#&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;块注释&lt;code&gt;/* */&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;开始语法&quot;&gt;&lt;a href=&quot;#开始语法&quot; class=&quot;headerlink&quot; title=&quot;开始语法&quot;&gt;&lt;/a&gt;开始语法&lt;/h2&gt;&lt;h3 id=&quot;变量&quot;&gt;&lt;a href=&quot;#变量&quot; class=&quot;headerlink&quot; title=&quot;变量&quot;&gt;&lt;/a&gt;变量&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;声明&lt;br&gt;&lt;code&gt;$var1;&lt;/code&gt;或直接赋值&lt;code&gt;$var2 = 1;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;删除变量&lt;br&gt;&lt;code&gt;unset($var1);&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;命名规则&lt;ul&gt;
-&lt;li&gt;以$开始&lt;/li&gt;
-&lt;li&gt;由字母、数字、下划线组成，但不能以数字开始&lt;/li&gt;
-&lt;li&gt;支持中文变量（很不建议你懂的）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;预定义变量（均为数组类型）&lt;ul&gt;
-&lt;li&gt;$_GET: 获取所有表单以get方式提交的数据&lt;/li&gt;
-&lt;li&gt;$_POST: 提交的数据都会保存在此&lt;/li&gt;
-&lt;li&gt;$_REQUEST: GET和POST提交的都会保存&lt;/li&gt;
-&lt;li&gt;$GLOBALS: PHP钟所有的全局变量&lt;/li&gt;
-&lt;li&gt;$_SERVER: 服务器信息&lt;/li&gt;
-&lt;li&gt;$_SESSION: session会话数据&lt;/li&gt;
-&lt;li&gt;$_COOKIE: cookie会话数据&lt;/li&gt;
-&lt;li&gt;$_ENV: 环境信息&lt;/li&gt;
-&lt;li&gt;$_FILES: 用户上传的文件信息&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;可变变量&lt;br&gt;如果一个变量保存的值刚好是另一个变量的名字，那么可以通过访问一个变量得到另一个变量的值。&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$a &amp;#x3D; &amp;#39;b&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$b &amp;#x3D; &amp;#39;bb&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo $$A&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;li&gt;变量赋值&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$b &amp;#x3D; 1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$a &amp;#x3D; $b&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$a &amp;#x3D; 2 &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo $a，$b&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$b &amp;#x3D; 1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$a &amp;#x3D; &amp;amp;$b &amp;#x2F;&amp;#x2F;引用赋值&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$a &amp;#x3D; 2 &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo $a，$b&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;常量&quot;&gt;&lt;a href=&quot;#常量&quot; class=&quot;headerlink&quot; title=&quot;常量&quot;&gt;&lt;/a&gt;常量&lt;/h3&gt;&lt;/li&gt;
-&lt;li&gt;定义常量&lt;ul&gt;
-&lt;li&gt;函数定义 &lt;code&gt;define(&amp;#39;PI&amp;#39;,3.14)&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;const定义 &lt;code&gt;const PI = 3.14&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;命名规则&lt;ul&gt;
-&lt;li&gt;不需要$&lt;/li&gt;
-&lt;li&gt;名字由数字、字母、下划线组成但不能由数字开头&lt;/li&gt;
-&lt;li&gt;通常常量都是大写字母&lt;/li&gt;
-&lt;li&gt;命名规则其实比较松，比如其实可以用一些特殊字符，但标准下不这样使用 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;define(&amp;#39;-_-&amp;#39;,3); &amp;#x2F;&amp;#x2F;只能这样命名&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;const -_-,3; &amp;#x2F;&amp;#x2F;这是错误的&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;li&gt;注意细节&lt;ul&gt;
-&lt;li&gt;define和const定义的常量是有区别的：访问权限有区别&lt;/li&gt;
-&lt;li&gt;常量名不区分大小写，但是可以区分（？？？）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;使用形式&lt;br&gt;&lt;code&gt;echo PI;&lt;/code&gt;&lt;ul&gt;
-&lt;li&gt;特殊常量的使用形式 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;echo -_-; &amp;#x2F;&amp;#x2F;X&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo constant(&amp;#39;-_-&amp;#39;); &amp;#x2F;&amp;#x2F;√&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-
-    
-    </summary>
-    
-    
-      <category term="笔记" scheme="https://asea.fun/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="notes" scheme="https://asea.fun/tags/notes/"/>
-    
-      <category term="php" scheme="https://asea.fun/tags/php/"/>
     
   </entry>
   
