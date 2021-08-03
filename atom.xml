@@ -544,19 +544,20 @@
     <published>2021-05-06T13:23:47.000Z</published>
     <updated>2021-05-06T13:25:52.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Github进不去解决方法"><a href="#Github进不去解决方法" class="headerlink" title="Github进不去解决方法"></a>Github进不去解决方法</h1><p>按以下方法修改hosts文件，注意hosts文件只有在管理员权限下才可以修改，hosts文件所在目录为:</p><p>C:\Windows\System32\drivers\etc\hosts，注意修改右下角显示所有文件才可以看到。</p><p><a href="https://www.ipaddress.com/ip-lookup用此网站查找github.com和github.global.ssl.fastly.net对应的ip，然后添加hosts文件以下内容：">https://www.ipaddress.com/ip-lookup用此网站查找github.com和github.global.ssl.fastly.net对应的ip，然后添加hosts文件以下内容：</a></p><p>github.com的ip    github.com</p><p>github.global.ssl.fastly.net的ip    github.global.ssl.fastly.net</p><p> 注意添加的ip要是你自己本机查到的，用网上其他人查到的可能不管用</p><p>————————————————</p><p>版权声明：本文为CSDN博主「w͏l͏j͏」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。</p><p><a href="https://blog.csdn.net/qq_40624026/article/details/107704677">原文链接</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Github进不去解决方法"><a href="#Github进不去解决方法" class="headerlink" title="Github进不去解决方法"></a>Github进不去解决方法</h1><p>按以下方法修改hosts文件，注意hosts文件只有在管理员权限下才可以修改，hosts文件所在目录为:</p><p><code>C:\Windows\System32\drivers\etc\hosts</code>，注意修改右下角显示所有文件才可以看到。</p><p>用<a href="https://www.ipaddress.com/ip-lookup">此网站</a>查找<code>github.com</code>和<code>github.global.ssl.fastly.net</code>对应的ip，然后添加hosts文件以下内容：</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">github.com的ip    github.com</span><br><span class="line"></span><br><span class="line">github.global.ssl.fastly.net的ip    github.global.ssl.fastly.net</span><br></pre></td></tr></table></figure><p> 注意添加的ip要是你自己本机查到的，用网上其他人查到的可能不管用</p><p>————————————————</p><p>版权声明：本文为CSDN博主「w͏l͏j͏」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。</p><p><a href="https://blog.csdn.net/qq_40624026/article/details/107704677">原文链接</a></p>]]></content>
     
     <summary type="html">
     
       &lt;h1 id=&quot;Github进不去解决方法&quot;&gt;&lt;a href=&quot;#Github进不去解决方法&quot; class=&quot;headerlink&quot; title=&quot;Github进不去解决方法&quot;&gt;&lt;/a&gt;Github进不去解决方法&lt;/h1&gt;&lt;p&gt;按以下方法修改hosts文件，注意hosts文件只有在管理员权限下才可以修改，hosts文件所在目录为:&lt;/p&gt;
-&lt;p&gt;C:\Windows\System32\drivers\etc\hosts，注意修改右下角显示所有文件才可以看到。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.ipaddress.com/ip-lookup用此网站查找github.com和github.global.ssl.fastly.net对应的ip，然后添加hosts文件以下内容：&quot;&gt;https://www.ipaddress.com/ip-lookup用此网站查找github.com和github.global.ssl.fastly.net对应的ip，然后添加hosts文件以下内容：&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;github.com的ip    github.com&lt;/p&gt;
-&lt;p&gt;github.global.ssl.fastly.net的ip    github.global.ssl.fastly.net&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;C:\Windows\System32\drivers\etc\hosts&lt;/code&gt;，注意修改右下角显示所有文件才可以看到。&lt;/p&gt;
+&lt;p&gt;用&lt;a href=&quot;https://www.ipaddress.com/ip-lookup&quot;&gt;此网站&lt;/a&gt;查找&lt;code&gt;github.com&lt;/code&gt;和&lt;code&gt;github.global.ssl.fastly.net&lt;/code&gt;对应的ip，然后添加hosts文件以下内容：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;github.com的ip    github.com&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;github.global.ssl.fastly.net的ip    github.global.ssl.fastly.net&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
 &lt;p&gt; 注意添加的ip要是你自己本机查到的，用网上其他人查到的可能不管用&lt;/p&gt;
 &lt;p&gt;————————————————&lt;/p&gt;
 &lt;p&gt;版权声明：本文为CSDN博主「w͏l͏j͏」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/qq_40624026/article/details/107704677&quot;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
+
     
     </summary>
     
