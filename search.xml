@@ -1792,7 +1792,118 @@ table th:nth-of-type(4) {
       </tags>
   </entry>
   <entry>
+    <title>汇编语言</title>
+    <url>/post/8e41db39.html</url>
+    <content><![CDATA[<h2 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h2><p>e 写入</p>
+<p>a 汇编指令</p>
+<p>r 查看寄存器</p>
+<p>d 查看内存</p>
+<p>t 执行指令</p>
+<h2 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h2><p>通用：ax, bx, cx, dx, ip, sp </p>
+<p>段：cs(control), ds(data)，ss(stack)</p>
+<h2 id="汇编指令"><a href="#汇编指令" class="headerlink" title="汇编指令"></a>汇编指令</h2><h3 id="mov"><a href="#mov" class="headerlink" title="mov"></a>mov</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mov ax,1000H</span><br><span class="line">mov ax,bx</span><br><span class="line">mov ax,[0]</span><br><span class="line">mov [0],ax</span><br><span class="line">mov ds,ax</span><br><span class="line">mov ax,ds</span><br><span class="line">&#x2F;&#x2F;add,sub类似</span><br></pre></td></tr></table></figure>
+
+<h3 id="jmp"><a href="#jmp" class="headerlink" title="jmp"></a>jmp</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">jmp 1000:3 &#x2F;&#x2F;cs为1000，ip为3</span><br><span class="line">jmp 4 &#x2F;&#x2F;修改ip为4</span><br></pre></td></tr></table></figure>
+
+<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">push ax &#x2F;&#x2F;ax中的数据送入栈</span><br><span class="line">pop ax &#x2F;&#x2F;从栈顶取出数据送入ax</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>assembler</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据结构</title>
+    <url>/post/79666db.html</url>
+    <content><![CDATA[<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ol>
+<li><p>数据对象，数据元素和数据项</p>
+</li>
+<li><p>四类基本结构</p>
+<ol>
+<li>集合</li>
+<li>线性结构</li>
+<li>树形结构</li>
+<li>图状结构</li>
+</ol>
+</li>
+<li><p>逻辑结构分类</p>
+<ol>
+<li>线性结构<ul>
+<li>线性表</li>
+<li>栈</li>
+<li>队列</li>
+<li>数组、广义表</li>
+<li>字符串</li>
+</ul>
+</li>
+<li>非线性结构<ul>
+<li>树、二叉树</li>
+<li>图</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>存储结构分类</p>
+<ol>
+<li>顺序存储结构<ul>
+<li>向量</li>
+<li>一维数组</li>
+</ul>
+</li>
+<li>非顺序存储结构（链式）<ul>
+<li>链接表</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>数据类型</p>
+<ol>
+<li>原子类型</li>
+<li>结构类型</li>
+</ol>
+</li>
+<li><p>ADT（抽象数据类型）</p>
+<p>​    （D,S,P)，分别表示数据对象，关系集，操作集。</p>
+</li>
+<li><p>算法</p>
+<ol>
+<li>特性<ul>
+<li>有穷性</li>
+<li>确定性</li>
+<li>可行性</li>
+<li>输入：0、多个</li>
+<li>输出：1、多个</li>
+</ul>
+</li>
+<li>设计要求<ul>
+<li>正确性</li>
+<li>可读性</li>
+<li>健壮性</li>
+<li>高效与低存储量</li>
+</ul>
+</li>
+<li>描述工具<ul>
+<li>自然语言</li>
+<li>程序设计语言</li>
+<li>流程图</li>
+<li>伪码</li>
+<li>类C√</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h2><p>前驱、后继</p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>数据结构新版</title>
     <url>/post/79666db.html</url>
     <content><![CDATA[<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ol>
 <li><p>数据对象，数据元素和数据项</p>
