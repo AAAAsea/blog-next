@@ -1792,6 +1792,231 @@ table th:nth-of-type(4) {
       </tags>
   </entry>
   <entry>
+    <title>mysql学习笔记</title>
+    <url>/post/295082ac.html</url>
+    <content><![CDATA[<h2 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h2><ol>
+<li><p>服务端口默认<code>3306</code></p>
+</li>
+<li><p>安装的时候选择自动添加<code>path</code></p>
+</li>
+<li><p>编码格式<code>utf8</code></p>
+</li>
+<li><p>windows启动服务</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">net start 服务名称（mysql）</span><br><span class="line">net stop 服务名称</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><ol>
+<li><p>首先确保mysql服务已经打开，不确定话<code>net start mysql</code>试试</p>
+</li>
+<li><p><code>mysql -uroot -pxxxx</code></p>
+<p>xxxx为你的密码，也可以不显示密码登录</p>
+<p><code>mysql -uroot -p</code></p>
+<p>然后输入密码（此时密码以*显示）即可登录。</p>
+</li>
+</ol>
+<h3 id="密码重置（8-0-23）"><a href="#密码重置（8-0-23）" class="headerlink" title="密码重置（8.0.23）"></a>密码重置（8.0.23）</h3><blockquote>
+<p>网上老的教程可能已经过时，8.0以上不支持<code>mysqld --skip-grant-tables</code></p>
+</blockquote>
+<ol>
+<li><p>打开命令窗口cmd，输入命令：<code>net stop mysql</code>，停止MySQL服务，</p>
+</li>
+<li><p>开启跳过密码验证登录的MySQL服务，输入命令，然后不要关闭此窗口，命令如下：</p>
+<p> <code>mysqld --console --skip-grant-tables --shared-memory</code></p>
+<ol start="3">
+<li><p>再打开一个新的cmd，无密码登录MySQL，输入登录命令：<code>mysql -u root -p</code>，然后回车即可</p>
+</li>
+<li><p>密码置为空，命令如下：</p>
+</li>
+</ol>
+<p><code>use mysql</code></p>
+<p><code>update user set authentication_string=&#39;&#39; where user=&#39;root&#39;;</code></p>
+<ol start="5">
+<li><p>退出，命令如下</p>
+<p><code>quit</code></p>
+</li>
+</ol>
+</li>
+<li><p>关闭以<code>-console --skip-grant-tables --shared-memory</code>启动的MySQL服务（即关闭第一个打开的cmd窗口）</p>
+<ol start="7">
+<li><p>打开cmd，输入：<code>net start mysql</code>启动MySQL服务。</p>
+</li>
+<li><p>步骤4密码已经置空，所以无密码状态登录MySQL，输入登录命令：mysql -u root -p，然后回车即可登录</p>
+</li>
+<li><p>修改密码，如下：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">USER</span> <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">WITH</span> mysql_native_password <span class="keyword">BY</span> 你的密码<span class="string">&#x27;;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>验证更改后密码正确登录</p>
+</li>
+<li><p>输入quit，退出当前登录，输入登录命令：<code>mysql -u root -p</code></p>
+</li>
+<li><p>输入密码，成功登录，到此，重置密码结束。</p>
+</li>
+</ol>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><blockquote>
+<p>以<code>;</code>结尾</p>
+</blockquote>
+<p><code>show databases;</code></p>
+<p><code>use test</code></p>
+<p><code>create database test2;</code></p>
+<p><code>quit\exit</code></p>
+<p><code>show tables;</code></p>
+<p><code>source D:\xxx\xxx\xxx.sql</code></p>
+<p><code>select version();</code></p>
+<p><code>select database();</code></p>
+<p><code>\c</code>终止写了一半的语句</p>
+<h2 id="SQL语句简介"><a href="#SQL语句简介" class="headerlink" title="SQL语句简介"></a>SQL语句简介</h2><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ol>
+<li><p>DQL：查询（select）</p>
+</li>
+<li><p>DML：对表中的数据进行增删改，操作（insert delete update）</p>
+<hr>
+<p>以下是了解一下</p>
+</li>
+<li><p>DDL：定义，（create drop alter）操作表结构增删改</p>
+</li>
+<li><p>TCL：事务控制</p>
+<ol>
+<li>事务提交：commit</li>
+<li>事务回滚：rollback</li>
+</ol>
+</li>
+<li><p>DCL：控制（授权，撤销授权等）</p>
+</li>
+</ol>
+<h2 id="DQL"><a href="#DQL" class="headerlink" title="DQL"></a>DQL</h2><h3 id="基础查询"><a href="#基础查询" class="headerlink" title="基础查询"></a>基础查询</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">desc tableName; //查询表的结构</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span> <span class="keyword">form</span> dept;//查询一个子段</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>,age <span class="keyword">from</span> dept;//查询多个字段</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> tableName; //查询所有字段，效率低，可读性差</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span> hhh <span class="keyword">from</span> dept;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span> <span class="keyword">as</span> hhh <span class="keyword">from</span> dept;//起别名</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span> <span class="string">&#x27;my hhh&#x27;</span> <span class="keyword">from</span> dept;//别名有空格加引号（单双都可，单最好用单引号，单引号是标准 ，如果别名是中文也要引号）</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, age*<span class="number">12</span> <span class="keyword">from</span> dept;//可以使用数学表达式</span><br><span class="line"><span class="keyword">select</span> 这里写个字符串或者数字（字面值） <span class="keyword">from</span> emp;//返回的是n个字符串或数字，了解一下（查看表的结构）</span><br></pre></td></tr></table></figure>
+<h3 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span> <span class="keyword">from</span> dept <span class="keyword">where</span> age = <span class="number">12</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span> <span class="keyword">from</span> dept <span class="keyword">where</span> age &lt;&gt; <span class="number">12</span>;//就是!=的意思</span><br><span class="line"><span class="keyword">select</span> salary <span class="keyword">from</span> emp <span class="keyword">where</span> <span class="keyword">name</span> = <span class="string">&#x27;smith&#x27;</span>;</span><br><span class="line"></span><br><span class="line">//常用的条件</span><br><span class="line">=</span><br><span class="line">&lt;&gt; !=</span><br><span class="line">&lt;</span><br><span class="line">&lt;=</span><br><span class="line">&gt;</span><br><span class="line">&gt;=</span><br><span class="line">between ... and ...//等同于下边  的</span><br><span class="line">&gt;= and &lt;= </span><br><span class="line">is null//null 不能用=</span><br><span class="line">is not null</span><br><span class="line">and</span><br><span class="line">or //and优先级大于or，可以加括号</span><br><span class="line">in//后面跟个python中的list</span><br><span class="line">not in</span><br><span class="line"></span><br><span class="line">//模糊查询</span><br><span class="line">like</span><br><span class="line">%表示任意多个字符</span><br><span class="line">_表示任意一个字符</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span> <span class="keyword">from</span> emp <span class="keyword">where</span> <span class="keyword">like</span> <span class="string">&#x27;%T%&#x27;</span>;  //如果包含下划线等可以用\转义；</span><br></pre></td></tr></table></figure>
+
+<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">	ename,sal</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	emp</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span></span><br><span class="line">	sal (<span class="keyword">asc</span>); //升序，也可以用别名排序</span><br><span class="line">	</span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">	ename,sal</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	emp</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span></span><br><span class="line">	sal <span class="keyword">desc</span>; //降序</span><br><span class="line">	</span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">	ename,sal</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	emp</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span></span><br><span class="line">	sal <span class="keyword">asc</span>, ename <span class="keyword">asc</span>; //多关键字排序</span><br><span class="line">	</span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">	ename,sal</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	emp</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span></span><br><span class="line">	<span class="number">2</span>; //按照第二列排序（不建议这么写）</span><br></pre></td></tr></table></figure>
+
+<h3 id="综合"><a href="#综合" class="headerlink" title="综合"></a>综合</h3><blockquote>
+<p>from，where，select，order顺序不能变</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> ename, sal</span><br><span class="line"><span class="keyword">from</span> emp</span><br><span class="line"><span class="keyword">where</span> sal <span class="keyword">between</span> <span class="number">1000</span> <span class="keyword">and</span> <span class="number">2000</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> sal <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="单行处理函数"><a href="#单行处理函数" class="headerlink" title="单行处理函数"></a>单行处理函数</h3><blockquote>
+<p>一个输入对应一个输出</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">lower upper</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">lower</span>(ename) <span class="keyword">as</span> ename <span class="keyword">from</span> emp;//注意别名</span><br><span class="line"></span><br><span class="line">substr</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">substr</span>(enmae, <span class="number">1</span>, <span class="number">1</span>) <span class="keyword">as</span> ename <span class="keyword">from</span> emp;//起始下标，从1开始，后面是截取长度</span><br><span class="line"></span><br><span class="line">contact(&#x27;a&#x27;, &#x27;b&#x27;);//字符串拼接</span><br><span class="line"></span><br><span class="line">length(name);</span><br><span class="line"></span><br><span class="line">trim(name);//去除前后空白 ltrim， rtrim</span><br><span class="line"></span><br><span class="line">round(double, n);//保留n个小数（四舍五入）n如果是-1的话，嘿嘿你试试</span><br><span class="line"></span><br><span class="line">rand()</span><br><span class="line"></span><br><span class="line">ifnull(数据，值)//有null参与的运算结果都是null，所以用ifnull来把null替换成一个值，如ifnull(sal, 0);</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> ename, job (<span class="keyword">case</span> job <span class="keyword">when</span> <span class="string">&#x27;MANAGER&#x27;</span> <span class="keyword">then</span> sal*<span class="number">1.1</span> <span class="keyword">when</span> <span class="string">&#x27;SALESMAN&#x27;</span> <span class="keyword">then</span> sal*<span class="number">1.5</span> <span class="keyword">else</span> sal) <span class="keyword">as</span> newsalary <span class="keyword">from</span> emp;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="分组函数"><a href="#分组函数" class="headerlink" title="分组函数"></a>分组函数</h3><blockquote>
+<p>输入多行，输出一行，自动忽略null</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">不分组的话默认整张表是一组</span><br><span class="line"> max()</span><br><span class="line"> min()</span><br><span class="line"> sum()</span><br><span class="line"> avg() //不考虑null的行</span><br><span class="line"> count()</span><br><span class="line"> </span><br><span class="line"> count (*) from emp;//即总行数</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>分组函数不能直接使用在where中      </li>
+<li>分组函数可以连起来用</li>
+</ol>
+<h3 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h3><ol>
+<li><p>例如计算每个部门的工资和</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> ...</span><br><span class="line"><span class="keyword">from</span> ...</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> ...</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<ol start="2">
+<li>关键字的执行顺序</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> job,<span class="keyword">sum</span>(sal) <span class="keyword">from</span> emp <span class="keyword">group</span> <span class="keyword">by</span> deptno;//当分组的时候，<span class="keyword">select</span>只能跟分组函数和用来分组的字段名。</span><br></pre></td></tr></table></figure>
+
+<p>where不能用分组函数，只能用having，但是having不能单独用，且能用where尽量用where</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">from</span><br><span class="line">where</span><br><span class="line">group by //后面跟多个字段时，相当于把两个字段合成一个字段</span><br><span class="line">having</span><br><span class="line"><span class="keyword">select</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="一些关键字"><a href="#一些关键字" class="headerlink" title="一些关键字"></a>一些关键字</h3><p><code>distinct</code>去重</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> job,deptno <span class="keyword">from</span> emp;//表示job 和deptno当成一个字段来去重</span><br><span class="line"><span class="keyword">select</span> job, <span class="keyword">distinct</span> deptno <span class="keyword">from</span> emp;//错误写法</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span> (disinct job) <span class="keyword">from</span> emp;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="连接查询"><a href="#连接查询" class="headerlink" title="连接查询"></a>连接查询</h3><h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><blockquote>
+<p>从一张表叫单表查询，多个表称为连接查询，分为SQL92,SQL99，重点学习99</p>
+</blockquote>
+<p>根据连接方式分类：</p>
+<ul>
+<li>内连接<ul>
+<li>等值连接</li>
+<li>非等值连接</li>
+<li>自连接</li>
+</ul>
+</li>
+<li>外连接<ul>
+<li>左外连接（左连接）</li>
+<li>右外连接（右连接）</li>
+</ul>
+</li>
+<li>全连接（不讲）</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> ename,dname <span class="keyword">from</span> emp,dept;//没有限制会匹配所有的（结果是两个行数乘积）笛卡尔积</span><br><span class="line"><span class="keyword">select</span> e.ename, d.dname <span class="keyword">from</span> emp e, dept d <span class="keyword">where</span> e,deptno = d.deptno;//注意from后面起的别名，以及.的应用</span><br></pre></td></tr></table></figure>
+
+<h4 id="内连接"><a href="#内连接" class="headerlink" title="内连接"></a>内连接</h4><h5 id="等值连接"><a href="#等值连接" class="headerlink" title="等值连接"></a>等值连接</h5><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">//sql92语法</span><br><span class="line"><span class="keyword">select</span> e.ename, d.dname <span class="keyword">from</span> emp e, dept d <span class="keyword">where</span> e,deptno = d.deptno <span class="keyword">and</span> 其他条件;</span><br><span class="line"></span><br><span class="line">//sql99语法</span><br><span class="line"><span class="keyword">select</span> e.name, d.dname <span class="keyword">from</span> emp e (<span class="keyword">inner</span>) <span class="keyword">join</span> dept d <span class="keyword">on</span> e.deptno = d.deptno <span class="keyword">where</span> 过滤条件；</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意，92的语法结构不清晰，因为表连接的条件和数据筛选条件放在一起，结构不清晰。99的on用来表连接条件，where用来筛选数据。结构清晰，92不用了！太tm老了！</p>
+</blockquote>
+<p><code>inner</code>可以省略，妈的，虽然可读性好，一眼就看出来了内连接，但是很麻烦，省略了吧</p>
+<h5 id="非等值连接"><a href="#非等值连接" class="headerlink" title="非等值连接"></a>非等值连接</h5><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> e.ename, e.sal, s.grade</span><br><span class="line"><span class="keyword">from</span> emp e (<span class="keyword">inner</span>) <span class="keyword">join</span> salgrade s</span><br><span class="line"><span class="keyword">on</span> e.sal <span class="keyword">between</span> s.losal <span class="keyword">and</span> s.hisal; </span><br></pre></td></tr></table></figure>
+
+<h5 id="自连接"><a href="#自连接" class="headerlink" title="自连接"></a>自连接</h5><blockquote>
+<p>一张表看成两张表，分别起别名，最后会少一个，因为有个NULL！领导查不出来了！</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> e1.ename, e2.ename</span><br><span class="line"><span class="keyword">from</span> emp e1 <span class="keyword">join</span> emp e2</span><br><span class="line"><span class="keyword">on</span> e1.mgr = e2.empno;</span><br></pre></td></tr></table></figure>
+
+<h4 id="外连接"><a href="#外连接" class="headerlink" title="外连接"></a>外连接</h4><h5 id="左、右连接"><a href="#左、右连接" class="headerlink" title="左、右连接"></a>左、右连接</h5><blockquote>
+<p>在join前加left或者right，即转换为外连接，outer可以省略。以left为例，在on的基础上，如果join左边表某一条在右边中没有匹配，那么依然显示。因此，left使左边表成为主表，right相反。而内连接两个表是平等的。</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">//对上边自连接的改进</span><br><span class="line">mysql&gt; select e1.ename, e2.ename</span><br><span class="line">    -&gt; from emp e1 left (outer) join emp e2</span><br><span class="line">    -&gt; on e1.mgr = e2.empno;</span><br></pre></td></tr></table></figure>
+
+<h5 id="全连接"><a href="#全连接" class="headerlink" title="全连接"></a>全连接</h5><figure class="highlight"><table><tr><td class="code"><pre><span class="line">mysql&gt; select e1.ename, e2.ename</span><br><span class="line">    -&gt; from emp e1 full (outer) join emp e2</span><br><span class="line">    -&gt; on e1.mgr = e2.empno;</span><br></pre></td></tr></table></figure>
+
+<h5 id="交叉连接"><a href="#交叉连接" class="headerlink" title="交叉连接"></a>交叉连接</h5><blockquote>
+<h5 id="用笛卡尔积，返回所有的匹配"><a href="#用笛卡尔积，返回所有的匹配" class="headerlink" title="用笛卡尔积，返回所有的匹配"></a>用笛卡尔积，返回所有的匹配</h5></blockquote>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">mysql&gt; select e1.ename, e2.ename</span><br><span class="line">    -&gt; from emp e1 cross (outer) join emp e2</span><br></pre></td></tr></table></figure>
+
+<h4 id="多张表的连接"><a href="#多张表的连接" class="headerlink" title="多张表的连接"></a>多张表的连接</h4><blockquote>
+<p>内外join可以混合使用</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> e.ename, d.dname, e.sal, s.grade</span><br><span class="line"><span class="keyword">from</span> emp e </span><br><span class="line"><span class="keyword">join</span> dept d <span class="keyword">on</span> e.deptno = d.deptno</span><br><span class="line"><span class="keyword">join</span> salgrade s <span class="keyword">on</span> e.sal <span class="keyword">between</span> s.losal <span class="keyword">and</span> s.hisal;</span><br></pre></td></tr></table></figure>
+
+<h3 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h3><blockquote>
+<p>嵌套查询</p>
+<p>把一个查询结果放在select、from、where后面</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> ename,sal <span class="keyword">from</span> emp <span class="keyword">where</span> sal &gt; (<span class="keyword">select</span> <span class="keyword">min</span>(sal) <span class="keyword">from</span> emp);//不能直接在where里使用分组函数</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>当放在select后面时，了解一下</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> ename,sal,(selct dname <span class="keyword">from</span> dept <span class="keyword">where</span> dept.depno = emp.depno) <span class="keyword">from</span> emp;</span><br></pre></td></tr></table></figure>
+
+<h3 id="union"><a href="#union" class="headerlink" title="union"></a>union</h3><blockquote>
+<p>可以将两个结果拼接起来，但是两个结果的列数应该一样，表头和第一个一样。oracle要求数据类型也要一样。</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> ........</span><br><span class="line"><span class="keyword">union</span></span><br><span class="line"><span class="keyword">select</span> ........;</span><br></pre></td></tr></table></figure>
+
+<h3 id="limit"><a href="#limit" class="headerlink" title="limit"></a>limit</h3><blockquote>
+<p>放在最后，限制取出数量 limit startIndex(缺省值0）, length</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> ename,sal</span><br><span class="line"><span class="keyword">from</span> emp</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> sal <span class="keyword">desc</span></span><br><span class="line"><span class="keyword">limit</span> <span class="number">2</span>,<span class="number">3</span>; //第三到第五</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>常用来分页显示</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> ename,sal</span><br><span class="line"><span class="keyword">from</span> emp</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> sal <span class="keyword">desc</span></span><br><span class="line"><span class="keyword">limit</span> <span class="number">0</span>,<span class="number">3</span>;</span><br><span class="line">//第一页</span><br><span class="line">limit 3,3;</span><br><span class="line">//第二页</span><br><span class="line">limit 6,3;</span><br><span class="line">//第三页</span><br><span class="line">limit 9,3;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>notes</tag>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>《The_Computer_and_the_Brain》词汇</title>
     <url>/post/f857d47.html</url>
     <content><![CDATA[<h1 id="The-Computer-and-the-Brain"><a href="#The-Computer-and-the-Brain" class="headerlink" title="The_Computer_and_the_Brain"></a>The_Computer_and_the_Brain</h1><blockquote>
@@ -2186,7 +2411,7 @@ table th:nth-of-type(4) {
       </tags>
   </entry>
   <entry>
-    <title>数据结构</title>
+    <title>数据结构新版</title>
     <url>/post/79666db.html</url>
     <content><![CDATA[<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ol>
 <li><p>数据对象，数据元素和数据项</p>
@@ -2273,7 +2498,7 @@ table th:nth-of-type(4) {
       </categories>
   </entry>
   <entry>
-    <title>数据结构新版</title>
+    <title>数据结构</title>
     <url>/post/79666db.html</url>
     <content><![CDATA[<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ol>
 <li><p>数据对象，数据元素和数据项</p>
@@ -3148,7 +3373,7 @@ table th:nth-of-type(4) {
 <h3 id="指向函数的指针"><a href="#指向函数的指针" class="headerlink" title="指向函数的指针"></a>指向函数的指针</h3><blockquote>
 <p>用的不多</p>
 </blockquote>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;&#125;</span><br><span class="line"><span class="keyword">int</span> (*p)(<span class="keyword">int</span> <span class="keyword">int</span>);<span class="comment">//之后p和f用法相同，p可以用来传参</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;&#125;</span><br><span class="line"><span class="keyword">int</span> (*p)(<span class="keyword">int</span> <span class="keyword">int</span>);</span><br><span class="line">p = f;</span><br><span class="line"><span class="comment">//之后p和f用法相同，p可以用来传参</span></span><br></pre></td></tr></table></figure>
 
 
 
