@@ -2203,7 +2203,7 @@ table th:nth-of-type(4) {
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-24 13:39:16" itemprop="dateModified" datetime="2021-09-24T13:39:16+08:00">2021-09-24</time>
+                <time title="修改时间：2021-09-27 14:38:41" itemprop="dateModified" datetime="2021-09-27T14:38:41+08:00">2021-09-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -2240,22 +2240,52 @@ table th:nth-of-type(4) {
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><h3 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h3><p>不写了，参考文档</p>
+          <h1 id="Vue核心"><a href="#Vue核心" class="headerlink" title="Vue核心"></a>Vue核心</h1><h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><h3 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h3><p>不写了，参考文档</p>
+<p>引入vue.js开发版的时候，控制台会提示，这个提示可以关掉。</p>
+<p><code>Vue.config.productionTip = false</code></p>
+<p><code>el</code>也可以通过`.$mount(‘#root’)挂载</p>
 <p><strong>后面用到了es6的简写，如果不了解es6语法的可以适当补充一下</strong></p>
 <h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
 <li>vue不能挂在到html和body上。</li>
 <li>vue作用范围包括子元素</li>
 <li>建议使用id选择器</li>
 <li>一个vue实例对应一个容器，<strong>一对一</strong></li>
-<li><code>&#123;&#123;&#125;&#125;</code>里可以写js表达式，一个表达式可以生成一个值（变量，运算，三元，函数…）</li>
-<li>data里面写多个同名属性，会覆盖，只有最后一个有用。</li>
-<li>methods里面的最好不要写箭头函数，否则会导致this从vue变成了window。</li>
+<li><code>&#123;&#123;&#125;&#125;`里可以写js表达式，一个表达式可以生成一个值（变量，运算，三元，函数...）
+6. data里面写多个同名属性，会覆盖，只有最后一个有用。
+7. methods里面的最好不要写箭头函数，否则会导致this从vue变成了window。
+
+## 数据代理
+
+> 大概是vue的MVVM的原理
+
+`Object.defineProperty`可以用来给一个对象添加属性，此时添加的属性是具有封装性质的属性，这个属性是否可枚举，可改，可删除都是可以设置的，默认都是false。该函数的参数有三个，分别是对象，属性名，和配置对象。配置对象里可以设置`get`和`set`函数，来决定该属性的值从哪里获取。而`vue`将`data`对象里的东西保存在自己的`_data`里，然后当访问`_data`或者修改时，便会调用`get`和`set`函数，从而达到数据更新的目的。且只有`data`里面的才会数据代理
+
+我的感觉时重载了`.`运算符，用户访问vm.name便会调用vm._data.name，但是`_data`里进行了数据劫持，并不直接提供，而是再度进行封装。总之js的基于对象不是基于类的思路，而是走了**原型**这条路。具体关于js的面向对象可以参考[这里](https://blog.csdn.net/cpongo3/article/details/89026265)。
+
+## 认识指令
+
+> vue主要的一些指令，后面详细解读其原理和更多用法
+
+`<h2 v-text="message"></h2>` 替换所有
+
+支持字符串拼接
+
+`v-html`会按照html渲染
+
+`v-on:` 、`@`，可以传参，可以简写`@click = "isHot = !isHot"`
+
+`v-show``v-if` 前者只改变display属性
+
+`v-bind:src = "xxx"`、`:src = "&#123;active:isActive&#125;"`可以使用对象形式或者三元表达式
+
+`v-model`双向绑定，只能用于输入型元素，需要有value属性，另外，`v-model:value`可以简写为`v-model`
+
+`v-for = "(item, index) in arr"`
+
+`v-message`和某个变量双向绑定
+
+`v-cloak`一个特殊的属性，没有值，vue在接管以后会删掉这个属性。因此，可以利用css来防止因为网速慢而显示出`&#123;&#123;&#125;&#125;</code>这样的插值表达式。cloak意思为斗篷。利用css属性选择器<code>[cloak]:&#123;display: none&#125;</code>就行了。</li>
 </ol>
-<h2 id="数据代理"><a href="#数据代理" class="headerlink" title="数据代理"></a>数据代理</h2><blockquote>
-<p>大概是vue的MVVM的原理</p>
-</blockquote>
-<p><code>Object.defineProperty</code>可以用来给一个对象添加属性，此时添加的属性是具有封装性质的属性，这个属性是否可枚举，可改，可删除都是可以设置的，默认都是false。该函数的参数有三个，分别是对象，属性名，和配置对象。配置对象里可以设置<code>get</code>和<code>set</code>函数，来决定该属性的值从哪里获取。而<code>vue</code>将<code>data</code>对象里的东西保存在自己的<code>_data</code>里，然后当访问<code>_data</code>或者修改时，便会调用<code>get</code>和<code>set</code>函数，从而达到数据更新的目的。且只有<code>data</code>里面的才会数据代理</p>
-<p>我的感觉时重载了<code>.</code>运算符，用户访问vm.name便会调用vm._data.name，但是<code>_data</code>里进行了数据劫持，并不直接提供，而是再度进行封装。总之js的基于对象不是基于类的思路，而是走了<strong>原型</strong>这条路。具体关于js的面向对象可以参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/cpongo3/article/details/89026265">这里</a>。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/71513ccb.html#more" rel="contents">
@@ -3758,7 +3788,7 @@ setInterval("createtime()",250);
 </script>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共83.2k字</span>
+  <span class="post-count">全站共86.5k字</span>
 </div>
 
         
