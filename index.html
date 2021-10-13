@@ -2172,6 +2172,111 @@ table th:nth-of-type(4) {
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://asea.fun/post/c8c632fe.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar1.png">
+      <meta itemprop="name" content="Asea">
+      <meta itemprop="description" content="我以為我可以獨自過一生 我還是被打動了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AseaBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/c8c632fe.html" class="post-title-link" itemprop="url">数据结构oj</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-10-06 16:46:24" itemprop="dateCreated datePublished" datetime="2021-10-06T16:46:24+08:00">2021-10-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/post/c8c632fe.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/c8c632fe.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><h3 id="提纯"><a href="#提纯" class="headerlink" title="提纯"></a>提纯</h3><blockquote>
+<p>记录一下我踩的坑吧…真够蠢的</p>
+<ol>
+<li>没加abs，因为题目是绝对值…</li>
+<li>删除元素以后pos应该–，或者删除的时候pos不++，传参的时候传pos+1</li>
+<li>拿一个指针记录上一次的位置！</li>
+<li>把其它题目adt复制过来了，忘了原题是个循环链表…</li>
+<li>new出来的数组没有初始化0…</li>
+</ol>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">ElemType</span>&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Delete_Equal_Node</span><span class="params">( LinkList&lt;ElemType&gt; &amp;A, <span class="keyword">int</span> N )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> *arr = <span class="keyword">new</span> <span class="keyword">int</span>[N+<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i)</span><br><span class="line">        arr[i] = <span class="number">0</span>;</span><br><span class="line">    LinkNode&lt;ElemType&gt; *p = A.GetHead()-&gt;next, *t;</span><br><span class="line">    <span class="keyword">int</span> pos = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(p)</span><br><span class="line">    &#123;</span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    p = A.GetHead()-&gt;next;</span><br><span class="line">    <span class="keyword">while</span>(p)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(!arr[<span class="built_in">abs</span>(p-&gt;data)])</span><br><span class="line">        &#123;</span><br><span class="line">            arr[<span class="built_in">abs</span>(p-&gt;data)] = <span class="number">1</span>;</span><br><span class="line">            t = p;</span><br><span class="line">            pos++;</span><br><span class="line"></span><br><span class="line">        &#125;<span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            p = t;</span><br><span class="line">            A.ListDelete(pos+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        p = p-&gt;next;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="有序归并"><a href="#有序归并" class="headerlink" title="有序归并"></a>有序归并</h3><blockquote>
+<p>当b比a长的时候，要把b接在a后边，还要注意b本身也要提纯。。</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Merge_L_Order</span><span class="params">( LinkList&lt;ElemType&gt; &amp;A, LinkList&lt;ElemType&gt; &amp;B )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkNode&lt;ElemType&gt; *pa = A.GetHead()-&gt;next, *pb = B.GetHead()-&gt;next, *t1=A.GetHead(), *t2;</span><br><span class="line">    <span class="keyword">int</span> pos = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(pa)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(!pb)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">if</span>(pb-&gt;data &lt; pa-&gt;data)</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">            t2 = pb-&gt;next;</span><br><span class="line">            A.ListInsertNode(t1, pb);</span><br><span class="line">            pa = pb;</span><br><span class="line">            pb = t2;</span><br><span class="line"></span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(pb-&gt;data == pa-&gt;data)</span><br><span class="line">        &#123;</span><br><span class="line">            t2 = pb-&gt;next;</span><br><span class="line">            <span class="keyword">delete</span> pb;</span><br><span class="line">            pb = t2;</span><br><span class="line">        &#125;<span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            pos ++;</span><br><span class="line">            t1 = pa;</span><br><span class="line">            pa = pa-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(pb)</span><br><span class="line">        A.GetTail()-&gt;next = pb;</span><br><span class="line">    <span class="keyword">while</span>(pb &amp;&amp; pb-&gt;next)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(pb-&gt;next-&gt;data == pb-&gt;data)</span><br><span class="line">        &#123;</span><br><span class="line">            t1 = pb-&gt;next;</span><br><span class="line">            pb-&gt;next = t1-&gt;next;</span><br><span class="line">            <span class="keyword">delete</span> t1;</span><br><span class="line">        &#125;<span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            pb = pb-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(pb)</span><br><span class="line">        A.SetTail(pb);</span><br><span class="line">    <span class="keyword">delete</span> B.GetHead();</span><br><span class="line">    B.GetTail()-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/c8c632fe.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://asea.fun/post/71513ccb.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -3376,126 +3481,6 @@ table th:nth-of-type(4) {
 
               <time title="创建时间：2021-09-11 15:51:14" itemprop="dateCreated datePublished" datetime="2021-09-11T15:51:14+08:00">2021-09-11</time>
             </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/post/ef959c76.html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/ef959c76.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>由于这几天图片有时候发不出了，怀疑版本问题，但好久没有重启了，结果一重启mcl，然后自动更新让我彻底崩盘；<br>记录一下目前各包的版本号</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>package</th>
-<th>tag</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>mcl</td>
-<td>1.2.1</td>
-</tr>
-<tr>
-<td>mah</td>
-<td>1.12.0</td>
-</tr>
-<tr>
-<td>gam</td>
-<td>0.19.1</td>
-</tr>
-<tr>
-<td>gb</td>
-<td>0.8.11</td>
-</tr>
-</tbody></table>
-<p><strong>以上缩写</strong>：<br>mirai-console-loader<br>mirai-api-http<br>girai-application-mirai<br>girai-broadcast</p>
-<p><strong>中间有个坑：mah版本怎么切换？</strong><br>需要先移除原来的包</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mcl -r net.mamoe:mirai-api-http</span><br></pre></td></tr></table></figure>
-<p>然后下载需要的版本，放到plugins即可。</p>
-<p>如果不想自动更新的话可以<code>mcl -u</code>启动。</p>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/ef959c76.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://asea.fun/post/ef959c76.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar1.png">
-      <meta itemprop="name" content="Asea">
-      <meta itemprop="description" content="我以為我可以獨自過一生 我還是被打動了">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AseaBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/ef959c76.html" class="post-title-link" itemprop="url">记录一次机器人更新的问题</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-09-11 15:51:14" itemprop="dateCreated datePublished" datetime="2021-09-11T15:51:14+08:00">2021-09-11</time>
-            </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
@@ -3674,7 +3659,7 @@ table th:nth-of-type(4) {
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-count">42</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -3788,7 +3773,7 @@ setInterval("createtime()",250);
 </script>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共87.1k字</span>
+  <span class="post-count">全站共87.5k字</span>
 </div>
 
         
