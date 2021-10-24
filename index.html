@@ -3134,7 +3134,7 @@ table th:nth-of-type(4) {
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-10-22 09:33:35" itemprop="dateModified" datetime="2021-10-22T09:33:35+08:00">2021-10-22</time>
+                <time title="修改时间：2021-10-24 10:37:37" itemprop="dateModified" datetime="2021-10-24T10:37:37+08:00">2021-10-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -3171,9 +3171,7 @@ table th:nth-of-type(4) {
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h2><ol>
-<li><p>e 写入</p>
-</li>
+          <h2 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h2><ol start="2">
 <li><p>a 汇编指令</p>
 </li>
 <li><p>r 查看寄存器</p>
@@ -3203,8 +3201,12 @@ table th:nth-of-type(4) {
 <h2 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h2><p>通用：ax, bx, cx, dx, ip, sp </p>
 <p>段：cs(control), ds(data)，ss(stack)</p>
 <p><img src="https://pic.imgdb.cn/item/6151c0912ab3f51d91b47ad7.jpg" alt></p>
-<h2 id="汇编指令"><a href="#汇编指令" class="headerlink" title="汇编指令"></a>汇编指令</h2><h3 id="mov"><a href="#mov" class="headerlink" title="mov"></a>mov</h3><p>8086不支持将立即数直接送到段寄存器</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mov ax,1000H</span><br><span class="line">mov ax,bx</span><br><span class="line">mov ax,[0]</span><br><span class="line">mov [0],ax</span><br><span class="line">mov [0],ds</span><br><span class="line">mov ds,[0]</span><br><span class="line">mov ds,ax</span><br><span class="line">mov ax,ds</span><br><span class="line"></span><br><span class="line">对于add，段寄存器不支持，如果是内存单元，不能两个都是内存单元</span><br></pre></td></tr></table></figure>
+<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><blockquote>
+<p>系统会自动改动sp，但是不会检测是否越界，无论是栈顶还是栈底，没有这样的寄存器！pop和push只支持字数据</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">push ax &#x2F;&#x2F;ax中的数据送入栈，sp-&#x3D;2</span><br><span class="line">pop ax &#x2F;&#x2F;从栈顶取出数据送入ax，s注意pop以后sp会改动，但是原来的数据是依然存在的，只是不在栈中而已。</span><br></pre></td></tr></table></figure>
+
+<h2 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h2>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/8e41db39.html#more" rel="contents">
@@ -3758,7 +3760,7 @@ setInterval("createtime()",250);
 </script>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共87.9k字</span>
+  <span class="post-count">全站共91k字</span>
 </div>
 
         
