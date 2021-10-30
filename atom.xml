@@ -27,22 +27,15 @@
     
     <summary type="html">
     
-      Linux目录介绍
-/bin存放二进制可执行文件(ls,cat,mkdir等)，常用命令一般都在这里；
-
-/etc存放系统管理和配置文件；
-
-/home存放所有用户文件的根目录，是用户主目录的基点，比如用户user的主目录就是/home/user，可以用~user表示；
-
-/usr用于存放系统应用程序，比较重要的目录/usr/local 本地系统管理员软件安装目录(安装系统级的应用)。这是最庞大的目录，要用到的应用程序和文件几乎都在这个目录；
-
-/usr/x11r6 存放x window的目录；
-
-/usr/bin 众多的应用程序；
-
-/usr/sbin 超级用户的一些管理程序；
-
-/usr/
+      &lt;h2 id=&quot;Linux目录介绍&quot;&gt;&lt;a href=&quot;#Linux目录介绍&quot; class=&quot;headerlink&quot; title=&quot;Linux目录介绍&quot;&gt;&lt;/a&gt;Linux目录介绍&lt;/h2&gt;&lt;p&gt;/bin存放二进制可执行文件(ls,cat,mkdir等)，常用命令一般都在这里；&lt;/p&gt;
+&lt;p&gt;/etc存放系统管理和配置文件；&lt;/p&gt;
+&lt;p&gt;/home存放所有用户文件的根目录，是用户主目录的基点，比如用户user的主目录就是/home/user，可以用~user表示；&lt;/p&gt;
+&lt;p&gt;/usr用于存放系统应用程序，比较重要的目录/usr/local 本地系统管理员软件安装目录(安装系统级的应用)。这是最庞大的目录，要用到的应用程序和文件几乎都在这个目录；&lt;/p&gt;
+&lt;p&gt;/usr/x11r6 存放x window的目录；&lt;/p&gt;
+&lt;p&gt;/usr/bin 众多的应用程序；&lt;/p&gt;
+&lt;p&gt;/usr/sbin 超级用户的一些管理程序；&lt;/p&gt;
+&lt;p&gt;/usr/doc linux文档；&lt;/p&gt;
+&lt;p&gt;/usr/include linux下开发和编译应用程序所需要的头文件；&lt;/p&gt;
     
     </summary>
     
@@ -65,22 +58,24 @@
     
     <summary type="html">
     
-      链表
-提纯
-记录一下我踩的坑吧…真够蠢的
+      &lt;h2 id=&quot;链表&quot;&gt;&lt;a href=&quot;#链表&quot; class=&quot;headerlink&quot; title=&quot;链表&quot;&gt;&lt;/a&gt;链表&lt;/h2&gt;&lt;h3 id=&quot;提纯&quot;&gt;&lt;a href=&quot;#提纯&quot; class=&quot;headerlink&quot; title=&quot;提纯&quot;&gt;&lt;/a&gt;提纯&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;记录一下我踩的坑吧…真够蠢的&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;没加abs，因为题目是绝对值…&lt;/li&gt;
+&lt;li&gt;删除元素以后pos应该–，或者删除的时候pos不++，传参的时候传pos+1&lt;/li&gt;
+&lt;li&gt;拿一个指针记录上一次的位置！&lt;/li&gt;
+&lt;li&gt;把其它题目adt复制过来了，忘了原题是个循环链表…&lt;/li&gt;
+&lt;li&gt;new出来的数组没有初始化0…&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;template&lt;/span&gt;&amp;lt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;ElemType&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Delete_Equal_Node&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;( LinkList&amp;lt;ElemType&amp;gt; &amp;amp;A, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; N )&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; *arr = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[N+&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; N; ++i)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        arr[i] = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    LinkNode&amp;lt;ElemType&amp;gt; *p = A.GetHead()-&amp;gt;next, *t;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; pos = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt;(p)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        p = p-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    p = A.GetHead()-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt;(p)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(!arr[&lt;span class=&quot;built_in&quot;&gt;abs&lt;/span&gt;(p-&amp;gt;data)])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            arr[&lt;span class=&quot;built_in&quot;&gt;abs&lt;/span&gt;(p-&amp;gt;data)] = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            t = p;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            pos++;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            p = t;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            A.ListDelete(pos+&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        p = p-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
- 1. 没加abs，因为题目是绝对值…
- 2. 删除元素以后pos应该–，或者删除的时候pos不++，传参的时候传pos+1
- 3. 拿一个指针记录上一次的位置！
- 4. 把其它题目adt复制过来了，忘了原题是个循环链表…
- 5. new出来的数组没有初始化0…
+&lt;h3 id=&quot;有序归并&quot;&gt;&lt;a href=&quot;#有序归并&quot; class=&quot;headerlink&quot; title=&quot;有序归并&quot;&gt;&lt;/a&gt;有序归并&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;当b比a长的时候，要把b接在a后边，还要注意b本身也要提纯。。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Merge_L_Order&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;( LinkList&amp;lt;ElemType&amp;gt; &amp;amp;A, LinkList&amp;lt;ElemType&amp;gt; &amp;amp;B )&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    LinkNode&amp;lt;ElemType&amp;gt; *pa = A.GetHead()-&amp;gt;next, *pb = B.GetHead()-&amp;gt;next, *t1=A.GetHead(), *t2;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; pos = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt;(pa)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(!pb)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(pb-&amp;gt;data &amp;lt; pa-&amp;gt;data)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            t2 = pb-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            A.ListInsertNode(t1, pb);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            pa = pb;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            pb = t2;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(pb-&amp;gt;data == pa-&amp;gt;data)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            t2 = pb-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;delete&lt;/span&gt; pb;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            pb = t2;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            pos ++;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            t1 = pa;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            pa = pa-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(pb)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        A.GetTail()-&amp;gt;next = pb;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt;(pb &amp;amp;&amp;amp; pb-&amp;gt;next)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(pb-&amp;gt;next-&amp;gt;data == pb-&amp;gt;data)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            t1 = pb-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            pb-&amp;gt;next = t1-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;delete&lt;/span&gt; t1;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            pb = pb-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(pb)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        A.SetTail(pb);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;delete&lt;/span&gt; B.GetHead();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    B.GetTail()-&amp;gt;next = &lt;span class=&quot;literal&quot;&gt;NULL&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-template&lt;class ElemType&gt;
-void Delete_Equal_Node( LinkList&lt;ElemType&gt; &amp;A, int N )
-{
-    int *arr = new int[N+1];
-    for(int i = 0; i &lt; N; ++i)
-   
+
     
     </summary>
     
@@ -103,22 +98,24 @@ void Delete_Equal_Node( LinkList&lt;ElemType&gt; &amp;A, int N )
     
     <summary type="html">
     
-      链表
-提纯
-记录一下我踩的坑吧…真够蠢的
+      &lt;h2 id=&quot;链表&quot;&gt;&lt;a href=&quot;#链表&quot; class=&quot;headerlink&quot; title=&quot;链表&quot;&gt;&lt;/a&gt;链表&lt;/h2&gt;&lt;h3 id=&quot;提纯&quot;&gt;&lt;a href=&quot;#提纯&quot; class=&quot;headerlink&quot; title=&quot;提纯&quot;&gt;&lt;/a&gt;提纯&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;记录一下我踩的坑吧…真够蠢的&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;没加abs，因为题目是绝对值…&lt;/li&gt;
+&lt;li&gt;删除元素以后pos应该–，或者删除的时候pos不++，传参的时候传pos+1&lt;/li&gt;
+&lt;li&gt;拿一个指针记录上一次的位置！&lt;/li&gt;
+&lt;li&gt;把其它题目adt复制过来了，忘了原题是个循环链表…&lt;/li&gt;
+&lt;li&gt;new出来的数组没有初始化0…&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;template&lt;/span&gt;&amp;lt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;ElemType&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Delete_Equal_Node&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;( LinkList&amp;lt;ElemType&amp;gt; &amp;amp;A, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; N )&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; *arr = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[N+&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; N; ++i)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        arr[i] = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    LinkNode&amp;lt;ElemType&amp;gt; *p = A.GetHead()-&amp;gt;next, *t;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; pos = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt;(p)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        p = p-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    p = A.GetHead()-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt;(p)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(!arr[&lt;span class=&quot;built_in&quot;&gt;abs&lt;/span&gt;(p-&amp;gt;data)])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            arr[&lt;span class=&quot;built_in&quot;&gt;abs&lt;/span&gt;(p-&amp;gt;data)] = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            t = p;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            pos++;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            p = t;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            A.ListDelete(pos+&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        p = p-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
- 1. 没加abs，因为题目是绝对值…
- 2. 删除元素以后pos应该–，或者删除的时候pos不++，传参的时候传pos+1
- 3. 拿一个指针记录上一次的位置！
- 4. 把其它题目adt复制过来了，忘了原题是个循环链表…
- 5. new出来的数组没有初始化0…
+&lt;h3 id=&quot;有序归并&quot;&gt;&lt;a href=&quot;#有序归并&quot; class=&quot;headerlink&quot; title=&quot;有序归并&quot;&gt;&lt;/a&gt;有序归并&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;当b比a长的时候，要把b接在a后边，还要注意b本身也要提纯。。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Merge_L_Order&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;( LinkList&amp;lt;ElemType&amp;gt; &amp;amp;A, LinkList&amp;lt;ElemType&amp;gt; &amp;amp;B )&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    LinkNode&amp;lt;ElemType&amp;gt; *pa = A.GetHead()-&amp;gt;next, *pb = B.GetHead()-&amp;gt;next, *t1=A.GetHead(), *t2;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; pos = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt;(pa)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(!pb)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(pb-&amp;gt;data &amp;lt; pa-&amp;gt;data)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            t2 = pb-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            A.ListInsertNode(t1, pb);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            pa = pb;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            pb = t2;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(pb-&amp;gt;data == pa-&amp;gt;data)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            t2 = pb-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;delete&lt;/span&gt; pb;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            pb = t2;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            pos ++;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            t1 = pa;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            pa = pa-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(pb)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        A.GetTail()-&amp;gt;next = pb;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt;(pb &amp;amp;&amp;amp; pb-&amp;gt;next)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(pb-&amp;gt;next-&amp;gt;data == pb-&amp;gt;data)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            t1 = pb-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            pb-&amp;gt;next = t1-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;delete&lt;/span&gt; t1;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            pb = pb-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(pb)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        A.SetTail(pb);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;delete&lt;/span&gt; B.GetHead();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    B.GetTail()-&amp;gt;next = &lt;span class=&quot;literal&quot;&gt;NULL&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-template&lt;class ElemType&gt;
-void Delete_Equal_Node( LinkList&lt;ElemType&gt; &amp;A, int N )
-{
-    int *arr = new int[N+1];
-    for(int i = 0; i &lt; N; ++i)
-   
+
     
     </summary>
     
@@ -141,26 +138,20 @@ void Delete_Equal_Node( LinkList&lt;ElemType&gt; &amp;A, int N )
     
     <summary type="html">
     
-      Vue核心
-快速入门
-入门
-不写了，参考文档
-
-引入vue.js开发版的时候，控制台会提示，这个提示可以关掉。
-
-Vue.config.productionTip = false
-
-el也可以通过`.$mount(‘#root’)挂载
-
-后面用到了es6的简写，如果不了解es6语法的可以适当补充一下
-
-注意事项
- 1. vue不能挂在到html和body上。
- 2. vue作用范围包括子元素
- 3. 建议使用id选择器
- 4. 一个vue实例对应一个容器，一对一
- 5. 插值里可以写js表达式，一个表达式可以生成一个值（变量，运算，三元，函数…）
- 6. data里面写多个同名属性，会覆盖，只
+      &lt;h1 id=&quot;Vue核心&quot;&gt;&lt;a href=&quot;#Vue核心&quot; class=&quot;headerlink&quot; title=&quot;Vue核心&quot;&gt;&lt;/a&gt;Vue核心&lt;/h1&gt;&lt;h2 id=&quot;快速入门&quot;&gt;&lt;a href=&quot;#快速入门&quot; class=&quot;headerlink&quot; title=&quot;快速入门&quot;&gt;&lt;/a&gt;快速入门&lt;/h2&gt;&lt;h3 id=&quot;入门&quot;&gt;&lt;a href=&quot;#入门&quot; class=&quot;headerlink&quot; title=&quot;入门&quot;&gt;&lt;/a&gt;入门&lt;/h3&gt;&lt;p&gt;不写了，参考文档&lt;/p&gt;
+&lt;p&gt;引入vue.js开发版的时候，控制台会提示，这个提示可以关掉。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Vue.config.productionTip = false&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;el&lt;/code&gt;也可以通过`.$mount(‘#root’)挂载&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;后面用到了es6的简写，如果不了解es6语法的可以适当补充一下&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;注意事项&quot;&gt;&lt;a href=&quot;#注意事项&quot; class=&quot;headerlink&quot; title=&quot;注意事项&quot;&gt;&lt;/a&gt;注意事项&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;vue不能挂在到html和body上。&lt;/li&gt;
+&lt;li&gt;vue作用范围包括子元素&lt;/li&gt;
+&lt;li&gt;建议使用id选择器&lt;/li&gt;
+&lt;li&gt;一个vue实例对应一个容器，&lt;strong&gt;一对一&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;插值里可以写js表达式，一个表达式可以生成一个值（变量，运算，三元，函数…）&lt;/li&gt;
+&lt;li&gt;data里面写多个同名属性，会覆盖，只有最后一个有用。&lt;/li&gt;
+&lt;li&gt;methods里面的最好不要写箭头函数，否则会导致this从vue变成了window。&lt;/li&gt;
+&lt;/ol&gt;
     
     </summary>
     
@@ -183,34 +174,70 @@ el也可以通过`.$mount(‘#root’)挂载
     
     <summary type="html">
     
-      基础配置
- 1. 服务端口默认3306
-    
-    
- 2. 安装的时候选择自动添加path
-    
-    
- 3. 编码格式utf8
-    
-    
- 4. windows启动服务
-    
-    net start 服务名称（mysql）
-    net stop 服务名称
-    
-    
-    
+      &lt;h2 id=&quot;基础配置&quot;&gt;&lt;a href=&quot;#基础配置&quot; class=&quot;headerlink&quot; title=&quot;基础配置&quot;&gt;&lt;/a&gt;基础配置&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;服务端口默认&lt;code&gt;3306&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;安装的时候选择自动添加&lt;code&gt;path&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;编码格式&lt;code&gt;utf8&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;windows启动服务&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;net start 服务名称（mysql）&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;net stop 服务名称&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-登录
- 1. 首先确保mysql服务已经打开，不确定话net start mysql试试
-    
-    
- 2. mysql -uroot -pxxxx
-    
-    xxxx为你的密码，也可以不显示密码登录
-    
-    mysql -uroot -p
-  
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;登录&quot;&gt;&lt;a href=&quot;#登录&quot; class=&quot;headerlink&quot; title=&quot;登录&quot;&gt;&lt;/a&gt;登录&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;首先确保mysql服务已经打开，不确定话&lt;code&gt;net start mysql&lt;/code&gt;试试&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;mysql -uroot -pxxxx&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;xxxx为你的密码，也可以不显示密码登录&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;mysql -uroot -p&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;然后输入密码（此时密码以*显示）即可登录。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;密码重置（8-0-23）&quot;&gt;&lt;a href=&quot;#密码重置（8-0-23）&quot; class=&quot;headerlink&quot; title=&quot;密码重置（8.0.23）&quot;&gt;&lt;/a&gt;密码重置（8.0.23）&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;网上老的教程可能已经过时，8.0以上不支持&lt;code&gt;mysqld --skip-grant-tables&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;打开命令窗口cmd，输入命令：&lt;code&gt;net stop mysql&lt;/code&gt;，停止MySQL服务，&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;开启跳过密码验证登录的MySQL服务，输入命令，然后不要关闭此窗口，命令如下：&lt;/p&gt;
+&lt;p&gt; &lt;code&gt;mysqld --console --skip-grant-tables --shared-memory&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;再打开一个新的cmd，无密码登录MySQL，输入登录命令：&lt;code&gt;mysql -u root -p&lt;/code&gt;，然后回车即可&lt;/p&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;密码置为空，命令如下：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;use mysql&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;update user set authentication_string=&amp;#39;&amp;#39; where user=&amp;#39;root&amp;#39;;&lt;/code&gt;&lt;/p&gt;
+&lt;ol start=&quot;5&quot;&gt;
+&lt;li&gt;&lt;p&gt;退出，命令如下&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;quit&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;关闭以&lt;code&gt;-console --skip-grant-tables --shared-memory&lt;/code&gt;启动的MySQL服务（即关闭第一个打开的cmd窗口）&lt;/p&gt;
+&lt;ol start=&quot;7&quot;&gt;
+&lt;li&gt;&lt;p&gt;打开cmd，输入：&lt;code&gt;net start mysql&lt;/code&gt;启动MySQL服务。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;步骤4密码已经置空，所以无密码状态登录MySQL，输入登录命令：mysql -u root -p，然后回车即可登录&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;修改密码，如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;ALTER&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;USER&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&amp;#x27;root&amp;#x27;&lt;/span&gt;@&lt;span class=&quot;string&quot;&gt;&amp;#x27;localhost&amp;#x27;&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;IDENTIFIED&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;WITH&lt;/span&gt; mysql_native_password &lt;span class=&quot;keyword&quot;&gt;BY&lt;/span&gt; 你的密码&lt;span class=&quot;string&quot;&gt;&amp;#x27;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;验证更改后密码正确登录&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;输入quit，退出当前登录，输入登录命令：&lt;code&gt;mysql -u root -p&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;输入密码，成功登录，到此，重置密码结束。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;常用命令&quot;&gt;&lt;a href=&quot;#常用命令&quot; class=&quot;headerlink&quot; title=&quot;常用命令&quot;&gt;&lt;/a&gt;常用命令&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;以&lt;code&gt;;&lt;/code&gt;结尾&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;show databases;&lt;/code&gt;&lt;/p&gt;
     
     </summary>
     
@@ -235,10 +262,366 @@ el也可以通过`.$mount(‘#root’)挂载
     
     <summary type="html">
     
-      The_Computer_and_the_Brain
-也太难了…
+      &lt;h1 id=&quot;The-Computer-and-the-Brain&quot;&gt;&lt;a href=&quot;#The-Computer-and-the-Brain&quot; class=&quot;headerlink&quot; title=&quot;The_Computer_and_the_Brain&quot;&gt;&lt;/a&gt;The_Computer_and_the_Brain&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;也太难了…&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;Word&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;释义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;discuss&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;讨论&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;neurologist&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;神经病学家&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;psychiatrist&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;精神病学家&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;essential&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;基本的、必要的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;privilege&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;特权、优待&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;analog&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;模拟的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;represent&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;代表&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;quantity&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;大量、数量&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;pre-assegned&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;预先指定的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;current&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;电流&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;voltage&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;电压&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;i.e.&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;也就是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;predetermined&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;预先决定的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;organs&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;器官、机构&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;perform&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;执行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;representative&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;典型的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;arithmetic&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;数字，算数&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;addition&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;subtraction&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;multiplication&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;*&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;division&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;/&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;parallel&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;平行的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;antparallel&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;反平行的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;componentry&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;元件部分&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;relevant&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;相关的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;unusual&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;不同寻常的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;remarkable&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;卓越的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;rather&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;相当&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;attribute&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;属性&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;analyzer&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;分析器&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;proceed&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;开始、继续进行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;gear&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;齿轮、装置、工具&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;axle&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;车轴&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;entirely&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;完全地&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;differential&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;微分的，差别的、微分&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;integrator&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;积分器、积分电路&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;integral&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;积分的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;scheme&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;计划、组合、方案&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;threefold&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;三倍的，有三部分的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;trick&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;技巧&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;implicit&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;含蓄的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;particular&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;详细的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;short-circuited&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;短路的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;iteration&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;迭代&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;approximation&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;近似&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;justification&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;理由、辩护&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;economical&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;经济的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;specifically&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;特别的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;subtle&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;微妙的、精细的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;efficient&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;有效率的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;simpler&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;更简单的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;extensive&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;广泛的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;equation&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;等式、相等&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;primarily&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;首先；主要的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;previously&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;以前的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;decimal&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;十进制、小数的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;conventional&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;传统的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;represent&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;表现为&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;sequence&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;顺序&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;embodiments&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;体现、化身&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;suffice&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;使满足&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;inadequate&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;不充分的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;adequate&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;足够、充分&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;hence&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;因此&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;see below&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;见下文&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;electrical pulse&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;电脉冲&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;positive polarity&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;正极&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;negative&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;负极&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;observation&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;观察监视&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;redundant&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;冗余的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;simultanious&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;同时&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;stipulate&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;保证&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;correspond&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;符合&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;indication&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;指出、迹象&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;valid&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;合法、有效&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;electrical gating devices&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;电门装置&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;electromechanical&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;机电的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;relays&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;继电器&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;crystal&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;晶体&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;diodes&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;二极管&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;ferromagnetic&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;铁磁的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;transistor&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;晶体管&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;preferably&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;最好是，更合意的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;cf. below&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;参看下面&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;temporal&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;暂时的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;adjustable&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;可调节的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;matters&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;事件、影响&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
 
-Word释义discuss讨论neurologist神经病学家psychiatrist精神病学家essential基本的、必要的privilege特权、优待analog模拟的represent代表quantity大量、数量pre-assegned预先指定的current电流voltage电压i.e.也就是predetermined预先决定的organs器官、机构perform执行representative典型的arithmetic数字，算数addition+subtraction-multiplication*divisio
     
     </summary>
     
@@ -261,38 +644,42 @@ Word释义discuss讨论neurologist神经病学家psychiatrist精神病学家esse
     
     <summary type="html">
     
-      debug
- 2. a 汇编指令
-    
-    
- 3. r 查看寄存器
-    
-     * r 寄存器
-    
-    
- 4. d 查看内存
-    
-     * d 段地址:偏移地址 （结尾偏移地址）
-    
-    
- 5. t 执行指令
-    
-    
- 6. e 修改内存数据
-    
-     * e 段地址:偏移地址 数据1 数据2 数据3…
-       
-       
-     * e 段地址:偏移地址
-       
-       数据 空格 数据 空格（逐个询问）
-       
-       
-    
-    
- 7. g执行到结束
-    
- 
+      &lt;h2 id=&quot;debug&quot;&gt;&lt;a href=&quot;#debug&quot; class=&quot;headerlink&quot; title=&quot;debug&quot;&gt;&lt;/a&gt;debug&lt;/h2&gt;&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;&lt;p&gt;a 汇编指令&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;r 查看寄存器&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;r 寄存器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;d 查看内存&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;d 段地址:偏移地址 （结尾偏移地址）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;t 执行指令&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;e 修改内存数据&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;e 段地址:偏移地址 数据1 数据2 数据3…&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;e 段地址:偏移地址&lt;/p&gt;
+&lt;p&gt;数据 空格 数据 空格（逐个询问）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;g执行到结束&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;寄存器&quot;&gt;&lt;a href=&quot;#寄存器&quot; class=&quot;headerlink&quot; title=&quot;寄存器&quot;&gt;&lt;/a&gt;寄存器&lt;/h2&gt;&lt;p&gt;通用：ax, bx, cx, dx, ip, sp &lt;/p&gt;
+&lt;p&gt;段：cs(control), ds(data)，ss(stack)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://pic.imgdb.cn/item/6151c0912ab3f51d91b47ad7.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;h2 id=&quot;栈&quot;&gt;&lt;a href=&quot;#栈&quot; class=&quot;headerlink&quot; title=&quot;栈&quot;&gt;&lt;/a&gt;栈&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;系统会自动改动sp，但是不会检测是否越界，无论是栈顶还是栈底，没有这样的寄存器！pop和push只支持字数据&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;push ax &amp;#x2F;&amp;#x2F;ax中的数据送入栈，sp-&amp;#x3D;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pop ax &amp;#x2F;&amp;#x2F;从栈顶取出数据送入ax，s注意pop以后sp会改动，但是原来的数据是依然存在的，只是不在栈中而已。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;程序&quot;&gt;&lt;a href=&quot;#程序&quot; class=&quot;headerlink&quot; title=&quot;程序&quot;&gt;&lt;/a&gt;程序&lt;/h2&gt;
     
     </summary>
     
@@ -315,35 +702,86 @@ Word释义discuss讨论neurologist神经病学家psychiatrist精神病学家esse
     
     <summary type="html">
     
-      基本概念
- 1. 数据对象，数据元素和数据项
-    
-    
- 2. 四类基本结构
-    
-     1. 集合
-     2. 线性结构
-     3. 树形结构
-     4. 图状结构
-    
-    
- 3. 逻辑结构分类
-    
-     1. 线性结构 * 线性表
-         * 栈
-         * 队列
-         * 数组、广义表
-         * 字符串
-        
-        
-     2. 非线性结构 * 树、二叉树
-         * 图
-        
-        
-    
-    
- 4. 存储结构分类
-    
+      &lt;h2 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;数据对象，数据元素和数据项&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;四类基本结构&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;集合&lt;/li&gt;
+&lt;li&gt;线性结构&lt;/li&gt;
+&lt;li&gt;树形结构&lt;/li&gt;
+&lt;li&gt;图状结构&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;逻辑结构分类&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;线性结构&lt;ul&gt;
+&lt;li&gt;线性表&lt;/li&gt;
+&lt;li&gt;栈&lt;/li&gt;
+&lt;li&gt;队列&lt;/li&gt;
+&lt;li&gt;数组、广义表&lt;/li&gt;
+&lt;li&gt;字符串&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;非线性结构&lt;ul&gt;
+&lt;li&gt;树、二叉树&lt;/li&gt;
+&lt;li&gt;图&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;存储结构分类&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;顺序存储结构&lt;ul&gt;
+&lt;li&gt;向量&lt;/li&gt;
+&lt;li&gt;一维数组&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;非顺序存储结构（链式）&lt;ul&gt;
+&lt;li&gt;链接表&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;数据类型&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;原子类型&lt;/li&gt;
+&lt;li&gt;结构类型&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ADT（抽象数据类型）&lt;/p&gt;
+&lt;p&gt;​    （D,S,P)，分别表示数据对象，关系集，操作集。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;算法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;特性&lt;ul&gt;
+&lt;li&gt;有穷性&lt;/li&gt;
+&lt;li&gt;确定性&lt;/li&gt;
+&lt;li&gt;可行性&lt;/li&gt;
+&lt;li&gt;输入：0、多个&lt;/li&gt;
+&lt;li&gt;输出：1、多个&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;设计要求&lt;ul&gt;
+&lt;li&gt;正确性&lt;/li&gt;
+&lt;li&gt;可读性&lt;/li&gt;
+&lt;li&gt;健壮性&lt;/li&gt;
+&lt;li&gt;高效与低存储量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;描述工具&lt;ul&gt;
+&lt;li&gt;自然语言&lt;/li&gt;
+&lt;li&gt;程序设计语言&lt;/li&gt;
+&lt;li&gt;流程图&lt;/li&gt;
+&lt;li&gt;伪码&lt;/li&gt;
+&lt;li&gt;类C√&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;线性表&quot;&gt;&lt;a href=&quot;#线性表&quot; class=&quot;headerlink&quot; title=&quot;线性表&quot;&gt;&lt;/a&gt;线性表&lt;/h2&gt;&lt;p&gt;前驱、后继&lt;/p&gt;
+
     
     </summary>
     
@@ -364,35 +802,86 @@ Word释义discuss讨论neurologist神经病学家psychiatrist精神病学家esse
     
     <summary type="html">
     
-      基本概念
- 1. 数据对象，数据元素和数据项
-    
-    
- 2. 四类基本结构
-    
-     1. 集合
-     2. 线性结构
-     3. 树形结构
-     4. 图状结构
-    
-    
- 3. 逻辑结构分类
-    
-     1. 线性结构 * 线性表
-         * 栈
-         * 队列
-         * 数组、广义表
-         * 字符串
-        
-        
-     2. 非线性结构 * 树、二叉树
-         * 图
-        
-        
-    
-    
- 4. 存储结构分类
-    
+      &lt;h2 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;数据对象，数据元素和数据项&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;四类基本结构&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;集合&lt;/li&gt;
+&lt;li&gt;线性结构&lt;/li&gt;
+&lt;li&gt;树形结构&lt;/li&gt;
+&lt;li&gt;图状结构&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;逻辑结构分类&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;线性结构&lt;ul&gt;
+&lt;li&gt;线性表&lt;/li&gt;
+&lt;li&gt;栈&lt;/li&gt;
+&lt;li&gt;队列&lt;/li&gt;
+&lt;li&gt;数组、广义表&lt;/li&gt;
+&lt;li&gt;字符串&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;非线性结构&lt;ul&gt;
+&lt;li&gt;树、二叉树&lt;/li&gt;
+&lt;li&gt;图&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;存储结构分类&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;顺序存储结构&lt;ul&gt;
+&lt;li&gt;向量&lt;/li&gt;
+&lt;li&gt;一维数组&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;非顺序存储结构（链式）&lt;ul&gt;
+&lt;li&gt;链接表&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;数据类型&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;原子类型&lt;/li&gt;
+&lt;li&gt;结构类型&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ADT（抽象数据类型）&lt;/p&gt;
+&lt;p&gt;​    （D,S,P)，分别表示数据对象，关系集，操作集。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;算法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;特性&lt;ul&gt;
+&lt;li&gt;有穷性&lt;/li&gt;
+&lt;li&gt;确定性&lt;/li&gt;
+&lt;li&gt;可行性&lt;/li&gt;
+&lt;li&gt;输入：0、多个&lt;/li&gt;
+&lt;li&gt;输出：1、多个&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;设计要求&lt;ul&gt;
+&lt;li&gt;正确性&lt;/li&gt;
+&lt;li&gt;可读性&lt;/li&gt;
+&lt;li&gt;健壮性&lt;/li&gt;
+&lt;li&gt;高效与低存储量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;描述工具&lt;ul&gt;
+&lt;li&gt;自然语言&lt;/li&gt;
+&lt;li&gt;程序设计语言&lt;/li&gt;
+&lt;li&gt;流程图&lt;/li&gt;
+&lt;li&gt;伪码&lt;/li&gt;
+&lt;li&gt;类C√&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;线性表&quot;&gt;&lt;a href=&quot;#线性表&quot; class=&quot;headerlink&quot; title=&quot;线性表&quot;&gt;&lt;/a&gt;线性表&lt;/h2&gt;&lt;p&gt;前驱、后继&lt;/p&gt;
+
     
     </summary>
     
@@ -413,24 +902,39 @@ Word释义discuss讨论neurologist神经病学家psychiatrist精神病学家esse
     
     <summary type="html">
     
-      由于这几天图片有时候发不出了，怀疑版本问题，但好久没有重启了，结果一重启mcl，然后自动更新让我彻底崩盘；
-记录一下目前各包的版本号
+      &lt;blockquote&gt;
+&lt;p&gt;由于这几天图片有时候发不出了，怀疑版本问题，但好久没有重启了，结果一重启mcl，然后自动更新让我彻底崩盘；&lt;br&gt;记录一下目前各包的版本号&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;package&lt;/th&gt;
+&lt;th&gt;tag&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;mcl&lt;/td&gt;
+&lt;td&gt;1.2.1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;mah&lt;/td&gt;
+&lt;td&gt;1.12.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;gam&lt;/td&gt;
+&lt;td&gt;0.19.1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;gb&lt;/td&gt;
+&lt;td&gt;0.8.11&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;以上缩写&lt;/strong&gt;：&lt;br&gt;mirai-console-loader&lt;br&gt;mirai-api-http&lt;br&gt;girai-application-mirai&lt;br&gt;girai-broadcast&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;中间有个坑：mah版本怎么切换？&lt;/strong&gt;&lt;br&gt;需要先移除原来的包&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mcl -r net.mamoe:mirai-api-http&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;然后下载需要的版本，放到plugins即可。&lt;/p&gt;
+&lt;p&gt;如果不想自动更新的话可以&lt;code&gt;mcl -u&lt;/code&gt;启动。&lt;/p&gt;
 
-packagetagmcl1.2.1mah1.12.0gam0.19.1gb0.8.11以上缩写：
-mirai-console-loader
-mirai-api-http
-girai-application-mirai
-girai-broadcast
-
-中间有个坑：mah版本怎么切换？
-需要先移除原来的包
-
-mcl -r net.mamoe:mirai-api-http
-
-
-然后下载需要的版本，放到plugins即可。
-
-如果不想自动更新的话可以mcl -u启
     
     </summary>
     
@@ -453,11 +957,14 @@ mcl -r net.mamoe:mirai-api-http
     
     <summary type="html">
     
-      新开一个记梦的板块Beta
-
-2021-08-31
-和即将毕业的学长打算一起去吃饭，具体缘由已记不清了。学长叫了出租车，我拉开副驾驶门的一瞬间车子突然向前走了一下，差点把我拽倒。上车后我向师傅调侃，走这么着急么。随后我们向目的地驶去。中间经过一道弯曲的桥，但是这师傅却像没看见一样，径直往前开，直到即将撞上护栏才猛打方向，哪里来得及，车辆栽入河里。车子刚没入水中，车内的气压变得不正常了。我迅速摇下来玻璃钻了出去，然而我不会游泳啊！我也不知道自己在水底多深，只能拼命往上狗刨，终于浮上来了，深吸一口气，竟然可以游到岸边。终于，我和学长都得救了，但有个孩子没救上来。
-车上除了司机不是只有两个人吗？我想
+      &lt;blockquote&gt;
+&lt;p&gt;新开一个记梦的板块Beta&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;2021-08-31&quot;&gt;&lt;a href=&quot;#2021-08-31&quot; class=&quot;headerlink&quot; title=&quot;2021-08-31&quot;&gt;&lt;/a&gt;2021-08-31&lt;/h2&gt;&lt;p&gt;和即将毕业的学长打算一起去吃饭，具体缘由已记不清了。学长叫了出租车，我拉开副驾驶门的一瞬间车子突然向前走了一下，差点把我拽倒。上车后我向师傅调侃，走这么着急么。随后我们向目的地驶去。中间经过一道弯曲的桥，但是这师傅却像没看见一样，径直往前开，直到即将撞上护栏才猛打方向，哪里来得及，车辆栽入河里。车子刚没入水中，车内的气压变得不正常了。我迅速摇下来玻璃钻了出去，然而我不会游泳啊！我也不知道自己在水底多深，只能拼命往上狗刨，终于浮上来了，深吸一口气，竟然可以游到岸边。终于，我和学长都得救了，但有个孩子没救上来。&lt;br&gt;车上除了司机不是只有两个人吗？我想。&lt;/p&gt;
+&lt;h2 id=&quot;2021-09-04&quot;&gt;&lt;a href=&quot;#2021-09-04&quot; class=&quot;headerlink&quot; title=&quot;2021-09-04&quot;&gt;&lt;/a&gt;2021-09-04&lt;/h2&gt;&lt;p&gt;是一个让人害怕一整天的梦。&lt;/p&gt;
+&lt;h2 id=&quot;2021-09-11&quot;&gt;&lt;a href=&quot;#2021-09-11&quot; class=&quot;headerlink&quot; title=&quot;2021-09-11&quot;&gt;&lt;/a&gt;2021-09-11&lt;/h2&gt;&lt;p&gt;参加了场史无前例的长跑，已经不是第一次了，很多往届没能成功跑完的人又来参加了比赛。又梦到我跟我爸在开车了，貌似是三轮车，想念小时候一个人坐在三轮车上的感觉，那是小时候的一小块天堂。&lt;/p&gt;
+&lt;h2 id=&quot;2021-10-13&quot;&gt;&lt;a href=&quot;#2021-10-13&quot; class=&quot;headerlink&quot; title=&quot;2021-10-13&quot;&gt;&lt;/a&gt;2021-10-13&lt;/h2&gt;&lt;p&gt;昨天到现在一直在做一个很大的梦，很可怕，是我如此多年来做的最大的噩梦。我当然很不希望记录这样一个梦，它的出现让我意外，但是细想其实也有因有果。我现在努力想的是，怎样让这样一个梦醒过来，有没有可以让人立马就醒过来的汤药，我一定不顾一切的喝它几碗。可是哪里会有呢？给我几天时间吧！梦里也不要太冲动，我可以帮助梦里的人找到解药的，这药一定保我以后不再做噩梦了。&lt;/p&gt;
+&lt;h2 id=&quot;2021-10-22&quot;&gt;&lt;a href=&quot;#2021-10-22&quot; class=&quot;headerlink&quot; title=&quot;2021-10-22&quot;&gt;&lt;/a&gt;2021-10-22&lt;/h2&gt;
     
     </summary>
     
@@ -484,14 +991,19 @@ mcl -r net.mamoe:mirai-api-http
     
     <summary type="html">
     
-      事情发生在前几天，当我从昏睡中苏醒时，暗喜，看着窗外的圆月高挂，人却已是筋疲力竭。
+      &lt;blockquote&gt;
+&lt;p&gt;事情发生在前几天，当我从昏睡中苏醒时，暗喜，看着窗外的圆月高挂，人却已是筋疲力竭。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;凸月之时，我被一伙严严实实包裹身份的人带到一处巨大的地方，那些包裹者自称此地便是欢乐谷，说着便让我独自破门而入。&lt;br&gt;门上仅有一栓，食指稍一用力，那门栓便垂头丧气。没有嘤嘤嘤的叫声，我进入了欢乐谷。&lt;br&gt;项目貌似并不多，导航地图也不需要，但是够大——这我很快就会察觉到的。&lt;/p&gt;
+&lt;p&gt;进来以后，并没有想象中的豁然开朗，反而杂草丛生，只能沿着被人踩出来的痕迹向前移动，很快我便意识到，我已经深入地下。&lt;br&gt;当我终于看到光亮的时候，藤蔓疯长的声音也趁机进入眼睛。四周淡淡的荧绿色，仿佛处在一个巨大的榕树森林。那突如其来的声音扭曲着，变本加厉，以我为中心迅速蠕动，巨大的压力让我蹲在地上双手抱耳。我感觉那一条条的枝桠即将从我两侧的耳朵像张一斧的尖刀对林祥福那样扎进去，又准又快，再转上一转。恐惧让我无法摆脱这种声音。&lt;br&gt;久了，我缓缓起身，面前已经有人在走动了，我不清楚他们是如何跨过我的，而面前人的步态却意外的像我许久不见的女友，不注意，声音已经偃旗息鼓了。&lt;/p&gt;
+&lt;p&gt;我向前伸出双手，跟随着女友的脚步走了出去。这时往身后一看，一个深邃幽暗的门洞坐在那里，门上赫然几个大字“星斗大森林“。再回头，女友又不知去向。我开始审视目前处境，除了身后门洞，四周像是身处一个电玩城，而面前大概只有两个去处，一条是大路，另一条是小路。你说，走小路。我说，走大路。&lt;br&gt;从那个小路摸着蓝色墙壁走进去，闷沉的碰撞和击打声传来。大概是个格斗场。&lt;/p&gt;
+&lt;p&gt;刚进门，我就被几个工作人员套上了不太合身的装备，和我一同被套上的人大概有七八个，还有一个无任何装束的男人，据说是教练。我们被安排成了一排，教练说要一挑我们几个人。我感到害怕，莫名其貌地被安排来打架了？这无论如何我也打不过的。这时，我的左肩被人狠狠的撞了一下，我向后一个趔趄勉强站稳，来不及思考，一记飞天脚朝我踢了过来，我下意识往右前方闪躲，在地上打了几个滚才停下，接着教练又向其他人开火。我在混战中不停地躲避，用尽了毕生的姿势和力气。&lt;br&gt;该死啊，我为什么要来这里，已经快要喘不上来气了。&lt;/p&gt;
+&lt;p&gt;之后我几乎陷入昏迷，直到从渐渐消止的打斗中看到门口女友的身影，我拼命找到一个角落脱掉沉重的装备追了出去。我看到了她，以及几位老同学。Z呼喊我的名字，示意我快过去。他们对我的出现并没有感到任何惊讶，我们就像没分开过一样继续走向下一个项目。&lt;br&gt;从刚刚昏暗的氛围里面过来，几步就到了室外。我们站在一个十米左右的平台上，下面是一片巨大的水，不规律的浪潮拍打过来。从平台的右侧可以下楼梯，那台阶一直绵延了百米，最后钻入深蓝里。Z说，我要下去玩玩。我看向楼梯尽头，汽轮的呜呜声飘渺可见。我们是在一个巨大的岛上。&lt;/p&gt;
+&lt;p&gt;Z从楼梯一路跑下去，在极度恐高中，我慢慢失去意识。&lt;br&gt;再往后，我似乎见到了🐍，我很害怕，临走时，看到了远处海洋上的邮轮，醒了。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;以上，记录一次梦，但因为断更，我已经忘了梦到了什么。总之，是一场把我所有的恐惧都汇聚到一起的梦。&lt;/p&gt;
+&lt;/blockquote&gt;
 
-凸月之时，我被一伙严严实实包裹身份的人带到一处巨大的地方，那些包裹者自称此地便是欢乐谷，说着便让我独自破门而入。
-门上仅有一栓，食指稍一用力，那门栓便垂头丧气。没有嘤嘤嘤的叫声，我进入了欢乐谷。
-项目貌似并不多，导航地图也不需要，但是够大——这我很快就会察觉到的。
-
-进来以后，并没有想象中的豁然开朗，反而杂草丛生，只能沿着被人踩出来的痕迹向前移动，很快我便意识到，我已经深入地下。
-当我终于看到光亮的时候，藤蔓疯长的声音也趁机进入眼睛。四周淡淡的荧绿色，仿佛处在一个巨大的榕树森林。那突如其来的声音扭曲着，变本加
     
     </summary>
     
@@ -514,11 +1026,14 @@ mcl -r net.mamoe:mirai-api-http
     
     <summary type="html">
     
-      记录一下自己做题的时候遇到的比较困扰的题
-
-数列2
-问题描述
-思维的严密性是相当重要的，尤其是在程序设计中，一个小小的错误，就可能导致无法想象的后果。明明的爸爸是一名富有经验的程序设计专家，深知思维严密的重要性，于是在明明很小的时候，就通过游戏的方式，训练明明的思维严密性。今天，明明的爸爸和明明做了一个数列的游戏。这个游戏很简单，就是有一数列，现在需要在这数列中选出一个或者若干个数（可以不连续），要求这些数的和能被11整除。明明的爸爸想锻炼明明思维的严密性，因此要求明明尽可能多的找出符合条件的数列来，最好一个也不要漏掉。 例如一数列为“11 22 33”，其中11可以被11整除，22可以被11
+      &lt;blockquote&gt;
+&lt;p&gt;记录一下自己做题的时候遇到的比较困扰的题&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;数列2&quot;&gt;&lt;a href=&quot;#数列2&quot; class=&quot;headerlink&quot; title=&quot;数列2&quot;&gt;&lt;/a&gt;数列2&lt;/h2&gt;&lt;h3 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h3&gt;&lt;p&gt;思维的严密性是相当重要的，尤其是在程序设计中，一个小小的错误，就可能导致无法想象的后果。明明的爸爸是一名富有经验的程序设计专家，深知思维严密的重要性，于是在明明很小的时候，就通过游戏的方式，训练明明的思维严密性。今天，明明的爸爸和明明做了一个数列的游戏。这个游戏很简单，就是有一数列，现在需要在这数列中选出一个或者若干个数（可以不连续），要求这些数的和能被11整除。明明的爸爸想锻炼明明思维的严密性，因此要求明明尽可能多的找出符合条件的数列来，最好一个也不要漏掉。 例如一数列为“11 22 33”，其中11可以被11整除，22可以被11整除，33可以被11整除，11+22=33能被11整除，22+33=55能被11整除，11+33=44能被11整除，11+22+33=66能被11整除。所以以上一数列能被11整除的情况一共有7种。 明明对于这个游戏很感兴趣，高兴地玩了起来。由于粗心，明明总是无法一次就把所有的情况都找出来，这使得他爸爸不是很满意。于是明明爸爸决定先降低游戏的难度，事先告诉明明某一数列总共有多少种符合条件的选择数字的方法，然后再让明明去选。明明的爸爸请你帮一个忙，他不想自己找出所有的情况，因此请你写一个程序，用程序来找出一共有多少种符合选数的情况，并把结果告诉他。 &lt;/p&gt;
+&lt;p&gt;明明爸爸的问题可以归结为：给你一个数列，从中选出1个或若干个数（可以不连续），要求这些数的和能被11整除，问这样的选数方法一共有多少种。&lt;/p&gt;
+&lt;h3 id=&quot;输入说明&quot;&gt;&lt;a href=&quot;#输入说明&quot; class=&quot;headerlink&quot; title=&quot;输入说明&quot;&gt;&lt;/a&gt;输入说明&lt;/h3&gt;&lt;p&gt;你写的程序要求从标准输入设备中读入测试数据作为你所写程序的输入数据。标准输入设备中有多组测试数据，每组测试数据有两行，每组测试数据的第一行有一个整数n(1≤n≤15)，表示数列中有多少个整数，每组测试数据的第二行有n个整数，整数的大小都大于等于0且小于等于100，整数之间用一个空格隔开。每组测试数据与其后一组测试数据之间没有任何空行，第一组测试数据前面以及最后一组测试数据后面也都没有任何空行。&lt;/p&gt;
+&lt;h3 id=&quot;输出说明&quot;&gt;&lt;a href=&quot;#输出说明&quot; class=&quot;headerlink&quot; title=&quot;输出说明&quot;&gt;&lt;/a&gt;输出说明&lt;/h3&gt;&lt;p&gt;对于每一组测试数据，你写的程序要求计算出一组相应的运算结果，并将每组运算结果作为你所写程序的输出数据依次写入到标准输出设备中。每组运算结果为一个整数，即表示一共有多少种选数方法。每组运算结果单独形成一行数据，其行首和行尾都没有任何空格，每组运算结果与其后一组运算结果之间没有任何空行，第一组运算结果前面以及最后一组运算结果后面也都没有任何空行。 注：通常，显示屏为标准输出设备。&lt;/p&gt;
+&lt;h3 id=&quot;输入范例&quot;&gt;&lt;a href=&quot;#输入范例&quot; class=&quot;headerlink&quot; title=&quot;输入范例&quot;&gt;&lt;/a&gt;输入范例&lt;/h3&gt;
     
     </summary>
     
@@ -543,16 +1058,15 @@ mcl -r net.mamoe:mirai-api-http
     
     <summary type="html">
     
-      在准备采用CDN动态加速之前，我的状态是：vercel托管，域名已经备案，但是访问速度不稳定，需要提高访问速度，且不想购买服务器。了解到七牛云的平台，于是开始着手操作。由于有些教程太老了，很多地方已经不正确，于是把自己的步骤记录下来。
-
-准备
-首先你需要有一个免费的部署平台，例如gitpages、vercel，部署之后你可以拿到平台分配给你的免费的域名，然后去七牛去和腾讯云注册账号。
-
-
-
-
-申请ssl证书
-腾讯云平台，搜索ssl，申请免费的ssl证书，免费证书不支持泛域名，所以二级域名和其子域名都需要各自申请（如果你有需求的话）。申请本身没有难度，不过采用DNS验证的时候有一个难点，你的域名
+      &lt;blockquote&gt;
+&lt;p&gt;在准备采用CDN动态加速之前，我的状态是：&lt;strong&gt;vercel托管，域名已经备案，但是访问速度不稳定，需要提高访问速度，且不想购买服务器&lt;/strong&gt;。了解到七牛云的平台，于是开始着手操作。由于有些教程太老了，很多地方已经不正确，于是把自己的步骤记录下来。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;准备&quot;&gt;&lt;a href=&quot;#准备&quot; class=&quot;headerlink&quot; title=&quot;准备&quot;&gt;&lt;/a&gt;准备&lt;/h2&gt;&lt;p&gt;首先你需要有一个免费的部署平台，例如gitpages、vercel，部署之后你可以拿到平台分配给你的免费的域名，然后去七牛去和腾讯云注册账号。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;申请ssl证书&quot;&gt;&lt;a href=&quot;#申请ssl证书&quot; class=&quot;headerlink&quot; title=&quot;申请ssl证书&quot;&gt;&lt;/a&gt;申请ssl证书&lt;/h2&gt;&lt;p&gt;腾讯云平台，搜索ssl，申请免费的ssl证书，免费证书不支持泛域名，所以二级域名和其子域名都需要各自申请（如果你有需求的话）。申请本身没有难度，不过采用DNS验证的时候有一个难点，你的域名解析可能会验证失败，你可以用&lt;a href=&quot;https://myssl.com/dns_check.html#ssl_verify&quot;&gt;这个网站&lt;/a&gt;自主查询一下自己是否解析成功，注意这里子域名的TXT值要去查子域名，而不是二级域名。如果提示失败，看一下自己的解析是否正确，如果正确，请暂停掉所有的CNAME记录，再尝试。此时应该可以查询到，等待腾讯云颁发证书，下载，解压。&lt;/p&gt;
+&lt;p&gt;注意：申请完的TXT记录可以删除。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;七牛云绑定&quot;&gt;&lt;a href=&quot;#七牛云绑定&quot; class=&quot;headerlink&quot; title=&quot;七牛云绑定&quot;&gt;&lt;/a&gt;七牛云绑定&lt;/h2&gt;&lt;p&gt;注册，登录，打开CDN，并添加域名。&lt;br&gt;各处的值分别是：&lt;br&gt;你的域名、HTTPS、大陆、动态加速、vercel给的域名、你的域名&lt;/p&gt;
     
     </summary>
     
@@ -575,78 +1089,15 @@ mcl -r net.mamoe:mirai-api-http
     
     <summary type="html">
     
-      一天会有多少快乐
-
-早上起来去吃了早饭
-
-
-
-
-
-
-
-回来后完成并且不断优化了挂件
-
-
-
-
-
-躺下睡了个小觉
-
-
-
-拍云的时候找到了丢失已久的钥匙
-
-
-
-
-
-给钥匙挂在了一个小钥匙串上（这样比较大，不容易丢吧）
-
-
-
-
-
-去试🔑的时候看到猫猫，于是上楼拿了充气宝和猫粮，一边给车胎打气，一边喂猫猫，三只猫，太可爱了
-
-
-
-
-
-洗了个澡吃完饭看男团比赛
-
-
-
-心动的加更，甜！
-
-
-
-
-
-骑了会车，最后干脆下来推车走了一圈，凉风真不错
-
-
-
-
-
-支付宝红包！买东西的时候突然想起来啦哈哈哈哈，居然真的有用！
-
-
-
-
-
-看了无间道！
-
-
-
-
-
-和老同学打了个电话
-最后就是还买了几件衣服！
-
-
-
-快乐来
+      &lt;blockquote&gt;
+&lt;p&gt;一天会有多少快乐&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;早上起来去吃了早饭&quot;&gt;&lt;a href=&quot;#早上起来去吃了早饭&quot; class=&quot;headerlink&quot; title=&quot;早上起来去吃了早饭&quot;&gt;&lt;/a&gt;早上起来去吃了早饭&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://pic.imgdb.cn/item/610d50165132923bf8dfb49a.jpg&quot; alt&gt;&lt;br&gt;&lt;img src=&quot;https://pic.imgdb.cn/item/610d50165132923bf8dfb4ad.jpg&quot; alt&gt;&lt;br&gt;&lt;img src=&quot;https://pic.imgdb.cn/item/610d50165132923bf8dfb487.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;回来后完成并且不断优化了挂件&quot;&gt;&lt;a href=&quot;#回来后完成并且不断优化了挂件&quot; class=&quot;headerlink&quot; title=&quot;回来后完成并且不断优化了挂件&quot;&gt;&lt;/a&gt;回来后完成并且不断优化了挂件&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://pic.imgdb.cn/item/610d4e805132923bf8dbc490.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;躺下睡了个小觉&quot;&gt;&lt;a href=&quot;#躺下睡了个小觉&quot; class=&quot;headerlink&quot; title=&quot;躺下睡了个小觉&quot;&gt;&lt;/a&gt;躺下睡了个小觉&lt;/h2&gt;&lt;hr&gt;
+&lt;h2 id=&quot;拍云的时候找到了丢失已久的钥匙&quot;&gt;&lt;a href=&quot;#拍云的时候找到了丢失已久的钥匙&quot; class=&quot;headerlink&quot; title=&quot;拍云的时候找到了丢失已久的钥匙&quot;&gt;&lt;/a&gt;拍云的时候找到了丢失已久的钥匙&lt;/h2&gt;
     
     </summary>
     
@@ -669,7 +1120,18 @@ mcl -r net.mamoe:mirai-api-http
     
     <summary type="html">
     
-      这里有东西被加密了，需要输入密码查看哦。
+      &lt;div class=&quot;hbe hbe-container&quot; id=&quot;hexo-blog-encrypt&quot; data-wpm=&quot;抱歉, 这个密码看着不太对, 请再试试.&quot; data-whm=&quot;抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.&quot;&gt;
+  &lt;script id=&quot;hbeData&quot; type=&quot;hbeData&quot; data-hmacdigest=&quot;0732eaedc4eb733fa9418f3f5c2830fbcb4b0dd981ec7c3e90a187ee22bebce9&quot;&gt;574b1481c95b9d13566c06ed649275dfa0dcd4a557eb09a03d605f102811239c26ebe9ec0fc5a0e7c03356a08fd08ac840ae03afa68566b4f7f64743ed3f206dc80a4f8f39e903e885a3cc46708651e07bd723ba3cda18322470bd46bd6e304cb4ed4ae5f98fc42242aa72e0bbc943165e348871d0dbe79c56793bf3498e58fa0dd0f1ea62a1a369b519090d74b622ab10e40769132e7552b8a5c260739bd21f310a0b0d20c978c4ddb4c316739ed44e09350f1f4f251d8c70f55727e8b1bd7736471bc92fd1e97fe742998791a90d07c30df8315fe91d8f4bb7c614b9a0715186012945dc46b32980e5b2521869e3922274842e5641c418b3fd613fca64ddb7e62ee60d3837331530fb584a9872ede09da80582924099246bf7587127bf8136dcb44ad9d4616f07fae1996cea4e88b458b533350ed949136bbceac585703bd6b17c0cb00c0ec518b9ec0f976e2e736b8cb603452c119f569a6c596416b3a431ea764ccd6250174e16bba56dba35f334aa91cdd537883d25e4969e5b08a80bf665aed3a63c72e0b064dfc4aa15842543cb2abbed29c9f7c51e59f7367b5ce4ce85c43a2c939f681473e81f36b3ccd7b8d4ff39aaf6052a639ea2a63f5b0c9a93ea9fcc67378bbb710a2fc3e6cd8228a1c4acf529dee469bd33dfcd2757fc181b8d53280b89656bc979b6c2cc1542d2423e781561f8bc6a83b8c74263e2768c223dbe46ea1bf76f4091a21f2cf82263f36d905cb0b9d764fd6a71f88f26440f8457cbb64e8c4770047e18f18ae11d1258bb1f6be75de472085c7b552b9e5f6acdf871262e6aa81613effcc359879ba56de9d8dd62bae162cf602eab9e6c7053815deef9b47dfc03331ee2faa8032e0c91b5f83e3d0d7a97191402d112ad92b56faf867574f90f478eca9df0c55ac677209fa3f449daa79bffbfd86a80ae8ae91e5d57641e7e8cc24a3ca420685e9b7b896a94b7a7ad7b4e3f3824326f36b40ee9e08204c1592c357655cc1c2ce11e827bcf09255ee9e7e01cd4e288262e53eb197364b8573abd3cc88390f9fc4a3a69661fbaa4b29cf3d55f42055e81f22da2470cfdc9df53b0ec78e786050d7338e173be0f07fee3d31c53fa8f99b32dd60ba7ce830f453172b88f21ade33a3b36239cf68a6ab0627f67ae6ccc4c332cd56a56a862b89ea83845ef9952922b6bfe7dd5aa2bc41da59e59e42e9dbc1722d05f6de145049c17983f03c7aade2d45996732adb57eba56422987c2ee041e821ea0e6791e84d64b66fd85deb779ac324e9227946c57b0f45a8c5782533459f2551c84cfeed045bcc37a3139b6e83c7328f48d223b4734ef216d96bcbfd4bb826989cb97037679096ecad230ad8efeabc0469a6c04d34c58ef0fb5d55920bf0f02cd1588bc3a611c61d426dcf4189d8be2af90dca3f433fac365ae3f487b7a47184c400c56c00f3c86180742e0b2b5ad5c8dadaec58da689e00061a5d5e724c5c2bfb0cd2ce51be329d860cc312b5100347863fcb7e3208a13668243cb98205fa750e2131bc3350d3678309eeb5f74c2cfb0b3ee46d732aca82e8584aa5e933d7abde5e097c1741d92ecc4b3a120ce6c7ca850177ac5910af967c00ae31991d7752fd6a3b54fbaa5853676f3d57c08630cac1c1772b7aecd0071410c8b6ccc807891b7a7d675788ed9e7042c1417d5dc96148d90bbd08f782bf6cb2a8574d83918b347e3770ccd210250b1ed9f0d91974fcbdb0744c008f9dab6138a6b0e5ac1a14487cc3945caaaa4fa1a0109e0eb658510b609e8da0b9dbe713f091bc3899101a188a3b9fe3a67b6dfc5935436c06bec6c4b751039263c94255537164899a00b5ddf8e4edf1a44e6b15dc7fa3f75b24eb4998047e77e1e516caac94b64834e23aa9bb4c84ceab013fa9a6e70a6bb5256477efe2864a5332c298da42e7412237bf20278ecc05f139c9efa44eb05b5a32b9c7ee8a7f9ea71047079d733acbb4ad7bcc25ce7725e492b9e7cf7994e6db758f38929469d570695f585e02be60b3c95424ee5060e5c6cf55ab117bfb11b680c49c13e8866bfaaf823ff46ab34c99250ded50bdb1bd32c4db0d14610a39d46424f0fb9db8dc176e80725577632bc48c23d9a71584defb4bf4c447486d211df814e81794b5f373f3431de969f1b16a7db441ca08775f8c7c7de649e64b098294b1b660d52cccff50003bd485f757701eef9b4fe2c932e1c99342194afc123f0bdc2484a2d39108871b81c6cb2803d4d6928364c62f2aeefa15dafda5b6194a4bfa5674049f4acaa55ead9f3b71f422584baf6febdda55247693b29856d40a3bb2ac809cf6d4a5e8b512840189fa1e4599700454e5e2ce4069a1f2206d71ccfab6ac878057284a6836616689a32cc03d4cef079cb30ae029c663cfcdd1945a6c80440ae87b03d45f154ed5bc17b2aef9c23e99f1ef8b7527ef8f5355f162349f9c1b3d3df5e24a5e12e2c5555defdc79c95855c80b07a2da92d0c9447f3b535d91cf5c750d5f7c9cceee932f4800e196ca883a75611ee4f7e7ade350aa9032e20b64362934709fd5617d0ed4fa1710bc4614e15186e7688648d19d76725fc3a07c74521b7f9bc219164b01fddab9828656a935acc7830752fd94d7c4311a9abc5da2e351fe18d5b905c88db88f6d03b2b8eb1bc7cdc6009e0d3604975a148e2735ebca&lt;/script&gt;
+  &lt;div class=&quot;hbe hbe-content&quot;&gt;
+    &lt;div class=&quot;hbe hbe-input hbe-input-default&quot;&gt;
+      &lt;input class=&quot;hbe hbe-input-field hbe-input-field-default&quot; type=&quot;password&quot; id=&quot;hbePass&quot;&gt;
+      &lt;label class=&quot;hbe hbe-input-label hbe-input-label-default&quot; for=&quot;hbePass&quot;&gt;
+        &lt;span class=&quot;hbe hbe-input-label-content hbe-input-label-content-default&quot;&gt;已加密，请在这里密码.&lt;/span&gt;
+      &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script data-pjax src=&quot;/lib/hbe.js&quot;&gt;&lt;/script&gt;&lt;link href=&quot;/css/hbe.style.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
     
     </summary>
     
@@ -690,33 +1152,42 @@ mcl -r net.mamoe:mirai-api-http
     
     <summary type="html">
     
-      四大件
- 1. 数据结构和算法
- 2. 计算机网络
- 3. 操作系统
- 4. 设计模式组成原理
+      &lt;h2 id=&quot;四大件&quot;&gt;&lt;a href=&quot;#四大件&quot; class=&quot;headerlink&quot; title=&quot;四大件&quot;&gt;&lt;/a&gt;四大件&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;数据结构和算法&lt;/li&gt;
+&lt;li&gt;计算机网络&lt;/li&gt;
+&lt;li&gt;操作系统&lt;/li&gt;
+&lt;li&gt;设计模式组成原理&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;数据类型&quot;&gt;&lt;a href=&quot;#数据类型&quot; class=&quot;headerlink&quot; title=&quot;数据类型&quot;&gt;&lt;/a&gt;数据类型&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;常量&lt;/p&gt;
+&lt;p&gt;​    宏常量 #define&lt;/p&gt;
+&lt;p&gt;​    const 修饰变量&lt;/p&gt;
+&lt;p&gt;​    均不可修改&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;字符串&lt;/p&gt;
+&lt;p&gt;char str[] = “ldksjfa”，会默认多一个’\0’&lt;/p&gt;
+&lt;p&gt;string str = “dlkjafd” 需要头文件&lt;string&gt;&lt;/string&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;bool char int float double void wchar_t&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;typedef为已有类命新名字&lt;/p&gt;
+&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; feet;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;feet a = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-数据类型
- 1. 常量
-    
-    ​ 宏常量 #define
-    
-    ​ const 修饰变量
-    
-    ​ 均不可修改
-    
-    
- 2. 字符串
-    
-    char str[] = “ldksjfa”，会默认多一个’\0’
-    
-    string str = “dlkjafd” 需要头文件
-    
-    
- 3. bool char int float double void wchar_t
-    
-    
- 4. typedef为已有
+
+
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;运算符&quot;&gt;&lt;a href=&quot;#运算符&quot; class=&quot;headerlink&quot; title=&quot;运算符&quot;&gt;&lt;/a&gt;运算符&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;三目运算符可以返回变量也可以返回变量值&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;控制结构&quot;&gt;&lt;a href=&quot;#控制结构&quot; class=&quot;headerlink&quot; title=&quot;控制结构&quot;&gt;&lt;/a&gt;控制结构&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;if - else if - else&lt;/li&gt;
+&lt;li&gt;switch - case break- case break-default break &lt;strong&gt;只能是int 或者 char，必须break&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;循环结构 while（）{},do{}while()，for(int i =0;i&amp;lt;10;i++)&lt;/li&gt;
+&lt;li&gt;goto FLAG; FLAG:&lt;/li&gt;
+&lt;li&gt;continue&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;数组&quot;&gt;&lt;a href=&quot;#数组&quot; class=&quot;headerlink&quot; title=&quot;数组&quot;&gt;&lt;/a&gt;数组&lt;/h2&gt;&lt;h3 id=&quot;一维数组&quot;&gt;&lt;a href=&quot;#一维数组&quot; class=&quot;headerlink&quot; title=&quot;一维数组&quot;&gt;&lt;/a&gt;一维数组&lt;/h3&gt;
     
     </summary>
     
@@ -739,28 +1210,88 @@ mcl -r net.mamoe:mirai-api-http
     
     <summary type="html">
     
-      踩坑
-推荐环境统一放在一个environment的文件夹下，最新的jdk的jre不用自己配置，只需要配置java_home以及path即可。
-安装后移动jdk路径，会导致cmd无任何输出，可以重新安装一下（如果你想换位置的话）。
+      &lt;h2 id=&quot;踩坑&quot;&gt;&lt;a href=&quot;#踩坑&quot; class=&quot;headerlink&quot; title=&quot;踩坑&quot;&gt;&lt;/a&gt;踩坑&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;推荐环境统一放在一个environment的文件夹下，最新的jdk的jre不用自己配置，只需要配置java_home以及path即可。&lt;br&gt;安装后移动jdk路径，会导致cmd无任何输出，可以重新安装一下（如果你想换位置的话）。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;DOS命令&quot;&gt;&lt;a href=&quot;#DOS命令&quot; class=&quot;headerlink&quot; title=&quot;DOS命令&quot;&gt;&lt;/a&gt;DOS命令&lt;/h2&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1. dir&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2. cd /d E:\xxx 跨盘操作&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3. cls (clear screen)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4. exit&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5. ipconfig&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6. calc&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7. mspaint&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8. notepad&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9. ping + domain&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10. md test&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11. cd&amp;gt;a.txt&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12. del a.txt&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13. rd test&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-DOS命令
-1. dir
-2. cd /d E:\xxx 跨盘操作
-3. cls (clear screen)
-4. exit
-5. ipconfig
-6. calc
-7. mspaint
-8. notepad
-9. ping + domain
-10. md test
-11. cd&gt;a.txt
-12. del a.txt
-13. rd test
+&lt;h2 id=&quot;基础知识点&quot;&gt;&lt;a href=&quot;#基础知识点&quot; class=&quot;headerlink&quot; title=&quot;基础知识点&quot;&gt;&lt;/a&gt;基础知识点&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;大小写敏感、强类型&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;char c  = ‘\u0061’&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;引用类型比较地址 基本类型比较值&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;高到低：强制转换；低到高：自动转换&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;byte-&amp;gt;short-&amp;gt;hcar-&amp;gt;int-&amp;gt;long-&amp;gt;float-&amp;gt;double&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;JDK7后数字可以用下划线分割&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;方法重载（参数类型、个数、排序不同）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;数组&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;int[] nums; （首选）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;int nums[]; （C的风格）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;int[] nums = new int[10];nums[0] = 1（动态初始化，先声明，后赋值）隐式初始化，int默认0，string默认null&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;int [] nums = {1,2,3}（静态初始化：创建直接赋值）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;长度是确定的，不可更改，元素类型相同，可以是基本类型也可是引用类型&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;for-each:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;pre&gt;&lt;code class=&quot;java&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; array : arrays)&amp;#123;
+    System.out.println(array);
+&amp;#125;&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Arrays类&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Arrays.sort()&lt;/li&gt;
+&lt;li&gt;Arrays.fill()&lt;/li&gt;
+&lt;li&gt;Arrays.tostring()&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;稀疏数组&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;总行 总列 有效值个数&lt;/li&gt;
+&lt;li&gt;行 列 值&lt;/li&gt;
+&lt;li&gt;…&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;面向对象（OOP）&quot;&gt;&lt;a href=&quot;#面向对象（OOP）&quot; class=&quot;headerlink&quot; title=&quot;面向对象（OOP）&quot;&gt;&lt;/a&gt;面向对象（OOP）&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;非静态方法需要实例化才能调用&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;引用传递、值传递&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;构造器（方法名和类名一致）,new本质是在调用构造器&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;无参构造再不定义任何构造时会自动生成，反之必须自己显示定义。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;idea :  alt+insert 自动生成构造器&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;封装：属性私有，get，set&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;继承：实例化子类时，会先调用父类构造器，如果显式定义构造器，super（）必须在子类构造器的第一行。ctrl + h继承树&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;重写：方法名和参数列表必须一样&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;多态：能调用的方法只看引用类型，且如果子类重写父类方法，则运行子类方法。 多态是方法的多态&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;A instanceof B&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
-
-基础知识点
- 1
     
     </summary>
     
@@ -783,26 +1314,18 @@ DOS命令
     
     <summary type="html">
     
-      关于如何利用Jupyter Notebook搭建网页编程
-展示
+      &lt;h1 id=&quot;关于如何利用Jupyter-Notebook搭建网页编程&quot;&gt;&lt;a href=&quot;#关于如何利用Jupyter-Notebook搭建网页编程&quot; class=&quot;headerlink&quot; title=&quot;关于如何利用Jupyter Notebook搭建网页编程&quot;&gt;&lt;/a&gt;关于如何利用Jupyter Notebook搭建网页编程&lt;/h1&gt;&lt;h2 id=&quot;展示&quot;&gt;&lt;a href=&quot;#展示&quot; class=&quot;headerlink&quot; title=&quot;展示&quot;&gt;&lt;/a&gt;展示&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://pic.imgdb.cn/item/60f54fb95132923bf82d6ab0.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;h2 id=&quot;安装jupyter&quot;&gt;&lt;a href=&quot;#安装jupyter&quot; class=&quot;headerlink&quot; title=&quot;安装jupyter&quot;&gt;&lt;/a&gt;安装jupyter&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pip install jupyter&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 安装失败的可以考虑换阿里源&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 修改.&amp;#x2F;pip&amp;#x2F;pip.ini 为&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[global]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;index-url &amp;#x3D; https:&amp;#x2F;&amp;#x2F;mirrors.aliyun.com&amp;#x2F;pypi&amp;#x2F;simple&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[install]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;trusted-host &amp;#x3D; mirrors.aliyun.com&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
+&lt;h2 id=&quot;配置&quot;&gt;&lt;a href=&quot;#配置&quot; class=&quot;headerlink&quot; title=&quot;配置&quot;&gt;&lt;/a&gt;配置&lt;/h2&gt;&lt;p&gt;&lt;code&gt;jupyter notebook --generate-config&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;第一种密码配置&lt;br&gt;&lt;code&gt;jupyter notebook password&lt;/code&gt;&lt;br&gt;确认密码后得到密文，复制。&lt;br&gt;在.py文件末尾填上如下几句&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;c.NotebookApp.password &amp;#x3D; u&amp;#39;这里填写密文&amp;#39;       # 刚才复制的那个密文&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;c.NotebookApp.open_browser &amp;#x3D; False       # 禁止自动打开浏览器  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;c.NotebookApp.port &amp;#x3D;8888                         #随便指定一个端口，默认就是8888，也可以不写&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;c.NotebookApp.certfile &amp;#x3D; u&amp;#39;c:&amp;#x2F;&amp;#x2F;xxx&amp;#x2F;&amp;#x2F;xxx&amp;#39;   # 根目录，一定要写转义符（我就是错在这里，要认真看报错）&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;第二种密码配置&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; IPython&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;IPython.lib.passwd()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+得到密文，修改.py文件&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;c.NotebookApp.password &amp;#x3D; u&amp;#39;这里填写密文&amp;#39;       # 刚才复制的那个密文&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;c.NotebookApp.open_browser &amp;#x3D; False       # 禁止自动打开浏览器  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;c.NotebookApp.port &amp;#x3D;8888                         #随便指定一个端口，默认就是8888，也可以不写&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;c.NotebookApp.certfile &amp;#x3D; u&amp;#39;c:&amp;#x2F;&amp;#x2F;xxx&amp;#x2F;&amp;#x2F;xxx&amp;#39;   # 根目录，一定要写转义符（我就是错在这里，要认真看报错）&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-安装jupyter
-pip install jupyter
-# 安装失败的可以考虑换阿里源
-# 修改./pip/pip.ini 为
-[global]
-index-url = https://mirrors.aliyun.com/pypi/simple
-[install]
-trusted-host = mirrors.aliyun.com
-
-
-配置
-jupyter notebook --generate-config
-
- 1. 第一种密码配置
-    jupyter notebook password
-    确认密码后得到密文
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;启动&quot;&gt;&lt;a href=&quot;#启动&quot; class=&quot;headerlink&quot; title=&quot;启动&quot;&gt;&lt;/a&gt;启动&lt;/h2&gt;&lt;p&gt;&lt;code&gt;jupyter notebook&lt;/code&gt;&lt;br&gt;注意启动后命令行弹出的运行地址包括token&lt;/p&gt;
     
     </summary>
     
@@ -825,8 +1348,8 @@ jupyter notebook --generate-config
     
     <summary type="html">
     
-      点击获取
-请在点击后的界面内操作
+      &lt;h1 id=&quot;点击获取&quot;&gt;&lt;a href=&quot;#点击获取&quot; class=&quot;headerlink&quot; title=&quot;点击获取&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://dt2.8tupian.com/1/21378a1b500.pg3&quot;&gt;点击获取&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;请在点击后的界面内操作&lt;/p&gt;
+
     
     </summary>
     
