@@ -233,6 +233,111 @@
 
               <time title="创建时间：2021-10-06 16:46:24" itemprop="dateCreated datePublished" datetime="2021-10-06T16:46:24+08:00">2021-10-06</time>
             </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/post/c8c632fe.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/c8c632fe.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><h3 id="提纯"><a href="#提纯" class="headerlink" title="提纯"></a>提纯</h3><blockquote>
+<p>记录一下我踩的坑吧…真够蠢的</p>
+<ol>
+<li>没加abs，因为题目是绝对值…</li>
+<li>删除元素以后pos应该–，或者删除的时候pos不++，传参的时候传pos+1</li>
+<li>拿一个指针记录上一次的位置！</li>
+<li>把其它题目adt复制过来了，忘了原题是个循环链表…</li>
+<li>new出来的数组没有初始化0…</li>
+</ol>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">ElemType</span>&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Delete_Equal_Node</span><span class="params">( LinkList&lt;ElemType&gt; &amp;A, <span class="keyword">int</span> N )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> *arr = <span class="keyword">new</span> <span class="keyword">int</span>[N+<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i)</span><br><span class="line">        arr[i] = <span class="number">0</span>;</span><br><span class="line">    LinkNode&lt;ElemType&gt; *p = A.GetHead()-&gt;next, *t;</span><br><span class="line">    <span class="keyword">int</span> pos = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(p)</span><br><span class="line">    &#123;</span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    p = A.GetHead()-&gt;next;</span><br><span class="line">    <span class="keyword">while</span>(p)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(!arr[<span class="built_in">abs</span>(p-&gt;data)])</span><br><span class="line">        &#123;</span><br><span class="line">            arr[<span class="built_in">abs</span>(p-&gt;data)] = <span class="number">1</span>;</span><br><span class="line">            t = p;</span><br><span class="line">            pos++;</span><br><span class="line"></span><br><span class="line">        &#125;<span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            p = t;</span><br><span class="line">            A.ListDelete(pos+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        p = p-&gt;next;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="有序归并"><a href="#有序归并" class="headerlink" title="有序归并"></a>有序归并</h3><blockquote>
+<p>当b比a长的时候，要把b接在a后边，还要注意b本身也要提纯。。</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Merge_L_Order</span><span class="params">( LinkList&lt;ElemType&gt; &amp;A, LinkList&lt;ElemType&gt; &amp;B )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkNode&lt;ElemType&gt; *pa = A.GetHead()-&gt;next, *pb = B.GetHead()-&gt;next, *t1=A.GetHead(), *t2;</span><br><span class="line">    <span class="keyword">int</span> pos = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(pa)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(!pb)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">if</span>(pb-&gt;data &lt; pa-&gt;data)</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">            t2 = pb-&gt;next;</span><br><span class="line">            A.ListInsertNode(t1, pb);</span><br><span class="line">            pa = pb;</span><br><span class="line">            pb = t2;</span><br><span class="line"></span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(pb-&gt;data == pa-&gt;data)</span><br><span class="line">        &#123;</span><br><span class="line">            t2 = pb-&gt;next;</span><br><span class="line">            <span class="keyword">delete</span> pb;</span><br><span class="line">            pb = t2;</span><br><span class="line">        &#125;<span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            pos ++;</span><br><span class="line">            t1 = pa;</span><br><span class="line">            pa = pa-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(pb)</span><br><span class="line">        A.GetTail()-&gt;next = pb;</span><br><span class="line">    <span class="keyword">while</span>(pb &amp;&amp; pb-&gt;next)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(pb-&gt;next-&gt;data == pb-&gt;data)</span><br><span class="line">        &#123;</span><br><span class="line">            t1 = pb-&gt;next;</span><br><span class="line">            pb-&gt;next = t1-&gt;next;</span><br><span class="line">            <span class="keyword">delete</span> t1;</span><br><span class="line">        &#125;<span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            pb = pb-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(pb)</span><br><span class="line">        A.SetTail(pb);</span><br><span class="line">    <span class="keyword">delete</span> B.GetHead();</span><br><span class="line">    B.GetTail()-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/c8c632fe.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://asea.fun/post/c8c632fe.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar1.png">
+      <meta itemprop="name" content="Asea">
+      <meta itemprop="description" content="我以為我可以獨自過一生 我還是被打動了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AseaBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/c8c632fe.html" class="post-title-link" itemprop="url">数据结构oj</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-10-06 16:46:24" itemprop="dateCreated datePublished" datetime="2021-10-06T16:46:24+08:00">2021-10-06</time>
+            </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
@@ -1663,108 +1768,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://asea.fun/post/5b353da9.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar1.png">
-      <meta itemprop="name" content="Asea">
-      <meta itemprop="description" content="我以為我可以獨自過一生 我還是被打動了">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AseaBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/5b353da9.html" class="post-title-link" itemprop="url">东华大学程序设计基础OJ题目</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-08-17 14:40:08" itemprop="dateCreated datePublished" datetime="2021-08-17T14:40:08+08:00">2021-08-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-29 00:55:30" itemprop="dateModified" datetime="2021-08-29T00:55:30+08:00">2021-08-29</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/post/5b353da9.html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/5b353da9.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>记录一下自己做题的时候遇到的比较困扰的题</p>
-</blockquote>
-<h2 id="数列2"><a href="#数列2" class="headerlink" title="数列2"></a>数列2</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>思维的严密性是相当重要的，尤其是在程序设计中，一个小小的错误，就可能导致无法想象的后果。明明的爸爸是一名富有经验的程序设计专家，深知思维严密的重要性，于是在明明很小的时候，就通过游戏的方式，训练明明的思维严密性。今天，明明的爸爸和明明做了一个数列的游戏。这个游戏很简单，就是有一数列，现在需要在这数列中选出一个或者若干个数（可以不连续），要求这些数的和能被11整除。明明的爸爸想锻炼明明思维的严密性，因此要求明明尽可能多的找出符合条件的数列来，最好一个也不要漏掉。 例如一数列为“11 22 33”，其中11可以被11整除，22可以被11整除，33可以被11整除，11+22=33能被11整除，22+33=55能被11整除，11+33=44能被11整除，11+22+33=66能被11整除。所以以上一数列能被11整除的情况一共有7种。 明明对于这个游戏很感兴趣，高兴地玩了起来。由于粗心，明明总是无法一次就把所有的情况都找出来，这使得他爸爸不是很满意。于是明明爸爸决定先降低游戏的难度，事先告诉明明某一数列总共有多少种符合条件的选择数字的方法，然后再让明明去选。明明的爸爸请你帮一个忙，他不想自己找出所有的情况，因此请你写一个程序，用程序来找出一共有多少种符合选数的情况，并把结果告诉他。 </p>
-<p>明明爸爸的问题可以归结为：给你一个数列，从中选出1个或若干个数（可以不连续），要求这些数的和能被11整除，问这样的选数方法一共有多少种。</p>
-<h3 id="输入说明"><a href="#输入说明" class="headerlink" title="输入说明"></a>输入说明</h3><p>你写的程序要求从标准输入设备中读入测试数据作为你所写程序的输入数据。标准输入设备中有多组测试数据，每组测试数据有两行，每组测试数据的第一行有一个整数n(1≤n≤15)，表示数列中有多少个整数，每组测试数据的第二行有n个整数，整数的大小都大于等于0且小于等于100，整数之间用一个空格隔开。每组测试数据与其后一组测试数据之间没有任何空行，第一组测试数据前面以及最后一组测试数据后面也都没有任何空行。</p>
-<h3 id="输出说明"><a href="#输出说明" class="headerlink" title="输出说明"></a>输出说明</h3><p>对于每一组测试数据，你写的程序要求计算出一组相应的运算结果，并将每组运算结果作为你所写程序的输出数据依次写入到标准输出设备中。每组运算结果为一个整数，即表示一共有多少种选数方法。每组运算结果单独形成一行数据，其行首和行尾都没有任何空格，每组运算结果与其后一组运算结果之间没有任何空行，第一组运算结果前面以及最后一组运算结果后面也都没有任何空行。 注：通常，显示屏为标准输出设备。</p>
-<h3 id="输入范例"><a href="#输入范例" class="headerlink" title="输入范例"></a>输入范例</h3>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/5b353da9.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1835,7 +1838,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1960,7 +1963,7 @@ setInterval("createtime()",250);
 </script>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共105.4k字</span>
+  <span class="post-count">全站共106.1k字</span>
 </div>
 
         
