@@ -1823,7 +1823,7 @@ table th:nth-of-type(4) {
   <entry>
     <title>Java期末复习</title>
     <url>/post/adf6b9f0.html</url>
-    <content><![CDATA[<h1 id="java期末复习"><a href="#java期末复习" class="headerlink" title="java期末复习"></a>java期末复习</h1><blockquote>
+    <content><![CDATA[<blockquote>
 <p>把这几百页的书从头到尾看一遍梳理一下期末考点吧！</p>
 </blockquote>
 <h2 id="基本数据类型与数组"><a href="#基本数据类型与数组" class="headerlink" title="基本数据类型与数组"></a>基本数据类型与数组</h2><h3 id="标识符和关键字"><a href="#标识符和关键字" class="headerlink" title="标识符和关键字"></a>标识符和关键字</h3><ol>
@@ -1996,6 +1996,24 @@ table th:nth-of-type(4) {
 </li>
 <li><p>使用正则表达式作为分隔标记解析字符串 </p>
 </li>
+<li><p>传入<code>File</code>对象，通过<code>next()</code>和<code>nextLine()</code>获取输入</p>
+<ol>
+<li>next():<ul>
+<li>一定要读取到有效字符后才可以结束输入。</li>
+<li>对输入有效字符之前遇到的空白，next() 方法会自动将其去掉。</li>
+<li>只有输入有效字符后才将其后面输入的空白作为分隔符或者结束符。</li>
+<li>next() 不能得到带有空格的字符串。</li>
+</ul>
+</li>
+<li>nextLine()：<ul>
+<li>以Enter为结束符,也就是说 nextLine()方法返回的是输入回车之前的所有字符。</li>
+<li>可以获得空白。</li>
+</ul>
+</li>
+<li>如果要输入 int 或 float 类型的数据，在 Scanner 类中也有支持，但是在输入之前最好先使用 hasNextXxx() 方法进行验证，再使用 nextXxx() 来读取</li>
+</ol>
+</li>
+<li></li>
 </ol>
 <h3 id="StringBuffer"><a href="#StringBuffer" class="headerlink" title="StringBuffer()"></a>StringBuffer()</h3><p>StringBuffer是可更改的，<code>append()</code>追加</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">char</span> <span class="title">charAt</span><span class="params">(<span class="keyword">int</span> n)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCharAt</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">char</span> ch)</span></span>;</span><br><span class="line"><span class="function">StringBuffer <span class="title">insert</span><span class="params">(<span class="keyword">int</span> index, String str)</span></span>;</span><br><span class="line">reverse</span><br><span class="line">delete</span><br><span class="line">replace</span><br></pre></td></tr></table></figure>
@@ -2004,7 +2022,7 @@ table th:nth-of-type(4) {
 
 <h3 id="数字格式化"><a href="#数字格式化" class="headerlink" title="数字格式化"></a>数字格式化</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String s = String.format(<span class="string">&quot;%.2f&quot;</span>,<span class="number">3.1415</span>);</span><br><span class="line"><span class="comment">//以下为修饰符</span></span><br><span class="line">%d;</span><br><span class="line">%o;</span><br><span class="line">%x;</span><br><span class="line">%X;</span><br><span class="line">%+d;</span><br><span class="line">%,d;</span><br><span class="line">%-<span class="number">8d</span>;</span><br><span class="line">%f(<span class="number">6</span>位);</span><br><span class="line">%e(%E)科学计数法;</span><br></pre></td></tr></table></figure>
 
-<h2 id="输入、输出流"><a href="#输入、输出流" class="headerlink" title="输入、输出流"></a>输入、输出流</h2><blockquote>
+<h2 id="输入、输出流"><a href="#输入、输出流" class="headerlink" title="输入、输出流"></a>输入、输出流</h2><h3 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h3><h3 id="流"><a href="#流" class="headerlink" title="流"></a>流</h3><blockquote>
 <p>FileInputStream、FileOutputSteam</p>
 <p>FileReader、FileWriter</p>
 <p>BufferedReader、BufferedWriter</p>
@@ -2041,14 +2059,25 @@ table th:nth-of-type(4) {
 <p>用<code>synchronized</code>修饰的方法必须遵守同步机制，即当一个线程正在使用时，其他线程若要使用则必须等待</p>
 </li>
 <li><p>协调同步</p>
-<p><code>wait()</code>来中断当前线程</p>
-<p><code>notifyAll()</code>通知中断的线程继续执行，先中断先继续</p>
+<p><code>wait()</code>来中断当前线程<br><code>notifyAll()</code>通知中断的线程继续执行，先中断先继续</p>
 </li>
-<li><p>Timer</p>
-<p>该类在<code>javax.swing</code></p>
-<p>我太困了……..-_-……..</p>
+<li><p>Timer<br>该类在<code>javax.swing</code><br>我太困了……..-_-……..</p>
 </li>
 </ol>
+<h2 id="泛型与集合框架"><a href="#泛型与集合框架" class="headerlink" title="泛型与集合框架"></a>泛型与集合框架</h2><h3 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cone</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> height;</span><br><span class="line">    E bottom;</span><br><span class="line">    <span class="function">Publi <span class="title">Cone</span> <span class="params">( E b )</span></span>&#123;</span><br><span class="line">        bottom = b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Cone&lt;Circle&gt; coneOne;</span><br><span class="line">coneOne = <span class="keyword">new</span> Cone&lt;Circle&gt; (<span class="keyword">new</span> Circle());</span><br></pre></td></tr></table></figure>
+
+<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">LinkedList&lt;String&gt; mylist = <span class="keyword">new</span> LinkedList&lt;String&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">//常用方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E element)</span> <span class="comment">//向链表末尾添加一个新的节点，该节点中的数据是参数elememt指定的数据。</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> index ,E element)</span> <span class="comment">//向链表的指定位置添加一个新的节点，该节点中的数据是参数elememt指定的数据。</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span> <span class="comment">//删除链表的所有节点，使当前链表成为空链表。</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">remove</span><span class="params">(<span class="keyword">int</span> index)</span> <span class="comment">//删除指定位置上的节点。</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">remove</span><span class="params">(E element)</span> <span class="comment">//删除首次出现含有数据elemen的节点。</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span> <span class="comment">//得到链表中指定位置处节点中的数据。</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="title">sort</span><span class="params">(List&lt;E&gt; list)</span> <span class="comment">//升序</span></span></span><br><span class="line"><span class="function"><span class="comment">//◆ LinkedList&lt;E&gt;泛型类本身新增加的一些常用方法 </span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addFirst</span><span class="params">(E element)</span> <span class="comment">//向链表的头添加新节点，该节点中的数据是参数elememt指定的数据。</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addLast</span><span class="params">(E element)</span> <span class="comment">//向链表的末尾添加新节点，该节点中的数据是参数elememt指定的数据。</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">getFirst</span><span class="params">()</span> <span class="comment">//得到链表中第一个节点中的数据。</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">getLast</span><span class="params">()</span> <span class="comment">//得到链表中最后一个节点中的数据。</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">removeFirst</span><span class="params">()</span> <span class="comment">//删除第一个节点，并返回这个节点中的数据。</span></span></span><br></pre></td></tr></table></figure>
+
+<p><strong>遍历</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">LinkedList&lt;String&gt; mylist = <span class="keyword">new</span> LinkedList&lt;String&gt;();</span><br><span class="line">Iterator&lt;String&gt; it = mylist.iterator();</span><br><span class="line"><span class="keyword">while</span>(it.hasNext())</span><br><span class="line">&#123;</span><br><span class="line">    print(it.next());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">HashMap&lt;String,Student&gt; hashtable = HashSet&lt;String,Student&gt;();</span><br><span class="line"><span class="comment">//常用方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">put</span><span class="params">(K key,V value)</span><span class="comment">//将键/值对数据存放到散列映射中，该方法同时返回键所对应的值。 </span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span> <span class="comment">//清空散列映射。</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">clone</span><span class="params">()</span>  <span class="comment">//返回当前散列映射的一个克隆。</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">containsKey</span><span class="params">(Object key)</span> <span class="comment">//如果散列映射有“键/值”对使用了参数指定的键，方法返回true，否则返回false。 </span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">containsValue</span><span class="params">(Object value)</span> <span class="comment">//如果散列映射有“键/值”对的值是参数指定的值。</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">get</span><span class="params">(Object key)</span> <span class="comment">//返回散列映射中使用key做键的“键/值”对中的值。</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span>  <span class="comment">//如果散列映射不含任何“键/值”对，方法返回true，否则返回false。</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">remove</span><span class="params">(Object key)</span> <span class="comment">//删除散列映射中键为参数指定的“键/值”对，并返回键对应的值。</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">size</span><span class="params">()</span> <span class="comment">//返回散列映射的大小，即散列映射中“键/值”对的数目。</span></span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
 ]]></content>
       <categories>
         <category>笔记</category>
