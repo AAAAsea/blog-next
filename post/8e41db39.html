@@ -1,4 +1,721 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"><meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.2.0"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png"><link rel="icon" type="image/png" sizes="32x32" href="https://blog.asea.fun/img/avatar1.png"><link rel="icon" type="image/png" sizes="16x16" href="https://blog.asea.fun/img/avatar1.png"><link rel="mask-icon" href="/images/logo.svg" color="#222"><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext"><link rel="stylesheet" href="/lib/font-awesome/css/all.min.css"><link rel="stylesheet" href="/lib/pace/pace-theme-big-counter.min.css"><script src="/lib/pace/pace.min.js"></script><script id="hexo-configurations">var NexT=window.NexT||{},CONFIG={hostname:"asea.fun",root:"/",scheme:"Gemini",version:"7.8.0",exturl:!1,sidebar:{position:"left",display:"post",padding:18,offset:12,onmobile:!1},copycode:{enable:!0,show_result:!0,style:"default"},back2top:{enable:!0,sidebar:!1,scrollpercent:!0},bookmark:{enable:!0,color:"#222",save:"auto"},fancybox:!1,mediumzoom:!1,lazyload:!1,pangu:!1,comments:{style:"tabs",active:"valine",storage:!0,lazyload:!1,nav:null,activeClass:"valine"},algolia:{hits:{per_page:10},labels:{input_placeholder:"Search for Posts",hits_empty:"We didn't find any results for the search: ${query}",hits_stats:"${hits} results found in ${time} ms"}},localsearch:{enable:!0,trigger:"auto",top_n_per_article:1,unescape:!1,preload:!1},motion:{enable:!0,async:!1,transition:{post_block:"fadeIn",post_header:"slideDownIn",post_body:"slideDownIn",coll_header:"slideLeftIn",sidebar:"slideUpIn"}},path:"search.xml"}</script><meta name="description" content="debug a 汇编指令  r 查看寄存器  r 寄存器   d 查看内存  d 段地址:偏移地址 （结尾偏移地址）   t 执行指令  e 修改内存数据  e 段地址:偏移地址 数据1 数据2 数据3…  e 段地址:偏移地址 数据 空格 数据 空格（逐个询问）    g执行到结束   寄存器通用：ax, bx, cx, dx, ip, sp  段：cs(control), ds(data)，s"><meta property="og:type" content="article"><meta property="og:title" content="汇编语言"><meta property="og:url" content="https://asea.fun/post/8e41db39.html"><meta property="og:site_name" content="AseaBlog"><meta property="og:description" content="debug a 汇编指令  r 查看寄存器  r 寄存器   d 查看内存  d 段地址:偏移地址 （结尾偏移地址）   t 执行指令  e 修改内存数据  e 段地址:偏移地址 数据1 数据2 数据3…  e 段地址:偏移地址 数据 空格 数据 空格（逐个询问）    g执行到结束   寄存器通用：ax, bx, cx, dx, ip, sp  段：cs(control), ds(data)，s"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://pic.imgdb.cn/item/6151c0912ab3f51d91b47ad7.jpg"><meta property="og:image" content="https://pic.imgdb.cn/item/6151bcce2ab3f51d91af7b5a.jpg"><meta property="og:image" content="https://pic.imgdb.cn/item/6151d21a2ab3f51d91cef820.jpg"><meta property="og:image" content="https://pic.imgdb.cn/item/615d08c72ab3f51d91b26ea0.jpg"><meta property="article:published_time" content="2021-09-13T11:34:25.000Z"><meta property="article:modified_time" content="2021-10-24T02:37:37.000Z"><meta property="article:author" content="Asea"><meta property="article:tag" content="assembler"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://pic.imgdb.cn/item/6151c0912ab3f51d91b47ad7.jpg"><link rel="canonical" href="https://asea.fun/post/8e41db39.html"><script id="page-configurations">CONFIG.page={sidebar:"",isHome:!1,isPost:!0,lang:"zh-CN"}</script><title>汇编语言 | AseaBlog</title><noscript><style>.sidebar-inner,.use-motion .brand,.use-motion .collection-header,.use-motion .comments,.use-motion .menu-item,.use-motion .pagination,.use-motion .post-block,.use-motion .post-body,.use-motion .post-header{opacity:initial}.use-motion .site-subtitle,.use-motion .site-title{opacity:initial;top:initial}.use-motion .logo-line-before i{left:initial}.use-motion .logo-line-after i{right:initial}</style></noscript><link rel="alternate" href="/atom.xml" title="AseaBlog" type="application/atom+xml"></head><body itemscope itemtype="http://schema.org/WebPage"><div class="container use-motion"><div class="headband"></div><header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-container"><div class="site-nav-toggle"><div class="toggle" aria-label="切换导航栏"><span class="toggle-line toggle-line-first"></span><span class="toggle-line toggle-line-middle"></span><span class="toggle-line toggle-line-last"></span></div></div><div class="site-meta custom-logo"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span><h1 class="site-title">AseaBlog</h1><span class="logo-line-after"><i></i></span></a><p class="site-subtitle" itemprop="description">我的个人博客</p> <a><img class="custom-logo-image" src="/uploads/logo2.png" alt="AseaBlog"></a></div><div class="site-nav-right"><div class="toggle popup-trigger"><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class="site-nav"><ul id="menu" class="main-menu menu"><li class="menu-item menu-item-主页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i> 主页</a></li><li class="menu-item menu-item-关于"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i> 关于</a></li><li class="menu-item menu-item-标签"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i> 标签</a></li><li class="menu-item menu-item-分类"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i> 分类</a></li><li class="menu-item menu-item-留言"><a href="/liuyan/" rel="section"><i class="fa fa-comments fa-fw"></i> 留言</a></li><li class="menu-item menu-item-归档"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i> 归档</a></li><li class="menu-item menu-item-search"><a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i> 搜索</a></li></ul></nav><div class="search-pop-overlay"><div class="popup search-popup"><div class="search-header"><span class="search-icon"><i class="fa fa-search"></i></span><div class="search-input-container"> <input autocomplete="off" autocapitalize="off" placeholder="搜索..." spellcheck="false" type="search" class="search-input"></div><span class="popup-btn-close"><i class="fa fa-times-circle"></i></span></div><div id="search-result"><div id="no-result"><i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i></div></div></div></div></div></header><div class="back-to-top"><i class="fa fa-arrow-up"></i> <span>0%</span></div><div class="reading-progress-bar"></div><a role="button" class="book-mark-link book-mark-link-fixed"></a> <a href="https://github.com/AAAAsea" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0 0 115 115 130 115 142 142 250 250 250 0Z"></path><path d="M128.3 109C113.8 99.7 119 89.6 119 89.6 122 82.7 120.5 78.6 120.5 78.6 119.2 72 123.4 76.3 123.4 76.3 127.3 80.9 125.5 87.3 125.5 87.3 122.9 97.6 130.6 101.9 134.4 103.2" fill="currentColor" style="transform-origin:130px 106px" class="octo-arm"></path><path d="M115 115C114.9 115.1 118.7 116.5 119.8 115.4L133.7 101.6C136.9 99.2 139.9 98.4 142.2 98.6 133.8 88 127.5 74.4 143.8 58 148.5 53.4 154 51.2 159.7 51 160.3 49.4 163.2 43.6 171.4 40.1 171.4 40.1 176.1 42.5 178.8 56.2 183.1 58.6 187.2 61.8 190.9 65.4 194.5 69 197.7 73.2 200.1 77.6 213.8 80.2 216.3 84.9 216.3 84.9 212.7 93.1 206.9 96 205.4 96.6 205.1 102.4 203 107.8 198.3 112.5 181.9 128.9 168.3 122.5 157.7 114.1 157.9 116.9 156.7 120.9 152.7 124.9L141 136.5C139.8 137.7 141.6 141.9 141.8 141.8Z" fill="currentColor" class="octo-body"></path></svg></a><main class="main"><div class="main-inner"><div class="content-wrap"><div class="content post posts-expand"><article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN"><link itemprop="mainEntityOfPage" href="https://asea.fun/post/8e41db39.html"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="image" content="/images/avatar1.png"><meta itemprop="name" content="Asea"><meta itemprop="description" content="我以為我可以獨自過一生 我還是被打動了"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="AseaBlog"></span><header class="post-header"><h1 class="post-title" itemprop="name headline"> 汇编语言</h1><div class="post-meta"><span class="post-meta-item"><span class="post-meta-item-icon"><i class="far fa-calendar"></i></span> <span class="post-meta-item-text">发表于</span> <time title="创建时间：2021-09-13 19:34:25" itemprop="dateCreated datePublished" datetime="2021-09-13T19:34:25+08:00">2021-09-13</time></span><span class="post-meta-item"><span class="post-meta-item-icon"><i class="far fa-calendar-check"></i></span> <span class="post-meta-item-text">更新于</span> <time title="修改时间：2021-10-24 10:37:37" itemprop="dateModified" datetime="2021-10-24T10:37:37+08:00">2021-10-24</time></span><span class="post-meta-item"><span class="post-meta-item-icon"><i class="far fa-folder"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span></span><span class="post-meta-item" title="热度" id="busuanzi_container_page_pv" style="display:none"><span class="post-meta-item-icon"><i class="fa fa-eye"></i></span> <span class="post-meta-item-text">热度：</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-item"><span class="post-meta-item-icon"><i class="far fa-comment"></i></span> <span class="post-meta-item-text">Valine：</span><a title="valine" href="/post/8e41db39.html#valine-comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/post/8e41db39.html" itemprop="commentCount"></span></a></span></div></header><div class="post-body" itemprop="articleBody"><h2 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h2><ol start="2"><li><p>a 汇编指令</p></li><li><p>r 查看寄存器</p><ul><li>r 寄存器</li></ul></li><li><p>d 查看内存</p><ul><li>d 段地址:偏移地址 （结尾偏移地址）</li></ul></li><li><p>t 执行指令</p></li><li><p>e 修改内存数据</p><ul><li><p>e 段地址:偏移地址 数据1 数据2 数据3…</p></li><li><p>e 段地址:偏移地址</p><p>数据 空格 数据 空格（逐个询问）</p></li></ul></li><li><p>g执行到结束</p></li></ol><h2 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h2><p>通用：ax, bx, cx, dx, ip, sp</p><p>段：cs(control), ds(data)，ss(stack)</p><p><img src="https://pic.imgdb.cn/item/6151c0912ab3f51d91b47ad7.jpg" alt></p><h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><blockquote><p>系统会自动改动sp，但是不会检测是否越界，无论是栈顶还是栈底，没有这样的寄存器！pop和push只支持字数据</p></blockquote><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">push ax &#x2F;&#x2F;ax中的数据送入栈，sp-&#x3D;2</span><br><span class="line">pop ax &#x2F;&#x2F;从栈顶取出数据送入ax，s注意pop以后sp会改动，但是原来的数据是依然存在的，只是不在栈中而已。</span><br></pre></td></tr></table></figure><h2 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h2><ol><li>当常量作为偏移地址的时候，最好加上段前缀，不然会当作把常量的值给寄存器</li><li>在多个segment的程序中，start从code段开始，且不需要初始化cs，但是ds和ss是需要初始化的。</li><li>开始以后ds对应的就是程序的起始地址，ds+100H才是真正的data段起始地址</li></ol><h2 id="字符处理"><a href="#字符处理" class="headerlink" title="字符处理"></a>字符处理</h2><ol><li>大写字母+20H = 小写字母（ASCII）<ul><li>小写转大写 <code>and al, 11011111b</code></li><li>小写转大写<code>or al, 00100000b</code></li></ul></li></ol><h2 id="寻址"><a href="#寻址" class="headerlink" title="寻址"></a>寻址</h2><blockquote><p>bp,bx称为基址，si、di称为变址 idata是立即数 。要么单独用，要么基址变址，要么加个立即数，没有基址基址，没有变址变址，没有立即数立即数。注意bp默认是ss段</p></blockquote><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mov ax,[200+bx] </span><br><span class="line"></span><br><span class="line">mov ax,200[bx] </span><br><span class="line"></span><br><span class="line">mov ax,[bx].200 </span><br><span class="line"></span><br><span class="line">mov ax,[bx+si]</span><br><span class="line"></span><br><span class="line">mov ax,[bx].200[si]</span><br><span class="line"></span><br><span class="line">mov ax,\[bx][si].200</span><br><span class="line"></span><br><span class="line">mov ax,\[bx][si]</span><br><span class="line"></span><br><span class="line">mov ax,[bp+si] </span><br></pre></td></tr></table></figure><p><img src="https://pic.imgdb.cn/item/6151bcce2ab3f51d91af7b5a.jpg" alt></p><h3 id="变址寄存器"><a href="#变址寄存器" class="headerlink" title="变址寄存器"></a>变址寄存器</h3><p>si di可以和bx类似的寻址用法，不同的是，si di只能作为16位来用，而bx可以拆开</p><h2 id="dup"><a href="#dup" class="headerlink" title="dup"></a>dup</h2><blockquote><p>伪指令，用来数据重复</p></blockquote><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">db 3 dup(0)</span><br><span class="line">db 3 dup(0,1,2)</span><br><span class="line">db 3 dup(&#39;abc&#39;, &#39;ACB&#39;)</span><br><span class="line">db 200 dup(0) ; 定义栈段</span><br></pre></td></tr></table></figure><h2 id="转移指令"><a href="#转移指令" class="headerlink" title="转移指令"></a>转移指令</h2><blockquote><p>首先认识一下offset，在程序中用s来作为标号（例如start之类的就是标号），<code>offset s</code>可以取出s的地址。</p></blockquote><p><img src="https://pic.imgdb.cn/item/6151d21a2ab3f51d91cef820.jpg" alt="转移"></p><h3 id="jmp"><a href="#jmp" class="headerlink" title="jmp"></a>jmp</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">这是z</span><br><span class="line">jmp 1000:3 &#x2F;&#x2F;cs为1000，ip为3</span><br><span class="line">jmp 4 &#x2F;&#x2F;修改ip为4</span><br></pre></td></tr></table></figure><h3 id="jcxz"><a href="#jcxz" class="headerlink" title="jcxz"></a>jcxz</h3><ol><li><p>有条件转移指令，当cx为0跳转，否则继续下一步。</p></li><li><p>短转移，机器码保存的是位移，范围是-128-127</p></li></ol><h3 id="loop"><a href="#loop" class="headerlink" title="loop"></a>loop</h3><ol><li><p>cx减一，然后判断cx是否为0，如果不是，则跳转，否则继续向下执行。</p></li><li><p>短转移，负数用补码</p></li><li><p>双重循环的时候需要注意，cx的值会被你改变了，所以可以用dx来保存cx的值，或者拿一个内存空间来保存cx，或者<strong>拿一个栈</strong>，push+pop来保存cx，建议用栈。</p></li></ol><h3 id="call"><a href="#call" class="headerlink" title="call"></a>call</h3><ol><li>call + 标号（相对地址 16位）</li><li>将当前的ip或者cs ip压栈（pop cs pop ip)</li><li>跳转，最后通过ret返回</li><li><strong>call far ptr段间转移</strong></li><li>call + 寄存器</li><li>call word ptr ds:[0]</li><li>call dword ptr ds:[0]</li></ol><h3 id="ret"><a href="#ret" class="headerlink" title="ret"></a>ret</h3><ol><li>ret的本质是从栈内取出ip的值，所以即便没有call，也可以去ss sp指向的位置取数据，相当于<code>pop ip</code></li><li>retf段间转移<code>pop ip</code>然后<code>pop cs</code></li></ol><h2 id="寄存器冲突"><a href="#寄存器冲突" class="headerlink" title="寄存器冲突"></a>寄存器冲突</h2><p>模块化设计中，由于子程序可能修改原程序的寄存器，所以需要在开始时将寄存器入栈，最后再出栈。</p><h2 id="标志寄存器"><a href="#标志寄存器" class="headerlink" title="标志寄存器"></a>标志寄存器</h2><p>8086中，标志寄存器是16位的，但没有全用。。1，3，5，12-15没有用。</p><p><img src="https://pic.imgdb.cn/item/615d08c72ab3f51d91b26ea0.jpg" alt></p><p>会影响标志寄存器的：加减乘除与或（运算指令）</p><p>不影响的：mov push pop（传送指令）</p><h3 id="具体来看几个标志"><a href="#具体来看几个标志" class="headerlink" title="具体来看几个标志"></a>具体来看几个标志</h3><p>奇偶： 结果中1的个数为o数时，pf为1，否则为0</p><p>符号：将结果视为有符号数，若为负数，sf为1</p><p>进位：将数据视为无符号数，有进位或者借位的时候cf为1</p><p>溢出：将数据视为有符号数，若有溢出，则of为1</p><h2 id="指令系统"><a href="#指令系统" class="headerlink" title="指令系统"></a>指令系统</h2><h3 id="传送指令"><a href="#传送指令" class="headerlink" title="传送指令"></a>传送指令</h3><h4 id="MOV"><a href="#MOV" class="headerlink" title="MOV"></a>MOV</h4><p>MOV DST SRC</p><ol><li>dst不能是cs</li><li>dst不能同时为内存单元，也不能同时为段</li><li>立即数不能直接送段，要通过ax</li></ol><h4 id="XCHG"><a href="#XCHG" class="headerlink" title="XCHG"></a>XCHG</h4><p>XCHG OPER1,OPER2</p><ol><li>不影响标志位</li><li>不能用段寄存器</li><li>不能同时为内存单元</li></ol><h4 id="LEA"><a href="#LEA" class="headerlink" title="LEA"></a>LEA</h4><p>LEA REG,SRC 将偏移地址送入寄存器，也可以用mov ax,offset 标号，来传送地址</p><ol><li><p>不影响标志位</p></li><li><p>REG不能为段寄存器</p></li><li><p>SRC是寻址方式</p></li><li><p>32送16时，取低16位</p></li><li><p>16送32时，0扩展</p></li></ol><h4 id="LDS"><a href="#LDS" class="headerlink" title="LDS"></a>LDS</h4><p>LDS REG,SRC 将src处的内存单元里的数据送入reg（通常为si），并且把src+2的数据送入ds</p><h4 id="LES"><a href="#LES" class="headerlink" title="LES"></a>LES</h4><p>LES REG,SRC 同上，si换成di，ds换成es</p><h3 id="算术指令"><a href="#算术指令" class="headerlink" title="算术指令"></a>算术指令</h3><h4 id="加法指令"><a href="#加法指令" class="headerlink" title="加法指令"></a>加法指令</h4><p>add adc inc</p><ol><li><p>其中adc会加上cf，inc是加一</p></li><li><p>只有inc不影响标志位</p></li></ol><p>这里考虑一下双精度两个数的加法</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">add ax,cx</span><br><span class="line">adc dx,bx ;这里要用adc！</span><br></pre></td></tr></table></figure><h4 id="减法指令"><a href="#减法指令" class="headerlink" title="减法指令"></a>减法指令</h4><p>sub dst,src减法</p><p>sbb dst,src带借位减法</p><p>dec opr减一</p><p>以上几个和加法类似</p><hr><p>neg opr求补，求补码，相当于0-opr，所以neg可以求负数的绝对值</p><p>cmp opr1,opr2比较</p><p>需要注意的是，加法减法的dst和src要求和mov一样。另外，sbb和adc主要用于双精度，对于高位的运算</p><h4 id="乘法指令"><a href="#乘法指令" class="headerlink" title="乘法指令"></a>乘法指令</h4><p>MUL 无符号数</p><p>IMUL 带符号数</p><ol><li>只影响cf，of</li><li>对于mul，当乘积高一半是0时，cf、of都是0，否则都是1</li><li>对于imul，当乘积高一半时低一半的符号扩展时，cf、of是0，否则是1</li></ol><p>格式：</p><p>​ mul reg</p><p>​ mul 内存单元（需要加word ptr等指定数据类型）</p><p>​ 不能是mul idata</p><p>结果：</p><p>​ 存放在ax或dx、ax中</p><h4 id="除法指令"><a href="#除法指令" class="headerlink" title="除法指令"></a>除法指令</h4><p>基本同乘法</p><p>另外需要说一下符号扩展，由于被除数字长必须是除数两倍，所以需要符号扩展</p><p>指令：</p><p>​ cbw：al-&gt;ax</p><p>​ cwd：ax-&gt;dx,ax</p><p>扩展方式：</p><p>​ 无符号数：高位置零</p><p>​ 有符号数：高位是低位符号的扩展</p><p>​ <strong>其实也就是低位的最高位是0就补0，不然就补1</strong></p><p>注意：</p><p>​ 不影响标志位</p><h3 id="定义数据指令"><a href="#定义数据指令" class="headerlink" title="定义数据指令"></a>定义数据指令</h3><p>数据标号 db、dw（单字，注意dword是双字）、dd（双字）、dq（四字）、dt（十个字节） 操作数1 操作数2….这里可以用dup具体用法上边写过了，另外直接对标号使用用的是地址</p><p>操作数可以是常数、或者表达式</p><p><strong>属性修改运算符</strong></p><p>说明：类型可以是BYTE、WORD、DWORD、NEAR、 FAR…</p><p>示例： DATA1 DB 26H DATA2 DW 5030H MOV AX, WORD PTR DATA1 ADD BYTE PTR DATA2, BL</p><p>上例中的： MOV AX，WORD PTR OPER1+1 MOV AL， BYTE PTR OPER2</p><h3 id="表达式赋值伪操作"><a href="#表达式赋值伪操作" class="headerlink" title="表达式赋值伪操作"></a>表达式赋值伪操作</h3><ol><li>等值语句EQU</li></ol><p>用来给表达式赋予一个名字</p><p>例：</p><p>⑴ PORT EQU 1234</p><p>⑵ BUFF EQU PORT＋58</p><p>⑶ MEM EQU DS:[BP＋20H]</p><p>⑷ COUNT EQU CX</p><p>⑸ ABC EQU AAA</p><ol start="2"><li><p>等号语句</p><p>NUM=34</p><p>NUM=34+1</p></li></ol><blockquote><p>EQU不能重复定义，=可以</p></blockquote><h3 id="ORG"><a href="#ORG" class="headerlink" title="ORG"></a>ORG</h3><blockquote><p>如下，也就是将aa的数据存放在了偏移地址为20的内存中。</p></blockquote><p>org 20</p><p>aa dw 2</p><p>org 40</p><p>bb db,?</p><h3 id="属性返回置运算符"><a href="#属性返回置运算符" class="headerlink" title="属性返回置运算符"></a>属性返回置运算符</h3><h4 id="seg"><a href="#seg" class="headerlink" title="seg"></a>seg</h4><p>格式： SEG 变量/标号 n</p><p>功能：返回变量或标号的段基址 n</p><p>示例： MOV AX, SEG X1 MOV BX, SEG ARRAY 如果变量X1所在段的段基址为0915H，变量 ARRAY所在段的段基址为0947H，那么上面两条 指令汇编后就分别为： MOV AX, 0915H MOV BX, 0947H</p><h4 id="offset"><a href="#offset" class="headerlink" title="offset"></a>offset</h4><p>同上，返回偏移地址</p><h4 id="type"><a href="#type" class="headerlink" title="type"></a>type</h4><p>返回变量或标号的类型属性值</p><p>如果该表达式是变量，则返回该变量的 以字节数表示的类型，DB为1，DW为 2 ，DD为4，DF为8….</p><p>如果表达式是标号，则返回代表该标号 的数值类型，NEAR是-1，FAR为-2。</p><p>如果表达式是常数，则应该回送0</p><h4 id="length"><a href="#length" class="headerlink" title="length"></a>length</h4><blockquote><p>如果只有一个dup，则返回dup的个数，否则返回1？还是返回第一个？</p></blockquote><p>格式：length 变量</p><p>该指令仅加在变量前，对于变量中使用DUP 的情况，返回分配的单元数（例如 3 dup(?)）则返回3，否则仅返回其中一项数据的情况</p><h4 id="size"><a href="#size" class="headerlink" title="size"></a>size</h4><p>字节总数：type*length</p><h3 id="地址计数器"><a href="#地址计数器" class="headerlink" title="地址计数器"></a>地址计数器</h3><p>$</p><p>指令中表示该指令的首字节地址</p><p>数据中表示即将分配出去的地址值</p><h3 id="逻辑运算指令"><a href="#逻辑运算指令" class="headerlink" title="逻辑运算指令"></a>逻辑运算指令</h3><p>逻辑非指令：NOT OPR * OPR不能为立即数</p><p>执行操作： (OPR) ¬ ¬ (OPR) * 不影响标志位</p><p> 逻辑与指令：AND DST, SRC</p><p>执行操作： (DST) ¬ (DST) Ù (SRC)</p><p>逻辑或指令：OR DST, SRC</p><p>执行操作： (DST) ¬ (DST) Ú (SRC)</p><p>异或指令： XOR DST, SRC</p><p>执行操作： (DST) ¬ (DST) “ (SRC)</p><p>测试指令： TEST OPR1, OPR2 （只改变标志寄存器的AND）</p><p>执行操作： (OPR1) Ù (OPR2)</p><h3 id="移位指令"><a href="#移位指令" class="headerlink" title="移位指令"></a>移位指令</h3><p>格式：例如SHL OPR, CNT（一个是操作数，一个是移位次数（二进制））</p><p>逻辑左移：SHL（最高位移入cf，低位补0）</p><p>逻辑右移：SHR（相反）</p><p>算数左移：SAL（同逻辑左移）</p><p>算数右移：SAR（最低为移入cf，最高位不变）</p><hr><p>循环移位指令</p><p>ROL,ROR（不带进位，类似于不带头节点的循环链表）</p><p>RCL,RCR（带进位，类似于带头节点的循环链表）</p><h2 id="dos调用"><a href="#dos调用" class="headerlink" title="dos调用"></a>dos调用</h2><h3 id="单字符输入"><a href="#单字符输入" class="headerlink" title="单字符输入"></a>单字符输入</h3><p>MOV AH,1H</p><p>INT 21H</p><p>送入的字符存放在AL</p><h3 id="单字符输出"><a href="#单字符输出" class="headerlink" title="单字符输出"></a>单字符输出</h3><p>MOV DL,’A’</p><p>MOV AH,2H</p><p>INT 21H</p><p>事先把字符送入DL</p><h3 id="大小写转换"><a href="#大小写转换" class="headerlink" title="大小写转换"></a>大小写转换</h3><p>大写字母二进制和小写字母的二进制不同在于，小写左数第三位是1，大写是0，所以可以通过AND,OR来转换，也可以通过加减20H。</p><h3 id="字符串输入"><a href="#字符串输入" class="headerlink" title="字符串输入"></a>字符串输入</h3><p>调用10号功能</p><p>首先定义缓冲区</p><p>BUFFER DB 10,?,10 DUP(?)</p><p>其中10代表最大字符数，？处系统会自动填入实际输入的字符数。若输入字符超过缓冲区能容纳的 个数，则系统忽略此字符并响铃警告。</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">MOV AX，SEG BUFFER</span><br><span class="line">MOV DS，AX</span><br><span class="line">MOV DX，OFFSET BUFFER</span><br><span class="line">MOV AH，10</span><br><span class="line">INT 21H</span><br></pre></td></tr></table></figure><h3 id="显示字符串"><a href="#显示字符串" class="headerlink" title="显示字符串"></a>显示字符串</h3><p>调用9号功能，要以$结尾</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">DISPLAY DB ‘Very Good!’ , ‘$’</span><br><span class="line">……</span><br><span class="line">MOV AX，SEG DISPLAY</span><br><span class="line">MOV DS，AX</span><br><span class="line">LEA DX，DISPLAY</span><br><span class="line">MOV AH，9</span><br><span class="line">INT 21H</span><br></pre></td></tr></table></figure><h3 id="十进制加减运算"><a href="#十进制加减运算" class="headerlink" title="十进制加减运算"></a>十进制加减运算</h3><p>在计算机中采用BCD码来表示十进制数。BCD码就是使用四位二进制数表示一位十进制数。在8086/8088系统中，将BCD码分为两种格式：</p><ol><li><p>压缩型（组合型、装配型、PACKED）</p><p>一个字节表示两个BCD码，即两位十进制数，例如：0010 0011 表示十进制数的23</p></li><li><p>非压缩型（非组合型、拆散型、UNPACKED）。</p><p>一个字节的低四位表示一个BCD码， 而高四位对所表示的十进制数没有影响。 所以对于非压缩形，09h和’9‘代表的是一样的，因为高位的3忽略了。常为0000B或0011B。例如：0000 1001与0011 1001都是十进制数9的非组合型的BCD码。</p></li></ol><h4 id="压缩BCD的加法调整"><a href="#压缩BCD的加法调整" class="headerlink" title="压缩BCD的加法调整"></a>压缩BCD的加法调整</h4><p>压缩的BCD码加法调整</p><p><strong>格式：</strong>DAA</p><p><strong>功能：</strong></p><p>​ 如果AL的低4位大于9，则将AL加6，并将辅助进位标志AF置1 （因为相当于16进制，9就相当于15，也就是把16进制的数转化为10进制）</p><p>​ 如果AL的高4位大于9，将AL加60H，并将进位标志CF置1（同上，调整的是十位所以加了60h，上一个是06h）</p><p><strong>注意</strong>：</p><p>​ 在执行DAA指令前，必须是用ADD或ADC完成了加 法操作，且加的结果放在AL中</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">X DB 05H</span><br><span class="line">Y DB 07H</span><br><span class="line">……</span><br><span class="line">MOV AL，X</span><br><span class="line">ADD AL，Y	；相加后，(AL)&#x3D;00001100&#x3D;0CH</span><br><span class="line">DAA			 ；加6调整后，(AL)&#x3D;00010010&#x3D;12H（压缩的BCD码）</span><br></pre></td></tr></table></figure><h4 id="压缩BCD的减法调整"><a href="#压缩BCD的减法调整" class="headerlink" title="压缩BCD的减法调整"></a>压缩BCD的减法调整</h4><p>压缩的BCD码减法调整</p><p><strong>格式：</strong>DAS</p><p><strong>功能：</strong></p><p>​ 如果AL的低4位大于9，则将AL减6，并将辅助进位标志AF置1 （因为相当于16进制，9就相当于15，也就是把16进制的数转化为10进制）</p><p>​ 如果AL的高4位大于9，将AL减60H，并将进位标志CF置1（同上，调整的是十位所以加了60h，上一个是06h）</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">十进制计算62－38&#x3D;24</span><br><span class="line">W1 DB 62H  ；BCD码表示的十进制62</span><br><span class="line">W2 DB 38H</span><br><span class="line">……</span><br><span class="line">MOV AL，W1</span><br><span class="line">SUB AL，W2  ；相减后，(AL)&#x3D;2AH</span><br><span class="line">DAS        ；减6调整后，(AL)&#x3D;24H</span><br></pre></td></tr></table></figure><h4 id="非压缩BCD的加法调整"><a href="#非压缩BCD的加法调整" class="headerlink" title="非压缩BCD的加法调整"></a>非压缩BCD的加法调整</h4><p>非压缩的BCD码加法调整</p><p><strong>格式：</strong>AAA</p><p><strong>功能：</strong></p><p>​ 如果AL的低4位大于9或者af=1（辅助进位标识），将AL加6、AH加1，AL的 高4位清零、CF、AF置1 由于非压缩的BCD码用1个字节表示1个十进制数， 所以调整后若加上30H就是该数值的ASCII码。因为0的ascii码是30h</p><p><strong>注意</strong>：</p><p>​ 在AAA指令执行前，必须是使用ADD或ADC指令完成了 加法，且结果是在AL中。AAA指令对AL中内容进行校正</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">例 十进制计算6+8&#x3D;14，用非压缩的BCD码表示并显示在屏幕上。</span><br><span class="line">T1 DB 06H</span><br><span class="line">T2 DB 08H</span><br><span class="line">……</span><br><span class="line">MOV AL，T1 ；(AL)&#x3D;00000110&#x3D;06H</span><br><span class="line">ADD AL，T2 ；(AL)&#x3D;00001110&#x3D;0EH</span><br><span class="line">AAA 	   ；调整后(AH)&#x3D;01H，(AL)&#x3D;04H</span><br><span class="line">ADD AX，3030H ；AH、AL分别加上30H，变成ASCII码</span><br><span class="line">MOV BX，AX ；用BX保存</span><br><span class="line">MOV DL，BH ；显示“1”</span><br><span class="line">MOV AH，2 ；2号显示功能</span><br><span class="line">INT 21H ；DOS中断调用</span><br><span class="line">MOV DL，BL ；显示“4”</span><br><span class="line">INT 21H</span><br><span class="line"></span><br></pre></td></tr></table></figure><h4 id="非压缩BCD的减法调整"><a href="#非压缩BCD的减法调整" class="headerlink" title="非压缩BCD的减法调整"></a>非压缩BCD的减法调整</h4><p>非压缩的BCD码减法调整</p><p><strong>格式：</strong>AAS</p><p><strong>功能：</strong></p><p>​ 如果AL的低4位大于9，将AL减6、AH减1， AL的高4位清零、CF、AF置1</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">例 十进制计算57－18&#x3D;39，用非压缩的BCD码表示。</span><br><span class="line">MOV AX,0507H</span><br><span class="line">MOV BX,0108H</span><br><span class="line">SUB AL,BL</span><br><span class="line">SUB AH,BH ；高位不用带借位减</span><br><span class="line">AAS       ；减法调整后(AX)&#x3D;0309H </span><br></pre></td></tr></table></figure><h4 id="非压缩BCD的乘法调整"><a href="#非压缩BCD的乘法调整" class="headerlink" title="非压缩BCD的乘法调整"></a>非压缩BCD的乘法调整</h4><p><strong>格式</strong>：AAM (ASCII Adjust Multiply)</p><p><strong>功能</strong>： 将乘积AX中的2个非压缩的BCD码调整。 AL除以0AH，得到的商送AH，余数送入 AL。即乘积的高位数在AH 、低位数在 AL中</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">例 十进制乘法6×8&#x3D;48，用非压缩的BCD码表示，并显示。</span><br><span class="line">P1 DB 06H</span><br><span class="line">P2 DB 08H</span><br><span class="line">……</span><br><span class="line">MOV AL，P1 ；(AL)&#x3D;00000110&#x3D;06H</span><br><span class="line">IMUL P2 ；(AL)&#x3D;00110000&#x3D;30H</span><br><span class="line">AAM ；调整后(AH)&#x3D;04H，(AL)&#x3D;08H</span><br><span class="line">ADD AX，3030H ；AH、AL分别加上30H</span><br><span class="line">MOV BX，AX ；用BX保存</span><br><span class="line">MOV DL，BH ；显示“4”</span><br><span class="line">MOV AH，2</span><br><span class="line">INT 21H</span><br><span class="line">MOV DL，BL ；显示“8”</span><br><span class="line">INT 21H</span><br></pre></td></tr></table></figure><h4 id="非压缩BCD的除法调整"><a href="#非压缩BCD的除法调整" class="headerlink" title="非压缩BCD的除法调整"></a>非压缩BCD的除法调整</h4><p><strong>格式</strong>：AAD (ASCII Adjust Division)</p><p><strong>功能</strong>：在做除法之前，将被除数AX中的2 个非压缩的BCD码调整。 (AL)=(AL)+(AH)*10，AH清零。除法之 后，商在AL 、余数在AH中.</p><h2 id="考试复习"><a href="#考试复习" class="headerlink" title="考试复习"></a>考试复习</h2><h3 id="标号"><a href="#标号" class="headerlink" title="标号"></a>标号</h3><p>对于数据标号，即<code>a db 1,2,3</code>，则在代码段中的a就会被替换成data:[0]，前提是要在assume里面关联ds与data。被替换以后，你就懂了吧，它可以表示一个数据，也可以用来寻址<code>a[si]</code>也就是<code>cs:0[si]</code></p><h3 id="offset-1"><a href="#offset-1" class="headerlink" title="offset"></a>offset</h3><p>offset只能和数据标号搭配，而不能用复杂的例如ds:[bx]等。。offset取出的地址可以用来mov、add之类的。。</p><h3 id="寻址-1"><a href="#寻址-1" class="headerlink" title="寻址"></a>寻址</h3><p>push word ptr 20[bx+si-2]这里是可以写表达式的</p><h3 id="栈-1"><a href="#栈-1" class="headerlink" title="栈"></a>栈</h3><p>栈顶应该是sp-1吗</p><h3 id="异或"><a href="#异或" class="headerlink" title="异或"></a>异或</h3><p>XOR CX,CX</p><p>相当于mov cx,0，但是异或效率更高</p><h3 id="标号-1"><a href="#标号-1" class="headerlink" title="标号"></a>标号</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u011555996/article/details/80114485">关于标号的一些问题</a></p><p>X1 DB 12H, 34H, 56H<br> X2 DW 78H, 90H<br> ADR1 DW X1<br> ADR2 DW X2</p><p>如上，ADR1和ADR2表示的是X1和X2的地址，即偏移地址，0000和0300。</p></div><div class="reward-container"><div></div> <button onclick='var qr=document.getElementById("qr");qr.style.display="none"===qr.style.display?"block":"none"'> b(￣▽￣)d</button><div id="qr" style="display:none"><div style="display:inline-block"> <img src="/images/wechat.png" alt="Asea 微信支付"><p>微信支付</p></div><div style="display:inline-block"> <img src="/images/alipay.png" alt="Asea 支付宝"><p>支付宝</p></div></div></div><div><ul class="post-copyright"><li class="post-copyright-author"> <strong>本文作者：</strong> Asea</li><li class="post-copyright-link"> <strong>本文链接：</strong> <a href="https://asea.fun/post/8e41db39.html" title="汇编语言">https://asea.fun/post/8e41db39.html</a></li><li class="post-copyright-license"> <strong>版权声明：</strong> 本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！</li></ul></div><div class="followme"><p>\(@^0^@)/</p><div class="social-list"><div class="social-item"><a target="_blank" class="social-link" href="https://www.zhihu.com/people/michael-48-84-31"><span class="icon"><i class="fab fa-zhihu"></i></span> <span class="label">知乎</span></a></div><div class="social-item"><a target="_blank" class="social-link" href="https://weibo.com/5568238770/profile?rightmod=1&wvr=6&mod=personinfo"><span class="icon"><i class="fab fa-weibo"></i></span> <span class="label">微博</span></a></div><div class="social-item"><a target="_blank" class="social-link" href="https://blog.asea.fun"><span class="icon"><i class="fa fa-user"></i></span> <span class="label">另一个博客</span></a></div></div></div><footer class="post-footer"><div class="post-tags"><a href="/tags/assembler/" rel="tag"><i class="fa fa-tag"></i> assembler</a></div><div class="post-nav"><div class="post-nav-item"><a href="/post/79666db.html" rel="prev" title="数据结构新版"><i class="fa fa-chevron-left"></i> 数据结构新版</a></div><div class="post-nav-item"> <a href="/post/f857d47.html" rel="next" title="《The_Computer_and_the_Brain》词汇">《The_Computer_and_the_Brain》词汇<i class="fa fa-chevron-right"></i></a></div></div></footer></article></div><div class="comments" id="valine-comments"></div><script>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://blog.asea.fun/img/avatar1.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://blog.asea.fun/img/avatar1.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-big-counter.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"asea.fun","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="debug a 汇编指令  r 查看寄存器  r 寄存器   d 查看内存  d 段地址:偏移地址 （结尾偏移地址）   t 执行指令  e 修改内存数据  e 段地址:偏移地址 数据1 数据2 数据3…  e 段地址:偏移地址 数据 空格 数据 空格（逐个询问）    g执行到结束   寄存器通用：ax, bx, cx, dx, ip, sp  段：cs(control), ds(data)，s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="汇编语言">
+<meta property="og:url" content="https://asea.fun/post/8e41db39.html">
+<meta property="og:site_name" content="AseaBlog">
+<meta property="og:description" content="debug a 汇编指令  r 查看寄存器  r 寄存器   d 查看内存  d 段地址:偏移地址 （结尾偏移地址）   t 执行指令  e 修改内存数据  e 段地址:偏移地址 数据1 数据2 数据3…  e 段地址:偏移地址 数据 空格 数据 空格（逐个询问）    g执行到结束   寄存器通用：ax, bx, cx, dx, ip, sp  段：cs(control), ds(data)，s">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic.imgdb.cn/item/6151c0912ab3f51d91b47ad7.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/6151bcce2ab3f51d91af7b5a.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/6151d21a2ab3f51d91cef820.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/615d08c72ab3f51d91b26ea0.jpg">
+<meta property="article:published_time" content="2021-09-13T11:34:25.000Z">
+<meta property="article:modified_time" content="2021-10-24T02:37:37.000Z">
+<meta property="article:author" content="Asea">
+<meta property="article:tag" content="assembler">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.imgdb.cn/item/6151c0912ab3f51d91b47ad7.jpg">
+
+<link rel="canonical" href="https://asea.fun/post/8e41db39.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>汇编语言 | AseaBlog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="AseaBlog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta custom-logo">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">AseaBlog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">我的个人博客</p>
+      <a>
+        <img class="custom-logo-image" src="/uploads/logo2.png" alt="AseaBlog">
+      </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-主页">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a>
+
+  </li>
+        <li class="menu-item menu-item-关于">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-标签">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-分类">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-留言">
+
+    <a href="/liuyan/" rel="section"><i class="fa fa-comments fa-fw"></i>留言</a>
+
+  </li>
+        <li class="menu-item menu-item-归档">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/AAAAsea" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://asea.fun/post/8e41db39.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar1.png">
+      <meta itemprop="name" content="Asea">
+      <meta itemprop="description" content="我以為我可以獨自過一生 我還是被打動了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AseaBlog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          汇编语言
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-09-13 19:34:25" itemprop="dateCreated datePublished" datetime="2021-09-13T19:34:25+08:00">2021-09-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-10-24 10:37:37" itemprop="dateModified" datetime="2021-10-24T10:37:37+08:00">2021-10-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="热度" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">热度：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/post/8e41db39.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/8e41db39.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h2><ol start="2">
+<li><p>a 汇编指令</p>
+</li>
+<li><p>r 查看寄存器</p>
+<ul>
+<li>r 寄存器</li>
+</ul>
+</li>
+<li><p>d 查看内存</p>
+<ul>
+<li>d 段地址:偏移地址 （结尾偏移地址）</li>
+</ul>
+</li>
+<li><p>t 执行指令</p>
+</li>
+<li><p>e 修改内存数据</p>
+<ul>
+<li><p>e 段地址:偏移地址 数据1 数据2 数据3…</p>
+</li>
+<li><p>e 段地址:偏移地址</p>
+<p>数据 空格 数据 空格（逐个询问）</p>
+</li>
+</ul>
+</li>
+<li><p>g执行到结束</p>
+</li>
+</ol>
+<h2 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h2><p>通用：ax, bx, cx, dx, ip, sp </p>
+<p>段：cs(control), ds(data)，ss(stack)</p>
+<p><img src="https://pic.imgdb.cn/item/6151c0912ab3f51d91b47ad7.jpg" alt></p>
+<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><blockquote>
+<p>系统会自动改动sp，但是不会检测是否越界，无论是栈顶还是栈底，没有这样的寄存器！pop和push只支持字数据</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">push ax &#x2F;&#x2F;ax中的数据送入栈，sp-&#x3D;2</span><br><span class="line">pop ax &#x2F;&#x2F;从栈顶取出数据送入ax，s注意pop以后sp会改动，但是原来的数据是依然存在的，只是不在栈中而已。</span><br></pre></td></tr></table></figure>
+
+<h2 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h2><ol>
+<li>当常量作为偏移地址的时候，最好加上段前缀，不然会当作把常量的值给寄存器 </li>
+<li>在多个segment的程序中，start从code段开始，且不需要初始化cs，但是ds和ss是需要初始化的。</li>
+<li>开始以后ds对应的就是程序的起始地址，ds+100H才是真正的data段起始地址</li>
+</ol>
+<h2 id="字符处理"><a href="#字符处理" class="headerlink" title="字符处理"></a>字符处理</h2><ol>
+<li>大写字母+20H = 小写字母（ASCII）<ul>
+<li>小写转大写 <code>and al, 11011111b</code></li>
+<li>小写转大写<code>or al, 00100000b</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="寻址"><a href="#寻址" class="headerlink" title="寻址"></a>寻址</h2><blockquote>
+<p>bp,bx称为基址，si、di称为变址  idata是立即数 。要么单独用，要么基址变址，要么加个立即数，没有基址基址，没有变址变址，没有立即数立即数。注意bp默认是ss段</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mov ax,[200+bx] </span><br><span class="line"></span><br><span class="line">mov ax,200[bx] </span><br><span class="line"></span><br><span class="line">mov ax,[bx].200 </span><br><span class="line"></span><br><span class="line">mov ax,[bx+si]</span><br><span class="line"></span><br><span class="line">mov ax,[bx].200[si]</span><br><span class="line"></span><br><span class="line">mov ax,\[bx][si].200</span><br><span class="line"></span><br><span class="line">mov ax,\[bx][si]</span><br><span class="line"></span><br><span class="line">mov ax,[bp+si] </span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic.imgdb.cn/item/6151bcce2ab3f51d91af7b5a.jpg" alt></p>
+<h3 id="变址寄存器"><a href="#变址寄存器" class="headerlink" title="变址寄存器"></a>变址寄存器</h3><p>si di可以和bx类似的寻址用法，不同的是，si di只能作为16位来用，而bx可以拆开</p>
+<h2 id="dup"><a href="#dup" class="headerlink" title="dup"></a>dup</h2><blockquote>
+<p>伪指令，用来数据重复</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">db 3 dup(0)</span><br><span class="line">db 3 dup(0,1,2)</span><br><span class="line">db 3 dup(&#39;abc&#39;, &#39;ACB&#39;)</span><br><span class="line">db 200 dup(0) ; 定义栈段</span><br></pre></td></tr></table></figure>
+
+<h2 id="转移指令"><a href="#转移指令" class="headerlink" title="转移指令"></a>转移指令</h2><blockquote>
+<p>首先认识一下offset，在程序中用s来作为标号（例如start之类的就是标号），<code>offset s</code>可以取出s的地址。</p>
+</blockquote>
+<p><img src="https://pic.imgdb.cn/item/6151d21a2ab3f51d91cef820.jpg" alt="转移"></p>
+<h3 id="jmp"><a href="#jmp" class="headerlink" title="jmp"></a>jmp</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">这是z</span><br><span class="line">jmp 1000:3 &#x2F;&#x2F;cs为1000，ip为3</span><br><span class="line">jmp 4 &#x2F;&#x2F;修改ip为4</span><br></pre></td></tr></table></figure>
+
+<h3 id="jcxz"><a href="#jcxz" class="headerlink" title="jcxz"></a>jcxz</h3><ol>
+<li><p>有条件转移指令，当cx为0跳转，否则继续下一步。</p>
+</li>
+<li><p>短转移，机器码保存的是位移，范围是-128-127</p>
+</li>
+</ol>
+<h3 id="loop"><a href="#loop" class="headerlink" title="loop"></a>loop</h3><ol>
+<li><p>cx减一，然后判断cx是否为0，如果不是，则跳转，否则继续向下执行。</p>
+</li>
+<li><p>短转移，负数用补码</p>
+</li>
+<li><p>双重循环的时候需要注意，cx的值会被你改变了，所以可以用dx来保存cx的值，或者拿一个内存空间来保存cx，或者<strong>拿一个栈</strong>，push+pop来保存cx，建议用栈。</p>
+</li>
+</ol>
+<h3 id="call"><a href="#call" class="headerlink" title="call"></a>call</h3><ol>
+<li>call + 标号（相对地址 16位）</li>
+<li>将当前的ip或者cs ip压栈（pop cs pop ip)</li>
+<li>跳转，最后通过ret返回</li>
+<li><strong>call far ptr段间转移</strong></li>
+<li>call + 寄存器</li>
+<li>call word ptr ds:[0]</li>
+<li>call dword ptr ds:[0]</li>
+</ol>
+<h3 id="ret"><a href="#ret" class="headerlink" title="ret"></a>ret</h3><ol>
+<li>ret的本质是从栈内取出ip的值，所以即便没有call，也可以去ss sp指向的位置取数据，相当于<code>pop ip</code></li>
+<li>retf段间转移<code>pop ip</code>然后<code>pop cs</code></li>
+</ol>
+<h2 id="寄存器冲突"><a href="#寄存器冲突" class="headerlink" title="寄存器冲突"></a>寄存器冲突</h2><p>模块化设计中，由于子程序可能修改原程序的寄存器，所以需要在开始时将寄存器入栈，最后再出栈。</p>
+<h2 id="标志寄存器"><a href="#标志寄存器" class="headerlink" title="标志寄存器"></a>标志寄存器</h2><p>8086中，标志寄存器是16位的，但没有全用。。1，3，5，12-15没有用。</p>
+<p><img src="https://pic.imgdb.cn/item/615d08c72ab3f51d91b26ea0.jpg" alt></p>
+<p>会影响标志寄存器的：加减乘除与或（运算指令）</p>
+<p>不影响的：mov push pop（传送指令）</p>
+<h3 id="具体来看几个标志"><a href="#具体来看几个标志" class="headerlink" title="具体来看几个标志"></a>具体来看几个标志</h3><p>奇偶： 结果中1的个数为o数时，pf为1，否则为0</p>
+<p>符号：将结果视为有符号数，若为负数，sf为1</p>
+<p>进位：将数据视为无符号数，有进位或者借位的时候cf为1</p>
+<p>溢出：将数据视为有符号数，若有溢出，则of为1</p>
+<h2 id="指令系统"><a href="#指令系统" class="headerlink" title="指令系统"></a>指令系统</h2><h3 id="传送指令"><a href="#传送指令" class="headerlink" title="传送指令"></a>传送指令</h3><h4 id="MOV"><a href="#MOV" class="headerlink" title="MOV"></a>MOV</h4><p>MOV DST SRC</p>
+<ol>
+<li>dst不能是cs</li>
+<li>dst不能同时为内存单元，也不能同时为段</li>
+<li>立即数不能直接送段，要通过ax</li>
+</ol>
+<h4 id="XCHG"><a href="#XCHG" class="headerlink" title="XCHG"></a>XCHG</h4><p>XCHG OPER1,OPER2</p>
+<ol>
+<li>不影响标志位</li>
+<li>不能用段寄存器</li>
+<li>不能同时为内存单元</li>
+</ol>
+<h4 id="LEA"><a href="#LEA" class="headerlink" title="LEA"></a>LEA</h4><p>LEA REG,SRC 将偏移地址送入寄存器，也可以用mov ax,offset 标号，来传送地址</p>
+<ol>
+<li><p>不影响标志位</p>
+</li>
+<li><p>REG不能为段寄存器</p>
+</li>
+<li><p>SRC是寻址方式</p>
+</li>
+<li><p>32送16时，取低16位</p>
+</li>
+<li><p>16送32时，0扩展</p>
+</li>
+</ol>
+<h4 id="LDS"><a href="#LDS" class="headerlink" title="LDS"></a>LDS</h4><p>LDS REG,SRC 将src处的内存单元里的数据送入reg（通常为si），并且把src+2的数据送入ds</p>
+<h4 id="LES"><a href="#LES" class="headerlink" title="LES"></a>LES</h4><p>LES REG,SRC 同上，si换成di，ds换成es</p>
+<h3 id="算术指令"><a href="#算术指令" class="headerlink" title="算术指令"></a>算术指令</h3><h4 id="加法指令"><a href="#加法指令" class="headerlink" title="加法指令"></a>加法指令</h4><p>add adc inc</p>
+<ol>
+<li><p>其中adc会加上cf，inc是加一</p>
+</li>
+<li><p>只有inc不影响标志位</p>
+</li>
+</ol>
+<p>这里考虑一下双精度两个数的加法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">add ax,cx</span><br><span class="line">adc dx,bx ;这里要用adc！</span><br></pre></td></tr></table></figure>
+
+<h4 id="减法指令"><a href="#减法指令" class="headerlink" title="减法指令"></a>减法指令</h4><p>sub dst,src减法 </p>
+<p>sbb dst,src带借位减法</p>
+<p>dec opr减一   </p>
+<p>以上几个和加法类似</p>
+<hr>
+<p>neg opr求补，求补码，相当于0-opr，所以neg可以求负数的绝对值</p>
+<p>cmp opr1,opr2比较</p>
+<p>需要注意的是，加法减法的dst和src要求和mov一样。另外，sbb和adc主要用于双精度，对于高位的运算</p>
+<h4 id="乘法指令"><a href="#乘法指令" class="headerlink" title="乘法指令"></a>乘法指令</h4><p>MUL  无符号数</p>
+<p>IMUL 带符号数</p>
+<ol>
+<li>只影响cf，of</li>
+<li>对于mul，当乘积高一半是0时，cf、of都是0，否则都是1</li>
+<li>对于imul，当乘积高一半时低一半的符号扩展时，cf、of是0，否则是1</li>
+</ol>
+<p>格式：</p>
+<p>​    mul reg</p>
+<p>​    mul 内存单元（需要加word ptr等指定数据类型）</p>
+<p>​    不能是mul idata</p>
+<p>结果：</p>
+<p>​    存放在ax或dx、ax中</p>
+<h4 id="除法指令"><a href="#除法指令" class="headerlink" title="除法指令"></a>除法指令</h4><p>基本同乘法</p>
+<p>另外需要说一下符号扩展，由于被除数字长必须是除数两倍，所以需要符号扩展</p>
+<p>指令：</p>
+<p>​    cbw：al-&gt;ax</p>
+<p>​    cwd：ax-&gt;dx,ax</p>
+<p>扩展方式：</p>
+<p>​    无符号数：高位置零</p>
+<p>​    有符号数：高位是低位符号的扩展</p>
+<p>​    <strong>其实也就是低位的最高位是0就补0，不然就补1</strong></p>
+<p>注意：</p>
+<p>​    不影响标志位</p>
+<h3 id="定义数据指令"><a href="#定义数据指令" class="headerlink" title="定义数据指令"></a>定义数据指令</h3><p>数据标号     db、dw（单字，注意dword是双字）、dd（双字）、dq（四字）、dt（十个字节）     操作数1 操作数2….这里可以用dup具体用法上边写过了，另外直接对标号使用用的是地址</p>
+<p>操作数可以是常数、或者表达式</p>
+<p><strong>属性修改运算符</strong></p>
+<p>说明：类型可以是BYTE、WORD、DWORD、NEAR、 FAR… </p>
+<p>示例： DATA1 DB 26H DATA2 DW 5030H MOV AX, WORD PTR DATA1 ADD BYTE PTR DATA2, BL </p>
+<p>上例中的： MOV AX，WORD PTR OPER1+1  MOV AL， BYTE PTR OPER2</p>
+<h3 id="表达式赋值伪操作"><a href="#表达式赋值伪操作" class="headerlink" title="表达式赋值伪操作"></a>表达式赋值伪操作</h3><ol>
+<li>等值语句EQU</li>
+</ol>
+<p>用来给表达式赋予一个名字</p>
+<p>例： </p>
+<p>⑴ PORT EQU 1234 </p>
+<p>⑵ BUFF EQU PORT＋58 </p>
+<p>⑶ MEM EQU DS:[BP＋20H]  </p>
+<p>⑷ COUNT EQU CX </p>
+<p>⑸ ABC EQU AAA</p>
+<ol start="2">
+<li><p>等号语句</p>
+<p>NUM=34</p>
+<p>NUM=34+1</p>
+</li>
+</ol>
+<blockquote>
+<p>EQU不能重复定义，=可以</p>
+</blockquote>
+<h3 id="ORG"><a href="#ORG" class="headerlink" title="ORG"></a>ORG</h3><blockquote>
+<p>如下，也就是将aa的数据存放在了偏移地址为20的内存中。</p>
+</blockquote>
+<p>org 20</p>
+<p>aa dw 2</p>
+<p>org 40</p>
+<p>bb db,?</p>
+<h3 id="属性返回置运算符"><a href="#属性返回置运算符" class="headerlink" title="属性返回置运算符"></a>属性返回置运算符</h3><h4 id="seg"><a href="#seg" class="headerlink" title="seg"></a>seg</h4><p>格式： SEG 变量/标号 n </p>
+<p>功能：返回变量或标号的段基址 n </p>
+<p>示例： MOV AX, SEG X1 MOV BX, SEG ARRAY  如果变量X1所在段的段基址为0915H，变量 ARRAY所在段的段基址为0947H，那么上面两条 指令汇编后就分别为： MOV AX, 0915H MOV BX, 0947H</p>
+<h4 id="offset"><a href="#offset" class="headerlink" title="offset"></a>offset</h4><p>同上，返回偏移地址</p>
+<h4 id="type"><a href="#type" class="headerlink" title="type"></a>type</h4><p>返回变量或标号的类型属性值</p>
+<p>如果该表达式是变量，则返回该变量的 以字节数表示的类型，DB为1，DW为 2 ，DD为4，DF为8…. </p>
+<p>如果表达式是标号，则返回代表该标号 的数值类型，NEAR是-1，FAR为-2。 </p>
+<p>如果表达式是常数，则应该回送0 </p>
+<h4 id="length"><a href="#length" class="headerlink" title="length"></a>length</h4><blockquote>
+<p>如果只有一个dup，则返回dup的个数，否则返回1？还是返回第一个？</p>
+</blockquote>
+<p>格式：length 变量</p>
+<p>该指令仅加在变量前，对于变量中使用DUP 的情况，返回分配的单元数（例如 3 dup(?)）则返回3，否则仅返回其中一项数据的情况</p>
+<h4 id="size"><a href="#size" class="headerlink" title="size"></a>size</h4><p>字节总数：type*length</p>
+<h3 id="地址计数器"><a href="#地址计数器" class="headerlink" title="地址计数器"></a>地址计数器</h3><p>$</p>
+<p>指令中表示该指令的首字节地址</p>
+<p>数据中表示即将分配出去的地址值</p>
+<h3 id="逻辑运算指令"><a href="#逻辑运算指令" class="headerlink" title="逻辑运算指令"></a>逻辑运算指令</h3><p>逻辑非指令：NOT OPR * OPR不能为立即数 </p>
+<p>执行操作： (OPR) ¬ ¬ (OPR) * 不影响标志位</p>
+<p> 逻辑与指令：AND DST, SRC </p>
+<p>执行操作： (DST) ¬ (DST) Ù (SRC) </p>
+<p>逻辑或指令：OR DST, SRC </p>
+<p>执行操作： (DST) ¬ (DST) Ú (SRC) </p>
+<p>异或指令： XOR DST, SRC </p>
+<p>执行操作： (DST) ¬ (DST) “ (SRC) </p>
+<p>测试指令： TEST OPR1, OPR2 （只改变标志寄存器的AND）</p>
+<p>执行操作： (OPR1) Ù (OPR2) </p>
+<h3 id="移位指令"><a href="#移位指令" class="headerlink" title="移位指令"></a>移位指令</h3><p>格式：例如SHL OPR, CNT（一个是操作数，一个是移位次数（二进制））</p>
+<p>逻辑左移：SHL（最高位移入cf，低位补0）</p>
+<p>逻辑右移：SHR（相反）</p>
+<p>算数左移：SAL（同逻辑左移）</p>
+<p>算数右移：SAR（最低为移入cf，最高位不变）</p>
+<hr>
+<p>循环移位指令</p>
+<p>ROL,ROR（不带进位，类似于不带头节点的循环链表）</p>
+<p>RCL,RCR（带进位，类似于带头节点的循环链表）</p>
+<h2 id="dos调用"><a href="#dos调用" class="headerlink" title="dos调用"></a>dos调用</h2><h3 id="单字符输入"><a href="#单字符输入" class="headerlink" title="单字符输入"></a>单字符输入</h3><p>MOV AH,1H</p>
+<p>INT 21H</p>
+<p>送入的字符存放在AL</p>
+<h3 id="单字符输出"><a href="#单字符输出" class="headerlink" title="单字符输出"></a>单字符输出</h3><p>MOV DL,’A’</p>
+<p>MOV AH,2H</p>
+<p>INT 21H</p>
+<p>事先把字符送入DL</p>
+<h3 id="大小写转换"><a href="#大小写转换" class="headerlink" title="大小写转换"></a>大小写转换</h3><p>大写字母二进制和小写字母的二进制不同在于，小写左数第三位是1，大写是0，所以可以通过AND,OR来转换，也可以通过加减20H。</p>
+<h3 id="字符串输入"><a href="#字符串输入" class="headerlink" title="字符串输入"></a>字符串输入</h3><p>调用10号功能</p>
+<p>首先定义缓冲区</p>
+<p>BUFFER DB 10,?,10 DUP(?)</p>
+<p>其中10代表最大字符数，？处系统会自动填入实际输入的字符数。若输入字符超过缓冲区能容纳的 个数，则系统忽略此字符并响铃警告。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">MOV AX，SEG BUFFER</span><br><span class="line">MOV DS，AX</span><br><span class="line">MOV DX，OFFSET BUFFER</span><br><span class="line">MOV AH，10</span><br><span class="line">INT 21H</span><br></pre></td></tr></table></figure>
+
+<h3 id="显示字符串"><a href="#显示字符串" class="headerlink" title="显示字符串"></a>显示字符串</h3><p>调用9号功能，要以$结尾</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">DISPLAY DB ‘Very Good!’ , ‘$’</span><br><span class="line">……</span><br><span class="line">MOV AX，SEG DISPLAY</span><br><span class="line">MOV DS，AX</span><br><span class="line">LEA DX，DISPLAY</span><br><span class="line">MOV AH，9</span><br><span class="line">INT 21H</span><br></pre></td></tr></table></figure>
+
+<h3 id="十进制加减运算"><a href="#十进制加减运算" class="headerlink" title="十进制加减运算"></a>十进制加减运算</h3><p>在计算机中采用BCD码来表示十进制数。BCD码就是使用四位二进制数表示一位十进制数。在8086/8088系统中，将BCD码分为两种格式： </p>
+<ol>
+<li><p>压缩型（组合型、装配型、PACKED） </p>
+<p>一个字节表示两个BCD码，即两位十进制数，例如：0010 0011 表示十进制数的23</p>
+</li>
+<li><p>非压缩型（非组合型、拆散型、UNPACKED）。</p>
+<p>一个字节的低四位表示一个BCD码， 而高四位对所表示的十进制数没有影响。 所以对于非压缩形，09h和’9‘代表的是一样的，因为高位的3忽略了。常为0000B或0011B。例如：0000 1001与0011 1001都是十进制数9的非组合型的BCD码。</p>
+</li>
+</ol>
+<h4 id="压缩BCD的加法调整"><a href="#压缩BCD的加法调整" class="headerlink" title="压缩BCD的加法调整"></a>压缩BCD的加法调整</h4><p>压缩的BCD码加法调整 </p>
+<p><strong>格式：</strong>DAA </p>
+<p><strong>功能：</strong> </p>
+<p>​    如果AL的低4位大于9，则将AL加6，并将辅助进位标志AF置1 （因为相当于16进制，9就相当于15，也就是把16进制的数转化为10进制）</p>
+<p>​    如果AL的高4位大于9，将AL加60H，并将进位标志CF置1（同上，调整的是十位所以加了60h，上一个是06h）</p>
+<p><strong>注意</strong>：</p>
+<p>​    在执行DAA指令前，必须是用ADD或ADC完成了加 法操作，且加的结果放在AL中</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">X DB 05H</span><br><span class="line">Y DB 07H</span><br><span class="line">……</span><br><span class="line">MOV AL，X</span><br><span class="line">ADD AL，Y	；相加后，(AL)&#x3D;00001100&#x3D;0CH</span><br><span class="line">DAA			 ；加6调整后，(AL)&#x3D;00010010&#x3D;12H（压缩的BCD码）</span><br></pre></td></tr></table></figure>
+
+<h4 id="压缩BCD的减法调整"><a href="#压缩BCD的减法调整" class="headerlink" title="压缩BCD的减法调整"></a>压缩BCD的减法调整</h4><p>压缩的BCD码减法调整 </p>
+<p><strong>格式：</strong>DAS</p>
+<p><strong>功能：</strong> </p>
+<p>​    如果AL的低4位大于9，则将AL减6，并将辅助进位标志AF置1 （因为相当于16进制，9就相当于15，也就是把16进制的数转化为10进制）</p>
+<p>​    如果AL的高4位大于9，将AL减60H，并将进位标志CF置1（同上，调整的是十位所以加了60h，上一个是06h）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">十进制计算62－38&#x3D;24</span><br><span class="line">W1 DB 62H  ；BCD码表示的十进制62</span><br><span class="line">W2 DB 38H</span><br><span class="line">……</span><br><span class="line">MOV AL，W1</span><br><span class="line">SUB AL，W2  ；相减后，(AL)&#x3D;2AH</span><br><span class="line">DAS        ；减6调整后，(AL)&#x3D;24H</span><br></pre></td></tr></table></figure>
+
+<h4 id="非压缩BCD的加法调整"><a href="#非压缩BCD的加法调整" class="headerlink" title="非压缩BCD的加法调整"></a>非压缩BCD的加法调整</h4><p>非压缩的BCD码加法调整 </p>
+<p><strong>格式：</strong>AAA</p>
+<p><strong>功能：</strong> </p>
+<p>​    如果AL的低4位大于9或者af=1（辅助进位标识），将AL加6、AH加1，AL的 高4位清零、CF、AF置1 由于非压缩的BCD码用1个字节表示1个十进制数， 所以调整后若加上30H就是该数值的ASCII码。因为0的ascii码是30h</p>
+<p><strong>注意</strong>：</p>
+<p>​    在AAA指令执行前，必须是使用ADD或ADC指令完成了 加法，且结果是在AL中。AAA指令对AL中内容进行校正</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">例 十进制计算6+8&#x3D;14，用非压缩的BCD码表示并显示在屏幕上。</span><br><span class="line">T1 DB 06H</span><br><span class="line">T2 DB 08H</span><br><span class="line">……</span><br><span class="line">MOV AL，T1 ；(AL)&#x3D;00000110&#x3D;06H</span><br><span class="line">ADD AL，T2 ；(AL)&#x3D;00001110&#x3D;0EH</span><br><span class="line">AAA 	   ；调整后(AH)&#x3D;01H，(AL)&#x3D;04H</span><br><span class="line">ADD AX，3030H ；AH、AL分别加上30H，变成ASCII码</span><br><span class="line">MOV BX，AX ；用BX保存</span><br><span class="line">MOV DL，BH ；显示“1”</span><br><span class="line">MOV AH，2 ；2号显示功能</span><br><span class="line">INT 21H ；DOS中断调用</span><br><span class="line">MOV DL，BL ；显示“4”</span><br><span class="line">INT 21H</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h4 id="非压缩BCD的减法调整"><a href="#非压缩BCD的减法调整" class="headerlink" title="非压缩BCD的减法调整"></a>非压缩BCD的减法调整</h4><p>非压缩的BCD码减法调整 </p>
+<p><strong>格式：</strong>AAS</p>
+<p><strong>功能：</strong> </p>
+<p>​    如果AL的低4位大于9，将AL减6、AH减1， AL的高4位清零、CF、AF置1</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">例 十进制计算57－18&#x3D;39，用非压缩的BCD码表示。</span><br><span class="line">MOV AX,0507H</span><br><span class="line">MOV BX,0108H</span><br><span class="line">SUB AL,BL</span><br><span class="line">SUB AH,BH ；高位不用带借位减</span><br><span class="line">AAS       ；减法调整后(AX)&#x3D;0309H </span><br></pre></td></tr></table></figure>
+
+<h4 id="非压缩BCD的乘法调整"><a href="#非压缩BCD的乘法调整" class="headerlink" title="非压缩BCD的乘法调整"></a>非压缩BCD的乘法调整</h4><p><strong>格式</strong>：AAM (ASCII Adjust Multiply) </p>
+<p><strong>功能</strong>： 将乘积AX中的2个非压缩的BCD码调整。 AL除以0AH，得到的商送AH，余数送入 AL。即乘积的高位数在AH 、低位数在 AL中</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">例 十进制乘法6×8&#x3D;48，用非压缩的BCD码表示，并显示。</span><br><span class="line">P1 DB 06H</span><br><span class="line">P2 DB 08H</span><br><span class="line">……</span><br><span class="line">MOV AL，P1 ；(AL)&#x3D;00000110&#x3D;06H</span><br><span class="line">IMUL P2 ；(AL)&#x3D;00110000&#x3D;30H</span><br><span class="line">AAM ；调整后(AH)&#x3D;04H，(AL)&#x3D;08H</span><br><span class="line">ADD AX，3030H ；AH、AL分别加上30H</span><br><span class="line">MOV BX，AX ；用BX保存</span><br><span class="line">MOV DL，BH ；显示“4”</span><br><span class="line">MOV AH，2</span><br><span class="line">INT 21H</span><br><span class="line">MOV DL，BL ；显示“8”</span><br><span class="line">INT 21H</span><br></pre></td></tr></table></figure>
+
+<h4 id="非压缩BCD的除法调整"><a href="#非压缩BCD的除法调整" class="headerlink" title="非压缩BCD的除法调整"></a>非压缩BCD的除法调整</h4><p><strong>格式</strong>：AAD (ASCII Adjust Division) </p>
+<p><strong>功能</strong>：在做除法之前，将被除数AX中的2 个非压缩的BCD码调整。 (AL)=(AL)+(AH)*10，AH清零。除法之 后，商在AL 、余数在AH中.</p>
+<h2 id="考试复习"><a href="#考试复习" class="headerlink" title="考试复习"></a>考试复习</h2><h3 id="标号"><a href="#标号" class="headerlink" title="标号"></a>标号</h3><p>对于数据标号，即<code>a db 1,2,3</code>，则在代码段中的a就会被替换成data:[0]，前提是要在assume里面关联ds与data。被替换以后，你就懂了吧，它可以表示一个数据，也可以用来寻址<code>a[si]</code>也就是<code>cs:0[si]</code></p>
+<h3 id="offset-1"><a href="#offset-1" class="headerlink" title="offset"></a>offset</h3><p>offset只能和数据标号搭配，而不能用复杂的例如ds:[bx]等。。offset取出的地址可以用来mov、add之类的。。</p>
+<h3 id="寻址-1"><a href="#寻址-1" class="headerlink" title="寻址"></a>寻址</h3><p>push word ptr 20[bx+si-2]这里是可以写表达式的</p>
+<h3 id="栈-1"><a href="#栈-1" class="headerlink" title="栈"></a>栈</h3><p>栈顶应该是sp-1吗</p>
+<h3 id="异或"><a href="#异或" class="headerlink" title="异或"></a>异或</h3><p>XOR CX,CX</p>
+<p>相当于mov cx,0，但是异或效率更高 </p>
+<h3 id="标号-1"><a href="#标号-1" class="headerlink" title="标号"></a>标号</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u011555996/article/details/80114485">关于标号的一些问题</a></p>
+<p>X1   DB  12H,  34H,  56H<br>        X2  DW  78H,  90H<br>        ADR1  DW X1<br>        ADR2  DW  X2</p>
+<p>如上，ADR1和ADR2表示的是X1和X2的地址，即偏移地址，0000和0300。</p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    b(￣▽￣)d
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechat.png" alt="Asea 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="Asea 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Asea
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://asea.fun/post/8e41db39.html" title="汇编语言">https://asea.fun/post/8e41db39.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>\(@^0^@)/</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://www.zhihu.com/people/michael-48-84-31">
+            <span class="icon">
+              <i class="fab fa-zhihu"></i>
+            </span>
+
+            <span class="label">知乎</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://weibo.com/5568238770/profile?rightmod=1&wvr=6&mod=personinfo">
+            <span class="icon">
+              <i class="fab fa-weibo"></i>
+            </span>
+
+            <span class="label">微博</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://blog.asea.fun">
+            <span class="icon">
+              <i class="fa fa-user"></i>
+            </span>
+
+            <span class="label">另一个博客</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/assembler/" rel="tag"><i class="fa fa-tag"></i> assembler</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/79666db.html" rel="prev" title="数据结构新版">
+      <i class="fa fa-chevron-left"></i> 数据结构新版
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/f857d47.html" rel="next" title="《The_Computer_and_the_Brain》词汇">
+      《The_Computer_and_the_Brain》词汇 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
   window.addEventListener('tabs:register', () => {
     let { activeClass } = CONFIG.comments;
     if (CONFIG.comments.storage) {
@@ -18,7 +735,255 @@
       localStorage.setItem('comments_active', commentClass);
     });
   }
-</script></div><div class="toggle sidebar-toggle"><span class="toggle-line toggle-line-first"></span><span class="toggle-line toggle-line-middle"></span><span class="toggle-line toggle-line-last"></span></div><aside class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc"> 文章目录</li><li class="sidebar-nav-overview"> 站点概览</li></ul><div class="post-toc-wrap sidebar-panel"><div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#debug"><span class="nav-number">1.</span> <span class="nav-text">debug</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">寄存器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%88"><span class="nav-number">3.</span> <span class="nav-text">栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F"><span class="nav-number">4.</span> <span class="nav-text">程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E5%A4%84%E7%90%86"><span class="nav-number">5.</span> <span class="nav-text">字符处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BB%E5%9D%80"><span class="nav-number">6.</span> <span class="nav-text">寻址</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E5%9D%80%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-number">6.1.</span> <span class="nav-text">变址寄存器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dup"><span class="nav-number">7.</span> <span class="nav-text">dup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AC%E7%A7%BB%E6%8C%87%E4%BB%A4"><span class="nav-number">8.</span> <span class="nav-text">转移指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jmp"><span class="nav-number">8.1.</span> <span class="nav-text">jmp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jcxz"><span class="nav-number">8.2.</span> <span class="nav-text">jcxz</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#loop"><span class="nav-number">8.3.</span> <span class="nav-text">loop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#call"><span class="nav-number">8.4.</span> <span class="nav-text">call</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ret"><span class="nav-number">8.5.</span> <span class="nav-text">ret</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8%E5%86%B2%E7%AA%81"><span class="nav-number">9.</span> <span class="nav-text">寄存器冲突</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-number">10.</span> <span class="nav-text">标志寄存器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E6%9D%A5%E7%9C%8B%E5%87%A0%E4%B8%AA%E6%A0%87%E5%BF%97"><span class="nav-number">10.1.</span> <span class="nav-text">具体来看几个标志</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F"><span class="nav-number">11.</span> <span class="nav-text">指令系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E9%80%81%E6%8C%87%E4%BB%A4"><span class="nav-number">11.1.</span> <span class="nav-text">传送指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MOV"><span class="nav-number">11.1.1.</span> <span class="nav-text">MOV</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#XCHG"><span class="nav-number">11.1.2.</span> <span class="nav-text">XCHG</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LEA"><span class="nav-number">11.1.3.</span> <span class="nav-text">LEA</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LDS"><span class="nav-number">11.1.4.</span> <span class="nav-text">LDS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LES"><span class="nav-number">11.1.5.</span> <span class="nav-text">LES</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%9C%AF%E6%8C%87%E4%BB%A4"><span class="nav-number">11.2.</span> <span class="nav-text">算术指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A0%E6%B3%95%E6%8C%87%E4%BB%A4"><span class="nav-number">11.2.1.</span> <span class="nav-text">加法指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%8F%E6%B3%95%E6%8C%87%E4%BB%A4"><span class="nav-number">11.2.2.</span> <span class="nav-text">减法指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B9%98%E6%B3%95%E6%8C%87%E4%BB%A4"><span class="nav-number">11.2.3.</span> <span class="nav-text">乘法指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%99%A4%E6%B3%95%E6%8C%87%E4%BB%A4"><span class="nav-number">11.2.4.</span> <span class="nav-text">除法指令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E6%8C%87%E4%BB%A4"><span class="nav-number">11.3.</span> <span class="nav-text">定义数据指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%B5%8B%E5%80%BC%E4%BC%AA%E6%93%8D%E4%BD%9C"><span class="nav-number">11.4.</span> <span class="nav-text">表达式赋值伪操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ORG"><span class="nav-number">11.5.</span> <span class="nav-text">ORG</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7%E8%BF%94%E5%9B%9E%E7%BD%AE%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">11.6.</span> <span class="nav-text">属性返回置运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#seg"><span class="nav-number">11.6.1.</span> <span class="nav-text">seg</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#offset"><span class="nav-number">11.6.2.</span> <span class="nav-text">offset</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#type"><span class="nav-number">11.6.3.</span> <span class="nav-text">type</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#length"><span class="nav-number">11.6.4.</span> <span class="nav-text">length</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#size"><span class="nav-number">11.6.5.</span> <span class="nav-text">size</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%B0%E5%9D%80%E8%AE%A1%E6%95%B0%E5%99%A8"><span class="nav-number">11.7.</span> <span class="nav-text">地址计数器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E6%8C%87%E4%BB%A4"><span class="nav-number">11.8.</span> <span class="nav-text">逻辑运算指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%BB%E4%BD%8D%E6%8C%87%E4%BB%A4"><span class="nav-number">11.9.</span> <span class="nav-text">移位指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dos%E8%B0%83%E7%94%A8"><span class="nav-number">12.</span> <span class="nav-text">dos调用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E5%AD%97%E7%AC%A6%E8%BE%93%E5%85%A5"><span class="nav-number">12.1.</span> <span class="nav-text">单字符输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E5%AD%97%E7%AC%A6%E8%BE%93%E5%87%BA"><span class="nav-number">12.2.</span> <span class="nav-text">单字符输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E5%B0%8F%E5%86%99%E8%BD%AC%E6%8D%A2"><span class="nav-number">12.3.</span> <span class="nav-text">大小写转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BE%93%E5%85%A5"><span class="nav-number">12.4.</span> <span class="nav-text">字符串输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">12.5.</span> <span class="nav-text">显示字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%81%E8%BF%9B%E5%88%B6%E5%8A%A0%E5%87%8F%E8%BF%90%E7%AE%97"><span class="nav-number">12.6.</span> <span class="nav-text">十进制加减运算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9BCD%E7%9A%84%E5%8A%A0%E6%B3%95%E8%B0%83%E6%95%B4"><span class="nav-number">12.6.1.</span> <span class="nav-text">压缩BCD的加法调整</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9BCD%E7%9A%84%E5%87%8F%E6%B3%95%E8%B0%83%E6%95%B4"><span class="nav-number">12.6.2.</span> <span class="nav-text">压缩BCD的减法调整</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%9E%E5%8E%8B%E7%BC%A9BCD%E7%9A%84%E5%8A%A0%E6%B3%95%E8%B0%83%E6%95%B4"><span class="nav-number">12.6.3.</span> <span class="nav-text">非压缩BCD的加法调整</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%9E%E5%8E%8B%E7%BC%A9BCD%E7%9A%84%E5%87%8F%E6%B3%95%E8%B0%83%E6%95%B4"><span class="nav-number">12.6.4.</span> <span class="nav-text">非压缩BCD的减法调整</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%9E%E5%8E%8B%E7%BC%A9BCD%E7%9A%84%E4%B9%98%E6%B3%95%E8%B0%83%E6%95%B4"><span class="nav-number">12.6.5.</span> <span class="nav-text">非压缩BCD的乘法调整</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%9E%E5%8E%8B%E7%BC%A9BCD%E7%9A%84%E9%99%A4%E6%B3%95%E8%B0%83%E6%95%B4"><span class="nav-number">12.6.6.</span> <span class="nav-text">非压缩BCD的除法调整</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%80%83%E8%AF%95%E5%A4%8D%E4%B9%A0"><span class="nav-number">13.</span> <span class="nav-text">考试复习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E5%8F%B7"><span class="nav-number">13.1.</span> <span class="nav-text">标号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#offset-1"><span class="nav-number">13.2.</span> <span class="nav-text">offset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BB%E5%9D%80-1"><span class="nav-number">13.3.</span> <span class="nav-text">寻址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%88-1"><span class="nav-number">13.4.</span> <span class="nav-text">栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%82%E6%88%96"><span class="nav-number">13.5.</span> <span class="nav-text">异或</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E5%8F%B7-1"><span class="nav-number">13.6.</span> <span class="nav-text">标号</span></a></li></ol></li></ol></div></div><div class="site-overview-wrap sidebar-panel"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"> <img class="site-author-image" itemprop="image" alt="Asea" src="/images/avatar1.png"><p class="site-author-name" itemprop="name">Asea</p><div class="site-description" itemprop="description">我以為我可以獨自過一生 我還是被打動了</div></div><div class="site-state-wrap motion-element"><nav class="site-state"><div class="site-state-item site-state-posts"> <a href="/archives"><span class="site-state-item-count">73</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"> <a href="/categories/"><span class="site-state-item-count">6</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"> <a href="/tags/"><span class="site-state-item-count">46</span> <span class="site-state-item-name">标签</span></a></div></nav></div><div class="links-of-author motion-element"><span class="links-of-author-item"><a href="https://github.com/AAAAsea" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AAAAsea" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i> GitHub</a></span><span class="links-of-author-item"><a href="https://space.bilibili.com/470490357" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;470490357" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i> Bilibili</a></span><span class="links-of-author-item"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=569389750&amp;site=qq&amp;menu=yes" title="QQ → http:&#x2F;&#x2F;wpa.qq.com&#x2F;msgrd?v&#x3D;3&amp;uin&#x3D;569389750&amp;site&#x3D;qq&amp;menu&#x3D;yes" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i> QQ</a></span><span class="links-of-author-item"><a href="https://www.zhihu.com/people/michael-48-84-31" title="ZhiHu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;michael-48-84-31" rel="noopener" target="_blank"><i class="fab fa-black-tie fa-fw"></i> ZhiHu</a></span></div><div class="cc-license motion-element" itemprop="license"> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a></div><div class="links-of-blogroll motion-element"><div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i> Links</div><ul class="links-of-blogroll-list"><li class="links-of-blogroll-item"> <a href="https://asea.fun/" title="https:&#x2F;&#x2F;asea.fun">我的主页</a></li><li class="links-of-blogroll-item"> <a href="https://blog.asea.fun/" title="https:&#x2F;&#x2F;blog.asea.fun" rel="noopener" target="_blank">Butterfly主题博客</a></li><li class="links-of-blogroll-item"> <a href="https://alicee.run/" title="https:&#x2F;&#x2F;alicee.run" rel="noopener" target="_blank">Alice Wonderland博客</a></li><li class="links-of-blogroll-item"> <a href="/fun/apesk/" title="&#x2F;fun&#x2F;apesk&#x2F;">APESK-荣格理论测试</a></li><li class="links-of-blogroll-item"> <a href="https://game01.asea.fun/" title="https:&#x2F;&#x2F;game01.asea.fun" rel="noopener" target="_blank">生长方块</a></li><li class="links-of-blogroll-item"> <a href="https://game02.asea.fun/" title="https:&#x2F;&#x2F;game02.asea.fun" rel="noopener" target="_blank">奔跑吧小球</a></li><li class="links-of-blogroll-item"> <a href="https://game03.asea.fun/" title="https:&#x2F;&#x2F;game03.asea.fun" rel="noopener" target="_blank">见缝插针</a></li><li class="links-of-blogroll-item"> <a href="https://hole.asea.fun/" title="https:&#x2F;&#x2F;hole.asea.fun" rel="noopener" target="_blank">合成黑洞</a></li><li class="links-of-blogroll-item"> <a href="/fun/mi/" title="&#x2F;fun&#x2F;mi&#x2F;">随机密码</a></li><li class="links-of-blogroll-item"> <a href="/fun/chi/" title="&#x2F;fun&#x2F;chi&#x2F;">吃什么</a></li><li class="links-of-blogroll-item"> <a href="/fun/du/" title="&#x2F;fun&#x2F;du&#x2F;">毒鸡汤</a></li><li class="links-of-blogroll-item"> <a href="/fun/hua/" title="&#x2F;fun&#x2F;hua&#x2F;">画板</a></li></ul></div></div></div></aside><div id="sidebar-dimmer"></div></div></main><footer class="footer"><div class="footer-inner"><div class="copyright"> &copy; 2019 – <span itemprop="copyrightYear">2022</span><span class="with-love"><i class="fa fa-user"></i></span> <span class="author" itemprop="copyrightHolder">©2021 by Asea</span></div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span><script>var now=new Date;function createtime(){var n=new Date("12/14/2019 22:08:00");now.setTime(now.getTime()+250),days=(now-n)/1e3/60/60/24,dnum=Math.floor(days),hours=(now-n)/1e3/60/60-24*dnum,hnum=Math.floor(hours),1==String(hnum).length&&(hnum="0"+hnum),minutes=(now-n)/1e3/60-1440*dnum-60*hnum,mnum=Math.floor(minutes),1==String(mnum).length&&(mnum="0"+mnum),seconds=(now-n)/1e3-86400*dnum-3600*hnum-60*mnum,snum=Math.round(seconds),1==String(snum).length&&(snum="0"+snum),document.getElementById("timeDate").innerHTML="本站已偷偷运行 "+dnum+" 天",document.getElementById("times").innerHTML=hnum+" 小时 "+mnum+" 分 "+snum+" 秒"}setInterval("createtime()",250)</script><div class="theme-info"><div class="powered-by"></div> <span class="post-count">全站共112.7k字</span></div><div class="busuanzi-count"><script async src="/lib/busuanzi.pure.min.js"></script><span class="post-meta-item" id="busuanzi_container_site_uv" style=""><span class="post-meta-item-icon"><i class="fa fa-user"></i></span><span class="site-uv" title="总访客量"><span id="busuanzi_value_site_uv"></span></span></span> <span class="post-meta-divider">|</span><span class="post-meta-item" id="busuanzi_container_site_pv" style=""><span class="post-meta-item-icon"><i class="fa fa-eye"></i></span><span class="site-pv" title="总访问量"><span id="busuanzi_value_site_pv"></span></span></span></div></div></footer></div><script src="/lib/anime.min.js"></script><script src="/lib/velocity/velocity.min.js"></script><script src="/lib/velocity/velocity.ui.min.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/pisces.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script defer="defer" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script><script defer="defer" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js"></script><script src="/js/local-search.js"></script><script>
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#debug"><span class="nav-number">1.</span> <span class="nav-text">debug</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">寄存器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%88"><span class="nav-number">3.</span> <span class="nav-text">栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F"><span class="nav-number">4.</span> <span class="nav-text">程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E5%A4%84%E7%90%86"><span class="nav-number">5.</span> <span class="nav-text">字符处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BB%E5%9D%80"><span class="nav-number">6.</span> <span class="nav-text">寻址</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E5%9D%80%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-number">6.1.</span> <span class="nav-text">变址寄存器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dup"><span class="nav-number">7.</span> <span class="nav-text">dup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AC%E7%A7%BB%E6%8C%87%E4%BB%A4"><span class="nav-number">8.</span> <span class="nav-text">转移指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jmp"><span class="nav-number">8.1.</span> <span class="nav-text">jmp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jcxz"><span class="nav-number">8.2.</span> <span class="nav-text">jcxz</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#loop"><span class="nav-number">8.3.</span> <span class="nav-text">loop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#call"><span class="nav-number">8.4.</span> <span class="nav-text">call</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ret"><span class="nav-number">8.5.</span> <span class="nav-text">ret</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8%E5%86%B2%E7%AA%81"><span class="nav-number">9.</span> <span class="nav-text">寄存器冲突</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-number">10.</span> <span class="nav-text">标志寄存器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E6%9D%A5%E7%9C%8B%E5%87%A0%E4%B8%AA%E6%A0%87%E5%BF%97"><span class="nav-number">10.1.</span> <span class="nav-text">具体来看几个标志</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F"><span class="nav-number">11.</span> <span class="nav-text">指令系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E9%80%81%E6%8C%87%E4%BB%A4"><span class="nav-number">11.1.</span> <span class="nav-text">传送指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MOV"><span class="nav-number">11.1.1.</span> <span class="nav-text">MOV</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#XCHG"><span class="nav-number">11.1.2.</span> <span class="nav-text">XCHG</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LEA"><span class="nav-number">11.1.3.</span> <span class="nav-text">LEA</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LDS"><span class="nav-number">11.1.4.</span> <span class="nav-text">LDS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LES"><span class="nav-number">11.1.5.</span> <span class="nav-text">LES</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%9C%AF%E6%8C%87%E4%BB%A4"><span class="nav-number">11.2.</span> <span class="nav-text">算术指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A0%E6%B3%95%E6%8C%87%E4%BB%A4"><span class="nav-number">11.2.1.</span> <span class="nav-text">加法指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%8F%E6%B3%95%E6%8C%87%E4%BB%A4"><span class="nav-number">11.2.2.</span> <span class="nav-text">减法指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B9%98%E6%B3%95%E6%8C%87%E4%BB%A4"><span class="nav-number">11.2.3.</span> <span class="nav-text">乘法指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%99%A4%E6%B3%95%E6%8C%87%E4%BB%A4"><span class="nav-number">11.2.4.</span> <span class="nav-text">除法指令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E6%8C%87%E4%BB%A4"><span class="nav-number">11.3.</span> <span class="nav-text">定义数据指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%B5%8B%E5%80%BC%E4%BC%AA%E6%93%8D%E4%BD%9C"><span class="nav-number">11.4.</span> <span class="nav-text">表达式赋值伪操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ORG"><span class="nav-number">11.5.</span> <span class="nav-text">ORG</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7%E8%BF%94%E5%9B%9E%E7%BD%AE%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">11.6.</span> <span class="nav-text">属性返回置运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#seg"><span class="nav-number">11.6.1.</span> <span class="nav-text">seg</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#offset"><span class="nav-number">11.6.2.</span> <span class="nav-text">offset</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#type"><span class="nav-number">11.6.3.</span> <span class="nav-text">type</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#length"><span class="nav-number">11.6.4.</span> <span class="nav-text">length</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#size"><span class="nav-number">11.6.5.</span> <span class="nav-text">size</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%B0%E5%9D%80%E8%AE%A1%E6%95%B0%E5%99%A8"><span class="nav-number">11.7.</span> <span class="nav-text">地址计数器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E6%8C%87%E4%BB%A4"><span class="nav-number">11.8.</span> <span class="nav-text">逻辑运算指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%BB%E4%BD%8D%E6%8C%87%E4%BB%A4"><span class="nav-number">11.9.</span> <span class="nav-text">移位指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dos%E8%B0%83%E7%94%A8"><span class="nav-number">12.</span> <span class="nav-text">dos调用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E5%AD%97%E7%AC%A6%E8%BE%93%E5%85%A5"><span class="nav-number">12.1.</span> <span class="nav-text">单字符输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E5%AD%97%E7%AC%A6%E8%BE%93%E5%87%BA"><span class="nav-number">12.2.</span> <span class="nav-text">单字符输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E5%B0%8F%E5%86%99%E8%BD%AC%E6%8D%A2"><span class="nav-number">12.3.</span> <span class="nav-text">大小写转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BE%93%E5%85%A5"><span class="nav-number">12.4.</span> <span class="nav-text">字符串输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">12.5.</span> <span class="nav-text">显示字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%81%E8%BF%9B%E5%88%B6%E5%8A%A0%E5%87%8F%E8%BF%90%E7%AE%97"><span class="nav-number">12.6.</span> <span class="nav-text">十进制加减运算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9BCD%E7%9A%84%E5%8A%A0%E6%B3%95%E8%B0%83%E6%95%B4"><span class="nav-number">12.6.1.</span> <span class="nav-text">压缩BCD的加法调整</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9BCD%E7%9A%84%E5%87%8F%E6%B3%95%E8%B0%83%E6%95%B4"><span class="nav-number">12.6.2.</span> <span class="nav-text">压缩BCD的减法调整</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%9E%E5%8E%8B%E7%BC%A9BCD%E7%9A%84%E5%8A%A0%E6%B3%95%E8%B0%83%E6%95%B4"><span class="nav-number">12.6.3.</span> <span class="nav-text">非压缩BCD的加法调整</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%9E%E5%8E%8B%E7%BC%A9BCD%E7%9A%84%E5%87%8F%E6%B3%95%E8%B0%83%E6%95%B4"><span class="nav-number">12.6.4.</span> <span class="nav-text">非压缩BCD的减法调整</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%9E%E5%8E%8B%E7%BC%A9BCD%E7%9A%84%E4%B9%98%E6%B3%95%E8%B0%83%E6%95%B4"><span class="nav-number">12.6.5.</span> <span class="nav-text">非压缩BCD的乘法调整</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%9E%E5%8E%8B%E7%BC%A9BCD%E7%9A%84%E9%99%A4%E6%B3%95%E8%B0%83%E6%95%B4"><span class="nav-number">12.6.6.</span> <span class="nav-text">非压缩BCD的除法调整</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%80%83%E8%AF%95%E5%A4%8D%E4%B9%A0"><span class="nav-number">13.</span> <span class="nav-text">考试复习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E5%8F%B7"><span class="nav-number">13.1.</span> <span class="nav-text">标号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#offset-1"><span class="nav-number">13.2.</span> <span class="nav-text">offset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BB%E5%9D%80-1"><span class="nav-number">13.3.</span> <span class="nav-text">寻址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%88-1"><span class="nav-number">13.4.</span> <span class="nav-text">栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%82%E6%88%96"><span class="nav-number">13.5.</span> <span class="nav-text">异或</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E5%8F%B7-1"><span class="nav-number">13.6.</span> <span class="nav-text">标号</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Asea"
+      src="/images/avatar1.png">
+  <p class="site-author-name" itemprop="name">Asea</p>
+  <div class="site-description" itemprop="description">我以為我可以獨自過一生 我還是被打動了</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/AAAAsea" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AAAAsea" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/470490357" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;470490357" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=569389750&amp;site=qq&amp;menu=yes" title="QQ → http:&#x2F;&#x2F;wpa.qq.com&#x2F;msgrd?v&#x3D;3&amp;uin&#x3D;569389750&amp;site&#x3D;qq&amp;menu&#x3D;yes" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>QQ</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/michael-48-84-31" title="ZhiHu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;michael-48-84-31" rel="noopener" target="_blank"><i class="fab fa-black-tie fa-fw"></i>ZhiHu</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://asea.fun/" title="https:&#x2F;&#x2F;asea.fun">我的主页</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.asea.fun/" title="https:&#x2F;&#x2F;blog.asea.fun" rel="noopener" target="_blank">Butterfly主题博客</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://alicee.run/" title="https:&#x2F;&#x2F;alicee.run" rel="noopener" target="_blank">Alice Wonderland博客</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/fun/apesk/" title="&#x2F;fun&#x2F;apesk&#x2F;">APESK-荣格理论测试</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://game01.asea.fun/" title="https:&#x2F;&#x2F;game01.asea.fun" rel="noopener" target="_blank">生长方块</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://game02.asea.fun/" title="https:&#x2F;&#x2F;game02.asea.fun" rel="noopener" target="_blank">奔跑吧小球</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://game03.asea.fun/" title="https:&#x2F;&#x2F;game03.asea.fun" rel="noopener" target="_blank">见缝插针</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hole.asea.fun/" title="https:&#x2F;&#x2F;hole.asea.fun" rel="noopener" target="_blank">合成黑洞</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/fun/mi/" title="&#x2F;fun&#x2F;mi&#x2F;">随机密码</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/fun/chi/" title="&#x2F;fun&#x2F;chi&#x2F;">吃什么</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/fun/du/" title="&#x2F;fun&#x2F;du&#x2F;">毒鸡汤</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/fun/hua/" title="&#x2F;fun&#x2F;hua&#x2F;">画板</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">©2021 by Asea</span>
+</div>
+<!-- 网站运行时间的设置 -->
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("12/14/2019 22:08:00");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已偷偷运行 "+dnum+" 天";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">全站共112.7k字</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="/lib/busuanzi.pure.min.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: ;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: ;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
+    <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
 NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
   NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
     var GUEST = ['nick', 'mail', 'link'];
@@ -45,4 +1010,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     
   }, window.Valine);
 });
-</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({pluginRootPath:"live2dw/",pluginJsPath:"lib/",pluginModelPath:"assets/",tagMode:!1,debug:!1,model:{jsonPath:"/live2dw/assets/hijiki.model.json"},display:{position:"right",width:170,height:340},mobile:{show:!1},log:!1})</script></body></html>
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":170,"height":340},"mobile":{"show":false},"log":false});</script></body>
+</html>
