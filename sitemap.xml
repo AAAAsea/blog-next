@@ -191,14 +191,14 @@
   </url>
   
   <url>
-    <loc>https://asea.fun/post/2ee0f961.html</loc>
+    <loc>https://asea.fun/post/cf7f39c3.html</loc>
     
     <lastmod>2021-08-08</lastmod>
     
   </url>
   
   <url>
-    <loc>https://asea.fun/post/cf7f39c3.html</loc>
+    <loc>https://asea.fun/post/2ee0f961.html</loc>
     
     <lastmod>2021-08-08</lastmod>
     
@@ -606,6 +606,13 @@
   </url>
   
   <url>
+    <loc>https://asea.fun/tags/Linux/</loc>
+    <lastmod>2022-02-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://asea.fun/tags/java/</loc>
     <lastmod>2022-02-26</lastmod>
     <changefreq>daily</changefreq>
@@ -621,13 +628,6 @@
   
   <url>
     <loc>https://asea.fun/tags/github/</loc>
-    <lastmod>2022-02-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://asea.fun/tags/Linux/</loc>
     <lastmod>2022-02-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -725,14 +725,14 @@
   </url>
   
   <url>
-    <loc>https://asea.fun/tags/python/</loc>
+    <loc>https://asea.fun/tags/three-js/</loc>
     <lastmod>2022-02-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://asea.fun/tags/three-js/</loc>
+    <loc>https://asea.fun/tags/python/</loc>
     <lastmod>2022-02-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -886,14 +886,14 @@
   </url>
   
   <url>
-    <loc>https://asea.fun/tags/assembler/</loc>
+    <loc>https://asea.fun/tags/dream/</loc>
     <lastmod>2022-02-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://asea.fun/tags/dream/</loc>
+    <loc>https://asea.fun/tags/assembler/</loc>
     <lastmod>2022-02-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
