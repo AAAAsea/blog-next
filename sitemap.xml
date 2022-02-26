@@ -520,13 +520,6 @@
   </url>
   
   <url>
-    <loc>https://asea.fun/link/index.html</loc>
-    
-    <lastmod>2020-11-24</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://asea.fun/about/index.html</loc>
     
     <lastmod>2020-11-24</lastmod>
@@ -541,7 +534,7 @@
   </url>
   
   <url>
-    <loc>https://asea.fun/tags/index.html</loc>
+    <loc>https://asea.fun/link/index.html</loc>
     
     <lastmod>2020-11-24</lastmod>
     
@@ -549,6 +542,13 @@
   
   <url>
     <loc>https://asea.fun/message/index.html</loc>
+    
+    <lastmod>2020-11-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://asea.fun/tags/index.html</loc>
     
     <lastmod>2020-11-24</lastmod>
     
@@ -620,14 +620,14 @@
   </url>
   
   <url>
-    <loc>https://asea.fun/tags/Linux/</loc>
+    <loc>https://asea.fun/tags/github/</loc>
     <lastmod>2022-02-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://asea.fun/tags/github/</loc>
+    <loc>https://asea.fun/tags/Linux/</loc>
     <lastmod>2022-02-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -767,6 +767,13 @@
   </url>
   
   <url>
+    <loc>https://asea.fun/tags/literature/</loc>
+    <lastmod>2022-02-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://asea.fun/tags/vercel/</loc>
     <lastmod>2022-02-26</lastmod>
     <changefreq>daily</changefreq>
@@ -775,13 +782,6 @@
   
   <url>
     <loc>https://asea.fun/tags/domain/</loc>
-    <lastmod>2022-02-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://asea.fun/tags/literature/</loc>
     <lastmod>2022-02-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
